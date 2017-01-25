@@ -11,7 +11,7 @@
 			if (empty($categoryId))
 			{
 				$assetName	= 'com_ttlivescore';
-				$level		= 'component'
+				$level		= 'component';
 			}
 			else
 			{

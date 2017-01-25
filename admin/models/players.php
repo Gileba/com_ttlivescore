@@ -17,8 +17,8 @@
 			$db	= $this->getDBO();
 			$query = $db->getQuery(true);
 			
-			$query->select($this->getState('list.select', 'a.id', 'a.lastname', 'a.firstname'));
-			$query->from($db->quoteName('#__ttlivescore_players' . 'AS a'));
+			$query->select($db->quoteName('a.id', 'a.lastname', 'a.firstname'));
+			$query->from($db->quoteName('#__ttlivescore_players' . ' AS a'));
 			
 			return $query;
 		}
