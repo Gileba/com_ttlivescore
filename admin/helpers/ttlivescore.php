@@ -6,12 +6,12 @@
 		public static function getActions($categoryId = 0)
 		{
 			$user	= JFactory::getUser();
-			$result	= newJObject;
+			$result	= new JObject;
 			
 			if (empty($categoryId))
 			{
 				$assetName	= 'com_ttlivescore';
-				$level		= 'component'
+				$level		= 'component';
 			}
 			else
 			{

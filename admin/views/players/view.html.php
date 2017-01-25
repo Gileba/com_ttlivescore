@@ -6,7 +6,7 @@
 		protected $items;
 		
 		public function display($tpl = null) {
-			$this->items = this->get('Items');
+			$this->items = $this->get('Items');
 			
 			if (count($errors = $this->get('Errors')))
 			{

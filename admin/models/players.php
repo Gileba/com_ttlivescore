@@ -14,11 +14,12 @@
 		
 		protected function getListQuery()
 		{
-			$db	= $this->getDBO();
+			$db	= $this->getDbo();
 			$query = $db->getQuery(true);
 			
-			$query->select($this->getState('list.select', 'a.id', 'a.lastname', 'a.firstname'));
-			$query->from($db->quoteName('#__ttlivescore_players' . 'AS a'));
+			$query
+				->select($db->quoteName(array('a.id', 'a.lastname', 'a.firstname')))
+				->from($db->quoteName('#__ttlivescore_players', 'a'));
 			
 			return $query;
 		}
