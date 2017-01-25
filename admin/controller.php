@@ -13,7 +13,7 @@
 			$layout	= $this->input->get('layout', 'default');
 			$id		= $this->input->getInt('id');
 			
-			if ($view == 'player' && layout == 'edit' && !$this->checkEditId('com_ttlivescore.edit.player', $id))
+			if ($view == 'player' && $layout == 'edit' && !$this->checkEditId('com_ttlivescore.edit.player', $id))
 			{
 				$this->setError(JTEXT::sprintf('JLIB_APPLICATION_ERROR_UNHELD_ID', $id));
 				$this->setMessage($this->getError(), 'error');

@@ -1,7 +1,8 @@
-<?xml version=“1.0” encoding=“utf-8” ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <form>
 	<fieldset>
 		<field name="id" type="text" default="0" label="JGLOBAL_FIELD_ID_LABEL" readonly="true" class="readonly" description="JGLOBAL_FIELD_ID_DESC" />
 		<field name="lastname" type="text" class="inputbox" size="60" label="COM_TTLIVESCORE_FIELD_LASTNAME_LABEL" description="COM_TTLIVESCORE_FIELD_LASTNAME_DESC" required="true" />
 		<field name="firstname" type="text" class="inputbox" size="60" label="COM_TTLIVESCORE_FIELD_FIRSTNAME_LABEL" description="COM_TTLIVESCORE_FIELD_FIRSTNAME_DESC" required="true" />
+	</fieldset>
 </form>
