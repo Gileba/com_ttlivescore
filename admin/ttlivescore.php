@@ -2,7 +2,7 @@
 	defined('_JEXEC') or die;
 	
 	// Check user permissions and return error if manage is prohibited
-	if (!JFactory::getUser()->authorize('core.manage', 'com_ttlivescore'))
+	if (!JFactory::getUser()->authorise('core.manage', 'com_ttlivescore'))
 	{
 		return JERROR::raiseWarning(404, JText::_('JERROR_ALERTNOAUTHOR'));
 	}
