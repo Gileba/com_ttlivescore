@@ -7,7 +7,7 @@
 		
 		public function display($cachable = false, $urlparams = false)
 		{
-			require_once JPATH_COMPONENT.'/helpers/player.php';
+			require_once JPATH_COMPONENT.'/helpers/ttlivescore.php';
 			
 			$view	= $this->input->get('view', 'players');
 			$layout	= $this->input->get('layout', 'default');
