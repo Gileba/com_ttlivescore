@@ -1,7 +1,7 @@
 <?php
 	defined('_JEXEC') or die;
 	
-	class TTLivescoreContollerPlayers extends JControllerAdmin
+	class TTLivescoreControllerPlayers extends JControllerAdmin
 	{
 		public function getModel($name = 'Player', prefix='TTLivescoreModel', $config=array('ignore_request' => true))
 		{
