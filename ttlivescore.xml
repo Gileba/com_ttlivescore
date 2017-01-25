@@ -19,13 +19,14 @@
 		</files>
 		
 		<languages folder="admin">
-			<language tag="en-GB">language/en-GB.com_ttlivescore.sys.ini</language>
+			<language tag="en-GB">language/en-GB/en-GB.com_ttlivescore.ini</language>
+			<language tag="en-GB">language/en-GB/en-GB.com_ttlivescore.sys.ini</language>
 		</languages>			
 	</administration>
 
 	<update> 
 		<schemas> 
-			<schemapath type="mysql">sql/updates/mysql</schemapath> 
+			<schemapath type="mysql">sql/updates/mysql/</schemapath> 
 		</schemas> 
 	</update>
 
