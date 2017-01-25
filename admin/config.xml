@@ -1,0 +1,9 @@
+<?xml version=“1.0” encoding=“utf-8” ?>
+<config>
+	<fieldset name="component" label="COM_FOLIO_COMPONENT_LABEL" description="COM_FOLIO_COMPONENT_DESC">
+	</fieldset>
+	
+	<fieldset name="permissions" label="JCONFIG_PERMISSIONS_LABEL" description="JCONFIG_PERMISSIONS_DESC">
+		<field name="rules" type="rules" component="com_ttlivescore" filter="rules" validate="rules" label="JCONFIG_PERMISSIONS_LABEL" section="component" />
+	</fieldset>
+</config>

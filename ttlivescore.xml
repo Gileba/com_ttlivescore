@@ -9,15 +9,24 @@
 	<authorUrl>http://www.gileba.be</authorUrl>
 	<version>0.0.1</version>
 	<description>COM_TTLIVESCORE_XML_DESCRIPTION</description>
+
 	<administration>
 		<menu>COM_TTLIVESCORE_MENU</menu>
 		
 		<files folder="admin">
 			<filename>index.html</filename>
+			<filename>ttlivescore.php</filename>
 		</files>
 		
 		<languages folder="admin">
 			<language tag="en-GB">language/en-GB.com_ttlivescore.sys.ini</language>
 		</languages>			
 	</administration>
+
+	<update> 
+		<schemas> 
+			<schemapath type="mysql">sql/updates/mysql</schemapath> 
+		</schemas> 
+	</update>
+
 </extension>
