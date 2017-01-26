@@ -29,12 +29,12 @@
 						<?php echo JHtml::_('grid.id', $i, $item->id); ?>
 					</td>
 					<td class="nowrap has-context">
-						<a href="<?php echo JROUTE::_('index.php?option=com_ttlivescore&task=player.edit&id.' . (int) $item->id); ?>">
+						<a href="<?php echo JROUTE::_('index.php?option=com_ttlivescore&task=player.edit&id=' . (int) $item->id); ?>">
 							<?php echo $this->escape($item->lastname); ?>
 						</a>
 					</td>
 					<td class="nowrap has-context">
-						<a href="<?php echo JROUTE::_('index.php?option=com_ttlivescore&task=player.edit&id.' . (int) $item->id); ?>">
+						<a href="<?php echo JROUTE::_('index.php?option=com_ttlivescore&task=player.edit&id=' . (int) $item->id); ?>">
 							<?php echo $this->escape($item->firstname); ?>
 						</a>
 					</td>
