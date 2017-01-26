@@ -9,10 +9,8 @@
 			<fieldset>
 				<?php echo JHtml::_('bootstrap.startPane', 'myTab', array('active' => 'details')); ?>
 				<?php echo JHtml::_('bootstrap.addPanel', 'myTab', 'details', empty($this->item->id) ? JText::_('COM_TTLIVESCORE_NEW_PLAYER', true) : JText::sprintf('COM_TTLIVESCORE_EDIT_PLAYER', $this->item->id, true)); ?>
-				<div class="control-group">
-					<?php echo $this->form->renderField('lastname'); ?>
-					<?php echo $this->form->renderField('firstname'); ?>
-				</div>
+				<?php echo $this->form->renderField('lastname'); ?>
+				<?php echo $this->form->renderField('firstname'); ?>
 				<?php echo JHtml::_('bootstrap.endPanel'); ?>
 				<input type="hidden" name="task" value="" />
 				<?php echo JHtml::_('form.token'); ?>
