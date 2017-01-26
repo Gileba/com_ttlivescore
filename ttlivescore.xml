@@ -40,4 +40,8 @@
 		</schemas> 
 	</update>
 
+	<updateservers>
+		<server type="extension" priority="1" name="TT Livescore">http://www.gileba.be/updates/ttlivescore.xml</server>
+	</updateservers>
+
 </extension>
