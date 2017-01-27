@@ -4,7 +4,7 @@
 		<field name="id" type="text" default="0" label="JGLOBAL_FIELD_ID_LABEL" readonly="true" class="readonly" description="JGLOBAL_FIELD_ID_DESC" />
 		<field name="lastname" type="text" class="inputbox" size="60" label="COM_TTLIVESCORE_FIELD_LASTNAME_LABEL" description="COM_TTLIVESCORE_FIELD_LASTNAME_DESC" required="true" />
 		<field name="firstname" type="text" class="inputbox" size="60" label="COM_TTLIVESCORE_FIELD_FIRSTNAME_LABEL" description="COM_TTLIVESCORE_FIELD_FIRSTNAME_DESC" required="true" />
-		<field name="middlenam" type="text" class="inputbox" size="20" label="COM_TTLIVESCORE_FIELD_MIDDLENAME_LABEL" description="COM_TTLIVESCORE_FIELD_MIDDLENAME_DESC" />
+		<field name="middlename" type="text" class="inputbox" size="20" label="COM_TTLIVESCORE_FIELD_MIDDLENAME_LABEL" description="COM_TTLIVESCORE_FIELD_MIDDLENAME_DESC" />
 		<field name="published" type="list" label="JSTATUS" description="JFIELD_PUBLISHED_DESC" class="inputbox small" size="1" default="1">
 			<option value="1">JPUBLISHED</option>
 			<option value="0">JUNPUBLISHED</option>
