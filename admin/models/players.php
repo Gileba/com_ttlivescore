@@ -7,7 +7,7 @@
 		{
 			if (empty($config['filter_fields']))
 			{
-				$config['filter_fields'] = array('id' ,'a.id', 'lastname', 'a.lastname', 'firstname', 'a.firstname');
+				$config['filter_fields'] = array('id' ,'a.id', 'lastname', 'a.lastname', 'firstname', 'a.firstname', 'middlename', 'a.middlename', 'country', 'a.country', 'published', 'a.published', 'dateofbirth', 'a.dateofbirth', 'image', 'a.image', );
 			}
 			parent::__construct($config);
 		}
@@ -18,7 +18,7 @@
 			$query = $db->getQuery(true);
 			
 			$query
-				->select($db->quoteName(array('a.id', 'a.lastname', 'a.firstname')))
+				->select($db->quoteName(array('a.id', 'a.lastname', 'a.firstname', 'a.middlename', 'a.country', 'a.published', 'a.dateofbirth', 'a.image', )))
 				->from($db->quoteName('#__ttlivescore_players', 'a'));
 			
 			return $query;
