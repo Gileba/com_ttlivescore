@@ -13,6 +13,7 @@
 				<?php echo $this->form->renderField('middlename'); ?>
 				<?php echo $this->form->renderField('firstname'); ?>
 				<?php echo $this->form->renderField('published'); ?>
+				<?php echo $this->form->renderField('dateofbirth'); ?>
 				<?php echo $this->form->renderField('image'); ?>
 				<?php echo $this->form->renderField('country'); ?>
 				<?php echo JHtml::_('bootstrap.endPanel'); ?>
