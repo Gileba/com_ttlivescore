@@ -3,7 +3,7 @@ CREATE TABLE IF NOT EXISTS `#__ttlivescore_players` (
 	`firstname` varchar(250) NOT NULL DEFAULT '',
 	`lastname` varchar(250) NOT NULL DEFAULT '',
 	`middlename` varchar(250),
-	`published` tinyint(1) NOT NULL DEFAULT '0',
+	`published` tinyint(1) NOT NULL DEFAULT '1',
 	`image` varchar(255),
 	`country` varchar(255) NOT NULL DEFAULT '0',
 	`dateofbirth`date,
