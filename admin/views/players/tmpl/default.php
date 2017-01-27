@@ -37,7 +37,7 @@
 								echo $this->escape($item->lastname); 
 								if ($this->escape($item->middlename) != '')
 								{
-									echo ' (' . echo $this->escape($item->middlename) . ')'; 
+									echo ' (' . $this->escape($item->middlename) . ')'; 
 								}
 							?>
 						</a>
