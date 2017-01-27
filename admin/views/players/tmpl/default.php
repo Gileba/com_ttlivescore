@@ -20,6 +20,9 @@
 					<th>
 						<?php echo JHtml::_('grid.sort', 'COM_TTLIVESCORE_FIELD_FIRSTNAME_LABEL', 'a.firstname', $listDirn, $listOrder); ?>
 					</th>
+					<th>
+						<?php echo JHtml::_('grid.sort', 'COM_TTLIVESCORE_FIELD_COUNTRY_LABEL', 'a.country', $listDirn, $listOrder); ?>
+					</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -30,13 +33,22 @@
 					</td>
 					<td class="nowrap has-context">
 						<a href="<?php echo JROUTE::_('index.php?option=com_ttlivescore&task=player.edit&id=' . (int) $item->id); ?>">
-							<?php echo $this->escape($item->lastname); ?>
+							<?php 
+								echo $this->escape($item->lastname); 
+								if ($this->escape($item->middlename) != '')
+								{
+									echo ' (' . echo $this->escape($item->middlename) . ')'; 
+								}
+							?>
 						</a>
 					</td>
 					<td class="nowrap has-context">
 						<a href="<?php echo JROUTE::_('index.php?option=com_ttlivescore&task=player.edit&id=' . (int) $item->id); ?>">
 							<?php echo $this->escape($item->firstname); ?>
 						</a>
+					</td>
+					<td class="nowrap has-context">
+						<?php echo $this->escape($item->country); ?>
 					</td>
 				</tr>
 				<?php endforeach; ?>
