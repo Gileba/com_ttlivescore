@@ -9,7 +9,7 @@
 			<option value="1">JPUBLISHED</option>
 			<option value="0">JUNPUBLISHED</option>
 			<option value="2">JARCHIVED</option>
-			<option value="-2">JTRAHSED</option>
+			<option value="-2">JTRASHED</option>
 		</field>
 		<field name="dateofbirth" type="calendar" label="COM_TTLIVESCORE_FIELD_DATEOFBIRTH_LABEL" description="COM_TTLIVESCORE_FIELD_DATEOFBIRTH_DESC" class="inputbox" size="22" format="%d-%m-%Y" filter="user-utc" />
 		<field name="image" type="media" directory="" hide_none="1" label="COM_TTLIVESCORE_FIELD_IMAGE_LABEL" description="COM_TTLIVESCORE_FIELD_IMAGE_DESC" size="40" />
