@@ -30,6 +30,7 @@
 			if (empty($data))
 			{
 				$data = $this->getItem();
+				if ($data->dateofbirth == '0000-00-00') { $data->birth_date = ''; }
 			}
 			
 			return $data;
