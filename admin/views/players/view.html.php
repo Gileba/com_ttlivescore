@@ -21,7 +21,6 @@
 		protected function addToolbar()
 		{
 			$canDo	= TTLivescoreHelper::getActions();
-			$bar 	= JToolbar::getInstance('toolbar');
 			
 			JToolbarHelper::title(JText::_('COM_TTLIVESCORE_MANAGER_PLAYERS'), '');
 			JToolbarHelper::addNew('player.add');
