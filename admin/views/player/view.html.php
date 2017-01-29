@@ -31,10 +31,8 @@
 			if (empty($this->item->id))
 			{
 				JToolbarHelper::cancel('player.cancel');
+				return;
 			}
-			else
-			{
-				JToolbarHelper::cancel('player.cancel', 'JTOOLBAR_CLOSE');
-			}
+			JToolbarHelper::cancel('player.cancel', 'JTOOLBAR_CLOSE');
 		}
 	}

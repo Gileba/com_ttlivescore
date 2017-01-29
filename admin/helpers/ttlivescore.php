@@ -8,15 +8,15 @@
 			$user	= JFactory::getUser();
 			$result	= new JObject;
 			
-			if (empty($categoryId))
-			{
-				$assetName	= 'com_ttlivescore';
-				$level		= 'component';
-			}
-			else
-			{
-				$assetName	= 'com_ttlivescore.category.' . (int) $categoryId;
-				$level		= 'category';
+			switch (empty($categoryId)) {
+				case true:
+					$assetName	= 'com_ttlivescore';
+					$level		= 'component';
+					break;
+				default:
+					$assetName	= 'com_ttlivescore.category.' . (int) $categoryId;
+					$level		= 'category';
+					break;
 			}
 			
 			$actions = JAccess::getActions('com_ttlivescore', $level);
