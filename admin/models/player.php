@@ -30,6 +30,7 @@
 			if (empty($data))
 			{
 				$data = $this->getItem();
+				if ($data->dateofbirth == '0000-00-00') { $data->birth_date = ''; }
 			}
 			
 			return $data;
@@ -39,5 +40,6 @@
 		{
 			$table->lastname = htmlspecialchars_decode($table->lastname, ENT_QUOTES);
 			$table->firstname = htmlspecialchars_decode($table->firstname, ENT_QUOTES);
+			$table->middlename = htmlspecialchars_decode($table->middlename, ENT_QUOTES);
 		}
 	}
