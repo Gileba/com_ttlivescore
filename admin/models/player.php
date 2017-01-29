@@ -12,8 +12,6 @@
 		
 		public function getForm($data = array(), $loadData = true)
 		{
-			$app = JFactory::getApplication();
-			
 			$form = $this->loadForm('com_ttlivescore.player', 'player', array('control' => 'jform', 'load_data' => $loadData));
 			if (empty($form))
 			{
