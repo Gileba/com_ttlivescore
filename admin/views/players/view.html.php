@@ -4,9 +4,11 @@
 	class TTLivescoreViewPlayers extends JViewLegacy
 	{
 		protected $items;
+		protected $state;
 		
 		public function display($tpl = null) {
 			$this->items = $this->get('Items');
+			$this->state = $this->get('State');
 			
 			if (count($errors = $this->get('Errors')))
 			{
