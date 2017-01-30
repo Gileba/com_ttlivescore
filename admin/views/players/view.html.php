@@ -4,9 +4,11 @@
 	class TTLivescoreViewPlayers extends JViewLegacy
 	{
 		protected $items;
+		protected $state;
 		
 		public function display($tpl = null) {
 			$this->items = $this->get('Items');
+			$this->state = $this->get('State');
 			
 			if (count($errors = $this->get('Errors')))
 			{
@@ -21,7 +23,6 @@
 		protected function addToolbar()
 		{
 			$canDo	= TTLivescoreHelper::getActions();
-			$bar 	= JToolbar::getInstance('toolbar');
 			
 			JToolbarHelper::title(JText::_('COM_TTLIVESCORE_MANAGER_PLAYERS'), '');
 			JToolbarHelper::addNew('player.add');
