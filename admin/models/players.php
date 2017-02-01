@@ -25,7 +25,10 @@
 		
 		protected function populateState($ordering = null, $direction = null)
 		{
-				parent::populateState('a.lastname', 'asc');
+			$published = $this->getUserStateFromRequest($this->context . '.filter.state', 'filter_state', '', 'string');
+			$this->setState('filter.state', $published);
+			
+			parent::populateState('a.lastname', 'asc');
 		}
 			
 		protected function getListQuery()
@@ -39,6 +42,16 @@
 				->select($db->quoteName(array('a.id', 'a.lastname', 'a.firstname', 'a.middlename', 'a.country', 'a.published', 'a.dateofbirth', 'a.image', 'a.publish_up', 'a.publish_down')))
 				->from($db->quoteName('#__ttlivescore_players', 'a'))
 				->order($orderCol . ' ' . $orderDirn);
+			
+			$published = $this->getState('filter.state');
+			if (is_numeric($published))
+			{
+				$query->where('a.published = ' . (int) $published);
+			}
+			elseif ($published === '')
+			{
+				$query->where('(a.published IN (0, 1))');
+			}
 			
 			return $query;
 		}
