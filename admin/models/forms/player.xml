@@ -14,8 +14,8 @@
 		<field name="dateofbirth" type="calendar" label="COM_TTLIVESCORE_FIELD_DATEOFBIRTH_LABEL" description="COM_TTLIVESCORE_FIELD_DATEOFBIRTH_DESC" class="inputbox" size="22" filter="user-utc" />
 		<field name="image" type="media" directory="ttlivescore" hide_none="1" label="COM_TTLIVESCORE_FIELD_IMAGE_LABEL" description="COM_TTLIVESCORE_FIELD_IMAGE_DESC" size="40" />
 		<field name="country" type="list" class="inputbox" label="COM_TTLIVESCORE_FIELD_COUNTRY_LABEL" description="COM_TTLIVESCORE_FIELD_COUNTRY_DESC" size="1" required="true">
-			<option value="1">Belgium</option>
-			<option value="2">The Netherlands</option>
+			<option value="BEL">Belgium</option>
+			<option value="NED">The Netherlands</option>
 		</field>
 	</fieldset>
 </form>

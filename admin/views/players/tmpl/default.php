@@ -25,7 +25,7 @@
 						<?php echo JHtml::_('grid.sort', 'COM_TTLIVESCORE_HEADING_FIRSTNAME', 'a.firstname', $listDirn, $listOrder); ?>
 					</th>
 					<th>
-						<?php echo JHtml::_('grid.sort', 'COM_TTLIVESCORE_HEADING_COUNTRY', 'a.country', $listDirn, $listOrder); ?>
+						<?php echo JText::_('COM_TTLIVESCORE_HEADING_COUNTRY'); ?>
 					</th>
 				</tr>
 			</thead>
