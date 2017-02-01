@@ -17,6 +17,7 @@
 			}
 			
 			$this->addToolbar();
+			$this->sidebar = JHtmlSidebar::render();
 			parent::display($tpl);
 		}
 		
@@ -46,5 +47,9 @@
 			{
 				JToolbarHelper::preferences('com_ttlivescore');
 			}
+			
+			JHtmlSidebar::setAction('index.php?option=com_ttlivescore&view-players');
+			
+			JHtmlSidebar::addFilter(Jtext::_('JOPTION_SELECT_PUBLISHED'), 'filter_state', JHtml::_('select.options', JHtml::_('jgrid.publishedOptions'), 'value', 'text', $this->state->get('filter.state'), true));
 		}
 	}
