@@ -31,6 +31,17 @@
 			{
 				JToolbarHelper::editList('player.edit');
 			}
+			if ($canDo->get('core.edit.state'))
+			{
+				JToolbarHelper::publish('players.publish', 'JTOOLBAR_PUBLISH', true);
+				JToolbarHelper::unpublish('players.unpublish', 'JTOOLBAR_UNPUBLISH', true);
+				JToolbarHelper::archiveList('players.archive');
+				JToolbarHelper::checkin('players.checkin');
+			}
+			if ($canDo->get('core.delete'))
+			{
+				JToolbarHelper::deleteList('', 'players.delete', 'JTOOLBAR_DELETE');
+			}
 			if ($canDo->get('core.admin'))
 			{
 				JToolbarHelper::preferences('com_ttlivescore');
