@@ -25,6 +25,9 @@
 		
 		protected function populateState($ordering = null, $direction = null)
 		{
+			$search = $this->getUserStateFromRequest($this->context . '.filter.search', 'filter_search');
+			$this->setState('filter.search', $search);
+			
 			$published = $this->getUserStateFromRequest($this->context . '.filter.state', 'filter_state', '', 'string');
 			$this->setState('filter.state', $published);
 			
@@ -51,6 +54,14 @@
 			elseif ($published === '')
 			{
 				$query->where('(a.published IN (0, 1))');
+			}
+			
+			//Filter by search in name
+			$search = $this->getState('filter.search');
+
+			if(!empty($search)){
+				$like = $db->quote('%' . $search . '%');
+				$query->where('(a.lastname LIKE ' . $like . ' OR a.firstname LIKE ' . $like . ')');
 			}
 			
 			return $query;

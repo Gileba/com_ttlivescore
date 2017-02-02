@@ -24,6 +24,7 @@
 		protected function addToolbar()
 		{
 			$canDo	= TTLivescoreHelper::getActions();
+			$state 	= $this->get('State');
 			
 			JToolbarHelper::title(JText::_('COM_TTLIVESCORE_MANAGER_PLAYERS'), '');
 			JToolbarHelper::addNew('player.add');
@@ -39,9 +40,13 @@
 				JToolbarHelper::archiveList('players.archive');
 				JToolbarHelper::checkin('players.checkin');
 			}
-			if ($canDo->get('core.delete'))
+			if ($state->get('filter.state') === -2 && ($canDo->get('core.delete')))
 			{
-				JToolbarHelper::deleteList('', 'players.delete', 'JTOOLBAR_DELETE');
+				JToolbarHelper::deleteList('', 'players.delete', 'JTOOLBAR_EMPTY_TRASH');
+			}
+			if ($canDo->get('core.edit.state') && !($state->get('filter.state') !== -2))
+			{
+				JToolbarHelper::trash('players.trash');
 			}
 			if ($canDo->get('core.admin'))
 			{
@@ -50,6 +55,15 @@
 			
 			JHtmlSidebar::setAction('index.php?option=com_ttlivescore&view-players');
 			
-			JHtmlSidebar::addFilter(Jtext::_('JOPTION_SELECT_PUBLISHED'), 'filter_state', JHtml::_('select.options', JHtml::_('jgrid.publishedOptions'), 'value', 'text', $this->state->get('filter.state'), true));
+			JHtmlSidebar::addFilter(Jtext::_('JOPTION_SELECT_PUBLISHED'),'filter_state', JHtml::_('select.options', JHtml::_('jgrid.publishedOptions'), 'value', 'text', $this->state->get('filter.state'), true));
+		}
+		
+		protected function getSortFields()
+		{
+			return array(
+				'a.published' => JText::_('JSTATUS'),
+				'a.lastname' => JText::_('COM_TTLIVESCORE_HEADING_LASTNAME'),
+				'a.firstname' => JText::_('COM_TTLIVESCORE_HEADING_FIRSTNAME')
+			);
 		}
 	}

@@ -4,10 +4,10 @@
 	<author>Gijs Lamon</author>
 	<creationDate>January 2017</creationDate>
 	<copyright>(C) 2017 Gileba. All rights reserved.</copyright>
-	<license>GNU GEneral Public License version 2 or later; see LICENSE.txt</license>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
 	<authorEmail>info@gileba.be</authorEmail>
 	<authorUrl>http://www.gileba.be</authorUrl>
-	<version>0.1.5</version>
+	<version>0.1.6</version>
 	<description>COM_TTLIVESCORE_XML_DESCRIPTION</description>
 
 	<administration>
