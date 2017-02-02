@@ -5,6 +5,7 @@
 	{
 		protected $items;
 		protected $state;
+		protected $pagination;
 		
 		public function display($tpl = null) {
 			$this->items = $this->get('Items');
