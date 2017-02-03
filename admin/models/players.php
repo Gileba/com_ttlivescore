@@ -17,7 +17,8 @@
 					'dateofbirth', 'a.dateofbirth', 
 					'image', 'a.image',
 					'publish_up', 'a.publish_up',
-					'publish_down', 'a.publish_down'
+					'publish_down', 'a.publish_down',
+					'sex', 'a.sex'
 					);
 			}
 			parent::__construct($config);
@@ -42,7 +43,7 @@
 			$orderDirn = $this->state->get('list.direction');
 			
 			$query
-				->select($db->quoteName(array('a.id', 'a.lastname', 'a.firstname', 'a.middlename', 'a.country', 'a.published', 'a.dateofbirth', 'a.image', 'a.publish_up', 'a.publish_down')))
+				->select($db->quoteName(array('a.id', 'a.lastname', 'a.firstname', 'a.middlename', 'a.country', 'a.published', 'a.dateofbirth', 'a.image', 'a.publish_up', 'a.publish_down', 'a.sex')))
 				->from($db->quoteName('#__ttlivescore_players', 'a'))
 				->order($orderCol . ' ' . $orderDirn);
 			

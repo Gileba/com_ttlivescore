@@ -6,6 +6,18 @@
 	$listDirn	= $this->escape($this->state->get('list.direction'));
 ?>
 
+<script type="text/javascript">
+	Joomla.orderTable = function()
+	{
+		table = document.getElementById("sortTable");
+		direction = document.getElementById("directionTable");
+		order = table.options[table.selectedIndex].value;
+		dirn = direction.options[direction.selectedIndex].value;
+		
+		Joomla.tableOrdering(order, dirn, '');
+	}
+</script>
+
 <form action="<?php echo JRoute::_('index.php?option=com_ttlivescore&view=players'); ?>" method="post" name="adminForm" id="adminForm">
 	<?php if(!empty($this->sidebar)) : ?>
 	<div id="j-sidebar-container" class="span2">
@@ -32,8 +44,14 @@
 			<button class="btn hasTooltip" type="button" title="<?php echo JText::_('JSEARCH_FILTER_CLEAR'); ?>" onclick="document.getElementById('filter_search').value=''; this.form.submit();"> <i class="icon-remove"> </i></button>
 		</div>
 		<div class="btn-group pull-right hidden-phone">
+			<label for="limit" class="element-invisible">
+				<?php echo JText::_('JFIELD_PLG_SEARCH_SEARCHLIMIT_DESC'); ?>
+			</label>
+			<?php echo $this->pagination->getLimitBox(); ?>
+		</div>
+		<div class="btn-group pull-right hidden-phone">
 			<label for="directionTable" class="element-invisible"><?php echo jText::_('JFIELD_ORDERING_DESC'); ?></label>
-			<select name="directionTable" id="directionTable" class="input-medium" onchange="var sortTbl = document.getElementById('sortTable'); var column = sortTbl.options[sortTbl.selectedIndex].value; var dirTbl = document.getElementById('directionTable'); var direction = dirTbl.options[dirTbl.selectedIndex].value; Joomla.tableOrdering(column, direction, '');">
+			<select name="directionTable" id="directionTable" class="input-medium" onchange="Joomla.orderTable();">
 				<option 
 					value="asc" <?php if($listDirn === 'asc') echo 'selected="selected"'; ?>><?php echo JText::_('JGLOBAL_ORDER_ASCENDING'); ?></option>
 				<option value="desc" <?php if($listDirn === 'desc') echo 'selected="selected"'; ?>><?php echo JText::_('JGLOBAL_ORDER_DESCENDING'); ?></option>
@@ -41,7 +59,7 @@
 		</div>
 		<div class="btn-group pull-right">
 			<label for="sortTable" class="element-invisible"><?php echo JText::_('JGLOBAL_SORT_BY'); ?></label>
-			<select name="sortTable" id="sortTable" class="input-medium" onchange="var sortTbl = document.getElementById('sortTable'); var column = sortTbl.options[sortTbl.selectedIndex].value; var dirTbl = document.getElementById('directionTable'); var direction = dirTbl.options[dirTbl.selectedIndex].value; Joomla.tableOrdering(column, direction, '');">
+			<select name="sortTable" id="sortTable" class="input-medium" onchange="Joomla.orderTable();">
 				<option value=""><?php echo JText::_('JGLOBAL_SORT_BY'); ?></option>
 				<?php echo JHtml::_('select.options', $this->getSortFields(), 'value', 'text', $listOrder); ?>
 			</select>
@@ -64,10 +82,20 @@
 						<?php echo JHtml::_('grid.sort', 'COM_TTLIVESCORE_HEADING_FIRSTNAME', 'a.firstname', $listDirn, $listOrder); ?>
 					</th>
 					<th>
+						<?php echo JText::_('COM_TTLIVESCORE_HEADING_SEX'); ?>
+					</th>
+					<th>
 						<?php echo JText::_('COM_TTLIVESCORE_HEADING_COUNTRY'); ?>
 					</th>
 				</tr>
 			</thead>
+			<tfoot>
+				<tr>
+					<td colspan="10">
+						<?php echo $this->pagination->getListFooter(); ?>
+					</td>
+				</tr>
+			</tfoot>
 			<tbody>
 				<?php foreach($this->items as $i => $item) : 
 					$canCheckin = $user->authorise('core.manage', 'com_checkin') || $item->checked_out === $user->get('id') || $item->checked_out === 0;
@@ -95,6 +123,9 @@
 						<a href="<?php echo JROUTE::_('index.php?option=com_ttlivescore&task=player.edit&id=' . (int) $item->id); ?>">
 							<?php echo $this->escape($item->firstname); ?>
 						</a>
+					</td>
+					<td class="nowrap has-context">
+						<?php echo $this->escape($item->sex); ?>
 					</td>
 					<td class="nowrap has-context">
 						<?php echo $this->escape($item->country); ?>
