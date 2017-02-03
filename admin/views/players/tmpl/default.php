@@ -82,6 +82,9 @@
 						<?php echo JHtml::_('grid.sort', 'COM_TTLIVESCORE_HEADING_FIRSTNAME', 'a.firstname', $listDirn, $listOrder); ?>
 					</th>
 					<th>
+						<?php echo JText::_('COM_TTLIVESCORE_HEADING_SEX'); ?>
+					</th>
+					<th>
 						<?php echo JText::_('COM_TTLIVESCORE_HEADING_COUNTRY'); ?>
 					</th>
 				</tr>
@@ -120,6 +123,9 @@
 						<a href="<?php echo JROUTE::_('index.php?option=com_ttlivescore&task=player.edit&id=' . (int) $item->id); ?>">
 							<?php echo $this->escape($item->firstname); ?>
 						</a>
+					</td>
+					<td class="nowrap has-context">
+						<?php echo $this->escape($item->sex); ?>
 					</td>
 					<td class="nowrap has-context">
 						<?php echo $this->escape($item->country); ?>
