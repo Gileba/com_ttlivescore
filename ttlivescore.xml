@@ -7,11 +7,15 @@
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
 	<authorEmail>info@gileba.be</authorEmail>
 	<authorUrl>http://www.gileba.be</authorUrl>
-	<version>0.2.0</version>
+	<version>0.2.1</version>
 	<description>COM_TTLIVESCORE_XML_DESCRIPTION</description>
 
 	<administration>
 		<menu>COM_TTLIVESCORE_MENU</menu>
+		<submenu>
+			<menu link="option=com_ttlivescore" view="players" alt="TTLivescore/Players">COM_TTLIVESCORE_SUBMENU_PLAYERS</menu>
+			<menu link="option=com_ttlivescore" view="clubs" alt="TTLivescore/Clubs">COM_TTLIVESCORE_SUBMENU_CLUBS</menu>
+		</submenu>
 		
 		<files folder="admin">
 			<filename>index.html</filename>
@@ -34,12 +38,22 @@
 		</languages>			
 	</administration>
 
+	<install>
+        	<sql>
+			<file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+		</sql>
+	</install>
+	<uninstall>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+		</sql>
+	</uninstall>
 	<update> 
 		<schemas> 
 			<schemapath type="mysql">sql/updates/mysql</schemapath> 
 		</schemas> 
 	</update>
-
+	
 	<updateservers>
 		<server type="extension" priority="1" name="TT Livescore">http://www.gileba.be/updates/ttlivescore.xml</server>
 	</updateservers>
