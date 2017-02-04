@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<form>
+	<fieldset>
+		<field name="id" type="text" default="0" label="JGLOBAL_FIELD_ID_LABEL" readonly="true" class="readonly" description="JGLOBAL_FIELD_ID_DESC" />
+		<field name="name" type="text" class="inputbox" size="60" label="COM_TTLIVESCORE_FIELD_NAME_LABEL" description="COM_TTLIVESCORE_FIELD_NAME_DESC" required="true" />
+		<field name="published" type="list" label="JSTATUS" description="JFIELD_PUBLISHED_DESC" class="inputbox" size="1" default="1">
+			<option value="1">JPUBLISHED</option>
+			<option value="0">JUNPUBLISHED</option>
+			<option value="2">JARCHIVED</option>
+			<option value="-2">JTRASHED</option>
+		</field>
+		<field name="emblem" type="media" directory="ttlivescore" hide_none="1" label="COM_TTLIVESCORE_FIELD_EMBLEM_LABEL" description="COM_TTLIVESCORE_FIELD_EMBLEM_DESC" size="40" />
+		<field name="country" type="list" class="inputbox" label="COM_TTLIVESCORE_FIELD_COUNTRY_LABEL" description="COM_TTLIVESCORE_FIELD_COUNTRY_DESC" size="1" required="true">
+			<option value="BEL">Belgium</option>
+			<option value="NED">The Netherlands</option>
+		</field>
+	</fieldset>
+</form>
