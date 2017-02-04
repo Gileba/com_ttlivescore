@@ -36,7 +36,7 @@
 			$this->setState('filter.contries', $country);
 			
 			$sex = $this->getUserStateFromRequest($this->context . '.filter.sex', 'filter_sex', '', 'string');
-			$this->setState('filter.sex', $country);
+			$this->setState('filter.sex', $sex);
 			
 			parent::populateState('a.lastname', 'asc');
 		}
