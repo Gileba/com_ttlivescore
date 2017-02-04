@@ -4,6 +4,10 @@
 	$user		= JFactory::getUser();
 	$listOrder	= $this->escape($this->state->get('list.ordering'));
 	$listDirn	= $this->escape($this->state->get('list.direction'));
+	
+	//Get country options
+	JFormHelper::addFieldPath(JPATH_COMPONENT . '/models/fields');
+	$countries = JFormHelper::loadFieldType('countries', false);
 ?>
 
 <script type="text/javascript">

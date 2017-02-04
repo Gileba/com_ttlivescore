@@ -32,6 +32,9 @@
 			$published = $this->getUserStateFromRequest($this->context . '.filter.state', 'filter_state', '', 'string');
 			$this->setState('filter.state', $published);
 			
+			$country = $this->getUserStateFromRequest($this->context . '.filter.countries', 'filter_countries', '', 'string');
+			$this->setState('filter.contries', $country);
+			
 			parent::populateState('a.lastname', 'asc');
 		}
 			
@@ -57,6 +60,12 @@
 				$query->where('(a.published IN (0, 1))');
 			}
 			
+			// Filter by country
+			$country= $db->escape($this->getState('filter.countries'));
+			if (!empty($country)) {
+				$query->where('(a.country = "' . $country . '")');
+			}
+ 
 			//Filter by search in name
 			$search = $this->getState('filter.search');
 
