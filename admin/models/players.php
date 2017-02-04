@@ -35,6 +35,9 @@
 			$country = $this->getUserStateFromRequest($this->context . '.filter.countries', 'filter_countries', '', 'string');
 			$this->setState('filter.contries', $country);
 			
+			$sex = $this->getUserStateFromRequest($this->context . '.filter.sex', 'filter_sex', '', 'string');
+			$this->setState('filter.sex', $country);
+			
 			parent::populateState('a.lastname', 'asc');
 		}
 			
@@ -61,9 +64,15 @@
 			}
 			
 			// Filter by country
-			$country= $db->escape($this->getState('filter.countries'));
+			$country = $db->escape($this->getState('filter.countries'));
 			if (!empty($country)) {
 				$query->where('(a.country = "' . $country . '")');
+			}
+ 
+			// Filter by sex
+			$sex = $db->escape($this->getState('filter.sex'));
+			if (!empty($sex)) {
+				$query->where('(a.sex = "' . $sex . '")');
 			}
  
 			//Filter by search in name
