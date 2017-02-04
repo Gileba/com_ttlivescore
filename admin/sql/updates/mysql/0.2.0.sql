@@ -1,3 +1,4 @@
+# SQL-file for the 0.2.0 update
 CREATE TABLE IF NOT EXISTS `#__ttlivescore_clubs` (
 	`id` int(10) unsigned NOT NULL AUTO_INCREMENT, 
 	`name` varchar(250) NOT NULL DEFAULT '',
