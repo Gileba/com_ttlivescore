@@ -16,6 +16,8 @@
 			$this->items 		= $this->get('Items');
 			$this->state 		= $this->get('State');
 			$this->pagination	= $this->get('Pagination');
+			
+			TTLivescoreHelper::addSubmenu('players');
 						
 			//Get country options
 			$this->countries = JFormHelper::loadFieldType('countries', false);

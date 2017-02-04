@@ -28,4 +28,13 @@
 			
 			return $result;
 		}
+		
+		public static function addSubmenu($vname = 'players')
+		{
+			JHtmlSidebar::addEntry(
+				JText::_('COM_TTLIVESCORE_SUBMENU_PLAYERS'),
+				'index.php?option=com_ttlivescore&view=players',
+				$vname === 'players'
+			);
+		}
 	}
