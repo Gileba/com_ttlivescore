@@ -13,8 +13,8 @@
 	<administration>
 		<menu>COM_TTLIVESCORE_MENU</menu>
 		<submenu>
-			<menu link="option=com_ttlivescore" view="players" alt="TTLivescore/Players">COM_TTLIVESCORE_SUBMENU_PLAYERS</menu>
-			<menu link="option=com_ttlivescore" view="clubs" alt="TTLivescore/Clubs">COM_TTLIVESCORE_SUBMENU_CLUBS</menu>
+			<menu link="option=com_ttlivescore&view=players" alt="TTLivescore/Players">COM_TTLIVESCORE_SUBMENU_PLAYERS</menu>
+			<menu link="option=com_ttlivescore&view=clubs" alt="TTLivescore/Clubs">COM_TTLIVESCORE_SUBMENU_CLUBS</menu>
 		</submenu>
 		
 		<files folder="admin">
