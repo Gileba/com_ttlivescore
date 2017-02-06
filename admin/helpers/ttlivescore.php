@@ -41,5 +41,10 @@
 				'index.php?option=com_ttlivescore&view=clubs',
 				$vname === 'clubs'
 			);
+			JHtmlSidebar::addEntry(
+				JText::_('COM_TTLIVESCORE_SUBMENU_COUNTRIES'),
+				'index.php?option=com_ttlivescore&view=countries',
+				$vname === 'countries'
+			);
 		}
 	}

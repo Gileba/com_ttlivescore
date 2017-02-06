@@ -31,6 +31,15 @@
 				return false;
 			}
 			
+			if ($view == 'club' && $layout == 'edit' && !$this->checkEditId('com_ttlivescore.edit.country', $id))
+			{
+				$this->setError(JTEXT::sprintf('JLIB_APPLICATION_ERROR_UNHELD_ID', $id));
+				$this->setMessage($this->getError(), 'error');
+				$this->setRedirect(JROUTE::_('index.php?option=com_ttlivescore&view=countries', false));
+				
+				return false;
+			}
+			
 			parent::display();
 			
 			return $this;
