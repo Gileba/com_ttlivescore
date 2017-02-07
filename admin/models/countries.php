@@ -14,7 +14,7 @@
 					'published', 'a.published', 
 					'publish_up', 'a.publish_up',
 					'publish_down', 'a.publish_down', 
-					'order', 'a.order'
+					'ordering', 'a.ordering'
 					);
 			}
 			parent::__construct($config);
@@ -28,7 +28,7 @@
 			$published = $this->getUserStateFromRequest($this->context . '.filter.state', 'filter_state', '', 'string');
 			$this->setState('filter.state', $published);
 			
-			parent::populateState('a.name', 'asc');
+			parent::populateState('a.ordering', 'asc');
 		}
 			
 		protected function getListQuery()
@@ -39,7 +39,7 @@
 			$orderDirn = $this->state->get('list.direction');
 			
 			$query
-				->select($db->quoteName(array('a.id', 'a.name', 'a.ioc_code', 'a.published', 'a.order', 'a.publish_up', 'a.publish_down')))
+				->select($db->quoteName(array('a.id', 'a.name', 'a.ioc_code', 'a.published', 'a.ordering', 'a.publish_up', 'a.publish_down')))
 				->from($db->quoteName('#__ttlivescore_countries', 'a'))
 				->order($orderCol . ' ' . $orderDirn);
 			

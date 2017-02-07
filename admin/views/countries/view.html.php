@@ -15,6 +15,12 @@
 			$this->state 		= $this->get('State');
 			$this->pagination	= $this->get('Pagination');
 			
+			if (count($errors = $this->get('Errors')))
+			{
+				JError::raiseError(500, implode("\n", $errors));
+				return false;
+			}
+			
 			TTLivescoreHelper::addSubmenu('countries');
 						
 			$this->addToolbar();
@@ -46,8 +52,10 @@
 		protected function getSortFields()
 		{
 			return array(
+				'a.ordering' => JText::_('JGRID_HEADING_ORDERING'),
 				'a.published' => JText::_('JSTATUS'),
-				'a.name' => JText::_('COM_TTLIVESCORE_HEADING_NAME')
+				'a.name' => JText::_('COM_TTLIVESCORE_HEADING_NAME'),
+				'a.ioc_code' => JText::_('COM_TTLIVESCORE_HEADING_IOCCODE')
 			);
 		}
 	}
