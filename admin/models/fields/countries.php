@@ -33,32 +33,28 @@ class JFormFieldCountries extends JFormFieldList
 	public function getOptions()
 	{
 		// Initialize variables.
-		$options = array(
-			'BEL'	=> 'Belgium',
-			'NED' => 'The Netherlands'
-		);
- 
-		/** Fixed array for now
-		
 		$db	= JFactory::getDbo();
 		$query	= $db->getQuery(true);
  
-		$query->select('shortcode As value, name As text');
+		$query->select('a.ioc_code As value, a.name As text');
 		$query->from('#__ttlivescore_countries AS a');
-		$query->order('a.name');
-		$query->where('state = 1');
+		$query->order('a.ordering');
+		$query->where('a.published = 1');
  
 		// Get the options.
 		$db->setQuery($query);
  
-		$options = $db->loadObjectList();
- 
+		$rows = $db->loadObjectList();
+		
 		// Check for a database error.
 		if ($db->getErrorNum()) {
 			JError::raiseWarning(500, $db->getErrorMsg());
 		}
 		
-		**/
+		foreach ($rows as $row)
+		{
+			$options[] = array('value' => $row->value, 'text' => JText::_($row->text));
+		}
  
 		return $options;
 	}
