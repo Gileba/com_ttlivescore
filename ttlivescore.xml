@@ -7,7 +7,7 @@
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
 	<authorEmail>info@gileba.be</authorEmail>
 	<authorUrl>http://www.gileba.be</authorUrl>
-	<version>0.2.4</version>
+	<version>0.3.0</version>
 	<description>COM_TTLIVESCORE_XML_DESCRIPTION</description>
 
 	<administration>
@@ -15,6 +15,7 @@
 		<submenu>
 			<menu link="option=com_ttlivescore&amp;view=players" alt="TTLivescore/Players">COM_TTLIVESCORE_SUBMENU_PLAYERS</menu>
 			<menu link="option=com_ttlivescore&amp;view=clubs" alt="TTLivescore/Clubs">COM_TTLIVESCORE_SUBMENU_CLUBS</menu>
+			<menu link="option=com_ttlivescore&amp;view=seasons" alt="TTLivescore/Clubs">COM_TTLIVESCORE_SUBMENU_SEASONS</menu>
 		</submenu>
 		
 		<files folder="admin">
