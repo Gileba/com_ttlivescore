@@ -53,7 +53,7 @@
 			}
 			if ($state->get('filter.state') === -2 && ($canDo->get('core.delete')))
 			{
-				JToolbarHelper::deleteList('', 'players.delete', 'JTOOLBAR_EMPTY_TRASH');
+				JToolbarHelper::deleteList('', 'clubs.delete', 'JTOOLBAR_EMPTY_TRASH');
 			}
 			if ($canDo->get('core.edit.state') && !($state->get('filter.state') !== -2))
 			{
