@@ -91,7 +91,7 @@
 						<?php echo JHtml::_('grid.sort', 'COM_TTLIVESCORE_HEADING_NAME', 'a.lastname', $listDirn, $listOrder); ?>
 					</th>
 					<th>
-						<?php echo JText::_('COM_TTLIVESCORE_HEADING_IOCCODE'); ?>
+						<?php echo JHtml::_('grid.sort', 'COM_TTLIVESCORE_HEADING_COUNTRY', 'a.country', $listDirn, $listOrder); ?>
 					</th>
 				</tr>
 			</thead>
