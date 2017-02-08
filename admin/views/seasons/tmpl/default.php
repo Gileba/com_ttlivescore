@@ -140,7 +140,6 @@
 						</a>
 					</td>
 					<td class="nowrap has-context">
-						<?php echo $this->escape($item->ioc_code); ?>
 						<?php echo $this->escape($item->country); ?>
 					</td>
 				</tr>
