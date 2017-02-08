@@ -10,9 +10,6 @@
 			<option value="-2">JTRASHED</option>
 		</field>
 		<field name="emblem" type="media" directory="ttlivescore" hide_none="1" label="COM_TTLIVESCORE_FIELD_EMBLEM_LABEL" description="COM_TTLIVESCORE_FIELD_EMBLEM_DESC" size="40" />
-		<field name="country" type="list" class="inputbox" label="COM_TTLIVESCORE_FIELD_COUNTRY_LABEL" description="COM_TTLIVESCORE_FIELD_COUNTRY_DESC" size="1" required="true">
-			<option value="BEL">Belgium</option>
-			<option value="NED">The Netherlands</option>
-		</field>
+		<field name="country" type="Countries" class="inputbox" label="COM_TTLIVESCORE_FIELD_COUNTRY_LABEL" description="COM_TTLIVESCORE_FIELD_COUNTRY_DESC" size="1" required="true" />
 	</fieldset>
 </form>
