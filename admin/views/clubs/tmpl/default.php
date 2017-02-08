@@ -80,7 +80,7 @@
 						<?php echo JHtml::_('grid.sort', 'JSTATUS', 'a.published', $listDirn, $listOrder); ?>
 					</th>
 					<th>
-						<?php echo JHtml::_('grid.sort', 'COM_TTLIVESCORE_HEADING_NAME', 'a.lastname', $listDirn, $listOrder); ?>
+						<?php echo JHtml::_('grid.sort', 'COM_TTLIVESCORE_HEADING_NAME', 'a.name', $listDirn, $listOrder); ?>
 					</th>
 					<th>
 						<?php echo JText::_('COM_TTLIVESCORE_HEADING_COUNTRY'); ?>

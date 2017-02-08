@@ -38,6 +38,7 @@
 			$state 	= $this->get('State');
 			
 			JToolbarHelper::title(JText::_('COM_TTLIVESCORE_MANAGER_SEASONS'), '');
+			JToolbarHelper::addNew('season.add');
 			if ($canDo->get('core.edit'))
 			{
 				JToolbarHelper::editList('season.edit');
