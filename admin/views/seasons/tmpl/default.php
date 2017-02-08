@@ -91,7 +91,7 @@
 						<?php echo JHtml::_('grid.sort', 'COM_TTLIVESCORE_HEADING_NAME', 'a.name', $listDirn, $listOrder); ?>
 					</th>
 					<th>
-						<?php echo JHtml::_('grid.sort', 'COM_TTLIVESCORE_HEADING_IOCCODE', 'a.ioccode', $listDirn, $listOrder); ?>
+						<?php echo JHtml::_('grid.sort', 'COM_TTLIVESCORE_HEADING_COUNTRY', 'a.country', $listDirn, $listOrder); ?>
 					</th>
 				</tr>
 			</thead>
@@ -135,10 +135,12 @@
 						<?php echo JHtml::_('jgrid.published', $item->published, $i, 'countries.', $canChange, 'cb', $item->publish_up, $item->publish_down); ?>
 					</td>
 					<td class="nowrap has-context">
-						<?php echo JText::_($this->escape($item->name)); ?>
+						<a href="<?php echo JROUTE::_('index.php?option=com_ttlivescore&task=season.edit&id=' . (int) $item->id); ?>">
+							<?php echo JText::_($this->escape($item->name)); ?>
+						</a>
 					</td>
 					<td class="nowrap has-context">
-						<?php echo $this->escape($item->ioc_code); ?>
+						<?php echo $this->escape($item->country); ?>
 					</td>
 				</tr>
 				<?php endforeach; ?>
