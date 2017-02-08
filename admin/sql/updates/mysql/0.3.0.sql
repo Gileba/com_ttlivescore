@@ -9,5 +9,5 @@ CREATE TABLE IF NOT EXISTS `#__ttlivescore_seasons` (
 	`publish_down` datetime NOT NULL default '0000-00-00 00:00:00',
 	`startdate` date NOT NULL default '0000-00-00',
 	`enddate` date NOT NULL default '0000-00-00',
-	PRIMARY KEY (`id`), UNIQUE (`ioc_code`)
+	PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
