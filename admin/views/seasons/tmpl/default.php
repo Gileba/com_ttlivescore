@@ -135,7 +135,9 @@
 						<?php echo JHtml::_('jgrid.published', $item->published, $i, 'countries.', $canChange, 'cb', $item->publish_up, $item->publish_down); ?>
 					</td>
 					<td class="nowrap has-context">
-						<?php echo JText::_($this->escape($item->name)); ?>
+						<a href="<?php echo JROUTE::_('index.php?option=com_ttlivescore&task=season.edit&id=' . (int) $item->id); ?>">
+							<?php echo JText::_($this->escape($item->name)); ?>
+						</a>
 					</td>
 					<td class="nowrap has-context">
 						<?php echo $this->escape($item->ioc_code); ?>
