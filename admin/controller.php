@@ -48,6 +48,16 @@
 				
 				return false;
 			}
+
+			if ($view == 'seasondetail' && $layout == 'edit' && !$this->checkEditId('com_ttlivescore.edit.seasondetail', $id))
+			{
+				$this->setError(JTEXT::sprintf('JLIB_APPLICATION_ERROR_UNHELD_ID', $id));
+				$this->setMessage($this->getError(), 'error');
+				$this->setRedirect(JROUTE::_('index.php?option=com_ttlivescore&view=seasondetails', false));
+				
+				return false;
+			}
+
 			parent::display();
 			
 			return $this;
