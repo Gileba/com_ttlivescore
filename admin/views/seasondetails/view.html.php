@@ -8,6 +8,7 @@
 		protected $items;
 		protected $state;
 		protected $pagination;
+		protected $seasons;
 		
 
 		public function display($tpl = null) {
@@ -18,7 +19,7 @@
 			TTLivescoreHelper::addSubmenu('seasondetails');
 						
 			//Get season options
-			$this->season = JFormHelper::loadFieldType('seasons', false);
+			$this->seasons = JFormHelper::loadFieldType('seasons', false);
 
 			if (count($errors = $this->get('Errors')))
 			{
