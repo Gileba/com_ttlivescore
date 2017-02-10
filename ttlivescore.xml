@@ -16,7 +16,7 @@
 			<menu link="option=com_ttlivescore&amp;view=players" alt="TTLivescore/Players">COM_TTLIVESCORE_SUBMENU_PLAYERS</menu>
 			<menu link="option=com_ttlivescore&amp;view=clubs" alt="TTLivescore/Clubs">COM_TTLIVESCORE_SUBMENU_CLUBS</menu>
 			<menu link="option=com_ttlivescore&amp;view=seasons" alt="TTLivescore/Seasons">COM_TTLIVESCORE_SUBMENU_SEASONS</menu>
-			<menu link="option=com_ttlivescore&amp;view=seasons" alt="TTLivescore/Seasons">COM_TTLIVESCORE_SUBMENU_SEASONDETAILS</menu>
+			<menu link="option=com_ttlivescore&amp;view=seasons" alt="TTLivescore/Seasondetails">COM_TTLIVESCORE_SUBMENU_SEASONDETAILS</menu>
 		</submenu>
 		
 		<files folder="admin">
