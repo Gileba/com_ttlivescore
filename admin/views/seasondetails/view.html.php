@@ -3,7 +3,7 @@
 
 	JFormHelper::addFieldPath(JPATH_COMPONENT . '/models/fields');
 
-	class TTLivescoreViewPlayers extends JViewLegacy
+	class TTLivescoreViewSeasondetails extends JViewLegacy
 	{
 		protected $items;
 		protected $state;
