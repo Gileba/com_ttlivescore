@@ -2,27 +2,9 @@
 <form>
 	<fieldset>
 		<field name="id" type="text" default="0" label="JGLOBAL_FIELD_ID_LABEL" readonly="true" class="readonly" description="JGLOBAL_FIELD_ID_DESC" />
-		<field name="season" type="sql" class="inputbox" size="60" label="COM_TTLIVESCORE_FIELD_SEASON_LABEL" description="COM_TTLIVESCORE_FIELD_SEASON_DESC" required="true"
-			sql_select="s.id, s.name"
-			sql_from="#__ttlivescore_seasons AS s"
-			sql_order="s.name asc"
-			key_field="s.id"
-			value_field="s.name" 
-		/>
-		<field name="player" type="sql" class="inputbox" size="60" label="COM_TTLIVESCORE_FIELD_PLAYER_LABEL" description="COM_TTLIVESCORE_FIELD_PLAYER_DESC" required="true"
-			sql_select="p.id, concat(lastname, ', ' firstname, ' (', middlename, ')' AS name"
-			sql_from="#__ttlivescore_players AS p"
-			sql_order="p.name asc"
-			key_field="p.id"
-			value_field="p.name" 
-		/>
-		<field name="club" type="sql" class="inputbox" size="60" label="COM_TTLIVESCORE_FIELD_CLUB_LABEL" description="COM_TTLIVESCORE_FIELD_CLUB_DESC" required="true"
-			sql_select="c.id, c.name"
-			sql_from="#__ttlivescore_clubs AS c"
-			sql_order="c.name asc"
-			key_field="c.id"
-			value_field="c.name" 
-		/>
+		<field name="season" type="Seasons" class="inputbox" label="COM_TTLIVESCORE_FIELD_SEASON_LABEL" description="COM_TTLIVESCORE_FIELD_SEASON_DESC" size="1" required="true" />
+		<field name="player" type="Players" class="inputbox" label="COM_TTLIVESCORE_FIELD_PLAYER_LABEL" description="COM_TTLIVESCORE_FIELD_PLAYER_DESC" size="1" required="true" />
+		<field name="club" type="Clubs" class="inputbox" label="COM_TTLIVESCORE_FIELD_CLUB_LABEL" description="COM_TTLIVESCORE_FIELD_CLUB_DESC" size="1" required="true" />
 		<field name="localranking" type="text" label="COM_TTLIVESCORE_FIELD_LOCALRANKING_LABEL" description="COM_TTLIVESCORE_FIELD_LOCALRANKING_DESC" class="inputbox" size="5" filter="user-utc" />
 	</fieldset>
 </form>
