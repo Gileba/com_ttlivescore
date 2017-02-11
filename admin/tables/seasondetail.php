@@ -1,7 +1,7 @@
 <?php
 	defined('_JEXEC') or die;
 	
-	class TTLivescoreTableSeason extends JTable
+	class TTLivescoreTableSeasondetail extends JTable
 	{
 		public function __construct(&$db)
 		{
