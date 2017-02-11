@@ -36,10 +36,10 @@ class JFormFieldPlayers extends JFormFieldList
 		$db	= JFactory::getDbo();
 		$query	= $db->getQuery(true);
  
-		$query->select("a.id As value, concat(a.lastname, ', ', a.firstname, ' (', a.middlename, ')' As text");
-		$query->from('#__ttlivescore_playerss AS a');
-		$query->order('a.name asc');
+		$query->select("a.id AS value, CONCAT(a.lastname, ', ', a.firstname, ' (', a.middlename, ')') AS text");
+		$query->from('#__ttlivescore_players AS a');
 		$query->where('a.published = 1');
+		$query->order('text asc');
  
 		// Get the options.
 		$db->setQuery($query);
