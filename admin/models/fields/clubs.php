@@ -38,7 +38,6 @@ class JFormFieldClubs extends JFormFieldList
  
 		$query->select('a.id As value, a.name As text');
 		$query->from('#__ttlivescore_clubs AS a');
-		$query->order('a.ordering');
 		$query->where('a.published = 1');
  
 		// Get the options.
