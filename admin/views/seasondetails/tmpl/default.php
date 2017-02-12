@@ -123,7 +123,10 @@
 						<?php echo $this->escape($item->season); ?>
 					</td>
 					<td class="nowrap has-context">
-						<?php echo $this->escape($item->localranking); ?>
+						<?php 
+							if (!($item->prefix === '')) echo $this->escape($item->prefix) . '-'; 
+							echo $this->escape($item->localranking);
+						?>
 					</td>
 				</tr>
 				<?php endforeach; ?>
