@@ -9,7 +9,7 @@
 			{
 				$config['filter_fields'] = array(
 					'id' ,'a.id', 
-					'season', 'a.season', 
+					'season', 's.name', 
 					'player', 'a.player', 
 					'club', 'a.club', 
 					'localranking', 'a.localranking'
@@ -34,8 +34,9 @@
 			$orderDirn = $this->state->get('list.direction');
 			
 			$query
-				->select($db->quoteName(array('a.id', 'a.season', 'a.player', 'a.club', 'a.localranking')))
+				->select($db->quoteName(array('a.id', 's.name', 'a.player', 'a.club', 'a.localranking')))
 				->from($db->quoteName('#__ttlivescore_seasondetails', 'a'))
+				->join('INNER', $db->quoteName('#__ttlivescore_seasons', 's') . ' ON (' . $db->quoteName('a.season') . ' = ' . $db->quoteName('s.id') . ')')
 				->order($orderCol . ' ' . $orderDirn);
 			
 			$published = $this->getState('filter.state');
