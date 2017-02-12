@@ -1,0 +1,16 @@
+language: php
+
+env:
+
+matrix:
+allow_failures:
+ - php: 5.6
+ - php: 7.0
+ - php: 7.1
+ - php: nightly
+ 
+before_script:
+  - git clone https://github.com/joomla/joomla-cms.git joomla-cms
+
+script:
+  - phpunit --configuration travisci-phpunit.xml --no-configuration tests
