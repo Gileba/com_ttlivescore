@@ -8,3 +8,12 @@ allow_failures:
  - php: 7.0
  - php: 7.1
  - php: nightly
+ 
+before_script:
+  - git clone https://github.com/joomla/joomla-cms.git joomla-cms
+  - cd joomla-cms && git checkout application-mocks && cd ..
+  - pyrus channel-discover pear.phpunit.de
+  - phpenv rehash
+
+script:
+  - phpunit --configuration travisci-phpunit.xml --no-configuration tests
