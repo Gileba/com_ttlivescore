@@ -34,7 +34,7 @@
 			$orderDirn = $this->state->get('list.direction');
 			
 			$query
-				->select($db->quoteName(array('a.id', 's.name', 'a.player', 'a.club', 'a.localranking')))
+				->select($db->quoteName(array('a.id', 's.name', 'a.player', 'a.club', 'a.localranking'), array('id', 'season', 'player', 'club', 'localranking')))
 				->from($db->quoteName('#__ttlivescore_seasondetails', 'a'))
 				->join('INNER', $db->quoteName('#__ttlivescore_seasons', 's') . ' ON (' . $db->quoteName('a.season') . ' = ' . $db->quoteName('s.id') . ')')
 				->order($orderCol . ' ' . $orderDirn);

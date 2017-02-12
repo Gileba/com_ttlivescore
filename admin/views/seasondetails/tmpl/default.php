@@ -119,7 +119,7 @@
 						<?php echo $this->escape($item->club); ?>
 					</td>
 					<td class="nowrap has-context">
-						<?php echo $this->escape($item->name); ?>
+						<?php echo $this->escape($item->season); ?>
 					</td>
 					<td class="nowrap has-context">
 						<?php echo $this->escape($item->localranking); ?>
