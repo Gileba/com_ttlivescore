@@ -52,5 +52,6 @@ CREATE TABLE IF NOT EXISTS `#__ttlivescore_seasondetails` (
 	`player` int(10) NOT NULL DEFAULT '0',
 	`club` int(10) NOT NULL DEFAULT '0',
 	`localranking` char(10) NOT NULL DEFAULT '1',
+	`rankingprefix`char(10) NOT NULL DEFAULT '',
 	PRIMARY KEY (`id`), CONSTRAINT `SeasonPlayer` UNIQUE (`season`, `player`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
