@@ -111,7 +111,8 @@
 					<td class="nowrap has-context">
 						<a href="<?php echo JROUTE::_('index.php?option=com_ttlivescore&task=seasondetail.edit&id=' . (int) $item->id); ?>">
 							<?php 
-								echo $this->escape($item->player); 
+								echo $this->escape($item->lastname) . ', ' . $this->escape($item->firstname);
+								if (!($item->middlename === '')) echo ' (' . $this->escape($item->middlename) . ')'; 
 							?>
 						</a>
 					</td>
