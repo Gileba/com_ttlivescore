@@ -12,7 +12,7 @@
 				<?php echo $this->form->renderField('name'); ?>
 				<?php echo $this->form->renderField('ioc_code'); ?>
 				<?php echo $this->form->renderField('published'); ?>
-				<?php echo $this->form->renderField('prefix'); ?>
+				<?php echo $this->form->renderField('rankingprefix'); ?>
 				<?php echo JHtml::_('bootstrap.endPanel'); ?>
 				<input type="hidden" name="task" value="" />
 				<?php echo JHtml::_('form.token'); ?>

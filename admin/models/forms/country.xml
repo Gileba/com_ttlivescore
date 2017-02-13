@@ -8,6 +8,6 @@
 			<option value="1">JPUBLISHED</option>
 			<option value="0">JUNPUBLISHED</option>
 		</field>
-		<field name="prefix" type="text" label="COM_TTLIVESCORE_FIELD_RANKINGPREFIX_LABEL" description="COM_TTLIVESCORE_FIELD_RANKINGPREFIX_DESC" class="inputbox" size="5" filter="user-utc" />
+		<field name="rankingprefix" type="text" label="COM_TTLIVESCORE_FIELD_RANKINGPREFIX_LABEL" description="COM_TTLIVESCORE_FIELD_RANKINGPREFIX_DESC" class="inputbox" size="5" filter="user-utc" />
 	</fieldset>
 </form>
