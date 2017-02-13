@@ -2,14 +2,12 @@
 <form>
 	<fieldset>
 		<field name="id" type="text" default="0" label="JGLOBAL_FIELD_ID_LABEL" readonly="true" class="readonly" description="JGLOBAL_FIELD_ID_DESC" />
-		<field name="name" type="text" class="inputbox" readonly="true" class="readonly" size="60" label="COM_TTLIVESCORE_FIELD_NAME_LABEL" description="COM_TTLIVESCORE_FIELD_NAME_DESC" required="true" />
-		<field name="ioccode" type="text" class="inputbox" readonly="true" class="readonly" size="5" label="COM_TTLIVESCORE_FIELD_IOCCODE_LABEL" description="COM_TTLIVESCORE_FIELD_IOCCODE_DESC" required="true" />
+		<field name="name" type="text" class="readonly" readonly="true" size="60" label="COM_TTLIVESCORE_FIELD_NAME_LABEL" description="COM_TTLIVESCORE_FIELD_NAME_DESC" required="true" />
+		<field name="ioc_code" type="text" class="readonly" readonly="true" size="5" label="COM_TTLIVESCORE_FIELD_IOCCODE_LABEL" description="COM_TTLIVESCORE_FIELD_IOCCODE_DESC" required="true" />
 		<field name="published" type="list" label="JSTATUS" description="JFIELD_PUBLISHED_DESC" class="inputbox" size="1" default="1">
 			<option value="1">JPUBLISHED</option>
 			<option value="0">JUNPUBLISHED</option>
-			<option value="2">JARCHIVED</option>
-			<option value="-2">JTRASHED</option>
 		</field>
-		<field name="prefix" type="text" label="COM_TTLIVESCORE_FIELD_RANKINGPREFIX_LABEL" description="COM_TTLIVESCORE_FIELD_RANKINGPREFIX_DESC" class="inputbox" size="5" filter="user-utc" />
+		<field name="rankingprefix" type="text" label="COM_TTLIVESCORE_FIELD_RANKINGPREFIX_LABEL" description="COM_TTLIVESCORE_FIELD_RANKINGPREFIX_DESC" class="inputbox" size="5" filter="user-utc" />
 	</fieldset>
 </form>
