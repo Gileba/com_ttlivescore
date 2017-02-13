@@ -45,7 +45,7 @@
 			}
 			if ($canDo->get('core.delete'))
 			{
-				JToolbarHelper::deleteList('', 'sesondetails.delete', 'JTOOLBAR_DELETE');
+				JToolbarHelper::deleteList('', 'seasondetails.delete', 'JTOOLBAR_DELETE');
 			}
 			if ($canDo->get('core.admin'))
 			{
