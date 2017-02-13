@@ -30,6 +30,7 @@ CREATE TABLE IF NOT EXISTS `#__ttlivescore_countries` (
 	`ioc_code` char(3) NOT NULL DEFAULT '',
 	`publish_up` datetime NOT NULL default '0000-00-00 00:00:00',
 	`publish_down` datetime NOT NULL default '0000-00-00 00:00:00',
+	`rankingprefix`char(10) NOT NULL DEFAULT '',
 	PRIMARY KEY (`id`), UNIQUE (`ioc_code`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 INSERT INTO `#__ttlivescore_countries` (name,ioc_code) VALUES ('COM_TTLIVESCORE_COUNTRY_BELGIUM', 'BEL');
@@ -52,6 +53,5 @@ CREATE TABLE IF NOT EXISTS `#__ttlivescore_seasondetails` (
 	`player` int(10) NOT NULL DEFAULT '0',
 	`club` int(10) NOT NULL DEFAULT '0',
 	`localranking` char(10) NOT NULL DEFAULT '1',
-	`rankingprefix`char(10) NOT NULL DEFAULT '',
 	PRIMARY KEY (`id`), CONSTRAINT `SeasonPlayer` UNIQUE (`season`, `player`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
