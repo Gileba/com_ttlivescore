@@ -43,15 +43,13 @@
 			
 			$published = $this->getState('filter.state');
  
-/** TODO: Search by name in name or club with join argument
 			//Filter by search in name
 			$search = $this->getState('filter.search');
 
 			if(!empty($search)){
 				$like = $db->quote('%' . $search . '%');
-				$query->where('(a.lastname LIKE ' . $like . ' OR a.firstname LIKE ' . $like . ')');
+				$query->where('(p.lastname LIKE ' . $like . ' OR p.firstname LIKE ' . $like . ' OR c.name LIKE ' . $like . ')');
 			}
-**/
 			
 			return $query;
 		}
