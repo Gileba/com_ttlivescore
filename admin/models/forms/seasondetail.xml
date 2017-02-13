@@ -6,6 +6,5 @@
 		<field name="player" type="Players" class="inputbox" label="COM_TTLIVESCORE_FIELD_PLAYER_LABEL" description="COM_TTLIVESCORE_FIELD_PLAYER_DESC" size="1" required="true" />
 		<field name="club" type="Clubs" class="inputbox" label="COM_TTLIVESCORE_FIELD_CLUB_LABEL" description="COM_TTLIVESCORE_FIELD_CLUB_DESC" size="1" required="true" />
 		<field name="localranking" type="text" label="COM_TTLIVESCORE_FIELD_LOCALRANKING_LABEL" description="COM_TTLIVESCORE_FIELD_LOCALRANKING_DESC" class="inputbox" size="5" filter="user-utc" />
-		<field name="prefix" type="text" label="COM_TTLIVESCORE_FIELD_RANKINGPREFIX_LABEL" description="COM_TTLIVESCORE_FIELD_RANKINGPREFIX_DESC" class="inputbox" size="5" filter="user-utc" />
 	</fieldset>
 </form>
