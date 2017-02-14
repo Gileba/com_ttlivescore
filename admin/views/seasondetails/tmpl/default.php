@@ -77,13 +77,13 @@
 						<input type="checkbox" name="checkall-toggle" value="" title="<?php echo JText::_('JGLOBAL_CHECK_ALL'); ?>" onclick="Joomla.checkAll(this)" />
 					</th>
 					<th>
-						<?php echo JHtml::_('grid.sort', 'COM_TTLIVESCORE_HEADING_NAME', 'a.player', $listDirn, $listOrder); ?>
+						<?php echo JHtml::_('grid.sort', 'COM_TTLIVESCORE_HEADING_NAME', 'p.lastname', $listDirn, $listOrder); ?>
 					</th>
 					<th>
-						<?php echo JHtml::_('grid.sort', 'COM_TTLIVESCORE_HEADING_CLUB', 'a.club', $listDirn, $listOrder); ?>
+						<?php echo JHtml::_('grid.sort', 'COM_TTLIVESCORE_HEADING_CLUB', 'c.name', $listDirn, $listOrder); ?>
 					</th>
 					<th>
-						<?php echo JHtml::_('grid.sort', 'COM_TTLIVESCORE_HEADING_SEASON', 'a.season', $listDirn, $listOrder); ?>
+						<?php echo JHtml::_('grid.sort', 'COM_TTLIVESCORE_HEADING_SEASON', 's.name', $listDirn, $listOrder); ?>
 					</th>
 					<th>
 						<?php echo JHtml::_('grid.sort', 'COM_TTLIVESCORE_HEADING_LOCALRANKING', 'a.localranking', $listDirn, $listOrder); ?>
