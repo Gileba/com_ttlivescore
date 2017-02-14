@@ -86,7 +86,7 @@
 						<?php echo JHtml::_('grid.sort', 'COM_TTLIVESCORE_HEADING_SEASON', 's.name', $listDirn, $listOrder); ?>
 					</th>
 					<th>
-						<?php echo JHtml::_('grid.sort', 'COM_TTLIVESCORE_HEADING_LOCALRANKING', 'a.localranking', $listDirn, $listOrder); ?>
+						<?php echo JText::_('COM_TTLIVESCORE_HEADING_LOCALRANKING'); ?>
 					</th>
 				</tr>
 			</thead>
