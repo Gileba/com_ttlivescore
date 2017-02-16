@@ -36,8 +36,6 @@
 				->from($db->quoteName('#__ttlivescore_matchdefinitions', 'a'))
 				->order($orderCol . ' ' . $orderDirn);
 			
-			$published = $this->getState('filter.state');
- 
 			//Filter by search in name
 			$search = $this->getState('filter.search');
 
