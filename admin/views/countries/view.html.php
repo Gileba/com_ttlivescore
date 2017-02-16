@@ -31,7 +31,6 @@
 		protected function addToolbar()
 		{
 			$canDo	= TTLivescoreHelper::getActions();
-			$state 	= $this->get('State');
 			
 			JToolbarHelper::title(JText::_('COM_TTLIVESCORE_MANAGER_COUNTRIES'), '');
 			if ($canDo->get('core.edit.state'))
