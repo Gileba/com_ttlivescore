@@ -52,6 +52,11 @@
 				$vname === 'seasondetails'
 			);
 			JHtmlSidebar::addEntry(
+				JText::_('COM_TTLIVESCORE_SUBMENU_MATCHDEFINITIONS'),
+				'index.php?option=com_ttlivescore&view=matchdefinitions',
+				$vname === 'countries'
+			);
+			JHtmlSidebar::addEntry(
 				JText::_('COM_TTLIVESCORE_SUBMENU_COUNTRIES'),
 				'index.php?option=com_ttlivescore&view=countries',
 				$vname === 'countries'
