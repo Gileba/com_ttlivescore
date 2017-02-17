@@ -42,8 +42,6 @@
 				->join('INNER', $db->quoteName('#__ttlivescore_countries', 'l') . ' ON (' . $db->quoteName('s.country') . ' = ' . $db->quoteName('l.ioc_code') . ')')
 				->order($orderCol . ' ' . $orderDirn);
 			
-			$published = $this->getState('filter.state');
- 
 			//Filter by search in name
 			$search = $this->getState('filter.search');
 
