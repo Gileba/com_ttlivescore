@@ -13,5 +13,5 @@ CREATE TABLE IF NOT EXISTS `#__ttlivescore_matchdefinitions` (
 	`matchorderaway` varchar(255) NOT NULL DEFAULT '',
 	`sets` int(1) NOT NULL DEFAULT '5',
 	`reservesallowed` varchar(255) NOT NULL DEFAULT '0',
-	PRIMARY KEY (`id`), UNIQUE `name`
+	PRIMARY KEY (`id`), UNIQUE (`name`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
