@@ -23,6 +23,12 @@
 			$search = $this->getUserStateFromRequest($this->context . '.filter.search', 'filter_search');
 			$this->setState('filter.search', $search);
 			
+			$club = $this->getUserStateFromRequest($this->context . '.filter.clubs', 'filter_clubs', '', 'string');
+			$this->setState('filter.clubs', $club);
+			
+			$season = $this->getUserStateFromRequest($this->context . '.filter.seasons', 'filter_seasons', '', 'string');
+			$this->setState('filter.seasons', $season);
+			
 			parent::populateState('p.lastname', 'asc');
 		}
 			
@@ -42,6 +48,18 @@
 				->join('INNER', $db->quoteName('#__ttlivescore_countries', 'l') . ' ON (' . $db->quoteName('s.country') . ' = ' . $db->quoteName('l.ioc_code') . ')')
 				->order($orderCol . ' ' . $orderDirn);
 			
+			// Filter by club
+			$club = $db->escape($this->getState('filter.clubs'));
+			if (!empty($club)) {
+				$query->where('(a.club = "' . $club . '")');
+			}
+ 
+			// Filter by season
+			$season = $db->escape($this->getState('filter.seasons'));
+			if (!empty($season)) {
+				$query->where('(a.season = "' . $season . '")');
+			}
+ 
 			//Filter by search in name
 			$search = $this->getState('filter.search');
 
