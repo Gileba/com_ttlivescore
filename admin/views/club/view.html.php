@@ -23,11 +23,17 @@
 		
 		protected function addToolbar()
 		{
+			$canDo	= TTLivescoreHelper::getActions();
 			JFactory::getApplication()->input->set('hidemainmenu', true);
 			
 			JToolbarHelper::title(JText::_('COM_TTLIVESCORE_MANAGER_CLUB'), '');
+			JToolbarHelper::apply('club.apply');
 			JToolbarHelper::save('club.save');
-			
+
+			if ($canDo->get('core.create')) {
+				JToolbarHelper::save2new('club.save2new');				
+			}
+
 			if (empty($this->item->id))
 			{
 				JToolbarHelper::cancel('club.cancel');
