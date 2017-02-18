@@ -54,7 +54,7 @@
 			JHtmlSidebar::addEntry(
 				JText::_('COM_TTLIVESCORE_SUBMENU_MATCHDEFINITIONS'),
 				'index.php?option=com_ttlivescore&view=matchdefinitions',
-				$vname === 'countries'
+				$vname === 'matchdefinitions'
 			);
 			JHtmlSidebar::addEntry(
 				JText::_('COM_TTLIVESCORE_SUBMENU_COUNTRIES'),

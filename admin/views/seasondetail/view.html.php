@@ -23,10 +23,16 @@
 		
 		protected function addToolbar()
 		{
+			$canDo	= TTLivescoreHelper::getActions();
 			JFactory::getApplication()->input->set('hidemainmenu', true);
 			
 			JToolbarHelper::title(JText::_('COM_TTLIVESCORE_MANAGER_SEASONDETAIL'), '');
+			JToolbarHelper::apply('seasondetail.apply');
 			JToolbarHelper::save('seasondetail.save');
+
+			if ($canDo->get('core.create')) {
+				JToolbarHelper::save2new('seasondetail.save2new');				
+			}
 			
 			if (empty($this->item->id))
 			{
