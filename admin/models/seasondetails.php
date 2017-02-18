@@ -10,8 +10,8 @@
 				$config['filter_fields'] = array(
 					'id' ,'a.id', 
 					'season', 's.name', 
-					'player', 'a.player', 
-					'club', 'a.club', 
+					'player', 'p.lastname', 
+					'club', 'c.name', 
 					'localranking', 'a.localranking'
 				);
 			}
@@ -23,7 +23,7 @@
 			$search = $this->getUserStateFromRequest($this->context . '.filter.search', 'filter_search');
 			$this->setState('filter.search', $search);
 			
-			parent::populateState('a.player', 'asc');
+			parent::populateState('p.lastname', 'asc');
 		}
 			
 		protected function getListQuery()
