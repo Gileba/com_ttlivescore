@@ -23,10 +23,16 @@
 		
 		protected function addToolbar()
 		{
+			$canDo	= TTLivescoreHelper::getActions();
 			JFactory::getApplication()->input->set('hidemainmenu', true);
 			
 			JToolbarHelper::title(JText::_('COM_TTLIVESCORE_MANAGER_PLAYER'), '');
+			JToolbarHelper::apply('player.apply');
 			JToolbarHelper::save('player.save');
+
+			if ($canDo->get('core.create')) {
+				JToolbarHelper::save2new('player.save2new');				
+			}
 			
 			if (empty($this->item->id))
 			{
