@@ -29,8 +29,13 @@
 			return $result;
 		}
 		
-		public static function addSubmenu($vname = 'players')
+		public static function addSubmenu($vname = 'clubmatches')
 		{
+			JHtmlSidebar::addEntry(
+				JText::_('COM_TTLIVESCORE_SUBMENU_CLUBMATCHES'),
+				'index.php?option=com_ttlivescore&view=clubmatches',
+				$vname === 'clubmatches'
+			);
 			JHtmlSidebar::addEntry(
 				JText::_('COM_TTLIVESCORE_SUBMENU_PLAYERS'),
 				'index.php?option=com_ttlivescore&view=players',
