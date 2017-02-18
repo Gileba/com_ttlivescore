@@ -34,33 +34,33 @@
 			$state 	= $this->get('State');
 			
 			JToolbarHelper::title(JText::_('COM_TTLIVESCORE_MANAGER_MATCHDEFINITIONS'), '');
-			JToolbarHelper::addNew('matchdefintion.add');
+			JToolbarHelper::addNew('matchdefinition.add');
 			
 			if ($canDo->get('core.edit'))
 			{
-				JToolbarHelper::editList('matchdefintion.edit');
+				JToolbarHelper::editList('matchdefinition.edit');
 			}
 			if ($canDo->get('core.edit.state'))
 			{
-				JToolbarHelper::publish('matchdefintions.publish', 'JTOOLBAR_PUBLISH', true);
-				JToolbarHelper::unpublish('matchdefintions.unpublish', 'JTOOLBAR_UNPUBLISH', true);
-				JToolbarHelper::archiveList('matchdefintions.archive');
-				JToolbarHelper::checkin('matchdefintions.checkin');
+				JToolbarHelper::publish('matchdefinitions.publish', 'JTOOLBAR_PUBLISH', true);
+				JToolbarHelper::unpublish('matchdefinitions.unpublish', 'JTOOLBAR_UNPUBLISH', true);
+				JToolbarHelper::archiveList('matchdefinitions.archive');
+				JToolbarHelper::checkin('matchdefinitions.checkin');
 			}
 			if ($state->get('filter.state') === -2 && ($canDo->get('core.delete')))
 			{
-				JToolbarHelper::deleteList('', 'matchdefintions.delete', 'JTOOLBAR_EMPTY_TRASH');
+				JToolbarHelper::deleteList('', 'matchdefinitions.delete', 'JTOOLBAR_EMPTY_TRASH');
 			}
 			if ($canDo->get('core.edit.state') && !($state->get('filter.state') !== -2))
 			{
-				JToolbarHelper::trash('matchdefintions.trash');
+				JToolbarHelper::trash('matchdefinitions.trash');
 			}
 			if ($canDo->get('core.admin'))
 			{
 				JToolbarHelper::preferences('com_ttlivescore');
 			}
 			
-			JHtmlSidebar::setAction('index.php?option=com_ttlivescore&view=matchdefintions');
+			JHtmlSidebar::setAction('index.php?option=com_ttlivescore&view=matchdefinitions');
 			
 			JHtmlSidebar::addFilter(Jtext::_('JOPTION_SELECT_PUBLISHED'),'filter_state', JHtml::_('select.options', JHtml::_('jgrid.publishedOptions'), 'value', 'text', $this->state->get('filter.state'), true));
 		}

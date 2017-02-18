@@ -32,7 +32,7 @@
 			$orderDirn = $this->state->get('list.direction');
 			
 			$query
-				->select($db->quoteName(array('a.id', 'a.name', 'a.ordering')))
+				->select($db->quoteName(array('a.id', 'a.name', 'a.ordering', 'a.published', 'a.publish_up', 'a.publish_down')))
 				->from($db->quoteName('#__ttlivescore_matchdefinitions', 'a'))
 				->order($orderCol . ' ' . $orderDirn);
 			
