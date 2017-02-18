@@ -8,6 +8,7 @@
 	//Get country options
 	JFormHelper::addFieldPath(JPATH_COMPONENT . '/models/fields');
 	$seasons = JFormHelper::loadFieldType('seasons', false);
+	$clubs = JFormHelper::loadFieldType('clubs', false);
 ?>
 
 <script type="text/javascript">
