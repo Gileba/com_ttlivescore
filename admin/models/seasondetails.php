@@ -26,6 +26,9 @@
 			$club = $this->getUserStateFromRequest($this->context . '.filter.clubs', 'filter_clubs', '', 'string');
 			$this->setState('filter.clubs', $club);
 			
+			$season = $this->getUserStateFromRequest($this->context . '.filter.seasons', 'filter_seasons', '', 'string');
+			$this->setState('filter.seasons', $season);
+			
 			parent::populateState('p.lastname', 'asc');
 		}
 			
@@ -49,6 +52,12 @@
 			$club = $db->escape($this->getState('filter.clubs'));
 			if (!empty($club)) {
 				$query->where('(a.club = "' . $club . '")');
+			}
+ 
+			// Filter by season
+			$season = $db->escape($this->getState('filter.seasons'));
+			if (!empty($season)) {
+				$query->where('(a.season = "' . $season . '")');
 			}
  
 			//Filter by search in name
