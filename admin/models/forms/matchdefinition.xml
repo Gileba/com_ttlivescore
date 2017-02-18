@@ -14,7 +14,7 @@
 		<field name="matches" type="text" class="inputbox" label="COM_TTLIVESCORE_FIELD_NUMBEROFMATCHES_LABEL" description="COM_TTLIVESCORE_FIELD_NUMBEROFMATCHES_DESC" size="5" required="true" />
 		<field name="matchorderhome" type="text" class="inputbox" label="COM_TTLIVESCORE_FIELD_MATCHORDERHOME_LABEL" description="COM_TTLIVESCORE_FIELD_MATCHORDERHOME_DESC" size="60" required="true" />
 		<field name="matchorderaway" type="text" class="inputbox" label="COM_TTLIVESCORE_FIELD_MATCHORDERAWAY_LABEL" description="COM_TTLIVESCORE_FIELD_MATCHORDERAWAY_DESC" size="60" required="true" />
-		<field name="sets" type="list" class="inputbox" label="COM_TTLIVESCORE_FIELD_NUMBEROFSETS_LABEL" description="COM_TTLIVESCORE_FIELD_NUMBEROFSETS_DESC" size="1" default "5" required="true">
+		<field name="sets" type="list" class="inputbox" label="COM_TTLIVESCORE_FIELD_NUMBEROFSETS_LABEL" description="COM_TTLIVESCORE_FIELD_NUMBEROFSETS_DESC" size="1" default="5" required="true">
 			<option value="5">5</option>
 			<option value="7">7</option>
 		</field>

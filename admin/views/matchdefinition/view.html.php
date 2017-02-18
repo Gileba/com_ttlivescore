@@ -26,13 +26,13 @@
 			JFactory::getApplication()->input->set('hidemainmenu', true);
 			
 			JToolbarHelper::title(JText::_('COM_TTLIVESCORE_MANAGER_MATCHDEFINITION'), '');
-			JToolbarHelper::save('club.save');
+			JToolbarHelper::save('matchdefinition.save');
 			
 			if (empty($this->item->id))
 			{
-				JToolbarHelper::cancel('club.cancel');
+				JToolbarHelper::cancel('matchdefinition.cancel');
 				return;
 			}
-			JToolbarHelper::cancel('club.cancel', 'JTOOLBAR_CLOSE');
+			JToolbarHelper::cancel('matchdefinition.cancel', 'JTOOLBAR_CLOSE');
 		}
 	}
