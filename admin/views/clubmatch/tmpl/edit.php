@@ -17,14 +17,14 @@
 					<?php echo $this->form->renderField('awayplayer1'); ?>
 					<?php echo $this->form->renderField('awayplayer2'); ?>
 					<?php echo $this->form->renderField('awayplayer3'); ?>
-					<?php echo $this->form->renderField('reserveawayplayer1'); ?>
+					<?php echo $this->form->renderField('awayreserveplayer1'); ?>
 				</div>
 				<div class="span6 form-horizontal">
 					<?php echo $this->form->renderField('homeclub'); ?>
 					<?php echo $this->form->renderField('homeplayer1'); ?>
 					<?php echo $this->form->renderField('homeplayer2'); ?>
 					<?php echo $this->form->renderField('homeplayer3'); ?>
-					<?php echo $this->form->renderField('reservehomeplayer1'); ?>
+					<?php echo $this->form->renderField('homereserveplayer1'); ?>
 				</div>
 				<?php echo JHtml::_('bootstrap.endPanel'); ?>
 				<input type="hidden" name="task" value="" />
