@@ -67,6 +67,15 @@
 				return false;
 			}
 
+			if ($view == 'clubmatch' && $layout == 'edit' && !$this->checkEditId('com_ttlivescore.edit.clubmatches', $id))
+			{
+				$this->setError(JTEXT::sprintf('JLIB_APPLICATION_ERROR_UNHELD_ID', $id));
+				$this->setMessage($this->getError(), 'error');
+				$this->setRedirect(JROUTE::_('index.php?option=com_ttlivescore&view=clubmatches', false));
+				
+				return false;
+			}
+
 			parent::display();
 			
 			return $this;
