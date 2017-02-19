@@ -82,6 +82,7 @@ CREATE TABLE IF NOT EXISTS `#__ttlivescore_matchdefinitions` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 CREATE TABLE IF NOT EXISTS `#__ttlivescore_clubmatches` (
 	`id` int(10) unsigned NOT NULL AUTO_INCREMENT, 
+	`sid` int(10) unsigned NOT NULL DEFAULT '', 
 	`mdid` int(10) unsigned NOT NULL DEFAULT '', 
 	`date` datetime NOT NULL default '0000-00-00 00:00:00',
 	`homeclub` int(10) unsigned NOT NULL DEFAULT '',

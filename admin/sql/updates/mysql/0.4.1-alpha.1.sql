@@ -2,6 +2,7 @@
 CREATE TABLE IF NOT EXISTS `#__ttlivescore_clubmatches` (
 	`id` int(10) unsigned NOT NULL AUTO_INCREMENT, 
 	`mdid` int(10) unsigned NOT NULL DEFAULT '', 
+	`sid` int(10) unsigned NOT NULL DEFAULT '', 
 	`date` datetime NOT NULL default '0000-00-00 00:00:00',
 	`homeclub` int(10) unsigned NOT NULL DEFAULT '',
 	`awayclub` int(10) unsigned NOT NULL DEFAULT '',
