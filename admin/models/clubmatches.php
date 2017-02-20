@@ -18,10 +18,8 @@
 			parent::__construct($config);
 		}
 		
-		protected function populateState($ordering = null, $direction = null)
+		protected function populateState($ordering = 'a.id', $direction = 'desc')
 		{
-			$ordering = 'a.id';
-			$direction = 'desc';
 			$search = $this->getUserStateFromRequest($this->context . '.filter.search', 'filter_search');
 			$this->setState('filter.search', $search);
 			
