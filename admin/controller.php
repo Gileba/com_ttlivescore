@@ -67,7 +67,7 @@
 				return false;
 			}
 
-			if ($view == 'clubmatch' && $layout == 'edit' && !$this->checkEditId('com_ttlivescore.edit.clubmatches', $id))
+			if ($view == 'clubmatch' && $layout == 'edit' && !$this->checkEditId('com_ttlivescore.edit.clubmatch', $id))
 			{
 				$this->setError(JTEXT::sprintf('JLIB_APPLICATION_ERROR_UNHELD_ID', $id));
 				$this->setMessage($this->getError(), 'error');
