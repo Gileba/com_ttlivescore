@@ -101,12 +101,12 @@
 						<?php echo JHtml::_('grid.id', $i, $item->id); ?>
 					</td>
 					<td class="nowrap has-context">
-						<?php echo $this->matchdate; ?>
+						<?php echo $item->matchdate; ?>
 					</td>
 					<td class="nowrap has-context">
 						<a href="<?php echo JROUTE::_('index.php?option=com_ttlivescore&task=clubmatch.edit&id=' . (int) $item->id); ?>">
 							<?php 
-								echo $this->homeclub . ' - ' . $this->awayclub; 
+								echo $item->homeclub . ' - ' . $item->awayclub; 
 							?>
 						</a>
 					</td>
