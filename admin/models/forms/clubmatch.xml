@@ -3,7 +3,7 @@
 	<fieldset>
 		<field name="id" type="text" default="0" label="JGLOBAL_FIELD_ID_LABEL" readonly="true" class="readonly" description="JGLOBAL_FIELD_ID_DESC" />
 		<field name="season" type="Seasons" class="inputbox" label="COM_TTLIVESCORE_FIELD_SEASON_LABEL" description="COM_TTLIVESCORE_FIELD_SEASON_DESC" size="1" required="true" />
-		<field name="date" type="calendar" label="COM_TTLIVESCORE_FIELD_DATE_LABEL" description="COM_TTLIVESCORE_FIELD_DATE_DESC" class="inputbox" size="22" filter="user-utc" format="%Y-%m-%d %H:%M:%S" />
+		<field name="date" type="calendar" label="COM_TTLIVESCORE_FIELD_MATCHDATE_LABEL" description="COM_TTLIVESCORE_FIELD_MATCHDATE_DESC" class="inputbox" size="22" filter="user-utc" format="%Y-%m-%d %H:%M:%S" />
 		<field name="matchdefinition" type="Matchdefinitions" class="inputbox" label="COM_TTLIVESCORE_FIELD_MATCHDEFINITION_LABEL" description="COM_TTLIVESCORE_FIELD_MATCHDEFINITION_DESC" size="1" required="true" />
 		<field name="homeclub" type="Clubs" class="inputbox" label="COM_TTLIVESCORE_FIELD_HOMECLUB_LABEL" description="COM_TTLIVESCORE_FIELD_HOMECLUB_DESC" size="1" required="true" />
 		<field name="awayclub" type="Clubs" class="inputbox" label="COM_TTLIVESCORE_FIELD_AWAYCLUB_LABEL" description="COM_TTLIVESCORE_FIELD_AWAYCLUB_DESC" size="1" required="true" />
