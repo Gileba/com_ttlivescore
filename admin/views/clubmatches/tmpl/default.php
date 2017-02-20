@@ -80,7 +80,7 @@
 						<?php echo JHtml::_('grid.sort', 'COM_TTLIVESCORE_HEADING_DATE', 'a.date', $listDirn, $listOrder); ?>
 					</th>
 					<th>
-						<?php echo JText::_('COM_TTLIVESCORE_HEADING_MATCH'); ?>
+						<?php echo JText::_('COM_TTLIVESCORE_HEADING_CLUBMATCH'); ?>
 					</th>
 				</tr>
 			</thead>
