@@ -70,7 +70,7 @@
 		</div>
 	</div>
 		<div class="clearfix"></div>
-		<table class="table table-striped" id="clubmatchesList">
+		<table class="table table-striped" id="clubmatchList">
 			<thead>
 				<tr>
 					<th width="1%" class="hidden-phone">
