@@ -20,10 +20,12 @@
 		
 		protected function populateState($ordering = null, $direction = null)
 		{
+			$ordering = 'a.id';
+			$direction = 'desc';
 			$search = $this->getUserStateFromRequest($this->context . '.filter.search', 'filter_search');
 			$this->setState('filter.search', $search);
 			
-			parent::populateState('a.id', 'desc');
+			parent::populateState($ordering, $direction);
 		}
 			
 		protected function getListQuery()
