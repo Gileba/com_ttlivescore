@@ -8,7 +8,6 @@
 	//Get country options
 	JFormHelper::addFieldPath(JPATH_COMPONENT . '/models/fields');
 	$seasons = JFormHelper::loadFieldType('seasons', false);
-	$clubs = JFormHelper::loadFieldType('clubs', false);
 ?>
 
 <script type="text/javascript">
@@ -23,7 +22,7 @@
 	}
 </script>
 
-<form action="<?php echo JRoute::_('index.php?option=com_ttlivescore&view=seasondetails'); ?>" method="post" name="adminForm" id="adminForm">
+<form action="<?php echo JRoute::_('index.php?option=com_ttlivescore&view=clubmatches'); ?>" method="post" name="adminForm" id="adminForm">
 	<?php if(!empty($this->sidebar)) : ?>
 	<div id="j-sidebar-container" class="span2">
 		<?php echo $this->sidebar; ?>
@@ -71,23 +70,17 @@
 		</div>
 	</div>
 		<div class="clearfix"></div>
-		<table class="table table-striped" id="seasondetailList">
+		<table class="table table-striped" id="clubmatchList">
 			<thead>
 				<tr>
 					<th width="1%" class="hidden-phone">
 						<input type="checkbox" name="checkall-toggle" value="" title="<?php echo JText::_('JGLOBAL_CHECK_ALL'); ?>" onclick="Joomla.checkAll(this)" />
 					</th>
 					<th>
-						<?php echo JHtml::_('grid.sort', 'COM_TTLIVESCORE_HEADING_NAME', 'p.lastname', $listDirn, $listOrder); ?>
+						<?php echo JHtml::_('grid.sort', 'COM_TTLIVESCORE_HEADING_DATE', 'a.date', $listDirn, $listOrder); ?>
 					</th>
 					<th>
-						<?php echo JHtml::_('grid.sort', 'COM_TTLIVESCORE_HEADING_CLUB', 'c.name', $listDirn, $listOrder); ?>
-					</th>
-					<th>
-						<?php echo JHtml::_('grid.sort', 'COM_TTLIVESCORE_HEADING_SEASON', 's.name', $listDirn, $listOrder); ?>
-					</th>
-					<th>
-						<?php echo JText::_('COM_TTLIVESCORE_HEADING_LOCALRANKING'); ?>
+						<?php echo JText::_('COM_TTLIVESCORE_HEADING_CLUBMATCH'); ?>
 					</th>
 				</tr>
 			</thead>
@@ -108,24 +101,14 @@
 						<?php echo JHtml::_('grid.id', $i, $item->id); ?>
 					</td>
 					<td class="nowrap has-context">
-						<a href="<?php echo JROUTE::_('index.php?option=com_ttlivescore&task=seasondetail.edit&id=' . (int) $item->id); ?>">
+						<?php echo $item->matchdate; ?>
+					</td>
+					<td class="nowrap has-context">
+						<a href="<?php echo JROUTE::_('index.php?option=com_ttlivescore&task=clubmatch.edit&id=' . (int) $item->id); ?>">
 							<?php 
-								echo $this->escape($item->lastname) . ', ' . $this->escape($item->firstname);
-								if (!($item->middlename === '')) echo ' (' . $this->escape($item->middlename) . ')'; 
+								echo $item->homeclub . ' - ' . $item->awayclub; 
 							?>
 						</a>
-					</td>
-					<td class="nowrap has-context">
-						<?php echo $this->escape($item->club); ?>
-					</td>
-					<td class="nowrap has-context">
-						<?php echo $this->escape($item->season); ?>
-					</td>
-					<td class="nowrap has-context">
-						<?php 
-							if (!($item->prefix === '')) echo $this->escape($item->prefix) . '-'; 
-							echo $this->escape($item->localranking);
-						?>
 					</td>
 				</tr>
 				<?php endforeach; ?>
