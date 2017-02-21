@@ -10,10 +10,12 @@
 		<field name="homeplayer1" type="Players" class="inputbox" label="COM_TTLIVESCORE_FIELD_HOMEPLAYER_LABEL" description="COM_TTLIVESCORE_FIELD_HOMEPLAYER_DESC" size="1" required="true" />
 		<field name="homeplayer2" type="Players" class="inputbox" label="COM_TTLIVESCORE_FIELD_HOMEPLAYER_LABEL" description="COM_TTLIVESCORE_FIELD_HOMEPLAYER_DESC" size="1" required="true" />
 		<field name="homeplayer3" type="Players" class="inputbox" label="COM_TTLIVESCORE_FIELD_HOMEPLAYER_LABEL" description="COM_TTLIVESCORE_FIELD_HOMEPLAYER_DESC" size="1" required="true" />
+		<field name="homeplayer4" type="Players" class="inputbox" label="COM_TTLIVESCORE_FIELD_HOMEPLAYER_LABEL" description="COM_TTLIVESCORE_FIELD_HOMEPLAYER_DESC" size="1" required="true" />
 		<field name="homereserveplayer1" type="Players" class="inputbox" label="COM_TTLIVESCORE_FIELD_HOMERESERVEPLAYER_LABEL" description="COM_TTLIVESCORE_FIELD_HOMERESERVEPLAYER_DESC" size="1" required="true" />
 		<field name="awayplayer1" type="Players" class="inputbox" label="COM_TTLIVESCORE_FIELD_HOMEPLAYER_LABEL" description="COM_TTLIVESCORE_FIELD_HOMEPLAYER_DESC" size="1" required="true" />
 		<field name="awayplayer2" type="Players" class="inputbox" label="COM_TTLIVESCORE_FIELD_HOMEPLAYER_LABEL" description="COM_TTLIVESCORE_FIELD_HOMEPLAYER_DESC" size="1" required="true" />
 		<field name="awayplayer3" type="Players" class="inputbox" label="COM_TTLIVESCORE_FIELD_HOMEPLAYER_LABEL" description="COM_TTLIVESCORE_FIELD_HOMEPLAYER_DESC" size="1" required="true" />
+		<field name="awayplayer4" type="Players" class="inputbox" label="COM_TTLIVESCORE_FIELD_HOMEPLAYER_LABEL" description="COM_TTLIVESCORE_FIELD_HOMEPLAYER_DESC" size="1" required="true" />
 		<field name="awayreserveplayer1" type="Players" class="inputbox" label="COM_TTLIVESCORE_FIELD_AWAYRESERVEPLAYER_LABEL" description="COM_TTLIVESCORE_FIELD_AWAYRESERVEPLAYER_DESC" size="1" required="true" />
 
 	</fieldset>
