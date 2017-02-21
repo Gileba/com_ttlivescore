@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<form>
+	<fieldset>
+		<field name="id" type="text" default="0" label="JGLOBAL_FIELD_ID_LABEL" readonly="true" class="readonly" description="JGLOBAL_FIELD_ID_DESC" />
+		<field name="season" type="Seasons" class="inputbox" label="COM_TTLIVESCORE_FIELD_SEASON_LABEL" description="COM_TTLIVESCORE_FIELD_SEASON_DESC" size="1" required="true" />
+		<field name="date" type="calendar" label="COM_TTLIVESCORE_FIELD_MATCHDATE_LABEL" description="COM_TTLIVESCORE_FIELD_MATCHDATE_DESC" class="inputbox" size="22" filter="user-utc" format="%Y-%m-%d %H:%M:%S" />
+		<field name="matchdefinition" type="Matchdefinitions" class="inputbox" label="COM_TTLIVESCORE_FIELD_MATCHDEFINITION_LABEL" description="COM_TTLIVESCORE_FIELD_MATCHDEFINITION_DESC" size="1" required="true" />
+		<field name="homeclub" type="Clubs" class="inputbox" label="COM_TTLIVESCORE_FIELD_HOMECLUB_LABEL" description="COM_TTLIVESCORE_FIELD_HOMECLUB_DESC" size="1" required="true" />
+		<field name="awayclub" type="Clubs" class="inputbox" label="COM_TTLIVESCORE_FIELD_AWAYCLUB_LABEL" description="COM_TTLIVESCORE_FIELD_AWAYCLUB_DESC" size="1" required="true" />
+		<field name="homeplayer1" type="Players" class="inputbox" label="COM_TTLIVESCORE_FIELD_HOMEPLAYER_LABEL" description="COM_TTLIVESCORE_FIELD_HOMEPLAYER_DESC" size="1" required="true" />
+		<field name="homeplayer2" type="Players" class="inputbox" label="COM_TTLIVESCORE_FIELD_HOMEPLAYER_LABEL" description="COM_TTLIVESCORE_FIELD_HOMEPLAYER_DESC" size="1" required="true" />
+		<field name="homeplayer3" type="Players" class="inputbox" label="COM_TTLIVESCORE_FIELD_HOMEPLAYER_LABEL" description="COM_TTLIVESCORE_FIELD_HOMEPLAYER_DESC" size="1" required="true" />
+		<field name="homeplayer4" type="Players" class="inputbox" label="COM_TTLIVESCORE_FIELD_HOMEPLAYER_LABEL" description="COM_TTLIVESCORE_FIELD_HOMEPLAYER_DESC" size="1" required="true" />
+		<field name="homereserveplayer1" type="Players" class="inputbox" label="COM_TTLIVESCORE_FIELD_HOMERESERVEPLAYER_LABEL" description="COM_TTLIVESCORE_FIELD_HOMERESERVEPLAYER_DESC" size="1" required="true" />
+		<field name="awayplayer1" type="Players" class="inputbox" label="COM_TTLIVESCORE_FIELD_AWAYPLAYER_LABEL" description="COM_TTLIVESCORE_FIELD_AWAYPLAYER_DESC" size="1" required="true" />
+		<field name="awayplayer2" type="Players" class="inputbox" label="COM_TTLIVESCORE_FIELD_AWAYPLAYER_LABEL" description="COM_TTLIVESCORE_FIELD_AWAYPLAYER_DESC" size="1" required="true" />
+		<field name="awayplayer3" type="Players" class="inputbox" label="COM_TTLIVESCORE_FIELD_AWAYPLAYER_LABEL" description="COM_TTLIVESCORE_FIELD_AWAYPLAYER_DESC" size="1" required="true" />
+		<field name="awayplayer4" type="Players" class="inputbox" label="COM_TTLIVESCORE_FIELD_AWAYPLAYER_LABEL" description="COM_TTLIVESCORE_FIELD_AWAYPLAYER_DESC" size="1" required="true" />
+		<field name="awayreserveplayer1" type="Players" class="inputbox" label="COM_TTLIVESCORE_FIELD_AWAYRESERVEPLAYER_LABEL" description="COM_TTLIVESCORE_FIELD_AWAYRESERVEPLAYER_DESC" size="1" required="true" />
+
+	</fieldset>
+</form>
