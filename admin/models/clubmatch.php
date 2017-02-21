@@ -31,4 +31,19 @@
 			
 			return $data;
 		}
+		
+		public function save($data)
+		{
+			$data['homeplayers'] = $data['homeplayer1'] . ',' . $data['homeplayer2'] . ',' . $data['homeplayer3'] . ',' . $data['homeplayer4'];
+			$data['awayplayers'] = $data['awayplayer1'] . ',' . $data['awayplayer2'] . ',' . $data['awayplayer3'] . ',' . $data['awayplayer4'];
+			$data['homereserves'] = $data['homereserveplayer1'];
+			$data['awayreserves'] = $data['awayreserveplayer1'];
+			
+			if (parent::save($data))
+			{
+				return true;
+			}
+
+			return false;
+		}
 	}
