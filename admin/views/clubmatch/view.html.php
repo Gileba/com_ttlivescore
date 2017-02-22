@@ -26,6 +26,9 @@
 			JFactory::getApplication()->input->set('hidemainmenu', true);
 			
 			JToolbarHelper::title(JText::_('COM_TTLIVESCORE_MANAGER_CLUBMATCH'), '');
+
+			JToolbarHelper::apply('clubmatch.apply');
+
 			JToolbarHelper::save('clubmatch.save');
 			
 			if (empty($this->item->id))
@@ -33,6 +36,9 @@
 				JToolbarHelper::cancel('clubmatch.cancel');
 				return;
 			}
+
 			JToolbarHelper::cancel('clubmatch.cancel', 'JTOOLBAR_CLOSE');
+			
+			JToolbarHelper::custom('clubmatch.creatematches', 'tree-2', '', 'Create Matches', false);
 		}
 	}
