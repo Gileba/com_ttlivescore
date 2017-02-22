@@ -26,6 +26,7 @@
 			JFactory::getApplication()->input->set('hidemainmenu', true);
 			
 			JToolbarHelper::title(JText::_('COM_TTLIVESCORE_MANAGER_CLUBMATCH'), '');
+			JToolbarHelper::apply('clubmatch.apply');
 			JToolbarHelper::save('clubmatch.save');
 			
 			if (empty($this->item->id))
