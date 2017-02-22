@@ -12,7 +12,7 @@
 			// Get the model
 			$model = $this->getModel();
  
-			$return = $model->creatematches($id);
+			$model->creatematches($id);
  
 			// Redirect to the list screen.
 			$this->setRedirect(JRoute::_('index.php?option=com_ttlivescore&view=clubmatch&layout=edit&id=' . $id, false));
