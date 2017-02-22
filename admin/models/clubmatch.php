@@ -56,9 +56,11 @@
 			// Insert columns.
 			$columns = array('cmid', 'matchid', 'homeplayerid', 'awayplayerid');
 			
+			// Array of payer-id's
 			$homeplayers = explode(",", $this->gethomeplayers($id));
 			$awayplayers = explode(",", $this->getawayplayers($id));
 
+			// Get order of playing defined in matchdefinition
 			$matchdefinition = $this->getmatchdefinition($id);			
 			$homeplayerorder = explode(",", $matchdefinition->matchorderhome);
 			$awayplayerorder = explode(",", $matchdefinition->matchorderaway);
