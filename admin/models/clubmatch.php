@@ -46,4 +46,9 @@
 
 			return false;
 		}
+
+		public function creatematches($pks)
+		{
+			return true;
+		}	
 	}
