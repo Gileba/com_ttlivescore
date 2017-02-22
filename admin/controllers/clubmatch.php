@@ -14,7 +14,7 @@
  
 			$model->creatematches($id);
  
-			// Redirect to the list screen.
+			// Redirect to the club match form.
 			$this->setRedirect(JRoute::_('index.php?option=com_ttlivescore&view=clubmatch&layout=edit&id=' . $id, false));
 			$this->redirect();
 		}
