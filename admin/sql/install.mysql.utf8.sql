@@ -93,3 +93,27 @@ CREATE TABLE IF NOT EXISTS `#__ttlivescore_clubmatches` (
 	`awayreserves` varchar(255) NOT NULL DEFAULT '',
 	PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+CREATE TABLE IF NOT EXISTS `#__ttlivescore_livescores` (
+	`id` int(10) unsigned NOT NULL AUTO_INCREMENT, 
+	`cmid` int(10) unsigned NOT NULL DEFAULT '0', 
+	`matchid` tinyint unsigned NOT NULL DEFAULT '0',
+	`homeplayerid` int(10) unsigned NOT NULL DEFAULT '0',
+	`awayplayerid` int(10) unsigned NOT NULL DEFAULT '0',
+	`homepointsset1` tinyint unsigned NOT NULL DEFAULT '0',
+	`homepointsset2` tinyint unsigned NOT NULL DEFAULT '0',
+	`homepointsset3` tinyint unsigned NOT NULL DEFAULT '0',
+	`homepointsset4` tinyint unsigned NOT NULL DEFAULT '0',
+	`homepointsset5` tinyint unsigned NOT NULL DEFAULT '0',
+	`homepointsset6` tinyint unsigned NOT NULL DEFAULT '0',
+	`homepointsset7` tinyint unsigned NOT NULL DEFAULT '0',
+	`awaypointsset1` tinyint unsigned NOT NULL DEFAULT '0',
+	`awaypointsset2` tinyint unsigned NOT NULL DEFAULT '0',
+	`awaypointsset3` tinyint unsigned NOT NULL DEFAULT '0',
+	`awaypointsset4` tinyint unsigned NOT NULL DEFAULT '0',
+	`awaypointsset5` tinyint unsigned NOT NULL DEFAULT '0',
+	`awaypointsset6` tinyint unsigned NOT NULL DEFAULT '0',
+	`awaypointsset7` tinyint unsigned NOT NULL DEFAULT '0',
+	`service` char(1) NOT NULL DEFAULT 'H',
+	`active` bool NOT NULL DEFAULT false,
+	PRIMARY KEY (`id`), CONSTRAINT UNIQUE (`cmid`, `matchid`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;

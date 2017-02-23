@@ -46,4 +46,120 @@
 
 			return false;
 		}
+
+		public function creatematches($id)
+		{
+			// Get a db connection.
+			$db = JFactory::getDbo();
+ 
+ 
+			// Insert columns.
+			$columns = array('cmid', 'matchid', 'homeplayerid', 'awayplayerid');
+			
+			// Array of payer-id's
+			$homeplayers = explode(",", $this->gethomeplayers($id));
+			$awayplayers = explode(",", $this->getawayplayers($id));
+
+			// Get order of playing defined in matchdefinition
+			$matchdefinition = $this->getmatchdefinition($id);			
+			$homeplayerorder = explode(",", $matchdefinition->matchorderhome);
+			$awayplayerorder = explode(",", $matchdefinition->matchorderaway);
+ 
+			$i = 0;
+			do
+			{
+				// Create a new query object.
+				$query = $db->getQuery(true);
+
+				// -1 because we are working with an array
+				$homeplayer = $homeplayerorder[$i] - 1;
+				$awayplayer = $awayplayerorder[$i] - 1;
+
+				// Insert values.
+				$values = array($id, $i+1, $homeplayers[$homeplayer], $awayplayers[$awayplayer]);
+ 
+				// Prepare the insert query.
+				$query
+					->insert($db->quoteName('#__ttlivescore_livescores'))
+					->columns($db->quoteName($columns))
+					->values(implode(',', $values));
+ 
+				// Set the query using our newly populated query object and execute it.
+				$db->setQuery($query);
+				$db->execute();
+				
+				$i++;
+			} while ($i < $matchdefinition->matches);
+
+			return true;
+		}
+		
+		public function getmatchdefinition($id)
+		{
+			// Get a db connection.
+			$db = JFactory::getDbo();
+ 
+			// Create a new query object.
+			$query = $db->getQuery(true);
+			
+			$id = $db->quote($id);
+ 
+			$query
+				->select($db->quoteName(array('a.id', 'a.name', 'a.matchorderhome', 'a.matchorderaway', 'a.matches')))
+				->from($db->quoteName('#__ttlivescore_matchdefinitions', 'a'))
+				->where('a.id = ' . $id);
+
+ 
+			// Set the query using our newly populated query object and execute it.
+			$db->setQuery($query);			
+			$db->execute();
+			
+			return $db->loadObject();
+		}	
+
+		public function gethomeplayers($id)
+		{
+			// Get a db connection.
+			$db = JFactory::getDbo();
+ 
+			// Create a new query object.
+			$query = $db->getQuery(true);
+			
+			$id = $db->quote($id);
+ 
+			$query
+				->select($db->quoteName(array('a.homeplayers')))
+				->from($db->quoteName('#__ttlivescore_clubmatches', 'a'))
+				->where('a.id = ' . $id);
+
+ 
+			// Set the query using our newly populated query object and execute it.
+			$db->setQuery($query);			
+			$db->execute();
+			
+			return $db->loadResult();
+		}	
+
+		public function getawayplayers($id)
+		{
+			// Get a db connection.
+			$db = JFactory::getDbo();
+ 
+			// Create a new query object.
+			$query = $db->getQuery(true);
+			
+			$id = $db->quote($id);
+ 
+			$query
+				->select($db->quoteName(array('a.awayplayers')))
+				->from($db->quoteName('#__ttlivescore_clubmatches', 'a'))
+				->where('a.id = ' . $id);
+
+ 
+			// Set the query using our newly populated query object and execute it.
+			$db->setQuery($query);			
+			$db->execute();
+			
+			return $db->loadResult();
+		}	
 	}
