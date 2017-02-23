@@ -82,6 +82,9 @@
 					<th>
 						<?php echo JText::_('COM_TTLIVESCORE_HEADING_CLUBMATCH'); ?>
 					</th>
+					<th>
+						<?php echo JText::_('COM_TTLIVESCORE_HEADING_FOLLOWUP'); ?>
+					</th>
 				</tr>
 			</thead>
 			<tfoot>
@@ -109,6 +112,8 @@
 								echo $item->homeclub . ' - ' . $item->awayclub; 
 							?>
 						</a>
+					</td>
+					<td class="nowrap has-context">
 					</td>
 				</tr>
 				<?php endforeach; ?>
