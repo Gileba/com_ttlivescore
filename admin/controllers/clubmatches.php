@@ -8,4 +8,20 @@
 			$model = parent::getModel($name, $prefix, $config);
 			return $model;
 		}
+
+		public function creatematches($id)
+		{
+			// Get the input
+			$input = JFactory::getApplication()->input;
+			$id	= $this->input->getInt('id');
+
+			// Get the model
+			$model = $this->getModel();
+ 
+			$model->creatematches($id);
+ 
+			// Redirect to the club match form.
+			$this->setRedirect(JRoute::_('index.php?option=com_ttlivescore&view=clubmatches', false));
+			$this->redirect();
+		}
 	}

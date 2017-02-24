@@ -114,6 +114,11 @@
 						</a>
 					</td>
 					<td class="nowrap has-context">
+							<a href="<?php echo JROUTE::_('index.php?option=com_ttlivescore&task=clubmatches.creatematches&id=' . (int) $item->id); ?>">
+								<span class="btn btn-small">
+									<span class="icon-tree-2"></span>Create Matches
+								</span>
+							</a>
 					</td>
 				</tr>
 				<?php endforeach; ?>
