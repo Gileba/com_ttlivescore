@@ -98,11 +98,11 @@
 
 			$query
 				->update($db->quoteName('#__ttlivescore_clubmatches', 'a'))
-				->set(array($db->quoteName('a.livescorescreated') . ' = ' . $db->quoteName('1')))
+				->set(array($db->quoteName('a.livescorescreated') . ' = 1'))
 				->where('a.id = ' . $id);
 	
 			$db->setQuery($query);
-			$db->execute;
+			$db->execute();
 
 			return true;
 		}
