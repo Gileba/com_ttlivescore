@@ -41,7 +41,7 @@
 			
 			if($this->item->livescorescreated == false)
 			{
-				JToolbarHelper::custom('clubmatch.creatematches', 'tree-2', '', JText::_('COM_TTLIVESCORE_BUTTON_CREATEMATCHES', false);
+				JToolbarHelper::custom('clubmatch.creatematches', 'tree-2', '', JText::_('COM_TTLIVESCORE_BUTTON_CREATEMATCHES'), false);
 			}
 		}
 	}
