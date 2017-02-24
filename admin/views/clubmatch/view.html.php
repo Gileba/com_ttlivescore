@@ -39,6 +39,9 @@
 
 			JToolbarHelper::cancel('clubmatch.cancel', 'JTOOLBAR_CLOSE');
 			
-			JToolbarHelper::custom('clubmatch.creatematches', 'tree-2', '', 'Create Matches', false);
+			if($this->item->livescorescreated == false)
+			{
+				JToolbarHelper::custom('clubmatch.creatematches', 'tree-2', '', 'Create Matches', false);
+			}
 		}
 	}

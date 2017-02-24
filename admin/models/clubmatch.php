@@ -90,6 +90,19 @@
 				
 				$i++;
 			} while ($i < $matchdefinition->matches);
+			
+			// Set value of created in table clubmatches to true
+			$query = $db->getQuery(true);
+
+			$id = $db->quote($id);
+
+			$query
+				->update($db->quoteName('#__ttlivescore_clubmatches', 'a'))
+				->set(array($db->quoteName('a.livescorescreated') . ' = ' . $db->quoteName('1')))
+				->where('a.id = ' . $id);
+	
+			$db->setQuery($query);
+			$db->execute;
 
 			return true;
 		}

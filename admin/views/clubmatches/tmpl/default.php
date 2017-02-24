@@ -114,11 +114,13 @@
 						</a>
 					</td>
 					<td class="nowrap has-context">
+						<?php if($item->livescorescreated == false) { ?>
 							<a href="<?php echo JROUTE::_('index.php?option=com_ttlivescore&task=clubmatches.creatematches&id=' . (int) $item->id); ?>">
 								<span class="btn btn-small">
 									<span class="icon-tree-2"></span>Create Matches
 								</span>
 							</a>
+						<?php } ?>
 					</td>
 				</tr>
 				<?php endforeach; ?>
