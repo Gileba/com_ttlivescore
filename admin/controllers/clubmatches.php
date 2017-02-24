@@ -9,10 +9,8 @@
 			return $model;
 		}
 
-		public function creatematches($id)
+		public function creatematches()
 		{
-			// Get the input
-			$input = JFactory::getApplication()->input;
 			$id	= $this->input->getInt('id');
 
 			// Get the model
