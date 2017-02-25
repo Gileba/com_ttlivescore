@@ -31,6 +31,9 @@
 					<th width="1%" class="hidden-phone">
 						<input type="checkbox" name="checkall-toggle" value="" title="<?php echo JText::_('JGLOBAL_CHECK_ALL'); ?>" onclick="Joomla.checkAll(this)" />
 					</th>
+					<th width="2%" class="hidden-phone">
+						#
+					</th>
 					<th>
 						<?php echo JText::_('COM_TTLIVESCORE_HEADING_CLUBMATCH'); ?>
 					</th>
@@ -52,8 +55,11 @@
 					<td class="center hidden-phone">
 						<?php echo JHtml::_('grid.id', $i, $item->id); ?>
 					</td>
+					<td class="center hidden-phone">
+						<?php echo $item->matchid; ?>
+					</td>
 					<td>
-						<?php echo 'Thuisploeg - Uitploeg'; ?>
+						<?php echo $item->homeplayer . ' - ' . $item->awayplayer; ?>
 					</td>
 				</tr>
 				<?php endforeach; ?>

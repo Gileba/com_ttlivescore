@@ -9,6 +9,8 @@
 			{
 				$config['filter_fields'] = array(
 					'id' ,'a.id', 
+					'homeplayer', 'hp.lastname',
+					'awayplayer', 'ap.lastname', 
 					);
 			}
 			parent::__construct($config);
@@ -30,8 +32,10 @@
 			$orderDirn = $this->state->get('list.direction');
 			
 			$query
-				->select($db->quoteName(array('a.id')))
+				->select($db->quoteName(array('a.id', 'a.matchid', 'hp.lastname', 'ap.lastname'), array('id', 'matchid', 'homeplayer', 'awayplayer')))
 				->from($db->quoteName('#__ttlivescore_livescores', 'a'))
+				->join('INNER', $db->quoteName('#__ttlivescore_players', 'hp') . ' ON (' . $db->quoteName('a.homeplayerid') . ' = ' . $db->quoteName('hp.id') . ')')
+				->join('INNER', $db->quoteName('#__ttlivescore_players', 'ap') . ' ON (' . $db->quoteName('a.awayplayerid') . ' = ' . $db->quoteName('ap.id') . ')')
 				->order($orderCol . ' ' . $orderDirn);
 			
 			return $query;
