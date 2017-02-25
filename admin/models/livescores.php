@@ -32,7 +32,7 @@
 			$orderDirn = $this->state->get('list.direction');
 			
 			$query
-				->select($db->quoteName(array('a.id', 'a.matchid', 'hp.lastname', 'ap.lastname'), array('id', 'matchid', 'homeplayer', 'awayplayer')))
+				->select($db->quoteName(array('a.id', 'a.matchid', 'hp.lastname', 'hp.firstname', 'hp.middlename', 'ap.lastname', 'ap.firstname', 'ap.middlename'), array('id', 'matchid', 'homeplayerlastname', 'homeplayerfirstname', 'homeplayermiddlename', 'awayplayerlastname', 'awayplayerfirstname', 'awayplayermiddlename')))
 				->from($db->quoteName('#__ttlivescore_livescores', 'a'))
 				->join('INNER', $db->quoteName('#__ttlivescore_players', 'hp') . ' ON (' . $db->quoteName('a.homeplayerid') . ' = ' . $db->quoteName('hp.id') . ')')
 				->join('INNER', $db->quoteName('#__ttlivescore_players', 'ap') . ' ON (' . $db->quoteName('a.awayplayerid') . ' = ' . $db->quoteName('ap.id') . ')')

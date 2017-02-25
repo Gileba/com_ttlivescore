@@ -35,7 +35,11 @@
 						#
 					</th>
 					<th>
-						<?php echo JText::_('COM_TTLIVESCORE_HEADING_CLUBMATCH'); ?>
+						<?php echo JText::_('COM_TTLIVESCORE_HEADING_HOME'); ?>
+					</th>
+					<th width="1%"></th>
+					<th>
+						<?php echo JText::_('COM_TTLIVESCORE_HEADING_AWAY'); ?>
 					</th>
 				</tr>
 			</thead>
@@ -59,7 +63,23 @@
 						<?php echo $item->matchid; ?>
 					</td>
 					<td>
-						<?php echo $item->homeplayer . ' - ' . $item->awayplayer; ?>
+						<?php 
+							echo $item->homeplayerlastname . ', ' . $item->homeplayerfirstname; 
+							if ($this->escape($item->homeplayermiddlename) !== '')
+							{
+								echo ' (' . $this->escape($item->homeplayermiddlename) . ')'; 
+							}
+						?>
+					</td>
+					<td class="center">-</td>
+					<td>
+						<?php
+							echo $item->awayplayerlastname . ', ' . $item->awayplayerfirstname;
+							if ($item->awayplayermiddlename !== '')
+							{
+								echo ' (' . $this->escape($item->awayplayermiddlename) . ')'; 
+							}
+						?>
 					</td>
 				</tr>
 				<?php endforeach; ?>
