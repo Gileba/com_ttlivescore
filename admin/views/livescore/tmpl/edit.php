@@ -7,7 +7,7 @@
 		<div class="span10 form-horizontal">
 			<fieldset>
 				<?php echo JHtml::_('bootstrap.startPane', 'myTab', array('active' => 'details')); ?>
-				<?php echo JHtml::_('bootstrap.addPanel', 'myTab', 'details', empty($this->item->id) ? JText::_('COM_TTLIVESCORE_NEW_PLAYER', true) : JText::sprintf('COM_TTLIVESCORE_EDIT_PLAYER', $this->item->id, true)); ?>
+				<?php echo JHtml::_('bootstrap.addPanel', 'myTab', 'details', JText::sprintf('COM_TTLIVESCORE_EDIT_LIVESCORE', $this->item->id, true)); ?>
 				<?php echo $this->form->renderField('id'); ?>
 				<?php echo JHtml::_('bootstrap.endPanel'); ?>
 				<input type="hidden" name="task" value="" />
