@@ -27,8 +27,4 @@
 			
 			return $data;
 		}
-		
-		protected function prepareTable($table)
-		{
-		}
 	}

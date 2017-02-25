@@ -23,7 +23,6 @@
 		
 		protected function addToolbar()
 		{
-			$canDo	= TTLivescoreHelper::getActions();
 			JFactory::getApplication()->input->set('hidemainmenu', true);
 			
 			JToolbarHelper::title(JText::_('COM_TTLIVESCORE_MANAGER_LIVESCORE'), '');
