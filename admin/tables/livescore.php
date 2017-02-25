@@ -1,7 +1,7 @@
 <?php
 	defined('_JEXEC') or die;
 	
-	class TTLivescoreTablePlayer extends JTable
+	class TTLivescoreTableLivescore extends JTable
 	{
 		public function __construct(&$db)
 		{

@@ -34,7 +34,7 @@
 			JToolbarHelper::title(JText::_('COM_TTLIVESCORE_MANAGER_LIVESCORES'), '');
 			if ($canDo->get('core.edit'))
 			{
-				JToolbarHelper::editList('season.edit');
+				JToolbarHelper::editList('livescore.edit');
 			}
 			if ($canDo->get('core.admin'))
 			{
@@ -42,5 +42,10 @@
 			}
 			
 			JHtmlSidebar::setAction('index.php?option=com_ttlivescore&view=livescores');
+		}
+
+		protected function getSortFields()
+		{
+			return array();
 		}
 	}

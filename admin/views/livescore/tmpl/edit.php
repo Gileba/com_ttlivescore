@@ -1,6 +1,5 @@
 <?php
 	defined('_JEXEC') or die;
-
 ?>
 
 <form action="<?php echo JRoute::_('index.php?option=com_ttlivescore&layout=edit&id=' . (int) $this->item->id); ?>" method="post" name="adminForm" id="adminForm" class="form-validate">
@@ -9,6 +8,7 @@
 			<fieldset>
 				<?php echo JHtml::_('bootstrap.startPane', 'myTab', array('active' => 'details')); ?>
 				<?php echo JHtml::_('bootstrap.addPanel', 'myTab', 'details', empty($this->item->id) ? JText::_('COM_TTLIVESCORE_NEW_PLAYER', true) : JText::sprintf('COM_TTLIVESCORE_EDIT_PLAYER', $this->item->id, true)); ?>
+				<?php echo $this->form->renderField('id'); ?>
 				<?php echo JHtml::_('bootstrap.endPanel'); ?>
 				<input type="hidden" name="task" value="" />
 				<?php echo JHtml::_('form.token'); ?>

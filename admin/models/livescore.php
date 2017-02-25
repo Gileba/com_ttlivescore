@@ -5,7 +5,7 @@
 	{
 		protected $text_prefix = 'COM_TTLIVESCORE';
 		
-		public function getTable($type = 'Livesore', $prefix = 'TTLivescoreTable', $config = array())
+		public function getTable($type = 'Livescore', $prefix = 'TTLivescoreTable', $config = array())
 		{
 			return JTable::getInstance($type, $prefix, $config);
 		}
