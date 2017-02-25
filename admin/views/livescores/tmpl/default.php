@@ -34,11 +34,11 @@
 					<th width="2%" class="hidden-phone">
 						#
 					</th>
-					<th>
+					<th class="center">
 						<?php echo JText::_('COM_TTLIVESCORE_HEADING_HOME'); ?>
 					</th>
 					<th width="1%"></th>
-					<th>
+					<th class="center">
 						<?php echo JText::_('COM_TTLIVESCORE_HEADING_AWAY'); ?>
 					</th>
 				</tr>
@@ -62,7 +62,7 @@
 					<td class="center hidden-phone">
 						<?php echo $item->matchid; ?>
 					</td>
-					<td>
+					<td class="center">
 						<?php 
 							echo $item->homeplayerlastname . ', ' . $item->homeplayerfirstname; 
 							if ($this->escape($item->homeplayermiddlename) !== '')
@@ -70,9 +70,16 @@
 								echo ' (' . $this->escape($item->homeplayermiddlename) . ')'; 
 							}
 						?>
+						<br /><?php echo $item->homeset1; ?>
+						<br /><?php echo $item->homeset2; ?>
+						<br /><?php echo $item->homeset3; ?>
+						<br /><?php echo $item->homeset4; ?>
+						<br /><?php echo $item->homeset5; ?>
+						<br /><?php echo $item->homeset6; ?>
+						<br /><?php echo $item->homeset7; ?>
 					</td>
 					<td class="center">-</td>
-					<td>
+					<td class="center">
 						<?php
 							echo $item->awayplayerlastname . ', ' . $item->awayplayerfirstname;
 							if ($item->awayplayermiddlename !== '')
@@ -80,6 +87,13 @@
 								echo ' (' . $this->escape($item->awayplayermiddlename) . ')'; 
 							}
 						?>
+						<br /><?php echo $item->awayset1; ?>
+						<br /><?php echo $item->awayset2; ?>
+						<br /><?php echo $item->awayset3; ?>
+						<br /><?php echo $item->awayset4; ?>
+						<br /><?php echo $item->awayset5; ?>
+						<br /><?php echo $item->awayset6; ?>
+						<br /><?php echo $item->awayset7; ?>
 					</td>
 				</tr>
 				<?php endforeach; ?>
