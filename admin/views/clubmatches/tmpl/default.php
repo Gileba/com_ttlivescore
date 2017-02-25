@@ -116,7 +116,7 @@
 					<td class="nowrap has-context">
 						<?php if($item->livescorescreated == false) { ?>
 							<a href="<?php echo JROUTE::_('index.php?option=com_ttlivescore&task=clubmatches.creatematches&id=' . (int) $item->id); ?>">
-								<span class="btn btn-small">
+								<span class="btn btn-small btn-primary">
 									<span class="icon-tree-2"></span><?php echo JText::_('COM_TTLIVESCORE_BUTTON_CREATEMATCHES');?>
 								</span>
 							</a>
