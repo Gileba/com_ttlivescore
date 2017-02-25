@@ -75,8 +75,15 @@
 						<br /><?php echo $item->homeset3; ?>
 						<br /><?php echo $item->homeset4; ?>
 						<br /><?php echo $item->homeset5; ?>
-						<br /><?php echo $item->homeset6; ?>
-						<br /><?php echo $item->homeset7; ?>
+						<?php
+							if ($this->escape($item->numberofsets) == 7)
+							{
+						?>
+								<br /><?php echo $item->homeset6; ?>
+								<br /><?php echo $item->homeset7; ?>
+						<?php
+							}
+						?>
 					</td>
 					<td class="center">-</td>
 					<td class="center">
@@ -92,8 +99,15 @@
 						<br /><?php echo $item->awayset3; ?>
 						<br /><?php echo $item->awayset4; ?>
 						<br /><?php echo $item->awayset5; ?>
-						<br /><?php echo $item->awayset6; ?>
-						<br /><?php echo $item->awayset7; ?>
+						<?php
+							if ($this->escape($item->numberofsets) == 7)
+							{
+						?>
+								<br /><?php echo $item->awayset6; ?>
+								<br /><?php echo $item->awayset7; ?>
+						<?php
+							}
+						?>
 					</td>
 				</tr>
 				<?php endforeach; ?>
