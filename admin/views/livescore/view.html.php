@@ -5,11 +5,14 @@
 	{
 		protected $item;
 		protected $form;
+		protected $set;
 		
 		public function display($tpl = null)
 		{
 			$this->item	= $this->get('Item');
 			$this->form	= $this->get('Form');
+			$model  	= $this->getModel();
+			$this->set 	= $model->getCurrentSet($this->item->id);
 			
 			if (count($errors = $this->get('Errors')))
 			{
