@@ -33,7 +33,7 @@
 			return $data;
 		}
 
-		public function getCurrentSet($id)
+		protected function loadMatch($id)
 		{
 			$db	= $this->getDbo();
 			$query = $db->getQuery(true);
@@ -48,9 +48,14 @@
 			$db->setQuery($query);
 			$db->execute();
 			
-			$match = $db->loadobject();
-			$home = 0;
-			$away = 0;
+			return $db->loadobject();
+		}
+		
+		public function getCurrentSet($id)
+		{
+			$match	= $this->loadMatch($id);
+			$home 	= 0;
+			$away 	= 0;
 			
 			// The livescore is in the first set
 			if (($match->homeset1 < 11 && $match->awayset1 < 11) || (abs($match->homeset1 - $match->awayset1) < 2))
