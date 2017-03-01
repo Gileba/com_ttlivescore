@@ -25,6 +25,11 @@
 		{
 			$data = JFactory::getApplication()->getUserState('com_ttlivescore.edit.livescore.data', array());
 			
+			if (empty($data))
+			{
+				$data = $this->getItem();
+			}
+			
 			return $data;
 		}
 
