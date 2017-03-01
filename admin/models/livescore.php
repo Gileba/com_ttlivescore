@@ -53,7 +53,7 @@
 			return $db->loadobject();
 		}
 		
-		public function getCurrentSetBestOfFive($id)
+		public function getCurrentSetBestOfFive()
 		{
 			$home 	= 0;
 			$away 	= 0;
@@ -104,7 +104,7 @@
 			return 5;
 		}
 	
-		public function getCurrentSetBestOfSeven($id)
+		public function getCurrentSetBestOfSeven()
 		{
 			$home 	= 0;
 			$away 	= 0;
@@ -179,9 +179,9 @@
 			switch ($this->match->numberofsets)
 			{
 				case 7:
-					return $this->getCurrentSetBestOfSeven($id);
+					return $this->getCurrentSetBestOfSeven();
 				default:
-					return $this->getCurrentSetBestOfFive($id);
+					return $this->getCurrentSetBestOfFive();
 			}
 		}
 	}
