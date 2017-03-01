@@ -70,20 +70,6 @@
 								echo ' (' . $this->escape($item->homeplayermiddlename) . ')'; 
 							}
 						?>
-						<br /><?php echo $item->homeset1; ?>
-						<br /><?php echo $item->homeset2; ?>
-						<br /><?php echo $item->homeset3; ?>
-						<br /><?php echo $item->homeset4; ?>
-						<br /><?php echo $item->homeset5; ?>
-						<?php
-							if ($this->escape($item->numberofsets) == 7)
-							{
-						?>
-								<br /><?php echo $item->homeset6; ?>
-								<br /><?php echo $item->homeset7; ?>
-						<?php
-							}
-						?>
 					</td>
 					<td class="center">-</td>
 					<td class="center">
@@ -92,20 +78,6 @@
 							if ($item->awayplayermiddlename !== '')
 							{
 								echo ' (' . $this->escape($item->awayplayermiddlename) . ')'; 
-							}
-						?>
-						<br /><?php echo $item->awayset1; ?>
-						<br /><?php echo $item->awayset2; ?>
-						<br /><?php echo $item->awayset3; ?>
-						<br /><?php echo $item->awayset4; ?>
-						<br /><?php echo $item->awayset5; ?>
-						<?php
-							if ($this->escape($item->numberofsets) == 7)
-							{
-						?>
-								<br /><?php echo $item->awayset6; ?>
-								<br /><?php echo $item->awayset7; ?>
-						<?php
 							}
 						?>
 					</td>
