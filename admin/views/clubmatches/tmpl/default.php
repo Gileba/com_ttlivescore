@@ -122,12 +122,12 @@
 							</a>
 						<?php } ?>
 						<?php if($item->livescorescreated == true) { ?>
-<!--							<a href="<?php echo JROUTE::_('index.php?option=com_ttlivescore&task=clubmatches.creatematches&id=' . (int) $item->id); ?>">
--->								<span class="btn btn-small btn-info">
+							<a href="<?php echo JROUTE::_('index.php?option=com_ttlivescore&view=livescores'); ?>">
+								<span class="btn btn-small btn-info">
 									<span class="icon-broadcast"></span><?php echo JText::_('COM_TTLIVESCORE_BUTTON_LIVESCORE');?>
 								</span>
-<!--							</a>
--->						<?php } ?>
+							</a>
+						<?php } ?>
 					</td>
 				</tr>
 				<?php endforeach; ?>
