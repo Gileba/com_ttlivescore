@@ -1,5 +1,7 @@
 <?php
 	defined('_JEXEC') or die;
+	
+	$model = $this->getModel();
 ?>
 
 <form action="<?php echo JRoute::_('index.php?option=com_ttlivescore&layout=edit&id=' . (int) $this->item->id); ?>" method="post" name="adminForm" id="adminForm" class="form-validate">
@@ -10,8 +12,9 @@
 				<?php echo JHtml::_('bootstrap.addPanel', 'myTab', 'details', JText::sprintf('COM_TTLIVESCORE_EDIT_LIVESCORE', $this->item->id, true)); ?>
 				<div class="span6 form-horizontal pull-right center">
 					<?php
+						echo $model->getPlayername($this->form->getValue('awayplayerid'));
 						if ($this->set >= 1) {
-							echo $this->form->getValue('awaypointsset1');
+							echo '<br />' . $this->form->getValue('awaypointsset1');
 						}
 						if ($this->set >= 2) {
 							echo '<br />' . $this->form->getValue('awaypointsset2');
@@ -35,8 +38,9 @@
 				</div>
 				<div class="span6 form-horizontal center">
 					<?php
+						echo $model->getPlayername($this->form->getValue('homeplayerid'));
 						if ($this->set >= 1) {
-							echo $this->form->getValue('homepointsset1');
+							echo '<br />' . $this->form->getValue('homepointsset1');
 						}
 						if ($this->set >= 2) {
 							echo '<br />' . $this->form->getValue('homepointsset2');

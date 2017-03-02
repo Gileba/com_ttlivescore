@@ -2,6 +2,7 @@
 <form>
 	<fieldset>
 		<field name="id" type="text" default="0" label="JGLOBAL_FIELD_ID_LABEL" readonly="true" class="readonly" description="JGLOBAL_FIELD_ID_DESC" />
+		<field name="homeplayerid" type="text" default="0" label="" readonly="true" class="readonly" description=" " />
 		<field name="homepointsset1" type="text" default="0" label="" readonly="true" class="readonly" description=" " />
 		<field name="homepointsset2" type="text" default="0" label="" readonly="true" class="readonly" description=" " />
 		<field name="homepointsset3" type="text" default="0" label="" readonly="true" class="readonly" description=" " />
@@ -9,6 +10,7 @@
 		<field name="homepointsset5" type="text" default="0" label="" readonly="true" class="readonly" description=" " />
 		<field name="homepointsset6" type="text" default="0" label="" readonly="true" class="readonly" description=" " />
 		<field name="homepointsset7" type="text" default="0" label="" readonly="true" class="readonly" description=" " />
+		<field name="awayplayerid" type="text" default="0" label="" readonly="true" class="readonly" description=" " />
 		<field name="awaypointsset1" type="text" default="0" label="" readonly="true" class="readonly" description=" " />
 		<field name="awaypointsset2" type="text" default="0" label="" readonly="true" class="readonly" description=" " />
 		<field name="awaypointsset3" type="text" default="0" label="" readonly="true" class="readonly" description=" " />
