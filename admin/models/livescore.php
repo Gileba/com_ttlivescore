@@ -70,7 +70,7 @@
 				
 				$homesets[$i] > $awaysets[$i] ? $home++ : $away++;
 				
-				if ($home > ($this->match-numberofsets / 2) || $away > ($this->match-numberofsets / 2)) {
+				if ($home > ($this->match->numberofsets / 2) || $away > ($this->match->numberofsets / 2)) {
 					return $i + 1;
 				}
 			}
