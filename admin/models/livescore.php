@@ -53,135 +53,32 @@
 			return $db->loadobject();
 		}
 		
-		public function getCurrentSetBestOfFive()
-		{
-			$home 	= 0;
-			$away 	= 0;
-			
-			// The livescore is in the first set
-			if (($this->match->homeset1 < 11 && $this->match->awayset1 < 11) || (abs($this->match->homeset1 - $this->match->awayset1) < 2))
-			{
-				return 1;
-			}
-			
-			// If the first set has finished, appoint set winner
-			$this->match->homeset1 > $this->match->awayset1 ? $home++ : $away++;
-
-			// The livescore is in the second set
-			if (($this->match->homeset2 < 11 && $this->match->awayset2 < 11) || (abs($this->match->homeset1 - $this->match->awayset2) < 2))
-			{
-				return 2;
-			}
-			
-			// If the second set has finished, appoint set winner
-			$this->match->homeset2 > $this->match->awayset2 ? $home++ : $away++;
-
-			// The livescore is in the third set
-			if (($this->match->homeset3 < 11 && $this->match->awayset3 < 11) || (abs($this->match->homeset3 - $this->match->awayset3) < 2))
-			{
-				return 3;
-			}
-			
-			// If the third set has finished, appoint set winner
-			$this->match->homeset3 > $this->match->awayset3 ? $home++ : $away++;
-			
-			// If one of the players has won three sets, the match has ended
-			if ($home == 3 || $away == 3) { return 3; }
-
-			// The livescore is in the fourth set
-			if (($this->match->homeset4 < 11 && $this->match->awayset4 < 11) || (abs($this->match->homeset4 - $this->match->awayset4) < 2))
-			{
-				return 4;
-			}
-			
-			// If the fourth set has finished, appoint set winner
-			$this->match->homeset4 > $this->match->awayset4 ? $home++ : $away++;
-
-			// If one of the players has won three sets, the match has ended
-			if ($home == 3 || $away == 3) { return 4; }
-			
-			// We are in the fifth and final set
-			return 5;
-		}
-	
-		public function getCurrentSetBestOfSeven()
-		{
-			$home 	= 0;
-			$away 	= 0;
-		
-			// The livescore is in the first set
-			if (($this->match->homeset1 < 11 && $this->match->awayset1 < 11) || (abs($this->match->homeset1 - $this->match->awayset1) < 2))
-			{
-				return 1;
-			}
-			// If the first set has finished, appoint set winner
-			$this->match->homeset1 > $this->match->awayset1 ? $home++ : $away++;
-
-			// The livescore is in the second set
-			if (($this->match->homeset2 < 11 && $this->match->awayset2 < 11) || (abs($this->match->homeset1 - $this->match->awayset2) < 2))
-			{
-				return 2;
-			}
-			// If the second set has finished, appoint set winner
-			$this->match->homeset2 > $this->match->awayset2 ? $home++ : $away++;
-
-			// The livescore is in the third set
-			if (($this->match->homeset3 < 11 && $this->match->awayset3 < 11) || (abs($this->match->homeset3 - $this->match->awayset3) < 2))
-			{
-				return 3;
-			}
-			// If the third set has finished, appoint set winner
-			$this->match->homeset3 > $this->match->awayset3 ? $home++ : $away++;
-			
-			// The livescore is in the fourth set
-			if (($this->match->homeset4 < 11 && $this->match->awayset4 < 11) || (abs($this->match->homeset4 - $this->match->awayset4) < 2))
-			{
-				return 4;
-			}
-			// If the fourth set has finished, appoint set winner
-			$this->match->homeset4 > $this->match->awayset4 ? $home++ : $away++;
-
-			// If the match is a best-of-seven and one of the players has won four sets, the match has ended
-			if ($home == 4 || $away == 4) { return 4; }
-
-			// The livescore is in the fifth set
-			if (($this->match->homeset5 < 11 && $this->match->awayset5 < 11) || (abs($this->match->homeset5 - $this->match->awayset5) < 2))
-			{
-				return 5;
-			}
-			
-			// If the fifth set has finished, appoint set winner
-			$this->match->homeset5 > $this->match->awayset5 ? $home++ : $away++;
-
-			// If the match is a best-of-seven and one of the players has won four sets, the match has ended
-			if ($home == 4 || $away == 4) { return 5; }
-
-			// The livescore is in the sixth set
-			if (($this->match->homeset6 < 11 && $this->match->awayset6 < 11) || (abs($this->match->homeset6 - $this->match->awayset6) < 2))
-			{
-				return 6;
-			}
-			
-			// If the sixth set has finished, appoint set winner
-			$this->match->homeset6 > $this->match->awayset6 ? $home++ : $away++;
-
-			// If the match is a best-of-seven and one of the players has won four sets, the match has ended
-			if ($home == 4 || $away == 4) { return 6; }
-
-			// We are in the seventh and final set of a best-of-seven
-			return 7;
-		}
-	
 		public function getCurrentSet($id)
 		{
-			$this->match = $this->getMatch($id);
+			$this->match 	= $this->getMatch($id);
+			$home 			= 0;
+			$away 			= 0;
+			$homesets 		= array($this->match->homeset1, $this->match->homeset2, $this->match->homeset3, $this->match->homeset4, $this->match->homeset5, $this->match->homeset6, $this->match->homeset7);
+			$awaysets 		= array ($this->match->awayset1, $this->match->awayset2, $this->match->awayset3, $this->match->awayset4, $this->match->awayset5, $this->match->awayset6, $this->match->awayset7);
 			
-			switch ($this->match->numberofsets)
+			for ($i = 0; $i < $this->match->numberofsets; $i++)
 			{
-				case 7:
-					return $this->getCurrentSetBestOfSeven();
-				default:
-					return $this->getCurrentSetBestOfFive();
+				if (($homesets[$i] < 11 && $awaysets[$i] < 11) || ((abs($homesets[$i] - $awaysets[$i]) < 2)))
+				{
+					return $i + 1;
+				}
+				
+				$homesets[$i] > $awaysets[$i] ? $home++ : $away++;
+				
+				if ($this->match->numberofsets == 5 && ($home == 3 || $away == 3)) {
+					return $i + 1;
+				}
+				
+				if ($this->match->numberofsets == 7 && ($home == 4 || $away == 4)) {
+					return $i + 1;
+				}
 			}
+			
+			return $i + 1;
 		}
 	}
