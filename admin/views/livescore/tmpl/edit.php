@@ -18,7 +18,20 @@
 						{
 							echo '<br />';
 							$points = 'awaypointsset' . $i;
-							if ($this->form->getValue($points) > 0)
+							if (
+								($this->form->getValue($points) > 0) && 
+								(
+									($this->set == $i) && 
+									(
+										($this->form->getValue($points) < 11) && 
+										($this->form->getValue('homepointsset' . $i) < 11)
+									) || 
+									(
+										(abs($this->form->getValue($points) - $this->form->getValue('homepointsset' . $i)) < 2)
+									)
+								) || 
+								($this->form->getValue($points) > $this->form->getValue('homepointsset' . $i))
+							)
 							{
 ?>
 								<button 
@@ -29,7 +42,19 @@
 <?php
 							} 					
 							echo $this->form->getValue($points);
-							if ($this->set == $i) {
+							if (
+								($this->set == $i) && 
+								(
+									(
+										($this->form->getValue($points) < 11) && 
+										($this->form->getValue('homepointsset' . $i) < 11)
+									) || 
+									(
+										(abs($this->form->getValue($points) - $this->form->getValue('homepointsset' . $i)) < 2)
+									)
+								)
+							)
+							{
 ?>
 								<button 
 									onclick="document.getElementById('<?php echo 'jform_' . $points; ?>').value++; Joomla.submitbutton('livescore.apply');" 
@@ -49,7 +74,20 @@
 						{
 							echo '<br />';
 							$points = 'homepointsset' . $i;
-							if ($this->form->getValue($points) > 0)
+							if (
+								($this->form->getValue($points) > 0) && 
+								(
+									($this->set == $i) && 
+									(
+										($this->form->getValue($points) < 11) && 
+										($this->form->getValue('awaypointsset' . $i) < 11)
+									) || 
+									(
+										(abs($this->form->getValue($points) - $this->form->getValue('awaypointsset' . $i)) < 2)
+									)
+								) || 
+								($this->form->getValue($points) > $this->form->getValue('awaypointsset' . $i))
+							)
 							{
 ?>
 								<button 
@@ -60,7 +98,19 @@
 <?php
 							} 					
 							echo $this->form->getValue($points);
-							if ($this->set == $i) {
+							if (
+								($this->set == $i) && 
+								(
+									(
+										($this->form->getValue($points) < 11) && 
+										($this->form->getValue('awaypointsset' . $i) < 11)
+									) || 
+									(
+										(abs($this->form->getValue($points) - $this->form->getValue('awaypointsset' . $i)) < 2)
+									)
+								)
+							)
+							{
 ?>
 								<button 
 									onclick="document.getElementById('<?php echo 'jform_' . $points; ?>').value++; Joomla.submitbutton('livescore.apply');" 
