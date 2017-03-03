@@ -4,7 +4,7 @@
 	$model = $this->getModel();
 ?>
 
-<form action="<?php echo JRoute::_('index.php?option=com_ttlivescore&layout=edit&id=' . (int) $this->item->id); ?>" method="post" name="adminForm" id="adminForm" class="form-validate">
+<form action="<?php echo JRoute::_('index.php?option=com_ttlivescore&view=livescore&layout=edit&id=' . (int) $this->item->id); ?>" method="post" name="adminForm" id="adminForm" class="form-validate">
 	<div class="row-fluid">
 		<div class="span10 form-horizontal">
 			<fieldset>
@@ -13,52 +13,63 @@
 				<div class="span6 form-horizontal pull-right center">
 					<?php
 						echo $model->getPlayername($this->form->getValue('awayplayerid'));
-						if ($this->set >= 1) {
-							echo '<br />' . $this->form->getValue('awaypointsset1');
+						
+						for ($i = 1; $i <= $this->set; $i++)
+						{
+							echo '<br />';
+							$points = 'awaypointsset' . $i;
+							if ($this->form->getValue($points) > 0)
+							{
+?>
+								<button 
+									onclick="document.getElementById('<?php echo 'jform_' . $points; ?>').value--; Joomla.submitbutton('livescore.apply');" 
+									class="btn btn-mini btn-danger">
+										<span class="icon-minus-2 icon-white"></span>
+								</button>
+<?php
+							} 					
+							echo $this->form->getValue($points);
+							if ($this->set == $i) {
+?>
+								<button 
+									onclick="document.getElementById('<?php echo 'jform_' . $points; ?>').value++; Joomla.submitbutton('livescore.apply');" 
+									class="btn btn-mini btn-success">
+										<span class="icon-plus-2 icon-white"></span>
+								</button>
+<?php
+							}
+							echo $this->form->renderField($points);
 						}
-						if ($this->set >= 2) {
-							echo '<br />' . $this->form->getValue('awaypointsset2');
-						}
-						if ($this->set >= 3) {
-							echo '<br />' . $this->form->getValue('awaypointsset3');
-						}
-						if ($this->set >= 4) {
-							echo '<br />' . $this->form->getValue('awaypointsset4');
-						}
-						if ($this->set >= 5) {
-							echo '<br />' . $this->form->getValue('awaypointsset5');
-						}
-						if ($this->set >= 6) {
-							echo '<br />' . $this->form->getValue('awaypointsset6');
-						}
-						if ($this->set == 7) {
-							echo '<br />' . $this->form->getValue('awaypointsset7');
-						}
-					?>
+?>
 				</div>
 				<div class="span6 form-horizontal center">
-					<?php
+<?php
 						echo $model->getPlayername($this->form->getValue('homeplayerid'));
-						if ($this->set >= 1) {
-							echo '<br />' . $this->form->getValue('homepointsset1');
-						}
-						if ($this->set >= 2) {
-							echo '<br />' . $this->form->getValue('homepointsset2');
-						}
-						if ($this->set >= 3) {
-							echo '<br />' . $this->form->getValue('homepointsset3');
-						}
-						if ($this->set >= 4) {
-							echo '<br />' . $this->form->getValue('homepointsset4');
-						}
-						if ($this->set >= 5) {
-							echo '<br />' . $this->form->getValue('homepointsset5');
-						}
-						if ($this->set >= 6) {
-							echo '<br />' . $this->form->getValue('homepointsset6');
-						}
-						if ($this->set == 7) {
-							echo '<br />' . $this->form->getValue('homepointsset7');
+						for ($i = 1; $i <= $this->set; $i++)
+						{
+							echo '<br />';
+							$points = 'homepointsset' . $i;
+							if ($this->form->getValue($points) > 0)
+							{
+?>
+								<button 
+									onclick="document.getElementById('<?php echo 'jform_' . $points; ?>').value--; Joomla.submitbutton('livescore.apply');" 
+									class="btn btn-mini btn-danger">
+										<span class="icon-minus-2 icon-white"></span>
+								</button>
+<?php
+							} 					
+							echo $this->form->getValue($points);
+							if ($this->set == $i) {
+?>
+								<button 
+									onclick="document.getElementById('<?php echo 'jform_' . $points; ?>').value++; Joomla.submitbutton('livescore.apply');" 
+									class="btn btn-mini btn-success">
+										<span class="icon-plus-2 icon-white"></span>
+								</button>
+<?php
+							}
+							echo $this->form->renderField($points);
 						}
 					?>
 				</div>

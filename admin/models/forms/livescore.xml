@@ -2,21 +2,21 @@
 <form>
 	<fieldset>
 		<field name="id" type="text" default="0" label="JGLOBAL_FIELD_ID_LABEL" readonly="true" class="readonly" description="JGLOBAL_FIELD_ID_DESC" />
-		<field name="homeplayerid" type="text" default="0" label="" readonly="true" class="readonly" description=" " />
-		<field name="homepointsset1" type="text" default="0" label="" readonly="true" class="readonly" description=" " />
-		<field name="homepointsset2" type="text" default="0" label="" readonly="true" class="readonly" description=" " />
-		<field name="homepointsset3" type="text" default="0" label="" readonly="true" class="readonly" description=" " />
-		<field name="homepointsset4" type="text" default="0" label="" readonly="true" class="readonly" description=" " />
-		<field name="homepointsset5" type="text" default="0" label="" readonly="true" class="readonly" description=" " />
-		<field name="homepointsset6" type="text" default="0" label="" readonly="true" class="readonly" description=" " />
-		<field name="homepointsset7" type="text" default="0" label="" readonly="true" class="readonly" description=" " />
-		<field name="awayplayerid" type="text" default="0" label="" readonly="true" class="readonly" description=" " />
-		<field name="awaypointsset1" type="text" default="0" label="" readonly="true" class="readonly" description=" " />
-		<field name="awaypointsset2" type="text" default="0" label="" readonly="true" class="readonly" description=" " />
-		<field name="awaypointsset3" type="text" default="0" label="" readonly="true" class="readonly" description=" " />
-		<field name="awaypointsset4" type="text" default="0" label="" readonly="true" class="readonly" description=" " />
-		<field name="awaypointsset5" type="text" default="0" label="" readonly="true" class="readonly" description=" " />
-		<field name="awaypointsset6" type="text" default="0" label="" readonly="true" class="readonly" description=" " />
-		<field name="awaypointsset7" type="text" default="0" label="" readonly="true" class="readonly" description=" " />
+		<field name="homeplayerid" type="hidden" default="0" label="" description=" " />
+		<field name="homepointsset1" type="hidden" default="0" label="" description=" " />
+		<field name="homepointsset2" type="hidden" default="0" label="" description=" " />
+		<field name="homepointsset3" type="hidden" default="0" label="" description=" " />
+		<field name="homepointsset4" type="hidden" default="0" label="" description=" " />
+		<field name="homepointsset5" type="hidden" default="0" label="" description=" " />
+		<field name="homepointsset6" type="hidden" default="0" label="" description=" " />
+		<field name="homepointsset7" type="hidden" default="0" label="" description=" " />
+		<field name="awayplayerid" type="hidden" default="0" label="" description=" " />
+		<field name="awaypointsset1" type="hidden" default="0" label="" description=" " />
+		<field name="awaypointsset2" type="hidden" default="0" label="" description=" " />
+		<field name="awaypointsset3" type="hidden" default="0" label="" description=" " />
+		<field name="awaypointsset4" type="hidden" default="0" label="" description=" " />
+		<field name="awaypointsset5" type="hidden" default="0" label="" description=" " />
+		<field name="awaypointsset6" type="hidden" default="0" label="" description=" " />
+		<field name="awaypointsset7" type="hidden" default="0" label="" description=" " />
 	</fieldset>
 </form>
