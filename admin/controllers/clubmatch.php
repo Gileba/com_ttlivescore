@@ -19,4 +19,11 @@
 			$this->redirect();
 		}
 		
+		public function livescore()
+		{
+			// Redirect to the club match form.
+			$this->setRedirect(JRoute::_('index.php?option=com_ttlivescore&view=livescores', false));
+			$this->redirect();
+		}
+		
 	}
