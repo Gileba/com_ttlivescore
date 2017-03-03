@@ -90,6 +90,19 @@
 				
 				$i++;
 			} while ($i < $matchdefinition->matches);
+			
+			// Set value of created in table clubmatches to true
+			$query = $db->getQuery(true);
+
+			$id = $db->quote($id);
+
+			$query
+				->update($db->quoteName('#__ttlivescore_clubmatches', 'a'))
+				->set(array($db->quoteName('a.livescorescreated') . ' = 1'))
+				->where('a.id = ' . $id);
+	
+			$db->setQuery($query);
+			$db->execute();
 
 			return true;
 		}
@@ -107,7 +120,8 @@
 			$query
 				->select($db->quoteName(array('a.id', 'a.name', 'a.matchorderhome', 'a.matchorderaway', 'a.matches')))
 				->from($db->quoteName('#__ttlivescore_matchdefinitions', 'a'))
-				->where('a.id = ' . $id);
+				->join('INNER', $db->quoteName('#__ttlivescore_clubmatches', 'cm') . ' ON (' . $db->quoteName('cm.mdid') . ' = ' . $db->quoteName('a.id') . ')')
+				->where('cm.mdid = ' . $id);
 
  
 			// Set the query using our newly populated query object and execute it.
