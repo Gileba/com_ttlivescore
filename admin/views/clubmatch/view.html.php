@@ -39,6 +39,14 @@
 
 			JToolbarHelper::cancel('clubmatch.cancel', 'JTOOLBAR_CLOSE');
 			
-			JToolbarHelper::custom('clubmatch.creatematches', 'tree-2', '', 'Create Matches', false);
+			if($this->item->livescorescreated == false)
+			{
+				JToolbarHelper::custom('clubmatch.creatematches', 'tree-2', '', JText::_('COM_TTLIVESCORE_BUTTON_CREATEMATCHES'), false);
+			}
+
+			if($this->item->livescorescreated == true)
+			{
+				JToolbarHelper::custom('clubmatch.livescore', 'broadcast', '', JText::_('COM_TTLIVESCORE_BUTTON_LIVESCORE'), false);
+			}
 		}
 	}

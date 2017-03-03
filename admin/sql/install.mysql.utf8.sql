@@ -91,6 +91,7 @@ CREATE TABLE IF NOT EXISTS `#__ttlivescore_clubmatches` (
 	`awayplayers` varchar(255) NOT NULL DEFAULT '',
 	`homereserves` varchar(255) NOT NULL DEFAULT '',
 	`awayreserves` varchar(255) NOT NULL DEFAULT '',
+	`livescorescreated` bool NOT NULL DEFAULT false,
 	PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 CREATE TABLE IF NOT EXISTS `#__ttlivescore_livescores` (
