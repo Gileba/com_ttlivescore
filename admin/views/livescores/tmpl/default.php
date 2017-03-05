@@ -34,11 +34,11 @@
 					<th width="2%" class="hidden-phone">
 						#
 					</th>
-					<th class="center">
+					<th>
 						<?php echo JText::_('COM_TTLIVESCORE_HEADING_HOME'); ?>
 					</th>
 					<th width="1%"></th>
-					<th class="center">
+					<th>
 						<?php echo JText::_('COM_TTLIVESCORE_HEADING_AWAY'); ?>
 					</th>
 				</tr>
@@ -62,7 +62,7 @@
 					<td class="center hidden-phone">
 						<?php echo $item->matchid; ?>
 					</td>
-					<td class="center">
+					<td>
 						<?php 
 							echo $item->homeplayerlastname . ', ' . $item->homeplayerfirstname; 
 							if ($this->escape($item->homeplayermiddlename) !== '')
@@ -72,7 +72,7 @@
 						?>
 					</td>
 					<td class="center">-</td>
-					<td class="center">
+					<td>
 						<?php
 							echo $item->awayplayerlastname . ', ' . $item->awayplayerfirstname;
 							if ($item->awayplayermiddlename !== '')
