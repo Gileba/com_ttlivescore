@@ -7,9 +7,19 @@
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
 	<authorEmail>info@gileba.be</authorEmail>
 	<authorUrl>http://www.gileba.be</authorUrl>
-	<version>0.6.0-alpha.1</version>
+	<version>0.6.0-alpha.2</version>
 	<description>COM_TTLIVESCORE_XML_DESCRIPTION</description>
 
+	<files folder="site">
+		<filename>index.html</filename>
+		<filename>ttlivescore.php</filename>
+		<filename>controller.php</filename>
+		<folder>controllers</folder>
+		<folder>language</folder>
+		<folder>models</folder>
+		<folder>views</folder>
+	</files>
+		
 	<administration>
 		<menu>COM_TTLIVESCORE_MENU</menu>
 		<submenu>
@@ -19,16 +29,6 @@
 			<menu link="option=com_ttlivescore&amp;view=seasons" alt="TTLivescore/Seasons">COM_TTLIVESCORE_SUBMENU_SEASONS</menu>
 			<menu link="option=com_ttlivescore&amp;view=seasondetails" alt="TTLivescore/Seasondetails">COM_TTLIVESCORE_SUBMENU_SEASONDETAILS</menu>
 		</submenu>
-		
-		<files folder="site">
-			<filename>index.html</filename>
-			<filename>ttlivescore.php</filename>
-			<filename>controller.php</filename>
-			<folder>controllers</folder>
-			<folder>language</folder>
-			<folder>models</folder>
-			<folder>views</folder>
-		</files>
 		
 		<files folder="admin">
 			<filename>index.html</filename>
