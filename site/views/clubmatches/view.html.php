@@ -12,7 +12,7 @@
 			if (count($errors = $this->get('Errors')))
 			{
 				JError::raiseErorr(500, implode("\n", $errors));
-				return false
+				return false;
 			}
 			parent::display($tpl);
 		}

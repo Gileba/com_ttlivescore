@@ -1,5 +1,5 @@
 <?php
-	defined(_'JEXEC') or die;
+	defined('_JEXEC') or die;
 ?>
 
 <div class="clubmatches">

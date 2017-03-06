@@ -16,7 +16,7 @@
 				);
 			}
 			
-			parent::_construct($config);
+			parent::__construct($config);
 		}
 		
 		protected function getListQuery()
