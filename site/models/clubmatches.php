@@ -29,8 +29,7 @@
 				->from($db->quoteName('#__ttlivescore_clubmatches', 'a'))
 				->join('INNER', $db->quoteName('#__ttlivescore_clubs', 'hc') . ' ON (' . $db->quoteName('a.homeclub') . ' = ' . $db->quoteName('hc.id') . ')')
 				->join('INNER', $db->quoteName('#__ttlivescore_clubs', 'ac') . ' ON (' . $db->quoteName('a.awayclub') . ' = ' . $db->quoteName('ac.id') . ')')
-				->join('INNER', $db->quoteName('#__ttlivescore_seasons', 's') . ' ON (' . $db->quoteName('a.sid') . ' = ' . $db->quoteName('s.id') . ')')
-				->order($orderCol . ' ' . $orderDirn);
+				->join('INNER', $db->quoteName('#__ttlivescore_seasons', 's') . ' ON (' . $db->quoteName('a.sid') . ' = ' . $db->quoteName('s.id') . ')');
 			
 			return $query;
 		}
