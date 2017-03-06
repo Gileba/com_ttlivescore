@@ -9,8 +9,8 @@
 	$saveOrder 	= $listOrder == 'a.ordering';
 	if ($saveOrder)
 	{
-		$saveOrderingUrl = 'index.php?option=com_ttlivescore&task=countries.saveOrderAjax&tmpl=component';
-		JHtml::_('sortablelist.sortable', 'countryList', 'adminForm', strtolower($listDirn), $saveOrderingUrl);
+		$saveOrderingUrl = 'index.php?option=com_ttlivescore&task=seasons.saveOrderAjax&tmpl=component';
+		JHtml::_('sortablelist.sortable', 'seasonList', 'adminForm', strtolower($listDirn), $saveOrderingUrl);
 	}
 	$sortFields = $this->getSortFields();
 ?>
@@ -27,7 +27,7 @@
 	}
 </script>
 
-<form action="<?php echo JRoute::_('index.php?option=com_ttlivescore&view=countries'); ?>" method="post" name="adminForm" id="adminForm">
+<form action="<?php echo JRoute::_('index.php?option=com_ttlivescore&view=seasons'); ?>" method="post" name="adminForm" id="adminForm">
 	<?php if(!empty($this->sidebar)) : ?>
 	<div id="j-sidebar-container" class="span2">
 		<?php echo $this->sidebar; ?>

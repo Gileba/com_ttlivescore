@@ -1,0 +1,1 @@
+# Dummy SQL-file for the 0.5.0 update

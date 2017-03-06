@@ -29,8 +29,13 @@
 			return $result;
 		}
 		
-		public static function addSubmenu($vname = 'players')
+		public static function addSubmenu($vname = 'clubmatches')
 		{
+			JHtmlSidebar::addEntry(
+				JText::_('COM_TTLIVESCORE_SUBMENU_CLUBMATCHES'),
+				'index.php?option=com_ttlivescore&view=clubmatches',
+				$vname === 'clubmatches'
+			);
 			JHtmlSidebar::addEntry(
 				JText::_('COM_TTLIVESCORE_SUBMENU_PLAYERS'),
 				'index.php?option=com_ttlivescore&view=players',
@@ -50,6 +55,11 @@
 				JText::_('COM_TTLIVESCORE_SUBMENU_SEASONDETAILS'),
 				'index.php?option=com_ttlivescore&view=seasondetails',
 				$vname === 'seasondetails'
+			);
+			JHtmlSidebar::addEntry(
+				JText::_('COM_TTLIVESCORE_SUBMENU_MATCHDEFINITIONS'),
+				'index.php?option=com_ttlivescore&view=matchdefinitions',
+				$vname === 'matchdefinitions'
 			);
 			JHtmlSidebar::addEntry(
 				JText::_('COM_TTLIVESCORE_SUBMENU_COUNTRIES'),

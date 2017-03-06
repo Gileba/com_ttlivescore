@@ -8,6 +8,7 @@
 	//Get country options
 	JFormHelper::addFieldPath(JPATH_COMPONENT . '/models/fields');
 	$seasons = JFormHelper::loadFieldType('seasons', false);
+	$clubs = JFormHelper::loadFieldType('clubs', false);
 ?>
 
 <script type="text/javascript">
@@ -32,7 +33,6 @@
 	<div id="j-main-container">
 	<?php endif; ?>
 	<div id="filter-bar" class="btn-toolbar">
-<!-- TODO: Search in name
 		<div class="filter-search btn-group pull-left">
 			<label for="filter_search" class="element-invisible"><?php echo JText::_('COM_TTLIVESCORE_SEARCH_IN_NAME');?></label>
 			<input 
@@ -48,7 +48,6 @@
 			<button class="btn hasTooltip" type="submit" title="<?php echo JText::_('JSEARCH_FILTER_SUBMIT'); ?> "><i class="icon-search"></i></button>
 			<button class="btn hasTooltip" type="button" title="<?php echo JText::_('JSEARCH_FILTER_CLEAR'); ?>" onclick="document.getElementById('filter_search').value=''; this.form.submit();"> <i class="icon-remove"> </i></button>
 		</div>
--->
 		<div class="btn-group pull-right hidden-phone">
 			<label for="limit" class="element-invisible">
 				<?php echo JText::_('JFIELD_PLG_SEARCH_SEARCHLIMIT_DESC'); ?>
@@ -79,16 +78,16 @@
 						<input type="checkbox" name="checkall-toggle" value="" title="<?php echo JText::_('JGLOBAL_CHECK_ALL'); ?>" onclick="Joomla.checkAll(this)" />
 					</th>
 					<th>
-						<?php echo JHtml::_('grid.sort', 'COM_TTLIVESCORE_HEADING_NAME', 'a.player', $listDirn, $listOrder); ?>
+						<?php echo JHtml::_('grid.sort', 'COM_TTLIVESCORE_HEADING_NAME', 'p.lastname', $listDirn, $listOrder); ?>
 					</th>
 					<th>
-						<?php echo JHtml::_('grid.sort', 'COM_TTLIVESCORE_HEADING_CLUB', 'a.club', $listDirn, $listOrder); ?>
+						<?php echo JHtml::_('grid.sort', 'COM_TTLIVESCORE_HEADING_CLUB', 'c.name', $listDirn, $listOrder); ?>
 					</th>
 					<th>
-						<?php echo JHtml::_('grid.sort', 'COM_TTLIVESCORE_HEADING_SEASON', 'a.season', $listDirn, $listOrder); ?>
+						<?php echo JHtml::_('grid.sort', 'COM_TTLIVESCORE_HEADING_SEASON', 's.name', $listDirn, $listOrder); ?>
 					</th>
 					<th>
-						<?php echo JHtml::_('grid.sort', 'COM_TTLIVESCORE_HEADING_LOCALRANKING', 'a.localranking', $listDirn, $listOrder); ?>
+						<?php echo JText::_('COM_TTLIVESCORE_HEADING_LOCALRANKING'); ?>
 					</th>
 				</tr>
 			</thead>
@@ -123,7 +122,10 @@
 						<?php echo $this->escape($item->season); ?>
 					</td>
 					<td class="nowrap has-context">
-						<?php echo $this->escape($item->localranking); ?>
+						<?php 
+							if (!($item->prefix === '')) echo $this->escape($item->prefix) . '-'; 
+							echo $this->escape($item->localranking);
+						?>
 					</td>
 				</tr>
 				<?php endforeach; ?>

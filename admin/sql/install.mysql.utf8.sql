@@ -30,10 +30,20 @@ CREATE TABLE IF NOT EXISTS `#__ttlivescore_countries` (
 	`ioc_code` char(3) NOT NULL DEFAULT '',
 	`publish_up` datetime NOT NULL default '0000-00-00 00:00:00',
 	`publish_down` datetime NOT NULL default '0000-00-00 00:00:00',
+	`rankingprefix`char(10) NOT NULL DEFAULT '',
 	PRIMARY KEY (`id`), UNIQUE (`ioc_code`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 INSERT INTO `#__ttlivescore_countries` (name,ioc_code) VALUES ('COM_TTLIVESCORE_COUNTRY_BELGIUM', 'BEL');
+INSERT INTO `#__ttlivescore_countries` (name,ioc_code) VALUES ('COM_TTLIVESCORE_COUNTRY_BOSNIAANDHERZEGOVINA', 'BIH');
+INSERT INTO `#__ttlivescore_countries` (name,ioc_code) VALUES ('COM_TTLIVESCORE_COUNTRY_CHINA', 'CHN');
+INSERT INTO `#__ttlivescore_countries` (name,ioc_code) VALUES ('COM_TTLIVESCORE_COUNTRY_CROATIA', 'CRO');
+INSERT INTO `#__ttlivescore_countries` (name,ioc_code) VALUES ('COM_TTLIVESCORE_COUNTRY_ENGLAND', 'ENG');
+INSERT INTO `#__ttlivescore_countries` (name,ioc_code) VALUES ('COM_TTLIVESCORE_COUNTRY_FRANCE', 'FRA');
+INSERT INTO `#__ttlivescore_countries` (name,ioc_code) VALUES ('COM_TTLIVESCORE_COUNTRY_ITALY', 'ITA');
+INSERT INTO `#__ttlivescore_countries` (name,ioc_code) VALUES ('COM_TTLIVESCORE_COUNTRY_LITUANIA', 'LTU');
+INSERT INTO `#__ttlivescore_countries` (name,ioc_code) VALUES ('COM_TTLIVESCORE_COUNTRY_NIGERIA', 'NGR');
 INSERT INTO `#__ttlivescore_countries` (name,ioc_code) VALUES ('COM_TTLIVESCORE_COUNTRY_THENETHERLANDS', 'NED');
+INSERT INTO `#__ttlivescore_countries` (name,ioc_code) VALUES ('COM_TTLIVESCORE_COUNTRY_WALES', 'WAL');
 CREATE TABLE IF NOT EXISTS `#__ttlivescore_seasons` (
 	`id` int(10) unsigned NOT NULL AUTO_INCREMENT, 
 	`name` varchar(250) NOT NULL DEFAULT '',
@@ -53,4 +63,58 @@ CREATE TABLE IF NOT EXISTS `#__ttlivescore_seasondetails` (
 	`club` int(10) NOT NULL DEFAULT '0',
 	`localranking` char(10) NOT NULL DEFAULT '1',
 	PRIMARY KEY (`id`), CONSTRAINT `SeasonPlayer` UNIQUE (`season`, `player`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+CREATE TABLE IF NOT EXISTS `#__ttlivescore_matchdefinitions` (
+	`id` int(10) unsigned NOT NULL AUTO_INCREMENT, 
+	`name` varchar(250) NOT NULL DEFAULT '',
+	`published` tinyint(1) NOT NULL DEFAULT '1',
+	`publish_up` datetime NOT NULL default '0000-00-00 00:00:00',
+	`publish_down` datetime NOT NULL default '0000-00-00 00:00:00',
+	`ordering` int(3) NOT NULL DEFAULT '1',
+	`players` int(3) NOT NULL DEFAULT '3',
+	`reserves` int(3) NOT NULL DEFAULT '0',
+	`matches` int(2) NOT NULL DEFAULT '5',
+	`matchorderhome` varchar(255) NOT NULL DEFAULT '',
+	`matchorderaway` varchar(255) NOT NULL DEFAULT '',
+	`md.sets` int(1) NOT NULL DEFAULT '5',
+	`reservesallowed` varchar(255) NOT NULL DEFAULT '0',
+	PRIMARY KEY (`id`), UNIQUE (`name`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+CREATE TABLE IF NOT EXISTS `#__ttlivescore_clubmatches` (
+	`id` int(10) unsigned NOT NULL AUTO_INCREMENT, 
+	`sid` int(10) unsigned NOT NULL DEFAULT '0', 
+	`mdid` int(10) unsigned NOT NULL DEFAULT '0', 
+	`date` datetime NOT NULL default '0000-00-00 00:00:00',
+	`homeclub` int(10) unsigned NOT NULL DEFAULT '0',
+	`awayclub` int(10) unsigned NOT NULL DEFAULT '0',
+	`homeplayers` varchar(255) NOT NULL DEFAULT '',
+	`awayplayers` varchar(255) NOT NULL DEFAULT '',
+	`homereserves` varchar(255) NOT NULL DEFAULT '',
+	`awayreserves` varchar(255) NOT NULL DEFAULT '',
+	`livescorescreated` bool NOT NULL DEFAULT false,
+	PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+CREATE TABLE IF NOT EXISTS `#__ttlivescore_livescores` (
+	`id` int(10) unsigned NOT NULL AUTO_INCREMENT, 
+	`cmid` int(10) unsigned NOT NULL DEFAULT '0', 
+	`matchid` tinyint unsigned NOT NULL DEFAULT '0',
+	`homeplayerid` int(10) unsigned NOT NULL DEFAULT '0',
+	`awayplayerid` int(10) unsigned NOT NULL DEFAULT '0',
+	`homepointsset1` tinyint unsigned NOT NULL DEFAULT '0',
+	`homepointsset2` tinyint unsigned NOT NULL DEFAULT '0',
+	`homepointsset3` tinyint unsigned NOT NULL DEFAULT '0',
+	`homepointsset4` tinyint unsigned NOT NULL DEFAULT '0',
+	`homepointsset5` tinyint unsigned NOT NULL DEFAULT '0',
+	`homepointsset6` tinyint unsigned NOT NULL DEFAULT '0',
+	`homepointsset7` tinyint unsigned NOT NULL DEFAULT '0',
+	`awaypointsset1` tinyint unsigned NOT NULL DEFAULT '0',
+	`awaypointsset2` tinyint unsigned NOT NULL DEFAULT '0',
+	`awaypointsset3` tinyint unsigned NOT NULL DEFAULT '0',
+	`awaypointsset4` tinyint unsigned NOT NULL DEFAULT '0',
+	`awaypointsset5` tinyint unsigned NOT NULL DEFAULT '0',
+	`awaypointsset6` tinyint unsigned NOT NULL DEFAULT '0',
+	`awaypointsset7` tinyint unsigned NOT NULL DEFAULT '0',
+	`service` char(1) NOT NULL DEFAULT 'H',
+	`active` bool NOT NULL DEFAULT false,
+	PRIMARY KEY (`id`), CONSTRAINT UNIQUE (`cmid`, `matchid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;

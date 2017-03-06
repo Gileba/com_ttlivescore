@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<form>
+	<fieldset>
+		<field name="id" type="text" default="0" label="JGLOBAL_FIELD_ID_LABEL" readonly="true" class="readonly" description="JGLOBAL_FIELD_ID_DESC" />
+		<field name="name" type="text" class="inputbox" size="60" label="COM_TTLIVESCORE_FIELD_NAME_LABEL" description="COM_TTLIVESCORE_FIELD_NAME_DESC" required="true" />
+		<field name="published" type="list" label="JSTATUS" description="JFIELD_PUBLISHED_DESC" class="inputbox" size="1" default="1">
+			<option value="1">JPUBLISHED</option>
+			<option value="0">JUNPUBLISHED</option>
+			<option value="2">JARCHIVED</option>
+			<option value="-2">JTRASHED</option>
+		</field>
+		<field name="players" type="text" class="inputbox" label="COM_TTLIVESCORE_FIELD_NUMBEROFPLAYERS_LABEL" description="COM_TTLIVESCORE_FIELD_NUMBEROFPLAYERS_DESC" size="5" required="true" />
+		<field name="reserves" type="text" class="inputbox" label="COM_TTLIVESCORE_FIELD_NUMBEROFRESERVES_LABEL" description="COM_TTLIVESCORE_FIELD_NUMBEROFRESERVES_DESC" size="5" required="true" />
+		<field name="matches" type="text" class="inputbox" label="COM_TTLIVESCORE_FIELD_NUMBEROFMATCHES_LABEL" description="COM_TTLIVESCORE_FIELD_NUMBEROFMATCHES_DESC" size="5" required="true" />
+		<field name="matchorderhome" type="text" class="inputbox" label="COM_TTLIVESCORE_FIELD_MATCHORDERHOME_LABEL" description="COM_TTLIVESCORE_FIELD_MATCHORDERHOME_DESC" size="60" required="true" />
+		<field name="matchorderaway" type="text" class="inputbox" label="COM_TTLIVESCORE_FIELD_MATCHORDERAWAY_LABEL" description="COM_TTLIVESCORE_FIELD_MATCHORDERAWAY_DESC" size="60" required="true" />
+		<field name="sets" type="list" class="inputbox" label="COM_TTLIVESCORE_FIELD_NUMBEROFSETS_LABEL" description="COM_TTLIVESCORE_FIELD_NUMBEROFSETS_DESC" size="1" default="5" required="true">
+			<option value="5">5</option>
+			<option value="7">7</option>
+		</field>
+		<field name="reservesallowed" type="text" class="inputbox" label="COM_TTLIVESCORE_FIELD_RESERVESALLOWED_LABEL" description="COM_TTLIVESCORE_FIELD_RESERVESALLOWED_DESC" size="60" required="true" />
+	</fieldset>
+</form>

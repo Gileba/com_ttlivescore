@@ -58,6 +58,32 @@
 				return false;
 			}
 
+			if ($view == 'matchdefinition' && $layout == 'edit' && !$this->checkEditId('com_ttlivescore.edit.matchdefinition', $id))
+			{
+				$this->setError(JTEXT::sprintf('JLIB_APPLICATION_ERROR_UNHELD_ID', $id));
+				$this->setMessage($this->getError(), 'error');
+				$this->setRedirect(JROUTE::_('index.php?option=com_ttlivescore&view=matchdefinitions', false));
+				
+				return false;
+			}
+
+			if ($view == 'clubmatch' && $layout == 'edit' && !$this->checkEditId('com_ttlivescore.edit.clubmatch', $id))
+			{
+				$this->setError(JTEXT::sprintf('JLIB_APPLICATION_ERROR_UNHELD_ID', $id));
+				$this->setMessage($this->getError(), 'error');
+				$this->setRedirect(JROUTE::_('index.php?option=com_ttlivescore&view=clubmatches', false));
+				
+				return false;
+			}
+
+			if ($view == 'livescore' && $layout == 'edit' && !$this->checkEditId('com_ttlivescore.edit.livescore', $id))
+			{
+				$this->setError(JTEXT::sprintf('JLIB_APPLICATION_ERROR_UNHELD_ID', $id));
+				$this->setMessage($this->getError(), 'error');
+				$this->setRedirect(JROUTE::_('index.php?option=com_ttlivescore&view=livescores', false));
+				
+				return false;
+			}
 			parent::display();
 			
 			return $this;
