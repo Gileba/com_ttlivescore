@@ -4,4 +4,3 @@
 	class TTLivescoreController extends JControllerLegacy
 	{
 	}
-?>
