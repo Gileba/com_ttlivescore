@@ -1,7 +1,7 @@
 <?php
 	defined('_JEXEC') or die;
 	
-	class TTLivescoreModelClubmatches extends LModelList
+	class TTLivescoreModelClubmatches extends JModelList
 	{
 		public function __construct($config = array())
 		{
