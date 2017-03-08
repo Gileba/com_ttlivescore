@@ -1,7 +1,8 @@
 <?php
 	defined('_JEXEC') or die;
 	
-	$model = $this->getModel();
+	$model	= $this->getModel();
+	$season	= '';
 ?>
 
 <div class="clubmatches">
@@ -10,7 +11,13 @@
 			$score = $model->getScore($item->id);
 	?>
 		<div class="season">
-			<?php echo $item->season; ?>
+			<?php 
+				if ($season != $item->season)
+				{
+					$season = $item->season;
+					echo $season; 
+				}
+			?>
 		</div>
 		<div class="clubmatch">
 			<div class="away">
