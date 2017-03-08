@@ -13,4 +13,4 @@ before_script:
   - git clone https://github.com/joomla/joomla-cms.git joomla-cms
 
 script:
-  - phpunit --configuration travisci-phpunit.xml --no-configuration tests
+  - phpunit --configuration travisci-phpunit.xml
