@@ -20,6 +20,10 @@
 		<folder>views</folder>
 	</files>
 		
+	<media destination="com_ttlivescore" folder="media">
+		<filename>index.html</filename>
+		<folder>css</folder>
+	</media>
 	<administration>
 		<menu>COM_TTLIVESCORE_MENU</menu>
 		<submenu>

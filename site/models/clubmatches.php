@@ -89,6 +89,6 @@
 
 			}
 			
-			return $homeclub . ' - ' . $awayclub;
+			return array('home' => $homeclub, 'away' => $awayclub);
 		}
 	}
