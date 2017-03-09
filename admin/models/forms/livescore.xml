@@ -18,5 +18,9 @@
 		<field name="awaypointsset5" type="hidden" default="0" label="" description=" " />
 		<field name="awaypointsset6" type="hidden" default="0" label="" description=" " />
 		<field name="awaypointsset7" type="hidden" default="0" label="" description=" " />
+		<field name="active" type="list" label="JSTATUS" description="JFIELD_PUBLISHED_DESC" class="inputbox" size="1" default="1">
+			<option value="1">JPUBLISHED</option>
+			<option value="0">JUNPUBLISHED</option>
+		</field>
 	</fieldset>
 </form>
