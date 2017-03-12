@@ -5,7 +5,15 @@
 	$season	= '';
 ?>
 
-<div class="clubmatches">
+<script>
+	setInterval(function () { loadLivescore() },60000);
+
+	function loadLivescore() {
+		jQuery( "#livescore" ).load( "index.php?option=com_ttlivescore&view=clubmatches #livescore" );
+	}
+</script>
+
+<div id="livescore">
 	<?php 
 		foreach ($this->items as $item) : 
 			$score = $model->getScore($item->id);
