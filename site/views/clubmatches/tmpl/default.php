@@ -6,7 +6,7 @@
 ?>
 
 <script>
-	setInterval(function () { loadLivescore() },10000);
+	setInterval(function () { loadLivescore() },60000);
 
 	function loadLivescore() {
 		jQuery( "#livescore" ).load( "index.php?option=com_ttlivescore&view=clubmatches #livescore" );
