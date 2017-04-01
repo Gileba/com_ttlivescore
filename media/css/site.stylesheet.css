@@ -7,8 +7,8 @@
 	float: right;
 	text-align: center;
 	width: 50%;
-	color: white;
 	border-left: white 3px solid;
+	color: white;
 	padding: 5px;
 }
 
@@ -28,10 +28,26 @@
 	font-size: 150%;
 }
 
+.club a {
+	color: white;
+}
+
 .season {
 	width: 100%;
 	background-color: #ccc;
 	padding: 10px;
 	font-size: 150%;
 	font-weight: bold;
+}
+
+.clubmatch .home, .clubmatch .away {
+	display: flex;
+}
+
+.clubmatch .club {
+	width: 80%;
+}
+
+.clubmatch .score {
+	width: 20%;
 }

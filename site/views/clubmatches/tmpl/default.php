@@ -29,11 +29,11 @@
 		</div>
 		<div class="clubmatch">
 			<div class="away">
-				<div class="club">
-					<a href="<?php echo JRoute::_('index.php?option=com_ttlivescore&view=clubmatch&id="'. (int) $item->id); ?>"><?php echo $item->awayclub; ?></a>
-				</div>
 				<div class="score">
 					<?php echo $score['away']; ?>
+				</div>
+				<div class="club">
+					<a href="<?php echo JRoute::_('index.php?option=com_ttlivescore&view=clubmatch&id="'. (int) $item->id); ?>"><?php echo $item->awayclub; ?></a>
 				</div>
 			</div>
 			<div class="home">
