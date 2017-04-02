@@ -10,7 +10,6 @@
 			<fieldset>
 				<?php echo JHtml::_('bootstrap.startPane', 'myTab', array('active' => 'details')); ?>
 				<?php echo JHtml::_('bootstrap.addPanel', 'myTab', 'details', JText::sprintf('COM_TTLIVESCORE_EDIT_LIVESCORE', $this->item->id, true)); ?>
-				<?php echo $this->form->renderField($active); ?>
 				<div class="span6 form-horizontal pull-right center">
 					<?php
 						echo $model->getPlayername($this->form->getValue('awayplayerid'));
