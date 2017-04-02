@@ -42,10 +42,12 @@
 
 .clubmatch .home, .clubmatch .away {
 	display: flex;
+	align-items: center;
+	height: 70px;
 }
 
 .clubmatch .club {
-	width: 80%;
+	width: 100%;
 }
 
 .clubmatch .score {
