@@ -4,6 +4,14 @@
 	$model	= $this->getModel();
 ?>
 
+<script>
+	setInterval(function () { loadLivescore() },30000);
+
+	function loadLivescore() {
+		jQuery( "#livescore" ).load( "<?php echo JUri::getInstance(); ?> #livescore" );
+	}
+</script>
+
 <div id="livescore">
 		<div class="clubmatch">
 			<div class="away">
