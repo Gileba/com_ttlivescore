@@ -9,7 +9,6 @@ php:
 
 env:
   - DB=mysql
-	
 
 matrix:
   allow_failures:
