@@ -22,9 +22,8 @@ script:
 
 deploy:
   provider: releases
-  api_key: 
-  	secure: SECURE_OAUTH_TOKEN
-  file: "FILE TO UPLOAD"
+  api_key: 684b4933a30373da8f79e328e057164e70c77c59
+  file: "readme.md"
   skip_cleanup: true
   on:
     branch: travis-ci
