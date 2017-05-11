@@ -19,3 +19,13 @@ before_script:
 
 script:
   - phpunit --configuration travisci-phpunit.xml --no-configuration tests
+
+deploy:
+  provider: releases
+  api_key: 
+  	secure: "SECURE OAUTH TOKEN"
+  file: "FILE TO UPLOAD"
+  skip_cleanup: true
+  on:
+    branch: travis-ci
+    tags: true
