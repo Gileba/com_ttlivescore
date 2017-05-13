@@ -12,12 +12,11 @@ matrix:
   - php: nightly
 before_script:
 - phpenv config-rm xdebug.ini
-- git clone https://github.com/joomla/joomla-cms.git joomla-cms
 script:
 - phpunit --configuration travisci-phpunit.xml --no-configuration tests
 deploy:
   provider: releases
-  file: readme.md
+  file: README.md
   skip_cleanup: true
   on:
     tags: true
