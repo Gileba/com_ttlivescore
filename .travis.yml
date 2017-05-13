@@ -22,7 +22,8 @@ script:
 
 deploy:
   provider: releases
-  api_key: 684b4933a30373da8f79e328e057164e70c77c59
+  api_key: 
+  	secure: "Jm2EM+8kXYGpn/LMfXGx7za8inSENrD9vX4Vv5pNDNoA3AxVJB8RjPr+9WWxDTn+MONVKvHFO38x1ZwVsS1rfyvcCWaikN9kYVvGMbrhTDQDNyJk51HMjPN/vYyxeoJf3AiF07CKE0kAZzbxnFmng/UaamnhEY+neT1XhHiypDz56hvde9yiYxOeLkDfEdLdGujboAorZvjBEVnw2Tf8MOeqpjTNc3WFKgRMiHYmp4lF9oFBSiizHEwmcH96CrJXeet9hS2sBcpD9VBkuQTY78eY7rhmpPjONR1YlhQ1xZrg1yadc6DP/KuPucm6gcl7l+jnHF+JtT2PGHsYHh4D0aip6FqH97S7B0RFGh8MyCRqKDBmIk5d997L5gHwNXgi6SwTPyXJ6MUdAp8Hh3FK2z1m8ZWSUaj1Vg/iJAwtIA/RGWjsIq6/kwMfYdTCug0xa4JM1IfB37mUnc0n8TNcTPuJV/SF6nrkTO1kCedB3xYA6R+w49qArTY2ZdFDq+6LGQKPwMqIl/+RGty8qi/AzT0y8SQo9GwP9mXslU0RN1wZVKJ3pQOJhmX6LtLkUradx4RIDOabbaB3iHO/CUeSnScGw47eIFfyWMmoe4i7OhO1mGokChQmOcLpOHBnyi3tAwvjs3BRo+42YL7JeNDDI8uUvvg/2i0B3lZgxTqj/n8="
   file: "readme.md"
   skip_cleanup: true
   on:
