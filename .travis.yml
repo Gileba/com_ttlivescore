@@ -1,30 +1,25 @@
 language: php
-
 php:
-  - '5.6'
-  - '7.0'
-  - '7.1'
-  - nightly
-
+- '5.6'
+- '7.0'
+- '7.1'
+- nightly
 env:
+  matrix:
   - DB=mysql
-
 matrix:
   allow_failures:
-    - php: nightly
-
+  - php: nightly
 before_script:
-  - phpenv config-rm xdebug.ini
-  - git clone https://github.com/joomla/joomla-cms.git joomla-cms
-
+- phpenv config-rm xdebug.ini
+- git clone https://github.com/joomla/joomla-cms.git joomla-cms
 script:
-  - phpunit --configuration travisci-phpunit.xml --no-configuration tests
-
+- phpunit --configuration travisci-phpunit.xml --no-configuration tests
 deploy:
   provider: releases
-  api_key:
-    secure: na4U0CUnnQED0pE03+A21MZkx8hXdfKeLRTg8JIpb3ZaYWmZ72D1WxOclFl40zYf39ZQkKG9yN0EtnDPqOVmiXjeSDL/q+7RTE0iZ+yBUHCZWYnUEwbI7Tx76XTHn6heOB5JeZMsmDpEhbQ0PHXdSVef7bWVehptDAlFFP1EK1b27Mlv9wHULf5dwlclnBV7jXy43WhRzBBtr+pGb3Y/BWR0ftceHreF2b46XA69ePhwkvE8TkNBpl4KAQMqwS5GfNLaX+9OZVnAxmoz5euNG7y+IvrepeBfQHXhe2nW6B7C00GZSgmQ+a9QmQEDin9vCxZJc16Oz+WkDyYw18R29YxmaaBkO3ZsAITwM5TkcMjk1UVuEwsuSy7zXa0gMK+wOnfPl0pnil5x8df1WvSeOR3OMYAsniMtNauk/uF6qPHbKmdw0lw+P76VxYX3Cgg/xF2ELHVBalYmITpuF9PpCdqNqxI06xoBJC/RzrkT1/t3gxSNN5o9pkdFDJIe2hSZy/nVQyVBWvMsI7abwYjiJBQGc0HtCInhPMH5TB7IlX8atQX5zut1ZpkEtZnSsfiTbXZEg8+OJrS8JORgtLxa4OjAI84ae8qaO8T69oT3Oh5lvsU3lSxzFga0okDCV2FNgzkLlzxLHIv2Jc92nYtAyNp0HMbmwhhHaTJq7LNlG3U=
   file: readme.md
   skip_cleanup: true
   on:
     tags: true
+  api_key:
+    secure: RgtXG0/o4Ij80BD4/gNUVJMe/nd7+1M2qxag2cln70v1JhnpOYpf9gXfQ0/oqIyLG0uQuz1G2FXtOdeSXHbXb3z+htlUlrboJKkuZWyRiVafmxvaJB/NLZPHqlNpoC3ngzJABE09J2OfVfgvCphN8klGBSrX6Tc243lzsZKbKvnKHKJgdFCps+pp++jdjW0YlJye9b22fO2wuE0fr7dXUaROrNEIXAsXOziA+l4F83MVZugf3elH1ym/CPbn9BxErf/yucPt6SbNhv7fpqdqZh+7w/O79qKSeQ+Xa0FAhJD+xS5XvmMM8ROC8Z+vNbkLDYvBKhYFN/dN3XV8xqwXOEXzL15GDxV8Fa921Lhq13VlPcu5WYwd+U8O3WsNmFuDLsKOydMpM+Mdg+gFBdWjzqorbQ6WUcOQxzJD8Xw+Q8Yl3DHzjdOrEDxDTEwt4wnZPXakf0SI2QF+dt0yeykUOe8aKZrG3vBiQbuvOfafCzX09Lk1g2LcNBTKn4co7wkqxciZJd+9RJzZNY+JRoFphwW7pZxjptzDSsUoVsm9gDBU3fCAeNkX7e4fsSWJSufcddtGOAMWMXhQLG0r0SFXHujmjjnOJM0bTAPFYK93G1o70EMmAb/JJqtmv7hX7/DfxJs/pbcc4N49g7fADCoCSPdvcr7QMi2jxoztKbm08+s=
