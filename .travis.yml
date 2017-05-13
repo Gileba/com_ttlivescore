@@ -1,6 +1,6 @@
 language: php
 
-php: 
+php:
   - '5.6'
   - '7.0'
   - '7.1'
@@ -12,7 +12,7 @@ env:
 matrix:
   allow_failures:
     - php: nightly
- 
+
 before_script:
   - phpenv config-rm xdebug.ini
   - git clone https://github.com/joomla/joomla-cms.git joomla-cms
@@ -22,9 +22,9 @@ script:
 
 deploy:
   provider: releases
-  api_key: 
-  	secure: "Jm2EM+8kXYGpn/LMfXGx7za8inSENrD9vX4Vv5pNDNoA3AxVJB8RjPr+9WWxDTn+MONVKvHFO38x1ZwVsS1rfyvcCWaikN9kYVvGMbrhTDQDNyJk51HMjPN/vYyxeoJf3AiF07CKE0kAZzbxnFmng/UaamnhEY+neT1XhHiypDz56hvde9yiYxOeLkDfEdLdGujboAorZvjBEVnw2Tf8MOeqpjTNc3WFKgRMiHYmp4lF9oFBSiizHEwmcH96CrJXeet9hS2sBcpD9VBkuQTY78eY7rhmpPjONR1YlhQ1xZrg1yadc6DP/KuPucm6gcl7l+jnHF+JtT2PGHsYHh4D0aip6FqH97S7B0RFGh8MyCRqKDBmIk5d997L5gHwNXgi6SwTPyXJ6MUdAp8Hh3FK2z1m8ZWSUaj1Vg/iJAwtIA/RGWjsIq6/kwMfYdTCug0xa4JM1IfB37mUnc0n8TNcTPuJV/SF6nrkTO1kCedB3xYA6R+w49qArTY2ZdFDq+6LGQKPwMqIl/+RGty8qi/AzT0y8SQo9GwP9mXslU0RN1wZVKJ3pQOJhmX6LtLkUradx4RIDOabbaB3iHO/CUeSnScGw47eIFfyWMmoe4i7OhO1mGokChQmOcLpOHBnyi3tAwvjs3BRo+42YL7JeNDDI8uUvvg/2i0B3lZgxTqj/n8="
-  file: "readme.md"
+  api_key:
+    secure: na4U0CUnnQED0pE03+A21MZkx8hXdfKeLRTg8JIpb3ZaYWmZ72D1WxOclFl40zYf39ZQkKG9yN0EtnDPqOVmiXjeSDL/q+7RTE0iZ+yBUHCZWYnUEwbI7Tx76XTHn6heOB5JeZMsmDpEhbQ0PHXdSVef7bWVehptDAlFFP1EK1b27Mlv9wHULf5dwlclnBV7jXy43WhRzBBtr+pGb3Y/BWR0ftceHreF2b46XA69ePhwkvE8TkNBpl4KAQMqwS5GfNLaX+9OZVnAxmoz5euNG7y+IvrepeBfQHXhe2nW6B7C00GZSgmQ+a9QmQEDin9vCxZJc16Oz+WkDyYw18R29YxmaaBkO3ZsAITwM5TkcMjk1UVuEwsuSy7zXa0gMK+wOnfPl0pnil5x8df1WvSeOR3OMYAsniMtNauk/uF6qPHbKmdw0lw+P76VxYX3Cgg/xF2ELHVBalYmITpuF9PpCdqNqxI06xoBJC/RzrkT1/t3gxSNN5o9pkdFDJIe2hSZy/nVQyVBWvMsI7abwYjiJBQGc0HtCInhPMH5TB7IlX8atQX5zut1ZpkEtZnSsfiTbXZEg8+OJrS8JORgtLxa4OjAI84ae8qaO8T69oT3Oh5lvsU3lSxzFga0okDCV2FNgzkLlzxLHIv2Jc92nYtAyNp0HMbmwhhHaTJq7LNlG3U=
+  file: readme.md
   skip_cleanup: true
   on:
     tags: true
