@@ -16,7 +16,7 @@ before_script:
 script:
 - phpunit --configuration travisci-phpunit.xml --no-configuration tests
 after_success:
-- cd .. && zip -r com_ttlivescore.zip src -x \*.git\* \*joomla-cms\*
+- cd .. && zip -r com_ttlivescore.zip com_ttlivescore -x \*.git\* \*joomla-cms\*
 deploy:
   provider: releases
   file: com_ttlivescore.zip
