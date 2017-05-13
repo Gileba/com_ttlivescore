@@ -15,9 +15,11 @@ before_script:
 - git clone https://github.com/joomla/joomla-cms.git joomla-cms
 script:
 - phpunit --configuration travisci-phpunit.xml --no-configuration tests
+after_success:
+- cd .. && zip -r com_ttlivescore.zip src -x \*.git\* \*joomla-cms\*
 deploy:
   provider: releases
-  file: README.md
+  file: com_ttlivescore.zip
   skip_cleanup: true
   on:
     tags: true
