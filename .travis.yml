@@ -15,7 +15,7 @@ before_script:
 - git clone https://github.com/joomla/joomla-cms.git joomla-cms
 script:
 - phpunit --configuration travisci-phpunit.xml --no-configuration tests
-after_success:
+before_deploy:
 - cd .. && zip -r com_ttlivescore.zip com_ttlivescore -x \*.git\* \*joomla-cms\* \*tests\* *travisci-phpunit.xml* *.travis.yml*
 deploy:
   provider: releases
