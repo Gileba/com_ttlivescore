@@ -154,6 +154,48 @@
 			return array('home' => $homeclub, 'away' => $awayclub);
 		}
 		
+		public function getShortScore($id, $set)
+		{
+			$scores 	= $this->getSetScoreQuery($id);
+			
+			switch ($set) {
+			case "1":
+				$homeset	= $scores[0]->homeset1;
+				$awayset	= $scores[0]->awayset1;
+				break;
+			case "2":
+				$homeset	= $scores[0]->homeset2;
+				$awayset	= $scores[0]->awayset2;
+				break;
+			case "3":
+				$homeset	= $scores[0]->homeset3;
+				$awayset	= $scores[0]->awayset3;
+				break;
+			case "4":
+				$homeset	= $scores[0]->homeset4;
+				$awayset	= $scores[0]->awayset4;
+				break;
+			case "5":
+				$homeset	= $scores[0]->homeset5;
+				$awayset	= $scores[0]->awayset5;
+				break;
+			case "6":
+				$homeset	= $scores[0]->homeset6;
+				$awayset	= $scores[0]->awayset6;
+				break;
+			case "7":
+				$homeset	= $scores[0]->homeset7;
+				$awayset	= $scores[0]->awayset7;
+				break;
+			}
+
+			if ($homeset < $awayset) {
+				return "-" . $homeset;
+			}
+			
+			return $awayset;
+		}
+		
 		public function getPlayername($id) {
 			$db	= $this->getDbo();
 			$query = $db->getQuery(true);

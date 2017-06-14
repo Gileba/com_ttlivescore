@@ -3,6 +3,7 @@
 	background-color: #333;
 }
 
+/* Clubmatches */
 .away {
 	float: right;
 	text-align: center;
@@ -52,4 +53,34 @@
 
 .clubmatch .score {
 	width: 20%;
+}
+
+/* Detailed Scores */
+.detailedscores {
+	background-color: #666;
+	color: black;
+}
+
+.homeplayer, .awayplayer {
+	display: inline-block;
+	margin: 5px;
+	width: 25%;
+}
+
+.seperator {
+	display: inline-block;
+	margin: 5px;
+	width: 2%;
+	text-align: center;
+}
+
+.details {
+	display: inline-block;
+	width: 28%;
+}
+
+.homescore, .awayscore {
+	display: inline-block;
+	width: 2%;
+	text-align: center;
 }
