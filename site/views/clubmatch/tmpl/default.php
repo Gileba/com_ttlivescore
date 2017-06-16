@@ -1,8 +1,13 @@
 <?php
 	defined('_JEXEC') or die;
 	
-	$model	= $this->getModel();
-	$score = $model->getScore($this->items[0]->cmid);
+	$model				= $this->getModel();
+	$score 				= $model->getScore($this->items[0]->cmid);
+	$currentMatch		= $model->getCurrentMatch($this->items[0]->cmid) - 1;
+	$currentMatchId		= $this->items[$currentMatch]->id;
+	$currentSetScore	= $model->getSetScore($currentMatchId);
+	$currentSet			= $currentSetScore['home'] + $currentSetScore['away'];
+	$currentPoints		= $model->getLivescore($currentMatchId);
 ?>
 
 <script>
@@ -15,20 +20,48 @@
 
 <div id="livescore">
 		<div class="clubmatch">
+			<div class="home">
+				<div class="club">
+					<?php echo $model->getClubname($this->items[0]->homeclub); ?>
+				</div>
+				<div class="score">
+					<?php echo $score['home']; ?>
+				</div>
+			</div>
 			<div class="away">
 				<div class="score">
 					<?php echo $score['away']; ?>
 				</div>
 				<div class="club">
-					<?php echo $model->getClubname($this->items[0]->homeclub); ?>
+					<?php echo $model->getClubname($this->items[0]->awayclub); ?>
+				</div>
+			</div>
+		</div>
+		<div class="currentmatch">
+			<div class="home">
+				<div class="player">
+					<?php echo $model->getPlayername($this->items[$currentMatch]->homeplayerid); ?>
+				</div>
+			</div>
+			<div class="away">
+				<div class="player">
+					<?php echo $model->getPlayername($this->items[$currentMatch]->awayplayerid); ?>
 				</div>
 			</div>
 			<div class="home">
-				<div class="club">
-					<?php echo $model->getClubname($this->items[0]->awayclub); ?>
+				<div class="points">
+					<div><?php echo $currentPoints['home'][$currentSet]; ?></div>
 				</div>
 				<div class="score">
-					<?php echo $score['home']; ?>
+					<?php echo $currentSetScore['home']; ?>
+				</div>
+			</div>
+			<div class="away">
+				<div class="score">
+					<?php echo $currentSetScore['away']; ?>
+				</div>
+				<div class="points">
+					<div><?php echo $currentPoints['away'][$currentSet]; ?></div>
 				</div>
 			</div>
 		</div>
@@ -37,11 +70,11 @@
 	?>
 		<div class="detailedscores">
 			<div class="homeplayer">
-				<?php echo $model->getPlayername($item->awayplayerid); ?>
+				<?php echo $model->getPlayername($item->homeplayerid); ?>
 			</div>
 			<div class="seperator">-</div>
 			<div class="awayplayer">
-				<?php echo $model->getPlayername($item->homeplayerid); ?>
+				<?php echo $model->getPlayername($item->awayplayerid); ?>
 			</div>
 			<div class="details">
 				<?php

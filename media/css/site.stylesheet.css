@@ -1,9 +1,13 @@
 #livescore {
 	margin-top: 16px;
-	background-color: #333;
 }
 
 /* Clubmatches */
+.clubmatch {
+	background-color: #333;
+	height: 70px;
+}
+
 .away {
 	float: right;
 	text-align: center;
@@ -11,6 +15,7 @@
 	border-left: white 3px solid;
 	color: white;
 	padding: 5px;
+	height: inherit;
 }
 
 .home {
@@ -18,6 +23,7 @@
 	width: 50%;
 	color: white;
 	padding: 5px;
+	float: left;
 }
 
 .score {
@@ -41,42 +47,68 @@
 	font-weight: bold;
 }
 
-.clubmatch .home, .clubmatch .away {
+.clubmatch .home, .clubmatch .away, .currentmatch .home, .currentmatch .away {
 	display: flex;
 	align-items: center;
-	height: 70px;
 }
 
-.clubmatch .club {
+.clubmatch .club, .currentmatch .club {
 	width: 100%;
 }
 
-.clubmatch .score {
+.clubmatch .score, .currentmatch .score {
 	width: 20%;
+}
+
+.currentmatch .home {
+	float: left;
+}
+
+.currentmatch .home, .currentmatch .away {
+	background-color: #999;
+	padding: 0px;
+}
+
+.player {
+	display: block;
+	width: 100%;
+	font-size: 150%;
+	padding-top: 10px;
+}
+
+.points {
+	font-size: 500%;
+	width: 100%;
+	font-weight: bolder;
+}
+
+.currentmatch .score {
+	background-color: black;
+	margin-top: 37px;
 }
 
 /* Detailed Scores */
 .detailedscores {
 	background-color: #666;
-	color: black;
+	color: white;
 }
 
 .homeplayer, .awayplayer {
 	display: inline-block;
 	margin: 5px;
-	width: 25%;
+	width: 30%;
 }
 
 .seperator {
 	display: inline-block;
 	margin: 5px;
-	width: 2%;
+	width: 1%;
 	text-align: center;
 }
 
 .details {
 	display: inline-block;
-	width: 28%;
+	width: 20%;
 }
 
 .homescore, .awayscore {

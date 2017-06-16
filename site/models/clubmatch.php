@@ -114,6 +114,22 @@
 			return array('home' => $home, 'away' => $away);
 		}
 		
+		public function getLivescore($id)
+		{
+			$scores 	= $this->getSetScoreQuery($id);
+			$homesets	= array(0);
+			$awaysets	= array(0);
+			
+			for ($i = 0; $i < count($scores); $i++)
+			{
+				$homesets 	= array($scores[$i]->homeset1, $scores[$i]->homeset2, $scores[$i]->homeset3, $scores[$i]->homeset4, $scores[$i]->homeset5, $scores[$i]->homeset6, $scores[$i]->homeset7);
+				$awaysets 	= array ($scores[$i]->awayset1, $scores[$i]->awayset2, $scores[$i]->awayset3, $scores[$i]->awayset4, $scores[$i]->awayset5, $scores[$i]->awayset6, $scores[$i]->awayset7);
+			
+			}
+			
+			return array('home' => $homesets, 'away' => $awaysets);
+		}
+		
 		public function getScore($id)
 		{
 			$scores 	= $this->getScoreQuery($id);
@@ -235,5 +251,10 @@
 			$result = $db->loadobject();
 			
 			return $result->name;
+		}
+		
+		public function getCurrentMatch ($id) {
+			$currentScore = $this->getScore($id);
+			return $currentScore['home'] + $currentScore['away'] + 1;
 		}
 	}
