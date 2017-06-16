@@ -1,15 +1,21 @@
 #livescore {
 	margin-top: 16px;
+}
+
+/* Clubmatches */
+.clubmatch {
 	background-color: #333;
+	height: 70px;
 }
 
 .away {
 	float: right;
 	text-align: center;
 	width: 50%;
-	color: white;
 	border-left: white 3px solid;
+	color: white;
 	padding: 5px;
+	height: inherit;
 }
 
 .home {
@@ -17,6 +23,7 @@
 	width: 50%;
 	color: white;
 	padding: 5px;
+	float: left;
 }
 
 .score {
@@ -28,10 +35,84 @@
 	font-size: 150%;
 }
 
+.club a {
+	color: white;
+}
+
 .season {
 	width: 100%;
 	background-color: #ccc;
 	padding: 10px;
 	font-size: 150%;
 	font-weight: bold;
+}
+
+.clubmatch .home, .clubmatch .away, .currentmatch .home, .currentmatch .away {
+	display: flex;
+	align-items: center;
+}
+
+.clubmatch .club, .currentmatch .club {
+	width: 100%;
+}
+
+.clubmatch .score, .currentmatch .score {
+	width: 20%;
+}
+
+.currentmatch .home {
+	float: left;
+}
+
+.currentmatch .home, .currentmatch .away {
+	background-color: #999;
+	padding: 0px;
+}
+
+.player {
+	display: block;
+	width: 100%;
+	font-size: 150%;
+	padding-top: 10px;
+}
+
+.points {
+	font-size: 500%;
+	width: 100%;
+	font-weight: bolder;
+}
+
+.currentmatch .score {
+	background-color: black;
+	margin-top: 37px;
+}
+
+/* Detailed Scores */
+.detailedscores {
+	background-color: #666;
+	color: white;
+}
+
+.homeplayer, .awayplayer {
+	display: inline-block;
+	margin: 5px;
+	width: 30%;
+}
+
+.seperator {
+	display: inline-block;
+	margin: 5px;
+	width: 1%;
+	text-align: center;
+}
+
+.details {
+	display: inline-block;
+	width: 20%;
+}
+
+.homescore, .awayscore {
+	display: inline-block;
+	width: 2%;
+	text-align: center;
 }
