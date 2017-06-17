@@ -12,11 +12,10 @@ matrix:
   - php: nightly
 before_script:
 - phpenv config-rm xdebug.ini
-- git clone https://github.com/joomla/joomla-cms.git joomla-cms
 script:
 - phpunit --configuration travisci-phpunit.xml --no-configuration tests
 before_deploy:
-- cd .. && zip -r com_ttlivescore.zip com_ttlivescore -x \*.git\* \*joomla-cms\* \*tests\* *travisci-phpunit.xml* *.travis.yml*
+- cd .. && zip -r com_ttlivescore.zip com_ttlivescore -x \*.git\* \*tests\* *travisci-phpunit.xml* *.travis.yml*
 deploy:
   provider: releases
   file: com_ttlivescore.zip
