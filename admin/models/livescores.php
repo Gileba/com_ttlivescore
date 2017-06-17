@@ -40,6 +40,11 @@
 				->join('INNER', $db->quoteName('#__ttlivescore_matchdefinitions', 'md') . ' ON (' . $db->quoteName('cb.mdid') . ' = ' . $db->quoteName('md.id') . ')')
 				->order($orderCol . ' ' . $orderDirn);
 			
+			$cmid = JRequest::getVar('id');
+			if ($cmid)
+			{
+				$query->where($db->quoteName('a.cmid') . ' = ' . (int) $cmid);
+			}
 			return $query;
 		}
 	}
