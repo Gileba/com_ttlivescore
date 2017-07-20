@@ -94,6 +94,11 @@
 	color: white;
 }
 
+.detailedscores.active {
+	background-color: silver;
+	color: #666;
+}
+
 .homeplayer, .awayplayer {
 	display: inline-block;
 	margin: 5px;
