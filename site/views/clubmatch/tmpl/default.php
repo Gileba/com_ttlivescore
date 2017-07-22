@@ -14,11 +14,12 @@
 	setInterval(function () { loadLivescore() },30000);
 
 	function loadLivescore() {
-		jQuery( "#livescore" ).load( "<?php echo JUri::getInstance(); ?> #livescore" );
+		jQuery( "#livescore-wrapper" ).load( "<?php echo JUri::getInstance(); ?> .livescore" );
 	}
 </script>
 
-<div id="livescore">
+<div id="livescore-wrapper">
+	<div class="livescore">
 		<div class="clubmatch">
 			<div class="home">
 				<div class="club">
@@ -94,4 +95,5 @@
 			</div>
 		</div>
 	<?php endforeach; ?>
+	</div>
 </div>
