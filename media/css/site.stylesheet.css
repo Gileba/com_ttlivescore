@@ -24,6 +24,7 @@
 	color: white;
 	padding: 5px;
 	float: left;
+	height: inherit;
 }
 
 .score {
@@ -91,6 +92,11 @@
 .detailedscores {
 	background-color: #666;
 	color: white;
+}
+
+.detailedscores.active {
+	background-color: silver;
+	color: #666;
 }
 
 .homeplayer, .awayplayer {

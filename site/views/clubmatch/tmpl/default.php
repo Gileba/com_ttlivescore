@@ -67,9 +67,10 @@
 			</div>
 		</div>
 	<?php 
+		$j = 0;
 		foreach ($this->items as $item) : 
 	?>
-		<div class="detailedscores">
+		<div class="detailedscores<?php if ($j == $currentMatch) {?> active<?php ; } ?>">
 			<div class="homeplayer">
 				<?php echo $model->getPlayername($item->homeplayerid); ?>
 			</div>
@@ -94,6 +95,9 @@
 				<?php echo $model->getSetScore($item->id)['away']; ?>
 			</div>
 		</div>
-	<?php endforeach; ?>
+	<?php 
+		$j++;
+		endforeach;
+	?>
 	</div>
 </div>
