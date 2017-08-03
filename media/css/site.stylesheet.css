@@ -122,3 +122,20 @@
 	width: 2%;
 	text-align: center;
 }
+
+/* Smartphone */
+@media only screen and (max-width: 479px) {
+	.club, .season, .player {
+		font-size: 100%;
+	}
+	.points {
+		font-size: 300%;
+	}
+	.score {
+		font-size: 200%;
+	}
+	.homeplayer, .awayplayer {
+		font-size: 80%;
+		width: 35%;
+	}
+}
