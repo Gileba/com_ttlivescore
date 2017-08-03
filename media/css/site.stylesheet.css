@@ -134,6 +134,9 @@
 	.score {
 		font-size: 200%;
 	}
+	.details {
+		display: none;
+	}
 	.homeplayer, .awayplayer {
 		font-size: 80%;
 		width: 35%;
