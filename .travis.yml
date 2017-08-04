@@ -26,4 +26,4 @@ deploy:
   api_key:
     secure: RgtXG0/o4Ij80BD4/gNUVJMe/nd7+1M2qxag2cln70v1JhnpOYpf9gXfQ0/oqIyLG0uQuz1G2FXtOdeSXHbXb3z+htlUlrboJKkuZWyRiVafmxvaJB/NLZPHqlNpoC3ngzJABE09J2OfVfgvCphN8klGBSrX6Tc243lzsZKbKvnKHKJgdFCps+pp++jdjW0YlJye9b22fO2wuE0fr7dXUaROrNEIXAsXOziA+l4F83MVZugf3elH1ym/CPbn9BxErf/yucPt6SbNhv7fpqdqZh+7w/O79qKSeQ+Xa0FAhJD+xS5XvmMM8ROC8Z+vNbkLDYvBKhYFN/dN3XV8xqwXOEXzL15GDxV8Fa921Lhq13VlPcu5WYwd+U8O3WsNmFuDLsKOydMpM+Mdg+gFBdWjzqorbQ6WUcOQxzJD8Xw+Q8Yl3DHzjdOrEDxDTEwt4wnZPXakf0SI2QF+dt0yeykUOe8aKZrG3vBiQbuvOfafCzX09Lk1g2LcNBTKn4co7wkqxciZJd+9RJzZNY+JRoFphwW7pZxjptzDSsUoVsm9gDBU3fCAeNkX7e4fsSWJSufcddtGOAMWMXhQLG0r0SFXHujmjjnOJM0bTAPFYK93G1o70EMmAb/JJqtmv7hX7/DfxJs/pbcc4N49g7fADCoCSPdvcr7QMi2jxoztKbm08+s=
 after_deploy:
-- curl -T com_ttlivescore/com_ttlivescore.xml -u $FTP_USER:$FTP_PASSWORD ftp://gilebabe.webhosting.be/
+- curl -T com_ttlivescore/com_ttlivescore.xml -u $FTP_USER:$FTP_PASSWORD ftp://ftp.gileba.be/
