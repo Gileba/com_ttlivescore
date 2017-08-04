@@ -10,8 +10,6 @@ env:
 matrix:
   allow_failures:
   - php: nightly
-before_script:
-- phpenv config-rm xdebug.ini
 script:
 - phpunit --configuration travisci-phpunit.xml --no-configuration tests
 before_deploy:
