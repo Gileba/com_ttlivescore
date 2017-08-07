@@ -72,7 +72,7 @@
 	</update>
 	
 	<updateservers>
-		<server type="extension" priority="1" name="TT Livescore">http://www.gileba.be/updates/ttlivescore.xml</server>
+		<server type="extension" priority="1" name="TT Livescore">http://www.gileba.be/updates/com_ttlivescore.xml</server>
 	</updateservers>
 
 </extension>
