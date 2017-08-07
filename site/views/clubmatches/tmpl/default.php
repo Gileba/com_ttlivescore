@@ -19,15 +19,13 @@
 			foreach ($this->items as $item) : 
 				$score = $model->getScore($item->id);
 		?>
-		<div class="season">
 		<?php 
 			if ($season != $item->season)
 			{
 				$season = $item->season;
-				echo $season; 
+				echo '<div class="season">' . $season . '</div>'; 
 			}
-		?>
-		</div>
+		?>		
 		<div class="clubmatch">
 			<div class="away">
 				<div class="score">
