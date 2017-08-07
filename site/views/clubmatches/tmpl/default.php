@@ -16,6 +16,9 @@
 <div id="livescore-wrapper">
 	<div class="livescore">
 		<?php 
+			if (empty($this->items)) {
+				echo '<div class="season">' . JText::_('COM_TTLIVESCORE_NO_ACTIVE_LIVESCORE') . '</div>';
+			}
 			foreach ($this->items as $item) : 
 				$score = $model->getScore($item->id);
 		?>
