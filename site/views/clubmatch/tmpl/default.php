@@ -14,11 +14,12 @@
 	setInterval(function () { loadLivescore() },30000);
 
 	function loadLivescore() {
-		jQuery( "#livescore" ).load( "<?php echo JUri::getInstance(); ?> #livescore" );
+		jQuery( "#livescore-wrapper" ).load( "<?php echo JUri::getInstance(); ?> .livescore" );
 	}
 </script>
 
-<div id="livescore">
+<div id="livescore-wrapper">
+	<div class="livescore">
 		<div class="clubmatch">
 			<div class="home">
 				<div class="club">
@@ -66,9 +67,10 @@
 			</div>
 		</div>
 	<?php 
+		$j = 0;
 		foreach ($this->items as $item) : 
 	?>
-		<div class="detailedscores">
+		<div class="detailedscores<?php if ($j == $currentMatch) {?> active<?php ; } ?>">
 			<div class="homeplayer">
 				<?php echo $model->getPlayername($item->homeplayerid); ?>
 			</div>
@@ -93,5 +95,9 @@
 				<?php echo $model->getSetScore($item->id)['away']; ?>
 			</div>
 		</div>
-	<?php endforeach; ?>
+	<?php 
+		$j++;
+		endforeach;
+	?>
+	</div>
 </div>

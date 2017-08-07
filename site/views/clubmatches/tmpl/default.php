@@ -9,24 +9,26 @@
 	setInterval(function () { loadLivescore() },60000);
 
 	function loadLivescore() {
-		jQuery( "#livescore" ).load( "index.php?option=com_ttlivescore&view=clubmatches #livescore" );
+		jQuery( "#livescore-wrapper" ).load( "index.php?option=com_ttlivescore&view=clubmatches .livescore" );
 	}
 </script>
 
-<div id="livescore">
-	<?php 
-		foreach ($this->items as $item) : 
-			$score = $model->getScore($item->id);
-	?>
-		<div class="season">
-			<?php 
-				if ($season != $item->season)
-				{
-					$season = $item->season;
-					echo $season; 
-				}
-			?>
-		</div>
+<div id="livescore-wrapper">
+	<div class="livescore">
+		<?php 
+			if (empty($this->items)) {
+				echo '<div class="season">' . JText::_('COM_TTLIVESCORE_NO_ACTIVE_LIVESCORE') . '</div>';
+			}
+			foreach ($this->items as $item) : 
+				$score = $model->getScore($item->id);
+		?>
+		<?php 
+			if ($season != $item->season)
+			{
+				$season = $item->season;
+				echo '<div class="season">' . $season . '</div>'; 
+			}
+		?>		
 		<div class="clubmatch">
 			<div class="away">
 				<div class="score">
@@ -46,4 +48,5 @@
 			</div>
 		</div>
 	<?php endforeach; ?>
+	</div>
 </div>
