@@ -1,7 +1,7 @@
 <?php
 	defined('_JEXEC') or die;
 	
-	JLoader::register('TTLivescoreAdminHelper', JPATH_ADMINISTRATOR . '/components/com_ttlivescore/helpers/ttlivescore.php');
+	JLoader::register('TTLivescoreHelper', JPATH_ADMINISTRATOR . '/components/com_ttlivescore/helpers/ttlivescore.php');
 	
 	$model				= $this->getModel();
 	$score 				= $model->getScore($this->items[0]->cmid);
@@ -43,12 +43,12 @@
 		<div class="currentmatch">
 			<div class="home">
 				<div class="player">
-					<?php echo TTLivescoreAdminHelper::getPlayername($this->items[$currentMatch]->homeplayerid); ?>
+					<?php echo TTLivescoreHelper::getPlayername($this->items[$currentMatch]->homeplayerid); ?>
 				</div>
 			</div>
 			<div class="away">
 				<div class="player">
-					<?php echo TTLivescoreAdminHelper::getPlayername($this->items[$currentMatch]->awayplayerid); ?>
+					<?php echo TTLivescoreHelper::getPlayername($this->items[$currentMatch]->awayplayerid); ?>
 				</div>
 			</div>
 			<div class="home">
@@ -74,11 +74,11 @@
 	?>
 		<div class="detailedscores<?php if ($j == $currentMatch) {?> active<?php ; } ?>">
 			<div class="homeplayer">
-				<?php echo TTLivescoreAdminHelper::getPlayername($item->homeplayerid); ?>
+				<?php echo TTLivescoreHelper::getPlayername($item->homeplayerid); ?>
 			</div>
 			<div class="seperator">-</div>
 			<div class="awayplayer">
-				<?php echo TTLivescoreAdminHelper::getPlayername($item->awayplayerid); ?>
+				<?php echo TTLivescoreHelper::getPlayername($item->awayplayerid); ?>
 			</div>
 			<div class="details">
 				<?php
