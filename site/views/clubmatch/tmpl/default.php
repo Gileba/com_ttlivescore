@@ -1,8 +1,6 @@
 <?php
 	defined('_JEXEC') or die;
 	
-	JLoader::register('TTLivescoreHelper', JPATH_ADMINISTRATOR . '/components/com_ttlivescore/helpers/ttlivescore.php');
-	
 	$model				= $this->getModel();
 	$score 				= $model->getScore($this->items[0]->cmid);
 	$currentMatch		= $model->getCurrentMatch($this->items[0]->cmid) - 1;
@@ -43,12 +41,12 @@
 		<div class="currentmatch">
 			<div class="home">
 				<div class="player">
-					<?php echo TTLivescoreHelper::getPlayername($this->items[$currentMatch]->homeplayerid); ?>
+					<?php echo $model->getPlayername($this->items[$currentMatch]->homeplayerid); ?>
 				</div>
 			</div>
 			<div class="away">
 				<div class="player">
-					<?php echo TTLivescoreHelper::getPlayername($this->items[$currentMatch]->awayplayerid); ?>
+					<?php echo $model->getPlayername($this->items[$currentMatch]->awayplayerid); ?>
 				</div>
 			</div>
 			<div class="home">
@@ -74,11 +72,11 @@
 	?>
 		<div class="detailedscores<?php if ($j == $currentMatch) {?> active<?php ; } ?>">
 			<div class="homeplayer">
-				<?php echo TTLivescoreHelper::getPlayername($item->homeplayerid); ?>
+				<?php echo $model->getPlayername($item->homeplayerid); ?>
 			</div>
 			<div class="seperator">-</div>
 			<div class="awayplayer">
-				<?php echo TTLivescoreHelper::getPlayername($item->awayplayerid); ?>
+				<?php echo $model->getPlayername($item->awayplayerid); ?>
 			</div>
 			<div class="details">
 				<?php
