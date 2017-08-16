@@ -75,7 +75,7 @@
 			$query
 				->select($db->quoteName(array('a.lastname', 'a.firstname', 'a.middlename'), array('lastname', 'firstname', 'middlename')))
 				->from($db->quoteName('#__ttlivescore_players', 'a'))
-				->where($db->quoteName('a.id') . ' = ' . $id);
+				->where($db->quoteName('a.id') . ' = ' . (int) $id);
 			
 			$db->setQuery($query);
 			$db->execute();

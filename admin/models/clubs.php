@@ -57,17 +57,17 @@
 			}
 			
 			// Filter by country
-			$country = $db->escape($this->getState('filter.countries'));
+			$country = $this->getState('filter.countries');
 			if (!empty($country)) {
-				$query->where('(a.country = "' . $country . '")');
+				$query->where('(a.country = ' . $db->quote($country) . ')');
 			}
  
 			//Filter by search in name
 			$search = $this->getState('filter.search');
 
 			if(!empty($search)){
-				$like = $db->quote('%' . $search . '%');
-				$query->where('(a.name LIKE ' . $like . ')');
+				$like = $db->escape('%' . $search . '%', true);
+				$query->where('(a.name LIKE ' . $db->quote($like, false) . ')');
 			}
 			
 			return $query;

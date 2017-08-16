@@ -32,7 +32,7 @@
 				->join('INNER', $db->quoteName('#__ttlivescore_clubs', 'ac') . ' ON (' . $db->quoteName('a.awayclub') . ' = ' . $db->quoteName('ac.id') . ')')
 				->join('INNER', $db->quoteName('#__ttlivescore_seasons', 's') . ' ON (' . $db->quoteName('a.sid') . ' = ' . $db->quoteName('s.id') . ')')
 				->where($db->quoteName('a.livescorescreated') . ' = 1')
-				->where($db->quoteName('a.date') . " >= '" . $date->toSql(false, $db) . "'");
+				->where($db->quoteName('a.date') . " >= " . $db->quote($date->toSql(false, $db), false));
 			
 			return $query;
 		}
@@ -47,7 +47,7 @@
 				->from($db->quoteName('#__ttlivescore_livescores', 'a'))
 				->join('INNER', $db->quoteName('#__ttlivescore_clubmatches', 'cm') . ' ON (' . $db->quoteName('a.cmid') . ' = ' . $db->quoteName('cm.id') . ')')
 				->join('INNER', $db->quoteName('#__ttlivescore_matchdefinitions', 'md') . ' ON (' . $db->quoteName('cm.mdid') . ' = ' . $db->quoteName('md.id') . ')')
-				->where($db->quoteName('a.cmid')  . ' = ' . $id);
+				->where($db->quoteName('a.cmid')  . ' = ' . (int) $id);
 				
 			$db->setQuery($query);
 			$db->execute();

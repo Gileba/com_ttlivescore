@@ -45,7 +45,7 @@
 				->from($db->quoteName('#__ttlivescore_livescores', 'a'))
 				->join('INNER', $db->quoteName('#__ttlivescore_clubmatches', 'cb') . ' ON (' . $db->quoteName('a.cmid') . ' = ' . $db->quoteName('cb.id') . ')')
 				->join('INNER', $db->quoteName('#__ttlivescore_matchdefinitions', 'md') . ' ON (' . $db->quoteName('cb.mdid') . ' = ' . $db->quoteName('md.id') . ')')
-				->where($db->quoteName('a.id') . ' = ' . $id);
+				->where($db->quoteName('a.id') . ' = ' . (int) $id);
 			
 			$db->setQuery($query);
 			$db->execute();
