@@ -1,6 +1,6 @@
 <?php
 	defined('_JEXEC') or die;
-
+	JSession::checkToken() or die( 'Invalid Token' );
 ?>
 
 <form action="<?php echo JRoute::_('index.php?option=com_ttlivescore&layout=edit&id=' . (int) $this->item->id); ?>" method="post" name="adminForm" id="adminForm" class="form-validate">
