@@ -9,8 +9,8 @@
 		{
 			require_once JPATH_COMPONENT.'/helpers/ttlivescore.php';
 			
-			$view	= $this->input->get('view', 'players');
-			$layout	= $this->input->get('layout', 'default');
+			$view	= $this->input->getWord('view', 'players');
+			$layout	= $this->input->getWord('layout', 'default');
 			$id	= $this->input->getInt('id');
 			
 			if ($view == 'player' && $layout == 'edit' && !$this->checkEditId('com_ttlivescore.edit.player', $id))
