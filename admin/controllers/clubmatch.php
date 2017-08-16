@@ -7,7 +7,7 @@
 		{
 			// Get the input
 			$input = JFactory::getApplication()->input;
-			$id = $input->get('id', '0', 'text');
+			$id = $input->getInt('id', '0');
  
 			// Get the model
 			$model = $this->getModel();
