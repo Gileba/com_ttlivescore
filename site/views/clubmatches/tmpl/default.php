@@ -1,7 +1,8 @@
 <?php
 	defined('_JEXEC') or die;
 	
-	$model	= $this->getModel();
+	JLoader::register('TTLivescoreHelper', JPATH_ADMINISTRATOR . '/components/com_ttlivescore/helpers/ttlivescore.php');
+	
 	$season	= '';
 ?>
 
@@ -20,7 +21,7 @@
 				echo '<div class="season">' . JText::_('COM_TTLIVESCORE_NO_ACTIVE_LIVESCORE') . '</div>';
 			}
 			foreach ($this->items as $item) : 
-				$score = $model->getScore($item->id);
+				$score = TTLivescoreHelper::getScore($item->id);
 		?>
 		<?php 
 			if ($season != $item->season)

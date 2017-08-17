@@ -4,7 +4,7 @@
 	JLoader::register('TTLivescoreHelper', JPATH_ADMINISTRATOR . '/components/com_ttlivescore/helpers/ttlivescore.php');
 	
 	$model				= $this->getModel();
-	$score 				= $model->getScore($this->items[0]->cmid);
+	$score 				= TTLivescoreHelper::getScore($this->items[0]->cmid);
 	$currentMatch		= $model->getCurrentMatch($this->items[0]->cmid) - 1;
 	$currentMatchId		= $this->items[$currentMatch]->id;
 	$currentSetScore	= $model->getSetScore($currentMatchId);
