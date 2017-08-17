@@ -112,7 +112,7 @@
 		
 		public static function getScore($id)
 		{
-			$scores 	= getScoreQuery($id);
+			$scores 	= $this->getScoreQuery($id);
 			$homeclub 	= 0;
 			$awayclub 	= 0;
 			
