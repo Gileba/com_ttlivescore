@@ -110,7 +110,7 @@
 			return $db->loadobjectList(); 			
 		}
 		
-		public function getScore($id)
+		public static function getScore($id)
 		{
 			$scores 	= getScoreQuery($id);
 			$homeclub 	= 0;
