@@ -92,7 +92,7 @@
 			return $player;
 		}
 		
-		protected function getScoreQuery($id)
+		protected static function getScoreQuery($id)
 		{
 			$db	= JFactory::getDbo();
 			$query = $db->getQuery(true);
@@ -112,7 +112,7 @@
 		
 		public static function getScore($id)
 		{
-			$scores 	= $this->getScoreQuery($id);
+			$scores 	= self::getScoreQuery($id);
 			$homeclub 	= 0;
 			$awayclub 	= 0;
 			
