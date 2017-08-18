@@ -52,7 +52,6 @@
 			// Get a db connection.
 			$db = JFactory::getDbo();
  
- 
 			// Insert columns.
 			$columns = array('cmid', 'matchid', 'homeplayerid', 'awayplayerid');
 			
@@ -83,7 +82,7 @@
 					->insert($db->quoteName('#__ttlivescore_livescores'))
 					->columns($db->quoteName($columns))
 					->values(implode(',', $values));
- 
+
 				// Set the query using our newly populated query object and execute it.
 				$db->setQuery($query);
 				$db->execute();
@@ -94,12 +93,10 @@
 			// Set value of created in table clubmatches to true
 			$query = $db->getQuery(true);
 
-			$id = $db->quote($id);
-
 			$query
 				->update($db->quoteName('#__ttlivescore_clubmatches', 'a'))
 				->set(array($db->quoteName('a.livescorescreated') . ' = 1'))
-				->where('a.id = ' . (int) $id);
+				->where($db->quoteName('a.id') . ' = ' . (int) $id);
 	
 			$db->setQuery($query);
 			$db->execute();
@@ -115,15 +112,12 @@
 			// Create a new query object.
 			$query = $db->getQuery(true);
 			
-			$id = $db->quote($id);
- 
 			$query
 				->select($db->quoteName(array('a.id', 'a.name', 'a.matchorderhome', 'a.matchorderaway', 'a.matches')))
 				->from($db->quoteName('#__ttlivescore_matchdefinitions', 'a'))
 				->join('INNER', $db->quoteName('#__ttlivescore_clubmatches', 'cm') . ' ON (' . $db->quoteName('cm.mdid') . ' = ' . $db->quoteName('a.id') . ')')
-				->where('cm.id = ' . (int) $id);
+				->where($db->quoteName('cm.id') . ' = ' . (int) $id);
 
- 
 			// Set the query using our newly populated query object and execute it.
 			$db->setQuery($query);			
 			$db->execute();
@@ -139,14 +133,11 @@
 			// Create a new query object.
 			$query = $db->getQuery(true);
 			
-			$id = $db->quote($id);
- 
 			$query
 				->select($db->quoteName(array('a.homeplayers')))
 				->from($db->quoteName('#__ttlivescore_clubmatches', 'a'))
-				->where('a.id = ' . (int) $id);
+				->where($db->quoteName('a.id') . ' = ' . (int) $id);
 
- 
 			// Set the query using our newly populated query object and execute it.
 			$db->setQuery($query);			
 			$db->execute();
@@ -162,14 +153,11 @@
 			// Create a new query object.
 			$query = $db->getQuery(true);
 			
-			$id = $db->quote($id);
- 
 			$query
 				->select($db->quoteName(array('a.awayplayers')))
 				->from($db->quoteName('#__ttlivescore_clubmatches', 'a'))
-				->where('a.id = ' . (int) $id);
+				->where($db->quoteName('a.id') . ' = ' . (int) $id);
 
- 
 			// Set the query using our newly populated query object and execute it.
 			$db->setQuery($query);			
 			$db->execute();
