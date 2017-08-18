@@ -9,5 +9,5 @@
 	
 	// Create controller and determine the next task
 	$controller = JControllerLegacy::getInstance('TTLivescore');
-	$controller->execute(JFactory::getApplication()->input->get('task'));
+	$controller->execute(JFactory::getApplication()->input->getWord('task'));
 	$controller->redirect();

@@ -64,23 +64,23 @@
 			}
 			
 			// Filter by country
-			$country = $db->escape($this->getState('filter.countries'));
+			$country = $this->getState('filter.countries');
 			if (!empty($country)) {
-				$query->where('(a.country = "' . $country . '")');
+				$query->where('(a.country = ' . $db->quote($country) . ')');
 			}
  
 			// Filter by sex
-			$sex = $db->escape($this->getState('filter.sex'));
+			$sex = $this->getState('filter.sex');
 			if (!empty($sex)) {
-				$query->where('(a.sex = "' . $sex . '")');
+				$query->where('(a.sex = ' . $db->quote(sex) . ')');
 			}
  
 			//Filter by search in name
 			$search = $this->getState('filter.search');
 
 			if(!empty($search)){
-				$like = $db->quote('%' . $search . '%');
-				$query->where('(a.lastname LIKE ' . $like . ' OR a.firstname LIKE ' . $like . ')');
+				$like = $db->escape('%' . $search . '%', true);
+				$query->where('(a.lastname LIKE ' . $db->quote($like, false) . ' OR a.firstname LIKE ' . $db->quote($like, false) . ')');
 			}
 			
 			return $query;

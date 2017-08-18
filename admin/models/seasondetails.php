@@ -49,23 +49,23 @@
 				->order($orderCol . ' ' . $orderDirn);
 			
 			// Filter by club
-			$club = $db->escape($this->getState('filter.clubs'));
+			$club = $this->getState('filter.clubs');
 			if (!empty($club)) {
-				$query->where('(a.club = "' . $club . '")');
+				$query->where('(a.club = ' . $db->quote($club) . ')');
 			}
  
 			// Filter by season
-			$season = $db->escape($this->getState('filter.seasons'));
+			$this->getState('filter.seasons');
 			if (!empty($season)) {
-				$query->where('(a.season = "' . $season . '")');
+				$query->where('(a.season = ' . $db->quote($season) . ')');
 			}
  
 			//Filter by search in name
 			$search = $this->getState('filter.search');
 
 			if(!empty($search)){
-				$like = $db->quote('%' . $search . '%');
-				$query->where('(p.lastname LIKE ' . $like . ' OR p.firstname LIKE ' . $like . ' OR c.name LIKE ' . $like . ')');
+				$like = $db->escape('%' . $search . '%');
+				$query->where('(p.lastname LIKE ' . $db->quote($like, false) . ' OR p.firstname LIKE ' . $db->quote($like, false) . ' OR c.name LIKE ' . $db->quote($like, false) . ')');
 			}
 			
 			return $query;
