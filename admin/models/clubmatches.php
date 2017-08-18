@@ -45,8 +45,8 @@
 			$search = $this->getState('filter.search');
 
 			if(!empty($search)){
-				$like = $db->quote('%' . $search . '%');
-				$query->where('(hc.name LIKE ' . $like . ' OR ' . 'ac.name LIKE ' . $like . ')');
+				$like = '%' . $db->escape($search, true) . '%';
+				$query->where('(hc.name LIKE ' . $db->quote($like, false) . ' OR ' . 'ac.name LIKE ' . $db->quote($like, false) . ')');
 			}
 			
 			return $query;

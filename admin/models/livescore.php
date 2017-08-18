@@ -45,37 +45,12 @@
 				->from($db->quoteName('#__ttlivescore_livescores', 'a'))
 				->join('INNER', $db->quoteName('#__ttlivescore_clubmatches', 'cb') . ' ON (' . $db->quoteName('a.cmid') . ' = ' . $db->quoteName('cb.id') . ')')
 				->join('INNER', $db->quoteName('#__ttlivescore_matchdefinitions', 'md') . ' ON (' . $db->quoteName('cb.mdid') . ' = ' . $db->quoteName('md.id') . ')')
-				->where($db->quoteName('a.id') . ' = ' . $id);
+				->where($db->quoteName('a.id') . ' = ' . (int) $id);
 			
 			$db->setQuery($query);
 			$db->execute();
 			
 			return $db->loadobject();
-		}
-		
-		public function getPlayername($id)
-		{
-			$db	= $this->getDbo();
-			$query = $db->getQuery(true);
-
-			$query
-				->select($db->quoteName(array('a.lastname', 'a.firstname', 'a.middlename'), array('lastname', 'firstname', 'middlename')))
-				->from($db->quoteName('#__ttlivescore_players', 'a'))
-				->where($db->quoteName('a.id') . ' = ' . $id);
-			
-			$db->setQuery($query);
-			$db->execute();
-			
-			$result = $db->loadobject();
-			
-			$player = $result->lastname;
-			if ($result->middlename !== '')
-			{
-				$player .= ' (' . $result->middlename . ')';
-			}
-			$player .= ', ' . $result->firstname;
-			
-			return $player;
 		}
 		
 		public function getCurrentSet($id)

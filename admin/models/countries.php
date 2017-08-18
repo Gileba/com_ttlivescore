@@ -57,8 +57,8 @@
 			$search = $this->getState('filter.search');
 
 			if(!empty($search)){
-				$like = $db->quote('%' . $search . '%');
-				$query->where('(a.name LIKE ' . $like . ')');
+				$like = $db->escape('%' . $search . '%'), true;
+				$query->where('(a.name LIKE ' . $db->quote($like, false) . ')');
 			}
 			
 			return $query;
