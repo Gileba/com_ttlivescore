@@ -64,32 +64,36 @@
 			$homeplayerorder = explode(",", $matchdefinition->matchorderhome);
 			$awayplayerorder = explode(",", $matchdefinition->matchorderaway);
  
-			try
+			$i = 0;
+			do
 			{
-				$i = 0;
-				do
-				{
-					// Create a new query object.
-					$query = $db->getQuery(true);
+				// Create a new query object.
+				$query = $db->getQuery(true);
+	
+				// -1 because we are working with an array
+				$homeplayer = $homeplayerorder[$i] - 1;
+				$awayplayer = $awayplayerorder[$i] - 1;
 
-					// -1 because we are working with an array
-					$homeplayer = $homeplayerorder[$i] - 1;
-					$awayplayer = $awayplayerorder[$i] - 1;
-
-					// Insert values.
-					$values = array($id, $i+1, $homeplayers[$homeplayer], $awayplayers[$awayplayer]);
+				// Insert values.
+				$values = array($id, $i+1, $homeplayers[$homeplayer], $awayplayers[$awayplayer]);
  
-					// Prepare the insert query.
-					$query
-						->insert($db->quoteName('#__ttlivescore_livescores'))
-						->columns($db->quoteName($columns))
-						->values(implode(',', $values));
+ 				// Prepare the insert query.
+				$query
+					->insert($db->quoteName('#__ttlivescore_livescores'))
+					->columns($db->quoteName($columns))
+					->values(implode(',', $values));
 
-					// Set the query using our newly populated query object and execute it.
-					$db->setQuery($query);
+				// Set the query using our newly populated query object and execute it.
+				$db->setQuery($query);
+				try
+				{
 					$db->execute();
+				catch (Exception $e) 
+				{
+					JFactory::getApplication()->enqueueMessage($e->getMessage());
+				}
 				
-					$i++;
+				$i++;
 				} while ($i < $matchdefinition->matches);
 			
 				// Set value of created in table clubmatches to true
@@ -104,10 +108,6 @@
 				$db->execute();
 
 				return true;
-			}
-			catch (Exception $e) 
-			{
-				JFactory::getApplication()->enqueueMessage($e->getMessage());
 			}
 		}
 		
@@ -134,14 +134,14 @@
 
 		public function getplayers($id, $homeaway)
 		{
+			// Get a db connection.
+			$db = JFactory::getDbo();
+
+			// Create a new query object.
+			$query = $db->getQuery(true);
+			
 			try
 			{
-				// Get a db connection.
-				$db = JFactory::getDbo();
- 
-				// Create a new query object.
-				$query = $db->getQuery(true);
-			
 				switch ($homeaway)
 				{
 					case 'home':
@@ -153,20 +153,27 @@
 					default:
 						throw new Exception('Wrong selection');
 				}
-					
-				$query
-					->from($db->quoteName('#__ttlivescore_clubmatches', 'a'))
-					->where($db->quoteName('a.id') . ' = ' . (int) $id);
-
-				// Set the query using our newly populated query object and execute it.
-				$db->setQuery($query);			
-				$db->execute();
-			
-				return $db->loadResult();
 			}
 			catch (Exception $e)
 			{
 				JFactory::getApplication()->enqueueMessage($e->getMessage());
 			}
+					
+			$query
+				->from($db->quoteName('#__ttlivescore_clubmatches', 'a'))
+				->where($db->quoteName('a.id') . ' = ' . (int) $id);
+
+			// Set the query using our newly populated query object and execute it.
+			$db->setQuery($query);			
+			try 
+			{
+				$db->execute();
+			}
+			catch (Exception $e)
+			{
+				JFactory::getApplication()->enqueueMessage($e->getMessage());
+			}
+			
+			return $db->loadResult();
 		}	
 	}
