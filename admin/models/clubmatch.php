@@ -105,7 +105,13 @@
 				->where($db->quoteName('a.id') . ' = ' . (int) $id);
 	
 			$db->setQuery($query);
-			$db->execute();
+			try
+			{
+				$db->execute();
+			catch (Exception $e) 
+			{
+				JFactory::getApplication()->enqueueMessage($e->getMessage());
+			}
 
 			return true;
 		}
@@ -126,7 +132,13 @@
 
 			// Set the query using our newly populated query object and execute it.
 			$db->setQuery($query);			
-			$db->execute();
+			try
+			{
+				$db->execute();
+			catch (Exception $e) 
+			{
+				JFactory::getApplication()->enqueueMessage($e->getMessage());
+			}
 			
 			return $db->loadObject();
 		}	

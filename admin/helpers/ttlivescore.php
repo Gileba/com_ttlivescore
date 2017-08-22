@@ -78,7 +78,13 @@
 				->where($db->quoteName('a.id') . ' = ' . (int) $id);
 			
 			$db->setQuery($query);
-			$db->execute();
+			try
+			{
+				$db->execute();
+			catch (Exception $e) 
+			{
+				JFactory::getApplication()->enqueueMessage($e->getMessage());
+			}
 			
 			$result = $db->loadobject();
 			
@@ -105,7 +111,13 @@
 				->where($db->quoteName('a.cmid')  . ' = ' . (int) $id);
 				
 			$db->setQuery($query);
-			$db->execute();
+			try
+			{
+				$db->execute();
+			catch (Exception $e) 
+			{
+				JFactory::getApplication()->enqueueMessage($e->getMessage());
+			}
 			
 			return $db->loadobjectList(); 			
 		}
