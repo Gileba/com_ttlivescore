@@ -56,8 +56,8 @@
 			$columns = array('cmid', 'matchid', 'homeplayerid', 'awayplayerid');
 			
 			// Array of payer-id's
-			$homeplayers = explode(",", $this->gethomeplayers($id));
-			$awayplayers = explode(",", $this->getawayplayers($id));
+			$homeplayers = explode(",", $this->getplayers($id, 'home'));
+			$awayplayers = explode(",", $this->getplayers($id, 'away'));
 
 			// Get order of playing defined in matchdefinition
 			$matchdefinition = $this->getmatchdefinition($id);			
@@ -85,7 +85,13 @@
 
 				// Set the query using our newly populated query object and execute it.
 				$db->setQuery($query);
-				$db->execute();
+				try
+				{
+					$db->execute();
+				catch (Exception $e) 
+				{
+					JFactory::getApplication()->enqueueMessage($e->getMessage());
+				}
 				
 				$i++;
 			} while ($i < $matchdefinition->matches);
@@ -125,42 +131,47 @@
 			return $db->loadObject();
 		}	
 
-		public function gethomeplayers($id)
+		public function getplayers($id, $homeaway)
 		{
 			// Get a db connection.
 			$db = JFactory::getDbo();
- 
+
 			// Create a new query object.
 			$query = $db->getQuery(true);
 			
+			try
+			{
+				switch ($homeaway)
+				{
+					case 'home':
+						$query->select($db->quoteName(array('a.homeplayers')));
+						break;
+					case 'away':
+						$query->select($db->quoteName(array('a.awayplayers')));
+						break;
+					default:
+						throw new Exception('Wrong selection');
+				}
+			}
+			catch (Exception $e)
+			{
+				JFactory::getApplication()->enqueueMessage($e->getMessage());
+			}
+					
 			$query
-				->select($db->quoteName(array('a.homeplayers')))
 				->from($db->quoteName('#__ttlivescore_clubmatches', 'a'))
 				->where($db->quoteName('a.id') . ' = ' . (int) $id);
 
 			// Set the query using our newly populated query object and execute it.
 			$db->setQuery($query);			
-			$db->execute();
-			
-			return $db->loadResult();
-		}	
-
-		public function getawayplayers($id)
-		{
-			// Get a db connection.
-			$db = JFactory::getDbo();
- 
-			// Create a new query object.
-			$query = $db->getQuery(true);
-			
-			$query
-				->select($db->quoteName(array('a.awayplayers')))
-				->from($db->quoteName('#__ttlivescore_clubmatches', 'a'))
-				->where($db->quoteName('a.id') . ' = ' . (int) $id);
-
-			// Set the query using our newly populated query object and execute it.
-			$db->setQuery($query);			
-			$db->execute();
+			try 
+			{
+				$db->execute();
+			}
+			catch (Exception $e)
+			{
+				JFactory::getApplication()->enqueueMessage($e->getMessage());
+			}
 			
 			return $db->loadResult();
 		}	
