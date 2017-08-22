@@ -69,7 +69,7 @@
 			{
 				// Create a new query object.
 				$query = $db->getQuery(true);
-	
+
 				// -1 because we are working with an array
 				$homeplayer = $homeplayerorder[$i] - 1;
 				$awayplayer = $awayplayerorder[$i] - 1;
@@ -77,7 +77,7 @@
 				// Insert values.
 				$values = array($id, $i+1, $homeplayers[$homeplayer], $awayplayers[$awayplayer]);
  
- 				// Prepare the insert query.
+				// Prepare the insert query.
 				$query
 					->insert($db->quoteName('#__ttlivescore_livescores'))
 					->columns($db->quoteName($columns))
@@ -94,21 +94,20 @@
 				}
 				
 				$i++;
-				} while ($i < $matchdefinition->matches);
+			} while ($i < $matchdefinition->matches);
 			
-				// Set value of created in table clubmatches to true
-				$query = $db->getQuery(true);
+			// Set value of created in table clubmatches to true
+			$query = $db->getQuery(true);
 
-				$query
-					->update($db->quoteName('#__ttlivescore_clubmatches', 'a'))
-					->set(array($db->quoteName('a.livescorescreated') . ' = 1'))
-					->where($db->quoteName('a.id') . ' = ' . (int) $id);
+			$query
+				->update($db->quoteName('#__ttlivescore_clubmatches', 'a'))
+				->set(array($db->quoteName('a.livescorescreated') . ' = 1'))
+				->where($db->quoteName('a.id') . ' = ' . (int) $id);
 	
-				$db->setQuery($query);
-				$db->execute();
+			$db->setQuery($query);
+			$db->execute();
 
-				return true;
-			}
+			return true;
 		}
 		
 		public function getmatchdefinition($id)
