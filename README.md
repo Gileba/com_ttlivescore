@@ -23,3 +23,6 @@ Download the full package from the [release section](https://github.com/Gileba/c
 7. Create the matches for the livescore
 
 ### Running the livescore
+- Click on the 'plus'-sign to mark a point scored by the player.
+- Make corrections using the 'minus'-sign
+- Sets and games are automatich finished based on the results
