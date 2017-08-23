@@ -29,11 +29,6 @@
 			JFactory::getApplication()->input->set('hidemainmenu', true);
 			
 			JToolbarHelper::title(JText::_('COM_TTLIVESCORE_MANAGER_LIVESCORE'), '');
-			if (empty($this->item->id))
-			{
-				JToolbarHelper::cancel('livescore.cancel');
-				return;
-			}
-			JToolbarHelper::cancel('livescore.cancel', 'JTOOLBAR_CLOSE');
+			JToolbarHelper::back();
 		}
 	}
