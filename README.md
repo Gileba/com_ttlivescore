@@ -21,6 +21,5 @@ Download the full package from the [release section](https://github.com/Gileba/c
 5. Define Match Definitions
 6. Create a clubmatch
 7. Create the matches for the livescore
----
 
-## Running the livescore
+### Running the livescore
