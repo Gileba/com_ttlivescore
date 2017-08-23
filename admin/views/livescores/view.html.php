@@ -31,6 +31,7 @@
 		{
 			$canDo	= TTLivescoreHelper::getActions();
 			
+			JToolbarHelper::back('', 'index.php?option=com_ttlivescore&view=clubmatches');
 			JToolbarHelper::title(JText::_('COM_TTLIVESCORE_MANAGER_LIVESCORES'), '');
 			if ($canDo->get('core.edit'))
 			{
