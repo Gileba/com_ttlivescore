@@ -21,6 +21,8 @@
 		
 		public function livescore()
 		{
+			// Get the input
+			$input = JFactory::getApplication()->input;
 			$id = $input->getInt('id', '0');
 			
 			// Redirect to the club match form.
