@@ -15,7 +15,7 @@
 			<option value="M">COM_TTLIVESCORE_SEX_MALE</option>
 			<option value="W">COM_TTLIVESCORE_SEX_FEMALE</option>
 		</field>
-		<field name="dateofbirth" type="calendar" label="COM_TTLIVESCORE_FIELD_DATEOFBIRTH_LABEL" description="COM_TTLIVESCORE_FIELD_DATEOFBIRTH_DESC" class="inputbox" size="22" filter="user-utc" format="%d-%m-%Y"/>
+		<field name="dateofbirth" type="calendar" label="COM_TTLIVESCORE_FIELD_DATEOFBIRTH_LABEL" description="COM_TTLIVESCORE_FIELD_DATEOFBIRTH_DESC" class="inputbox" size="22" filter="user-utc" translateformat="true" todaybutton="false" showtime="false"/>
 		<field name="image" type="media" directory="ttlivescore" hide_none="1" label="COM_TTLIVESCORE_FIELD_IMAGE_LABEL" description="COM_TTLIVESCORE_FIELD_IMAGE_DESC" size="40" />
 		<field name="country" type="Countries" class="inputbox" label="COM_TTLIVESCORE_FIELD_COUNTRY_LABEL" description="COM_TTLIVESCORE_FIELD_COUNTRY_DESC" size="1" required="true" />
 	</fieldset>
