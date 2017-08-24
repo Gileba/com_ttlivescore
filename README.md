@@ -7,6 +7,11 @@
 
 ---
 
+## Requirements
+- Joomla 3.7.0 (or higher)
+
+---
+
 ## Installation
 Download the full package from the [release section](https://github.com/Gileba/com_ttlivescore/releases) and install with the Joomla Installer
 
