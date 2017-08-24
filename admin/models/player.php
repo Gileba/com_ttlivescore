@@ -39,6 +39,5 @@
 			$table->lastname = htmlspecialchars_decode($table->lastname, ENT_QUOTES);
 			$table->firstname = htmlspecialchars_decode($table->firstname, ENT_QUOTES);
 			$table->middlename = htmlspecialchars_decode($table->middlename, ENT_QUOTES);
-			$table->dateofbirth = $table->dateofbirth->toMysql();
 		}
 	}
