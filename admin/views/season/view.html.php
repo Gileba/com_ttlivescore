@@ -34,6 +34,6 @@
 				return;
 			}
 			JToolbarHelper::cancel('season.cancel', 'JTOOLBAR_CLOSE');
-			JToolbarHelper::custom('season.details', ' list-2', ' list-2', JText::_('COM_TTLIVESCORE_SEASON_DETAILS'), false);
+			JToolbarHelper::custom('season.details', ' list-2', ' list-2', JText::_('COM_TTLIVESCORE_SUBMENU_SEASONDETAILS'), false);
 		}
 	}
