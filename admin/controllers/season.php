@@ -5,11 +5,10 @@
 		public function details()
 		{
 			// Get the input
-			$input = JFactory::getApplication()->input;
-			$id = $input->getInt('id', '0');
+			$id = JFactory::getApplication()->input->getInt('id', '0');
 			
 			// Redirect to the season details form.
-			$this->setRedirect(JRoute::_('index.php?option=com_ttlivescore&view=seasondetails&id=' . (int) $id), false);
+			$this->setRedirect(JRoute::_('index.php?option=com_ttlivescore&view=seasondetails', false);
 			$this->redirect();
 		}		
 	}
