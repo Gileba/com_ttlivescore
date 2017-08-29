@@ -115,7 +115,7 @@
 								if ($canChange)
 								{
 									echo JHtml::_('jgrid.published', $item->published, $i, 'players.', $canChange, 'cb', $item->publish_up, $item->publish_down);
-									JHtml::_('actionsdropdown.' . ((int) $item->published === 2 ? 'un' : '') . 'archive', 'cb' . $i, 'articles');
+									JHtml::_('actionsdropdown.' . ((int) $item->published === 2 ? 'un' : '') . 'archive', 'cb' . $i, 'players');
 									echo JHtml::_('actionsdropdown.render', $this->escape($item->lastname . ' ' . $item->firstname));
 								}
 							?>
