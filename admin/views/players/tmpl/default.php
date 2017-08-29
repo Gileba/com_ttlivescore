@@ -110,7 +110,16 @@
 						<?php echo JHtml::_('grid.id', $i, $item->id); ?>
 					</td>
 					<td class="center">
-						<?php echo JHtml::_('jgrid.published', $item->published, $i, 'players.', $canChange, 'cb', $item->publish_up, $item->publish_down); ?>
+						<div class="btn-group">
+							<?php 
+								if ($canChange)
+								{
+									echo JHtml::_('jgrid.published', $item->published, $i, 'players.', $canChange, 'cb', $item->publish_up, $item->publish_down);
+									JHtml::_('actionsdropdown.' . ((int) $item->published === 2 ? 'un' : '') . 'archive', 'cb' . $i, 'articles');
+									echo JHtml::_('actionsdropdown.render', $this->escape($item->lastname . ' ' . $item->firstname));
+								}
+							?>
+						</div>
 					</td>
 					<td class="nowrap has-context">
 						<a href="<?php echo JROUTE::_('index.php?option=com_ttlivescore&task=player.edit&id=' . (int) $item->id); ?>">
