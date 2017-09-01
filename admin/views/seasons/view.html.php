@@ -58,6 +58,7 @@
 			{
 				JToolbarHelper::trash('seasons.trash');
 			}
+			JToolbarHelper::custom('seasons.details', 'list-2', 'list-2', JText::_('COM_TTLIVESCORE_SUBMENU_SEASONDETAILS'), true);
 			if ($canDo->get('core.admin'))
 			{
 				JToolbarHelper::preferences('com_ttlivescore');

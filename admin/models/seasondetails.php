@@ -55,7 +55,7 @@
 			}
  
 			// Filter by season
-			$this->getState('filter.seasons');
+			$season = $this->getState('filter.seasons');
 			if (!empty($season)) {
 				$query->where('(a.season = ' . $db->quote($season) . ')');
 			}
