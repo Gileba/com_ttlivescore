@@ -3,8 +3,8 @@
 	<fieldset>
 		<field name="id" type="text" default="0" label="JGLOBAL_FIELD_ID_LABEL" readonly="true" class="readonly" description="JGLOBAL_FIELD_ID_DESC" />
 		<field name="season" type="Seasons" class="inputbox" label="COM_TTLIVESCORE_FIELD_SEASON_LABEL" description="COM_TTLIVESCORE_FIELD_SEASON_DESC" size="1" required="true" />
-		<field name="player" type="Players" class="inputbox" label="COM_TTLIVESCORE_FIELD_PLAYER_LABEL" description="COM_TTLIVESCORE_FIELD_PLAYER_DESC" size="1" required="true" />
-		<field name="club" type="Clubs" class="inputbox" label="COM_TTLIVESCORE_FIELD_CLUB_LABEL" description="COM_TTLIVESCORE_FIELD_CLUB_DESC" size="1" required="true" />
-		<field name="localranking" type="text" label="COM_TTLIVESCORE_FIELD_LOCALRANKING_LABEL" description="COM_TTLIVESCORE_FIELD_LOCALRANKING_DESC" class="inputbox" size="5" filter="user-utc" />
+		<field name="player" type="Players" class="inputbox" label="COM_TTLIVESCORE_FIELD_PLAYER_LABEL" description="COM_TTLIVESCORE_FIELD_PLAYER_DESC" size="1" required="true" showon="season!:" default="" />
+		<field name="club" type="Clubs" class="inputbox" label="COM_TTLIVESCORE_FIELD_CLUB_LABEL" description="COM_TTLIVESCORE_FIELD_CLUB_DESC" size="1" required="true" showon="player!:" />
+		<field name="localranking" type="text" label="COM_TTLIVESCORE_FIELD_LOCALRANKING_LABEL" description="COM_TTLIVESCORE_FIELD_LOCALRANKING_DESC" class="inputbox" size="5" filter="user-utc" showon="player!:"/>
 	</fieldset>
 </form>
