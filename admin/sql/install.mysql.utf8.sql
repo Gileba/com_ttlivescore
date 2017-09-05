@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS `#__ttlivescore_countries` (
 	`id` int(10) unsigned NOT NULL AUTO_INCREMENT, 
 	`name` varchar(250) NOT NULL DEFAULT '',
 	`published` tinyint(1) NOT NULL DEFAULT '1',
-	`ordering` int(3) NOT NULL DEFAULT '1',
+	`ordering` int(3) NOT NULL DEFAULT '999',
 	`ioc_code` char(3) NOT NULL DEFAULT '',
 	`publish_up` datetime NOT NULL default '0000-00-00 00:00:00',
 	`publish_down` datetime NOT NULL default '0000-00-00 00:00:00',
