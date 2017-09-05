@@ -26,24 +26,30 @@ CREATE TABLE IF NOT EXISTS `#__ttlivescore_countries` (
 	`id` int(10) unsigned NOT NULL AUTO_INCREMENT, 
 	`name` varchar(250) NOT NULL DEFAULT '',
 	`published` tinyint(1) NOT NULL DEFAULT '1',
-	`ordering` int(3) NOT NULL DEFAULT '1',
+	`ordering` int(3) NOT NULL DEFAULT '999',
 	`ioc_code` char(3) NOT NULL DEFAULT '',
 	`publish_up` datetime NOT NULL default '0000-00-00 00:00:00',
 	`publish_down` datetime NOT NULL default '0000-00-00 00:00:00',
 	`rankingprefix`char(10) NOT NULL DEFAULT '',
 	PRIMARY KEY (`id`), UNIQUE (`ioc_code`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
-INSERT INTO `#__ttlivescore_countries` (name,ioc_code) VALUES ('COM_TTLIVESCORE_COUNTRY_BELGIUM', 'BEL');
-INSERT INTO `#__ttlivescore_countries` (name,ioc_code) VALUES ('COM_TTLIVESCORE_COUNTRY_BOSNIAANDHERZEGOVINA', 'BIH');
-INSERT INTO `#__ttlivescore_countries` (name,ioc_code) VALUES ('COM_TTLIVESCORE_COUNTRY_CHINA', 'CHN');
-INSERT INTO `#__ttlivescore_countries` (name,ioc_code) VALUES ('COM_TTLIVESCORE_COUNTRY_CROATIA', 'CRO');
-INSERT INTO `#__ttlivescore_countries` (name,ioc_code) VALUES ('COM_TTLIVESCORE_COUNTRY_ENGLAND', 'ENG');
-INSERT INTO `#__ttlivescore_countries` (name,ioc_code) VALUES ('COM_TTLIVESCORE_COUNTRY_FRANCE', 'FRA');
-INSERT INTO `#__ttlivescore_countries` (name,ioc_code) VALUES ('COM_TTLIVESCORE_COUNTRY_ITALY', 'ITA');
-INSERT INTO `#__ttlivescore_countries` (name,ioc_code) VALUES ('COM_TTLIVESCORE_COUNTRY_LITUANIA', 'LTU');
-INSERT INTO `#__ttlivescore_countries` (name,ioc_code) VALUES ('COM_TTLIVESCORE_COUNTRY_NIGERIA', 'NGR');
-INSERT INTO `#__ttlivescore_countries` (name,ioc_code) VALUES ('COM_TTLIVESCORE_COUNTRY_THENETHERLANDS', 'NED');
-INSERT INTO `#__ttlivescore_countries` (name,ioc_code) VALUES ('COM_TTLIVESCORE_COUNTRY_WALES', 'WAL');
+INSERT INTO `#__ttlivescore_countries` (name,ioc_code, ordering) VALUES ('COM_TTLIVESCORE_COUNTRY_BELGIUM', 'BEL', 1);
+INSERT INTO `#__ttlivescore_countries` (name,ioc_code, ordering) VALUES ('COM_TTLIVESCORE_COUNTRY_BOSNIAANDHERZEGOVINA', 'BIH', 2);
+INSERT INTO `#__ttlivescore_countries` (name,ioc_code, ordering) VALUES ('COM_TTLIVESCORE_COUNTRY_CANADA', 'CAN', 3);
+INSERT INTO `#__ttlivescore_countries` (name,ioc_code, ordering) VALUES ('COM_TTLIVESCORE_COUNTRY_CHINA', 'CHN', 4);
+INSERT INTO `#__ttlivescore_countries` (name,ioc_code, ordering) VALUES ('COM_TTLIVESCORE_COUNTRY_CROATIA', 'CRO', 5);
+INSERT INTO `#__ttlivescore_countries` (name,ioc_code, ordering) VALUES ('COM_TTLIVESCORE_COUNTRY_EGYPT', 'EGY', 6);
+INSERT INTO `#__ttlivescore_countries` (name,ioc_code, ordering) VALUES ('COM_TTLIVESCORE_COUNTRY_ENGLAND', 'ENG', 7);
+INSERT INTO `#__ttlivescore_countries` (name,ioc_code, ordering) VALUES ('COM_TTLIVESCORE_COUNTRY_FRANCE', 'FRA', 8);
+INSERT INTO `#__ttlivescore_countries` (name,ioc_code, ordering) VALUES ('COM_TTLIVESCORE_COUNTRY_GREECE', 'GRE', 9);
+INSERT INTO `#__ttlivescore_countries` (name,ioc_code, ordering) VALUES ('COM_TTLIVESCORE_COUNTRY_ITALY', 'ITA', 10);
+INSERT INTO `#__ttlivescore_countries` (name,ioc_code, ordering) VALUES ('COM_TTLIVESCORE_COUNTRY_LITUANIA', 'LTU', 11);
+INSERT INTO `#__ttlivescore_countries` (name,ioc_code, ordering) VALUES ('COM_TTLIVESCORE_COUNTRY_THENETHERLANDS', 'NED', 12);
+INSERT INTO `#__ttlivescore_countries` (name,ioc_code, ordering) VALUES ('COM_TTLIVESCORE_COUNTRY_NIGERIA', 'NGR', 13);
+INSERT INTO `#__ttlivescore_countries` (name,ioc_code, ordering) VALUES ('COM_TTLIVESCORE_COUNTRY_POLAND', 'POL', 14);
+INSERT INTO `#__ttlivescore_countries` (name,ioc_code, ordering) VALUES ('COM_TTLIVESCORE_COUNTRY_RUSSIA', 'RUS', 15);
+INSERT INTO `#__ttlivescore_countries` (name,ioc_code, ordering) VALUES ('COM_TTLIVESCORE_COUNTRY_SWEDEN', 'SWE', 16);
+INSERT INTO `#__ttlivescore_countries` (name,ioc_code, ordering) VALUES ('COM_TTLIVESCORE_COUNTRY_WALES', 'WAL', 17);
 CREATE TABLE IF NOT EXISTS `#__ttlivescore_seasons` (
 	`id` int(10) unsigned NOT NULL AUTO_INCREMENT, 
 	`name` varchar(250) NOT NULL DEFAULT '',
