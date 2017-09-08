@@ -51,6 +51,7 @@
 			try
 			{
 				$db->execute();
+			}
 			catch (Exception $e) 
 			{
 				JFactory::getApplication()->enqueueMessage($e->getMessage());
