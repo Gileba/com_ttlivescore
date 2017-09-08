@@ -1,5 +1,6 @@
 <?php
 	defined('_JEXEC') or die;
+	JHtml::_('behavior.framework', true);
 ?>
 
 <form action="<?php echo JRoute::_('index.php?option=com_ttlivescore&view=livescore&layout=edit&id=' . (int) $this->item->id); ?>" method="post" name="adminForm" id="adminForm" class="form-validate">
