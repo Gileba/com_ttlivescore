@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS `#__ttlivescore_players` (
 	`published` tinyint(1) NOT NULL DEFAULT '1',
 	`image` varchar(255),
 	`country` char(3) NOT NULL DEFAULT '0',
-	`dateofbirth` date,
+	`dateofbirth` date DEFAULT '0000-00-00 00:00:00',
 	`publish_up` datetime NOT NULL default '0000-00-00 00:00:00',
 	`publish_down` datetime NOT NULL default '0000-00-00 00:00:00',
 	`sex` varchar(1) NOT NULL DEFAULT '1',
