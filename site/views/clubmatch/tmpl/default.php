@@ -8,7 +8,7 @@
 	$score 				= TTLivescoreHelper::getScore($this->items[0]->cmid);
 	$currentMatch		= $model->getCurrentMatch($this->items[0]->cmid) - 1;
 	if ($currentMatch < $this->items[0]->matches) {
-		$active = false;
+		$active = true;
 		$currentMatchId		= $this->items[$currentMatch]->id;
 		$currentSetScore	= $model->getSetScore($currentMatchId);
 		$currentSet			= $currentSetScore['home'] + $currentSetScore['away'];
