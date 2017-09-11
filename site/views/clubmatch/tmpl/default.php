@@ -13,7 +13,7 @@
 ?>
 
 <script>
-	setInterval(function () { loadLivescore() },30000);
+	setInterval(function () { loadLivescore() },10000);
 
 	function loadLivescore() {
 		jQuery( "#livescore-wrapper" ).load( "<?php echo JUri::getInstance(); ?> .livescore" );
