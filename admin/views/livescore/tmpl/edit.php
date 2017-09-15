@@ -17,20 +17,7 @@
 						{
 							echo '<br />';
 							$points = 'awaypointsset' . $i;
-							if (
-								($this->form->getValue($points) > 0) && 
-								(
-									($this->set == $i) && 
-									(
-										($this->form->getValue($points) < 11) && 
-										($this->form->getValue('homepointsset' . $i) < 11)
-									) || 
-									(
-										(abs($this->form->getValue($points) - $this->form->getValue('homepointsset' . $i)) < 2)
-									)
-								) || 
-								($this->form->getValue($points) > $this->form->getValue('homepointsset' . $i))
-							)
+							if ($this->form->getValue($points) > 0)
 							{
 ?>
 								<button 
@@ -73,20 +60,7 @@
 						{
 							echo '<br />';
 							$points = 'homepointsset' . $i;
-							if (
-								($this->form->getValue($points) > 0) && 
-								(
-									($this->set == $i) && 
-									(
-										($this->form->getValue($points) < 11) && 
-										($this->form->getValue('awaypointsset' . $i) < 11)
-									) || 
-									(
-										(abs($this->form->getValue($points) - $this->form->getValue('awaypointsset' . $i)) < 2)
-									)
-								) || 
-								($this->form->getValue($points) > $this->form->getValue('awaypointsset' . $i))
-							)
+							if ($this->form->getValue($points) > 0)
 							{
 ?>
 								<button 
