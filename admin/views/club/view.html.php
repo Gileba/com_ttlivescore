@@ -31,7 +31,7 @@
 			JToolbarHelper::save('club.save');
 
 			if ($canDo->get('core.create')) {
-				JToolbarHelper::save2new('club.save2new');				
+				// JToolbarHelper::save2new('club.save2new');				
 			}
 
 			if (empty($this->item->id))

@@ -31,7 +31,7 @@
 			JToolbarHelper::save('seasondetail.save');
 
 			if ($canDo->get('core.create')) {
-				JToolbarHelper::save2new('seasondetail.save2new');				
+				// JToolbarHelper::save2new('seasondetail.save2new');				
 			}
 			
 			if (empty($this->item->id))
