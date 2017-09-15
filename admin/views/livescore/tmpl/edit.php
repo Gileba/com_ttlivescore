@@ -20,16 +20,13 @@
 						{
 							echo '<br />';
 							$points = 'awaypointsset' . $i;
-							if ($this->form->getValue($points) > 0)
-							{
 ?>
-								<button 
-									onclick="document.getElementById('<?php echo 'jform_' . $points; ?>').value--; Joomla.submitbutton('livescore.apply');" 
-									class="btn btn-mini btn-danger">
-										<span class="icon-minus-2 icon-white"></span>
-								</button>
+							<button 
+								onclick="document.getElementById('<?php echo 'jform_' . $points; ?>').value--; Joomla.submitbutton('livescore.apply');" 
+								class="btn btn-mini btn-danger" <?php if ($this->form->getValue($points) == 0) { echo $disabled; } ?>>
+									<span class="icon-minus-2 icon-white"></span>
+							</button>
 <?php
-							} 					
 							echo $this->form->getValue($points);
 							if (
 								($this->set == $i) && 
@@ -64,16 +61,13 @@
 						{
 							echo '<br />';
 							$points = 'homepointsset' . $i;
-							if ($this->form->getValue($points) > 0)
-							{
 ?>
-								<button 
-									onclick="document.getElementById('<?php echo 'jform_' . $points; ?>').value--; Joomla.submitbutton('livescore.apply');" 
-									class="btn btn-mini btn-danger">
-										<span class="icon-minus-2 icon-white"></span>
-								</button>
+							<button 
+								onclick="document.getElementById('<?php echo 'jform_' . $points; ?>').value--; Joomla.submitbutton('livescore.apply');" 
+								class="btn btn-mini btn-danger" <?php if ($this->form->getValue($points) == 0) { echo $disabled; } ?>>
+									<span class="icon-minus-2 icon-white"></span>
+							</button>
 <?php
-							} 					
 							echo $this->form->getValue($points);
 							if (
 								($this->set == $i) && 
