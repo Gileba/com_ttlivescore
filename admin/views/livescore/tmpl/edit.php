@@ -1,6 +1,9 @@
 <?php
 	defined('_JEXEC') or die;
 	JHtml::_('behavior.framework', true);
+	$disabled = 'disabled style="background-color: silver" ';
+	$disablehomeplus = true;
+	$disableawayplus = true;
 ?>
 
 <form action="<?php echo JRoute::_('index.php?option=com_ttlivescore&view=livescore&layout=edit&id=' . (int) $this->item->id); ?>" method="post" name="adminForm" id="adminForm" class="form-validate">
@@ -41,14 +44,15 @@
 								)
 							)
 							{
+								$disableawayplus = false;
+							}
 ?>
 								<button 
 									onclick="document.getElementById('<?php echo 'jform_' . $points; ?>').value++; Joomla.submitbutton('livescore.apply');" 
-									class="btn btn-mini btn-success">
+									class="btn btn-mini btn-success" <?php if ($disableawayplus) { echo $disabled; } ?>>
 										<span class="icon-plus-2 icon-white"></span>
 								</button>
 <?php
-							}
 							echo $this->form->renderField($points);
 						}
 ?>
@@ -84,14 +88,15 @@
 								)
 							)
 							{
+								$disablehomeplus = false;
+							}
 ?>
 								<button 
 									onclick="document.getElementById('<?php echo 'jform_' . $points; ?>').value++; Joomla.submitbutton('livescore.apply');" 
-									class="btn btn-mini btn-success">
+									class="btn btn-mini btn-success" <?php if ($disablehomeplus) { echo $disabled; } ?>>
 										<span class="icon-plus-2 icon-white"></span>
 								</button>
 <?php
-							}
 							echo $this->form->renderField($points);
 						}
 					?>
