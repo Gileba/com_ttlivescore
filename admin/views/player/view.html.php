@@ -31,7 +31,7 @@
 			JToolbarHelper::save('player.save');
 
 			if ($canDo->get('core.create')) {
-				// JToolbarHelper::save2new('player.save2new');				
+				JToolbarHelper::save2new('player.save2new');				
 			}
 			
 			if (empty($this->item->id))
