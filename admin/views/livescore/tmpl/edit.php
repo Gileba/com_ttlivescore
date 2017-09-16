@@ -1,6 +1,10 @@
 <?php
 	defined('_JEXEC') or die;
 	JHtml::_('behavior.framework', true);
+
+	$document = JFactory::getDocument();
+	$document->addStyleDeclaration( 'div.alert { display: none; }' );
+	
 	$disabled = 'disabled style="background-color: silver" ';
 	$disablehomeplus = true;
 	$disableawayplus = true;
