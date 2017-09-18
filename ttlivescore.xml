@@ -52,6 +52,8 @@
 		<languages folder="admin">
 			<language tag="en-GB">language/en-GB/en-GB.com_ttlivescore.ini</language>
 			<language tag="en-GB">language/en-GB/en-GB.com_ttlivescore.sys.ini</language>
+			<language tag="nl-BE">language/nl-BE/nl-BE.com_ttlivescore.ini</language>
+			<language tag="nl-BE">language/nl-BE/nl-BE.com_ttlivescore.sys.ini</language>
 		</languages>			
 	</administration>
 
