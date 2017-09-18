@@ -3,21 +3,17 @@
 	
 	JLoader::register('TTLivescoreHelper', JPATH_ADMINISTRATOR . '/components/com_ttlivescore/helpers/ttlivescore.php');
 	
-	$active				= false;
 	$model				= $this->getModel();
 	$score 				= TTLivescoreHelper::getScore($this->items[0]->cmid);
 	$currentMatch		= $model->getCurrentMatch($this->items[0]->cmid) - 1;
-	if ($currentMatch < $this->items[0]->matches) {
-		$active = true;
-		$currentMatchId		= $this->items[$currentMatch]->id;
-		$currentSetScore	= $model->getSetScore($currentMatchId);
-		$currentSet			= $currentSetScore['home'] + $currentSetScore['away'];
-		$currentPoints		= $model->getLivescore($currentMatchId);
-	}
+	$currentMatchId		= $this->items[$currentMatch]->id;
+	$currentSetScore	= $model->getSetScore($currentMatchId);
+	$currentSet			= $currentSetScore['home'] + $currentSetScore['away'];
+	$currentPoints		= $model->getLivescore($currentMatchId);
 ?>
 
 <script>
-	setInterval(function () { loadLivescore() },10000);
+	setInterval(function () { loadLivescore() },30000);
 
 	function loadLivescore() {
 		jQuery( "#livescore-wrapper" ).load( "<?php echo JUri::getInstance(); ?> .livescore" );
@@ -44,9 +40,6 @@
 				</div>
 			</div>
 		</div>
-		<?php
-			if ($active) {
-		?>
 		<div class="currentmatch">
 			<div class="home">
 				<div class="player">
@@ -75,9 +68,6 @@
 				</div>
 			</div>
 		</div>
-		<?php
-			}
-		?>
 	<?php 
 		$j = 0;
 		foreach ($this->items as $item) : 
@@ -108,7 +98,7 @@
 			</div>
 		</div>
 	<?php 
-			$j++;
+		$j++;
 		endforeach;
 	?>
 	</div>

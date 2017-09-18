@@ -1,6 +1,5 @@
 <?php
 	defined('_JEXEC') or die;
-	JHtml::_('formbehavior.chosen', 'select');
 	
 	// Prefilling the values is only possible for existing matches
 	if ($this->form->getValue('id') != 0)
