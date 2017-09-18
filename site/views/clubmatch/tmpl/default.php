@@ -18,7 +18,10 @@
 	$app = JFactory::getApplication();
 	$currentMenuItem = $app->getMenu()->getActive();
 	$params = $currentMenuItem->params;
-	$refreshRate = (int) $params->get('refreshDetail');
+	$refreshrate = 10;
+	if ((int) $params->get('refreshDetail') !== 0) {
+		$refreshRate = (int) $params->get('refreshDetail');
+	}
 
 ?>
 

@@ -6,7 +6,10 @@
 	$app = JFactory::getApplication();
 	$currentMenuItem = $app->getMenu()->getActive();
 	$params = $currentMenuItem->params;
-	$refreshRate = (int) $params->get('refreshGlobal');
+	$refreshrate = 60;
+	if ((int) $params->get('refreshGlobal') !== 0) {
+		$refreshRate = (int) $params->get('refreshGlobal');
+	}
 	
 	$season	= '';
 ?>
