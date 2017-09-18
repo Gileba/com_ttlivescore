@@ -3,11 +3,16 @@
 	
 	JLoader::register('TTLivescoreHelper', JPATH_ADMINISTRATOR . '/components/com_ttlivescore/helpers/ttlivescore.php');
 	
+	$app = JFactory::getApplication();
+	$currentMenuItem = $app->getMenu()->getActive();
+	$params = $currentMenuItem->params;
+	$refreshRate = (int) $params->get('refreshGlobal');
+	
 	$season	= '';
 ?>
 
 <script>
-	setInterval(function () { loadLivescore() },60000);
+	setInterval(function () { loadLivescore() },<?php echo $refreshRate * 1000; ?>);
 
 	function loadLivescore() {
 		jQuery( "#livescore-wrapper" ).load( "index.php?option=com_ttlivescore&view=clubmatches .livescore" );
