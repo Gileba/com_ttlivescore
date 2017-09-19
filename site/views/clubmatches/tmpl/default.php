@@ -44,12 +44,12 @@
 					<?php echo $score['away']; ?>
 				</div>
 				<div class="club">
-					<a href="<?php echo JRoute::_('index.php?option=com_ttlivescore&view=clubmatch&id="'. (int) $item->id); ?>"><?php echo $item->awayclub; ?></a>
+					<a href="<?php echo JRoute::_('index.php?option=com_ttlivescore&view=clubmatch&id='. (int) $item->id); ?>"><?php echo $item->awayclub; ?></a>
 				</div>
 			</div>
 			<div class="home">
 				<div class="club">
-					<a href="<?php echo JRoute::_('index.php?option=com_ttlivescore&view=clubmatch&id="'. (int) $item->id); ?>"><?php echo $item->homeclub; ?></a>
+					<a href="<?php echo JRoute::_('index.php?option=com_ttlivescore&view=clubmatch&id='. (int) $item->id); ?>"><?php echo $item->homeclub; ?></a>
 				</div>
 				<div class="score">
 					<?php echo $score['home']; ?>
