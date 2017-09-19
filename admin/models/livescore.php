@@ -35,7 +35,7 @@
 			return $data;
 		}
 
-		protected function getMatch($id)
+		public function getMatch($id)
 		{
 			$db	= $this->getDbo();
 			$query = $db->getQuery(true);

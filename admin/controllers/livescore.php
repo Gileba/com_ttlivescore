@@ -11,12 +11,10 @@
  
 			// Get the model
 			$model = $this->getModel();
+			$currentMatch = $model->getMatch($id);
 			
-			if ($id !== 0) {
- 
-			}
-
-			$this->setRedirect(JRoute::_('index.php?option=com_ttlivescore&view=livescores&id=' . (int) $model->getMatch($id)->cmid, false));
+			// Redirect
+			$this->setRedirect(JRoute::_('index.php?option=com_ttlivescore&view=livescores&id=' . (int) $currentMatch->cmid, false));
 			$this->redirect();
 		}
 	}
