@@ -29,6 +29,6 @@
 			JFactory::getApplication()->input->set('hidemainmenu', true);
 			
 			JToolbarHelper::title(JText::_('COM_TTLIVESCORE_MANAGER_LIVESCORE'), '');
-			JToolbarHelper::back(JText::_('JTOOLBAR_BACK'), 'index.php?option=com_ttlivescore&view=livescores&id=' (int) $this->item->cmid);
+			JToolbarHelper::back(JText::_('JTOOLBAR_BACK'), 'index.php?option=com_ttlivescore&view=livescores&id=' $this->item->cmid);
 		}
 	}
