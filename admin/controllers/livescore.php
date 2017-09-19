@@ -16,7 +16,7 @@
  
 			}
 
-			$this->setRedirect(JRoute::_('index.php?option=com_ttlivescore&view=livescores&id=' . (int) $model->cmid, false));
+			$this->setRedirect(JRoute::_('index.php?option=com_ttlivescore&view=livescores&id=' . (int) $model->getMatch($id)->cmid, false));
 			$this->redirect();
 		}
 	}
