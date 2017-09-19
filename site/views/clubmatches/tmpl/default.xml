@@ -5,4 +5,10 @@
 			<![CDATA[com_ttlivescore_livescores_view_default_desc]]>
 		</message>
 	</layout>
+	<fields name="params">
+		<fieldset name="basic">
+			<field name="refreshGlobal" type="integer" default="60" label="com_ttlivescore_livescores_view_refresh_global" description="com_ttlivescore_livescores_view_refresh_global_desc" first="10" last="300" step="10"/>
+			<field name="refreshDetail" type="integer" default="10" label="com_ttlivescore_livescores_view_refresh_detail" description="com_ttlivescore_livescores_view_refresh_detail_desc" first="10" last="300" step="10" />
+		</fieldset>
+	</fields>
 </metadata>	
