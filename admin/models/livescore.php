@@ -118,7 +118,7 @@
 				}
 			}
 			
-			return array($all_matches[$i+1]->cmid, 0);
+			return array('cmid' => $all_matches[$i+1]->cmid, 'matchid' => 0);
 		}
 		
 	}
