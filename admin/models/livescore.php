@@ -87,7 +87,7 @@
 
 		public function getNextMatch($id)
 		{
-			$currentMatch = getMatch($id)
+			$currentMatch = getMatch($id);
 
 			$db	= $this->getDbo();
 			$query = $db->getQuery(true);
