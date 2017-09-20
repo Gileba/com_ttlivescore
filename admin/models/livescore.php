@@ -35,7 +35,7 @@
 			return $data;
 		}
 
-		public function getMatch($id)
+		protected function getMatch($id)
 		{
 			$db	= $this->getDbo();
 			$query = $db->getQuery(true);
@@ -84,4 +84,41 @@
 			
 			return $i + 1;
 		}
+
+		public function getNextMatch($id)
+		{
+			$currentMatch = getMatch($id)
+
+			$db	= $this->getDbo();
+			$query = $db->getQuery(true);
+
+			$query
+				->select($db->quoteName(array('a.id', 'a.cmid', 'a.matchid'), array('id', 'cmid', 'matchid')))
+				->from($db->quoteName('#__ttlivescore_livescores', 'a'))
+				->where($db->quoteName('a.cmid') . ' = ' . (int) $currentMatch->cmid)
+				->order('matchid ASC');
+			
+			$db->setQuery($query);
+			try
+			{
+				$db->execute();
+			}
+			catch (Exception $e) 
+			{
+				JFactory::getApplication()->enqueueMessage($e->getMessage());
+			}
+			
+			$num_rows = $db->getNumRows();
+			$all_matches = $db->loadObjectList();
+			
+			for ($i = 0, $i < $num_rows, $i++)
+			{
+				if (($all_matches[$i]->id) === $id && ($i < $num_rows)) {
+					return array('cmid' => $all_matches[$i+1]->cmid, 'matchid' => $all_matches[$i+1]->matchid);
+				}
+			}
+			
+			return array($all_matches[$i+1]->cmid, 0);
+		}
+		
 	}
