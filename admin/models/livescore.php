@@ -111,7 +111,7 @@
 			$num_rows = $db->getNumRows();
 			$all_matches = $db->loadObjectList();
 			
-			for ($i = 0, $i < $num_rows, $i++)
+			for ($i = 0; $i < $num_rows; $i++)
 			{
 				if (($all_matches[$i]->id) === $id && ($i < $num_rows)) {
 					return array('cmid' => $all_matches[$i+1]->cmid, 'matchid' => $all_matches[$i+1]->matchid);
