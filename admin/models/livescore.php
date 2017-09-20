@@ -110,11 +110,15 @@
 			
 			$num_rows = $db->getNumRows();
 			$all_matches = $db->loadObjectList();
+			$next = false;
 			
-			for ($i = 0; $i < $num_rows; $i++)
+			foreach ($all_matches as $match)
 			{
-				if (($all_matches[$i]->id) === $id && ($i < $num_rows)) {
-					return array('cmid' => $all_matches[$i+1]->cmid, 'matchid' => $all_matches[$i+1]->matchid);
+				if ($next === true) {
+					return array('cmid' => $match->cmid, 'matchid' => $match->matchid);
+				}
+				if ($match->id) === $id && ($i < $num_rows)) {
+					$next = true;
 				}
 			}
 			
