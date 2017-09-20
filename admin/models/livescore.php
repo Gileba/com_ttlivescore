@@ -113,7 +113,9 @@
 			
 			for ($i = 0; $i < $num_rows; $i++)
 			{
+				JFactory::getApplication()->enqueueMessage('Looking for a match (part ' . $i . ')');
 				if (($all_matches[$i]->id) === $id && ($i < $num_rows)) {
+					JFactory::getApplication()->enqueueMessage('We found a match');
 					return array('cmid' => $all_matches[$i+1]->cmid, 'matchid' => $all_matches[$i+1]->matchid);
 				}
 			}
