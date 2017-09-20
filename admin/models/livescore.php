@@ -109,6 +109,7 @@
 			}
 			
 			$num_rows = $db->getNumRows();
+			JFactory::getApplication()->enqueueMessage('We have found ' . $num_rows . ' records for this livescore.');
 			$all_matches = $db->loadObjectList();
 			
 			for ($i = 0; $i < $num_rows; $i++)
