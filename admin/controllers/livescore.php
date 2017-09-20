@@ -16,7 +16,8 @@
 			if ($nextMatch->matchid !== 0) {
 			// Redirect
 				$this->setRedirect(JRoute::_('index.php?option=com_ttlivescore&view=livescore&layout=edit&id=' . (int) $nextMatch->matchid, false));
-				$this->redirect();				
+				$this->redirect();	
+				return;			
 			}
 			
 			// Redirect
