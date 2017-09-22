@@ -14,10 +14,19 @@
 		$currentSet			= $currentSetScore['home'] + $currentSetScore['away'];
 		$currentPoints		= $model->getLivescore($currentMatchId);
 	}
+	
+	$app = JFactory::getApplication();
+	$currentMenuItem = $app->getMenu()->getActive();
+	$params = $currentMenuItem->params;
+	$refreshrate = 10;
+	if ((int) $params->get('refreshDetail') !== 0) {
+		$refreshRate = (int) $params->get('refreshDetail');
+	}
+
 ?>
 
 <script>
-	setInterval(function () { loadLivescore() },10000);
+	setInterval(function () { loadLivescore() }, <?php echo $refreshRate * 1000; ?>);
 
 	function loadLivescore() {
 		jQuery( "#livescore-wrapper" ).load( "<?php echo JUri::getInstance(); ?> .livescore" );
