@@ -108,7 +108,6 @@
 				JFactory::getApplication()->enqueueMessage($e->getMessage());
 			}
 			
-			$num_rows = $db->getNumRows();
 			$all_matches = $db->loadObjectList();
 			$next = false;
 			
