@@ -30,5 +30,6 @@
 			
 			JToolbarHelper::title(JText::_('COM_TTLIVESCORE_MANAGER_LIVESCORE'), '');
 			JToolbarHelper::back(JText::_('JTOOLBAR_BACK'), 'index.php?option=com_ttlivescore&view=livescores&id=' . (int) $this->item->cmid);
+			JToolbarHelper::custom('livescore.nextlivescore', 'arrow-right', '', JText::_('COM_TTLIVESCORE_TOOLBAR_NEXT'), false);
 		}
 	}

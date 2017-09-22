@@ -84,4 +84,44 @@
 			
 			return $i + 1;
 		}
+
+		public function getNextMatch($id)
+		{
+			$currentMatch = $this->getMatch($id);
+
+			$db	= $this->getDbo();
+			$query = $db->getQuery(true);
+
+			$query
+				->select($db->quoteName(array('a.id', 'a.cmid', 'a.matchid'), array('id', 'cmid', 'matchid')))
+				->from($db->quoteName('#__ttlivescore_livescores', 'a'))
+				->where($db->quoteName('cmid') . ' = ' . (int) $currentMatch->cmid)
+				->order($db->quotename ('matchid') . ' ASC');
+			
+			$db->setQuery($query);
+			try
+			{
+				$db->execute();
+			}
+			catch (Exception $e) 
+			{
+				JFactory::getApplication()->enqueueMessage($e->getMessage());
+			}
+			
+			$all_matches = $db->loadObjectList();
+			$next = false;
+			
+			foreach ($all_matches as $match)
+			{
+				if ($next == true) {
+					return array('cmid' => $match->cmid, 'matchid' => $match->id);
+				}
+				if (($match->id) == $id) {
+					$next = true;
+				}
+			}
+			
+			return array('cmid' => $currentMatch->cmid, 'matchid' => 0);
+		}
+		
 	}
