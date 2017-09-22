@@ -2,12 +2,12 @@
 <extension type="component" version="3.7" method="upgrade">
 	<name>com_ttlivescore</name>
 	<author>Gijs Lamon</author>
-	<creationDate>2017-09-05</creationDate>
+	<creationDate>2017-09-22</creationDate>
 	<copyright>(C) 2017 Gileba. All rights reserved.</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
 	<authorEmail>info@gileba.be</authorEmail>
 	<authorUrl>http://www.gileba.be</authorUrl>
-	<version>0.7.4</version>
+	<version>0.7.6</version>
 	<description>COM_TTLIVESCORE_XML_DESCRIPTION</description>
 
 	<files folder="site">
@@ -52,6 +52,10 @@
 		<languages folder="admin">
 			<language tag="en-GB">language/en-GB/en-GB.com_ttlivescore.ini</language>
 			<language tag="en-GB">language/en-GB/en-GB.com_ttlivescore.sys.ini</language>
+			<language tag="nl-BE">language/nl-BE/nl-BE.com_ttlivescore.ini</language>
+			<language tag="nl-BE">language/nl-BE/nl-BE.com_ttlivescore.sys.ini</language>
+			<language tag="nl-NL">language/nl-NL/nl-NL.com_ttlivescore.ini</language>
+			<language tag="nl-NL">language/nl-NL/nl-NL.com_ttlivescore.sys.ini</language>
 		</languages>			
 	</administration>
 

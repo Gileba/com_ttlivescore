@@ -3,11 +3,19 @@
 	
 	JLoader::register('TTLivescoreHelper', JPATH_ADMINISTRATOR . '/components/com_ttlivescore/helpers/ttlivescore.php');
 	
+	$app = JFactory::getApplication();
+	$currentMenuItem = $app->getMenu()->getActive();
+	$params = $currentMenuItem->params;
+	$refreshrate = 60;
+	if ((int) $params->get('refreshGlobal') !== 0) {
+		$refreshRate = (int) $params->get('refreshGlobal');
+	}
+	
 	$season	= '';
 ?>
 
 <script>
-	setInterval(function () { loadLivescore() },60000);
+	setInterval(function () { loadLivescore() },<?php echo $refreshRate * 1000; ?>);
 
 	function loadLivescore() {
 		jQuery( "#livescore-wrapper" ).load( "index.php?option=com_ttlivescore&view=clubmatches .livescore" );
@@ -36,12 +44,12 @@
 					<?php echo $score['away']; ?>
 				</div>
 				<div class="club">
-					<a href="<?php echo JRoute::_('index.php?option=com_ttlivescore&view=clubmatch&id="'. (int) $item->id); ?>"><?php echo $item->awayclub; ?></a>
+					<a href="<?php echo JRoute::_('index.php?option=com_ttlivescore&view=clubmatch&id='. (int) $item->id); ?>"><?php echo $item->awayclub; ?></a>
 				</div>
 			</div>
 			<div class="home">
 				<div class="club">
-					<a href="<?php echo JRoute::_('index.php?option=com_ttlivescore&view=clubmatch&id="'. (int) $item->id); ?>"><?php echo $item->homeclub; ?></a>
+					<a href="<?php echo JRoute::_('index.php?option=com_ttlivescore&view=clubmatch&id='. (int) $item->id); ?>"><?php echo $item->homeclub; ?></a>
 				</div>
 				<div class="score">
 					<?php echo $score['home']; ?>

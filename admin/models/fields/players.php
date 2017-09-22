@@ -51,6 +51,8 @@ class JFormFieldPlayers extends JFormFieldList
 			JError::raiseWarning(500, $db->getErrorMsg());
 		}
 		
+		$options = array();
+		
 		foreach ($rows as $row)
 		{
 			$options[] = array('value' => $row->value, 'text' => JText::_(str_replace(" ()","",$row->text)));

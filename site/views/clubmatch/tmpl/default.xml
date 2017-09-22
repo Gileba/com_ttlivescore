@@ -2,7 +2,12 @@
 <metadata>
 	<layout title="com_ttlivescore_clubmatch_view_default_title" option="com_ttlivescore_clubmatch_view_default_option">
 		<message>
-			<![CDATA[com_ttlivescore_clubmatch_view_default_dec]]>
+			<![CDATA[com_ttlivescore_clubmatch_view_default_desc]]>
 		</message>
 	</layout>
+	<fields name="params">
+		<fieldset name="basic">
+			<field name="refreshDetail" type="integer" default="10" label="com_ttlivescore_livescores_view_refresh_detail" description="com_ttlivescore_livescores_view_refresh_detail_desc" first="10" last="300" step="10" />
+		</fieldset>
+	</fields>
 </metadata>	

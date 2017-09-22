@@ -1,5 +1,13 @@
 <?php
 	defined('_JEXEC') or die;
+	JHtml::_('behavior.framework', true);
+
+	$document = JFactory::getDocument();
+	$document->addStyleDeclaration( 'div.alert { display: none; }' );
+	$document->addStyleDeclaration( 'button[disabled], button[disabled]:hover { background-color: silver; }' );
+	
+	$disablehomeplus = true;
+	$disableawayplus = true;
 ?>
 
 <form action="<?php echo JRoute::_('index.php?option=com_ttlivescore&view=livescore&layout=edit&id=' . (int) $this->item->id); ?>" method="post" name="adminForm" id="adminForm" class="form-validate">
@@ -9,37 +17,26 @@
 				<?php echo JHtml::_('bootstrap.startPane', 'myTab', array('active' => 'details')); ?>
 				<?php echo JHtml::_('bootstrap.addPanel', 'myTab', 'details', JText::sprintf('COM_TTLIVESCORE_EDIT_LIVESCORE', $this->item->id, true)); ?>
 				<div class="span6 form-horizontal pull-right center">
-					<?php
-						echo TTLivescoreHelper::getPlayername($this->form->getValue('awayplayerid'));
+						<div class="span12 center">
+						<?php
+							echo '<h3>' . TTLivescoreHelper::getPlayername($this->form->getValue('awayplayerid')) . '</h3>';
+							echo '</div>';
 						
 						for ($i = 1; $i <= $this->set; $i++)
 						{
-							echo '<br />';
 							$points = 'awaypointsset' . $i;
-							if (
-								($this->form->getValue($points) > 0) && 
-								(
-									($this->set == $i) && 
-									(
-										($this->form->getValue($points) < 11) && 
-										($this->form->getValue('homepointsset' . $i) < 11)
-									) || 
-									(
-										(abs($this->form->getValue($points) - $this->form->getValue('homepointsset' . $i)) < 2)
-									)
-								) || 
-								($this->form->getValue($points) > $this->form->getValue('homepointsset' . $i))
-							)
-							{
 ?>
+							<div class="span12" style="margin-left: 0px;">
+								<div class="span4"></div>
 								<button 
 									onclick="document.getElementById('<?php echo 'jform_' . $points; ?>').value--; Joomla.submitbutton('livescore.apply');" 
-									class="btn btn-mini btn-danger">
+									class="span1 btn btn-mini btn-danger"
+									style="min-height: 1px;" 
+									<?php if ($this->form->getValue($points) == 0) { echo 'disabled '; } ?>>
 										<span class="icon-minus-2 icon-white"></span>
 								</button>
 <?php
-							} 					
-							echo $this->form->getValue($points);
+							echo '<div class="span2 center">'. $this->form->getValue($points) . '</div>';
 							if (
 								($this->set == $i) && 
 								(
@@ -53,49 +50,43 @@
 								)
 							)
 							{
+								$disableawayplus = false;
+							}
 ?>
 								<button 
 									onclick="document.getElementById('<?php echo 'jform_' . $points; ?>').value++; Joomla.submitbutton('livescore.apply');" 
-									class="btn btn-mini btn-success">
+									class="span1 btn btn-mini btn-success" 
+									style="min-height: 1px;" 
+									<?php if ($disableawayplus) { echo 'disabled '; } ?>>
 										<span class="icon-plus-2 icon-white"></span>
 								</button>
 <?php
-							}
 							echo $this->form->renderField($points);
+							echo '<div class="span4"></div>';
+							echo '</div>';
 						}
 ?>
 				</div>
 				<div class="span6 form-horizontal center">
+						<div class="span12 center">
 <?php
-						echo TTLivescoreHelper::getPlayername($this->form->getValue('homeplayerid'));
+						echo '<h3>' . TTLivescoreHelper::getPlayername($this->form->getValue('homeplayerid')) . '</h3>';
+						echo '</div>';
 						for ($i = 1; $i <= $this->set; $i++)
 						{
-							echo '<br />';
 							$points = 'homepointsset' . $i;
-							if (
-								($this->form->getValue($points) > 0) && 
-								(
-									($this->set == $i) && 
-									(
-										($this->form->getValue($points) < 11) && 
-										($this->form->getValue('awaypointsset' . $i) < 11)
-									) || 
-									(
-										(abs($this->form->getValue($points) - $this->form->getValue('awaypointsset' . $i)) < 2)
-									)
-								) || 
-								($this->form->getValue($points) > $this->form->getValue('awaypointsset' . $i))
-							)
-							{
 ?>
-								<button 
-									onclick="document.getElementById('<?php echo 'jform_' . $points; ?>').value--; Joomla.submitbutton('livescore.apply');" 
-									class="btn btn-mini btn-danger">
-										<span class="icon-minus-2 icon-white"></span>
-								</button>
+							<div class="span12" style="margin-left: 0px;">
+								<div class="span4"></div>
+							<button 
+								onclick="document.getElementById('<?php echo 'jform_' . $points; ?>').value--; Joomla.submitbutton('livescore.apply');" 
+								class="btn btn-mini btn-danger span1" 
+								style="min-height: 1px;"
+								<?php if ($this->form->getValue($points) == 0) { echo 'disabled '; } ?>>
+									<span class="icon-minus-2 icon-white"></span>
+							</button>
 <?php
-							} 					
-							echo $this->form->getValue($points);
+							echo '<div class="span2 center">'. $this->form->getValue($points) . '</div>';
 							if (
 								($this->set == $i) && 
 								(
@@ -109,15 +100,20 @@
 								)
 							)
 							{
+								$disablehomeplus = false;
+							}
 ?>
 								<button 
 									onclick="document.getElementById('<?php echo 'jform_' . $points; ?>').value++; Joomla.submitbutton('livescore.apply');" 
-									class="btn btn-mini btn-success">
+									class="btn btn-mini btn-success span1" 
+									style="min-height: 1px;"
+									<?php if ($disablehomeplus) { echo 'disabled '; } ?>>
 										<span class="icon-plus-2 icon-white"></span>
 								</button>
 <?php
-							}
 							echo $this->form->renderField($points);
+							echo '<div class="span4"></div>';
+							echo '</div>';
 						}
 					?>
 				</div>
