@@ -95,8 +95,8 @@
 			$query
 				->select($db->quoteName(array('a.id', 'a.cmid', 'a.matchid'), array('id', 'cmid', 'matchid')))
 				->from($db->quoteName('#__ttlivescore_livescores', 'a'))
-				->where($db->quoteName('a.cmid') . ' = ' . (int) $currentMatch->cmid)
-				->order('matchid ASC');
+				->where($db->quoteName('cmid') . ' = ' . (int) $currentMatch->cmid)
+				->order($db->quotename ('matchid') . ' ASC');
 			
 			$db->setQuery($query);
 			try
@@ -114,15 +114,15 @@
 			
 			foreach ($all_matches as $match)
 			{
-				if ($next === true) {
+				if ($next == true) {
 					return array('cmid' => $match->cmid, 'matchid' => $match->matchid);
 				}
-				if ($match->id) === $id && ($i < $num_rows)) {
+				if (($match->id) == $id) {
 					$next = true;
 				}
 			}
 			
-			return array('cmid' => $all_matches[$i+1]->cmid, 'matchid' => 0);
+			return array('cmid' => $currentMatch->cmid, 'matchid' => 0);
 		}
 		
 	}
