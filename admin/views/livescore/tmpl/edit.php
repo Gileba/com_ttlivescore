@@ -27,16 +27,16 @@
 							$points = 'awaypointsset' . $i;
 ?>
 							<div class="span12" style="margin-left: 0px;">
-								<div class="span4"></div>
+								<div class="span3"></div>
 								<button 
 									onclick="document.getElementById('<?php echo 'jform_' . $points; ?>').value--; Joomla.submitbutton('livescore.apply');" 
-									class="span1 btn btn-mini btn-danger"
-									style="min-height: 1px;" 
+									class="span2 btn btn-danger"
+									style="min-height: 1px; font-size: 200%; height: 40px;" 
 									<?php if ($this->form->getValue($points) == 0) { echo 'disabled '; } ?>>
-										<span class="icon-minus-2 icon-white"></span>
+										<span class="icon-minus-2 icon-white" style="margin-right: .5em; margin-top: 0.1em;"></span>
 								</button>
 <?php
-							echo '<div class="span2 center">'. $this->form->getValue($points) . '</div>';
+							echo '<div class="span2 center" style="font-size: 200%; font-weight: bold; height: 40px; margin-top: .4em;">'. $this->form->getValue($points) . '</div>';
 							if (
 								($this->set == $i) && 
 								(
@@ -55,14 +55,14 @@
 ?>
 								<button 
 									onclick="document.getElementById('<?php echo 'jform_' . $points; ?>').value++; Joomla.submitbutton('livescore.apply');" 
-									class="span1 btn btn-mini btn-success" 
-									style="min-height: 1px;" 
+									class="span2 btn btn-success" 
+									style="min-height: 1px; font-size: 200%; height: 40px;" 
 									<?php if ($disableawayplus) { echo 'disabled '; } ?>>
-										<span class="icon-plus-2 icon-white"></span>
+										<span class="icon-plus-2 icon-white" style="margin-right: .5em; margin-top: 0.1em;"></span>
 								</button>
 <?php
 							echo $this->form->renderField($points);
-							echo '<div class="span4"></div>';
+							echo '<div class="span3"></div>';
 							echo '</div>';
 						}
 ?>
@@ -77,16 +77,16 @@
 							$points = 'homepointsset' . $i;
 ?>
 							<div class="span12" style="margin-left: 0px;">
-								<div class="span4"></div>
+								<div class="span3"></div>
 							<button 
 								onclick="document.getElementById('<?php echo 'jform_' . $points; ?>').value--; Joomla.submitbutton('livescore.apply');" 
-								class="btn btn-mini btn-danger span1" 
-								style="min-height: 1px;"
+								class="btn btn-danger span2" 
+								style="min-height: 1px; font-size: 200%; height: 40px;"
 								<?php if ($this->form->getValue($points) == 0) { echo 'disabled '; } ?>>
-									<span class="icon-minus-2 icon-white"></span>
+									<span class="icon-minus-2 icon-white" style="margin-right: .5em; margin-top: 0.1em;"></span>
 							</button>
 <?php
-							echo '<div class="span2 center">'. $this->form->getValue($points) . '</div>';
+							echo '<div class="span2 center" style="font-size: 200%; font-weight: bold; height: 40px; margin-top: .4em;">'. $this->form->getValue($points) . '</div>';
 							if (
 								($this->set == $i) && 
 								(
@@ -105,14 +105,14 @@
 ?>
 								<button 
 									onclick="document.getElementById('<?php echo 'jform_' . $points; ?>').value++; Joomla.submitbutton('livescore.apply');" 
-									class="btn btn-mini btn-success span1" 
-									style="min-height: 1px;"
+									class="btn btn-success span2" 
+									style="min-height: 1px; font-size: 200%; height: 40px;"
 									<?php if ($disablehomeplus) { echo 'disabled '; } ?>>
-										<span class="icon-plus-2 icon-white"></span>
+										<span class="icon-plus-2 icon-white" style="margin-right: .5em; margin-top: 0.1em;"></span>
 								</button>
 <?php
 							echo $this->form->renderField($points);
-							echo '<div class="span4"></div>';
+							echo '<div class="span3"></div>';
 							echo '</div>';
 						}
 					?>
