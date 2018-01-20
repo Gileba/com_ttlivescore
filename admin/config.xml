@@ -7,6 +7,7 @@
 			label="COM_TTLIVESCORE_FIELD_BIG_BUTTONS_LABEL"
 			description="COM_TTLIVESCORE_FIELD_BIG_BUTTONS_DESC"
 			default="0"
+			class="btn-group btn-group-yesno"
 		>
 			<option value="1">JYES</option>
 			<option value="0">JNO</option>
