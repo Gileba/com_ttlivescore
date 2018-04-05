@@ -56,7 +56,7 @@
 		<?php
 			if ($active) {
 		?>
-		<div class="currentmatch">
+		<div class="playerNames">
 			<div class="home">
 				<div class="player">
 					<?php echo TTLivescoreHelper::getPlayername($this->items[$currentMatch]->homeplayerid); ?>
@@ -67,6 +67,8 @@
 					<?php echo TTLivescoreHelper::getPlayername($this->items[$currentMatch]->awayplayerid); ?>
 				</div>
 			</div>
+		</div>
+		<div class="currentmatch">
 			<div class="home">
 				<div class="points">
 					<div><?php echo $currentPoints['home'][$currentSet]; ?></div>
