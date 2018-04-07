@@ -6,8 +6,7 @@
 		public function creatematches()
 		{
 			// Get the input
-			$input = JFactory::getApplication()->input;
-			$id = $input->getInt('id', '0');
+			$id = JFactory::getApplication()->input->getInt('id', '0');
  
 			// Get the model
 			$model = $this->getModel();
