@@ -1,0 +1,26 @@
+.ttlivescore .btn {
+	min-height: 1px;
+}
+
+.ttlivescore .bigbutton {
+	font-size: 200%;
+	height: 40px;
+}
+
+.ttlivescore .bigbutton span {
+	margin-right: .5em;
+	margin-top: .1em;
+}
+
+.ttlivescore .bigbutton.score {
+	font-weight: bold;
+	margin-top: .4em;
+}
+
+div.alert { 
+	display: none;
+}
+
+button[disabled], button[disabled]:hover { 
+	background-color: silver; 
+}
