@@ -46,7 +46,7 @@
 
 			if(!empty($search)){
 				$like = '%' . $db->escape($search, true) . '%';
-				$query->where('(hc.name LIKE ' . $db->quote($like, false) . ' OR ' . 'ac.name LIKE ' . $db->quote($like, false) . ')');
+				$query->where('(hc.name LIKE ' . $db->quote($like, false) . ' OR ac.name LIKE ' . $db->quote($like, false) . ')');
 			}
 			
 			return $query;

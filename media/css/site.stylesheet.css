@@ -92,7 +92,7 @@
 /* Current Match */
 .currentmatch .home, .currentmatch .away, .playerNames {
 	background-color: #999;
-	padding: 0px;
+	padding: 0;
 }
 
 .player {
