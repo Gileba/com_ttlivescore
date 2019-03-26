@@ -10,7 +10,8 @@
 		protected $pagination;
 		
 
-		public function display($tpl = null) {
+		public function display($tpl = null)
+        {
 			$this->items 		= $this->get('Items');
 			$this->state 		= $this->get('State');
 			$this->pagination	= $this->get('Pagination');
