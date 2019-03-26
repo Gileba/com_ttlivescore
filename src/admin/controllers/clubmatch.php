@@ -25,7 +25,7 @@
 			$id = $input->getInt('id', '0');
 			
 			// Redirect to the club match form.
-			$this->setRedirect(JRoute::_('index.php?option=com_ttlivescore&view=livescores&id=' . (int) $id , false));
+			$this->setRedirect(JRoute::_('index.php?option=com_ttlivescore&view=livescores&id=' . (int) $id, false));
 			$this->redirect();
 		}
 		

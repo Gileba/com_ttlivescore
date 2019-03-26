@@ -56,7 +56,7 @@
 			
 			JHtmlSidebar::setAction('index.php?option=com_ttlivescore&view=clubmatches');
 			
-			JHtmlSidebar::addFilter(Jtext::_('COM_TTLIVESCORE_FILTER_SEASONS'),'filter_seasons', JHtml::_('select.options', $this->seasons->getOptions(), 'value', 'text', $this->state->get('filter.seasons'), true));
+			JHtmlSidebar::addFilter(Jtext::_('COM_TTLIVESCORE_FILTER_SEASONS'), 'filter_seasons', JHtml::_('select.options', $this->seasons->getOptions(), 'value', 'text', $this->state->get('filter.seasons'), true));
 		}
 		
 		protected function getSortFields()

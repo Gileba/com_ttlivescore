@@ -60,8 +60,8 @@
 			
 			JHtmlSidebar::setAction('index.php?option=com_ttlivescore&view=seasondetails');
 			
-			JHtmlSidebar::addFilter(Jtext::_('COM_TTLIVESCORE_FILTER_SEASONS'),'filter_seasons', JHtml::_('select.options', $this->seasons->getOptions(), 'value', 'text', $this->state->get('filter.seasons'), true));
-			JHtmlSidebar::addFilter(Jtext::_('COM_TTLIVESCORE_FILTER_CLUBS'),'filter_clubs', JHtml::_('select.options', $this->clubs->getOptions(), 'value', 'text', $this->state->get('filter.clubs'), true));
+			JHtmlSidebar::addFilter(Jtext::_('COM_TTLIVESCORE_FILTER_SEASONS'), 'filter_seasons', JHtml::_('select.options', $this->seasons->getOptions(), 'value', 'text', $this->state->get('filter.seasons'), true));
+			JHtmlSidebar::addFilter(Jtext::_('COM_TTLIVESCORE_FILTER_CLUBS'), 'filter_clubs', JHtml::_('select.options', $this->clubs->getOptions(), 'value', 'text', $this->state->get('filter.clubs'), true));
 		}
 		
 		protected function getSortFields()
