@@ -33,7 +33,7 @@ if ((int) $params->get('refreshDetail') !== 0) {
 	}
 </script>
 
-<div id="livescore-wrapper">
+<div id="livescore-wrapper" class="livescore-wrapper">
 	<div class="livescore">
 		<div class="clubmatch">
 			<div class="home">
