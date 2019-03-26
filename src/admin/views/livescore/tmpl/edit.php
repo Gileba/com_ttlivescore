@@ -30,7 +30,8 @@
 								<button 
 									onclick="document.getElementById('<?php echo 'jform_' . $points; ?>').value--; Joomla.submitbutton('livescore.apply');" 
 									<?php echo 'class="btn btn-danger' . ($bigButtons ? ' span2 bigbutton' : ' span1 btn-mini') . '"'; ?>
-									<?php if ($this->form->getValue($points) == 0) { echo 'disabled '; } ?>>
+									<?php if ($this->form->getValue($points) == 0) { echo 'disabled '; 
+                                    } ?>>
 										<?php echo '<span class="icon-minus-2 icon-white"></span>'; ?>
 								</button>
 <?php
@@ -47,7 +48,8 @@
 								<button 
 									onclick="document.getElementById('<?php echo 'jform_' . $points; ?>').value++; Joomla.submitbutton('livescore.apply');" 
 									<?php echo 'class="btn btn-success' . ($bigButtons ? ' span2 bigbutton' : ' span1 btn-mini') . '"'; ?>
-									<?php if ($disableawayplus) { echo 'disabled '; } ?>>
+									<?php if ($disableawayplus) { echo 'disabled '; 
+                                    } ?>>
 										<?php echo '<span class="icon-plus-2 icon-white"></span>'; ?>
 								</button>
 <?php
@@ -71,7 +73,8 @@
 							<button 
 								onclick="document.getElementById('<?php echo 'jform_' . $points; ?>').value--; Joomla.submitbutton('livescore.apply');" 
 								<?php echo 'class="btn btn-danger' . ($bigButtons ? ' span2 bigbutton' : ' span1 btn-mini') . '"'; ?>
-								<?php if ($this->form->getValue($points) == 0) { echo 'disabled '; } ?>>
+								<?php if ($this->form->getValue($points) == 0) { echo 'disabled '; 
+                                } ?>>
 										<?php echo '<span class="icon-minus-2 icon-white"></span>'; ?>
 							</button>
 <?php
@@ -88,7 +91,8 @@
 								<button 
 									onclick="document.getElementById('<?php echo 'jform_' . $points; ?>').value++; Joomla.submitbutton('livescore.apply');" 
 									<?php echo 'class="btn btn-success' . ($bigButtons ? ' span2 bigbutton' : 'span1 btn-mini') . '"'; ?>
-									<?php if ($disablehomeplus) { echo 'disabled '; } ?>>
+									<?php if ($disablehomeplus) { echo 'disabled '; 
+                                    } ?>>
 										<?php echo '<span class="icon-plus-2 icon-white"></span>'; ?>
 								</button>
 <?php

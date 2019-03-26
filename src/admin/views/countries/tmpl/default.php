@@ -63,8 +63,10 @@
 			<label for="directionTable" class="element-invisible"><?php echo jText::_('JFIELD_ORDERING_DESC'); ?></label>
 			<select name="directionTable" id="directionTable" class="input-medium" size="1" onchange="Joomla.orderTable();">
 				<option 
-					value="asc" <?php if($listDirn === 'asc') { echo 'selected="selected"';} ?>><?php echo JText::_('JGLOBAL_ORDER_ASCENDING'); ?></option>
-				<option value="desc" <?php if($listDirn === 'desc') { echo 'selected="selected"';} ?>><?php echo JText::_('JGLOBAL_ORDER_DESCENDING'); ?></option>
+					value="asc" <?php if($listDirn === 'asc') { echo 'selected="selected"';
+                                } ?>><?php echo JText::_('JGLOBAL_ORDER_ASCENDING'); ?></option>
+				<option value="desc" <?php if($listDirn === 'desc') { echo 'selected="selected"';
+                                     } ?>><?php echo JText::_('JGLOBAL_ORDER_DESCENDING'); ?></option>
 			</select>
 		</div>
 		<div class="btn-group pull-right">
@@ -123,11 +125,11 @@
 							<i class="icon-menu"></i>
 						</span>
 						<input type="text" style="display:none;" name="order[]" size="5" value="<?php echo $item->ordering; ?>" class="width-20 text-area-order" />
-					<?php else : ?>
+					    <?php else : ?>
 						<span class="sortable-handler inactive">
 							<i class="icon-menu"></i>
 						</span>
-					<?php endif; ?>
+					    <?php endif; ?>
 					</td>
 					<td class="center hidden-phone">
 						<?php echo JHtml::_('grid.id', $i, $item->id); ?>

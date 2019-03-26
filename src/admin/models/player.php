@@ -28,7 +28,8 @@
 			if (empty($data))
 			{
 				$data = $this->getItem();
-				if ($data->dateofbirth === '0000-00-00') { $data->dateofbirth = ''; }
+				if ($data->dateofbirth === '0000-00-00') { $data->dateofbirth = ''; 
+                }
 			}
 			
 			return $data;
@@ -39,5 +40,6 @@
 			$table->lastname = htmlspecialchars_decode($table->lastname, ENT_QUOTES);
 			$table->firstname = htmlspecialchars_decode($table->firstname, ENT_QUOTES);
 			$table->middlename = htmlspecialchars_decode($table->middlename, ENT_QUOTES);
-			$table->dateofbirth = JFactory::getDate($table->dateofbirth)->toSql();		}
+			$table->dateofbirth = JFactory::getDate($table->dateofbirth)->toSql();		
+        }
 	}

@@ -93,7 +93,8 @@
 		$j = 0;
 		foreach ($this->items as $item) : 
 	?>
-		<div class="detailedscores<?php if ($j == $currentMatch) {?> active<?php ; } ?>">
+		<div class="detailedscores<?php if ($j == $currentMatch) {?> active<?php ; 
+                                  } ?>">
 			<div class="homeplayer">
 				<?php echo TTLivescoreHelper::getPlayername($item->homeplayerid); ?>
 			</div>
