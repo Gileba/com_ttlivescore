@@ -1,5 +1,5 @@
 <?php
-	defined ('_JEXEC') or die;
+	defined('_JEXEC') or die;
 
 	JHtml::stylesheet('com_ttlivescore/site.stylesheet.css', array(), true);
 

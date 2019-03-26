@@ -35,7 +35,7 @@
 										<?php echo '<span class="icon-minus-2 icon-white"></span>'; ?>
 								</button>
 							<?php
-							echo '<div class="span2 center score' . ($bigButtons ? ' bigbutton':'') . '">'. $this->form->getValue($points) . '</div>';
+							echo '<div class="span2 center score' . ($bigButtons ? ' bigbutton' : '') . '">' . $this->form->getValue($points) . '</div>';
 							if (($this->set == $i)
 								&& (                                (                                ($this->form->getValue($points) < 11)
 								&& ($this->form->getValue('homepointsset' . $i) < 11)                                )
@@ -78,7 +78,7 @@ for ($i = 1; $i <= $this->set; $i++)
 				<?php echo '<span class="icon-minus-2 icon-white"></span>'; ?>
 							</button>
 	<?php
-	echo '<div class="span2 center score' . ($bigButtons ? ' bigbutton':'') . '">'. $this->form->getValue($points) . '</div>';
+	echo '<div class="span2 center score' . ($bigButtons ? ' bigbutton' : '') . '">' . $this->form->getValue($points) . '</div>';
 	if (($this->set == $i)
 		&& (                                (                                ($this->form->getValue($points) < 11)
 		&& ($this->form->getValue('awaypointsset' . $i) < 11)                                )

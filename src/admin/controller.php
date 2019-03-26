@@ -7,7 +7,7 @@ class TTLivescoreController extends JControllerLegacy
 
 	public function display($cachable = false, $urlparams = false)
 	{
-		require_once JPATH_COMPONENT.'/helpers/ttlivescore.php';
+		require_once JPATH_COMPONENT . '/helpers/ttlivescore.php';
 
 		$view	= $this->input->getWord('view', 'players');
 		$layout	= $this->input->getWord('layout', 'default');

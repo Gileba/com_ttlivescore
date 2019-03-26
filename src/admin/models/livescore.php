@@ -96,7 +96,7 @@ class TTLivescoreModelLivescore extends JModelAdmin
 			->select($db->quoteName(array('a.id', 'a.cmid', 'a.matchid'), array('id', 'cmid', 'matchid')))
 			->from($db->quoteName('#__ttlivescore_livescores', 'a'))
 			->where($db->quoteName('cmid') . ' = ' . (int) $currentMatch->cmid)
-			->order($db->quotename ('matchid') . ' ASC');
+			->order($db->quotename('matchid') . ' ASC');
 
 		$db->setQuery($query);
 		try

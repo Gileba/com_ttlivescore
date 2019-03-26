@@ -66,7 +66,7 @@ if ($saveOrder)
 					value="asc" <?php if($listDirn === 'asc') { echo 'selected="selected"';
 								} ?>><?php echo JText::_('JGLOBAL_ORDER_ASCENDING'); ?></option>
 				<option value="desc" <?php if($listDirn === 'desc') { echo 'selected="selected"';
-										} ?>><?php echo JText::_('JGLOBAL_ORDER_DESCENDING'); ?></option>
+							} ?>><?php echo JText::_('JGLOBAL_ORDER_DESCENDING'); ?></option>
 			</select>
 		</div>
 		<div class="btn-group pull-right">
@@ -119,7 +119,7 @@ if ($saveOrder)
 						if (!$saveOrder) :
 							$disabledLabel = JText::_('JORDERINGDISABLED');
 							$disableClassName = 'inactive tip-top';
-							endif;
+						endif;
 						?>
 						<span class="sortable-handler hasTooltip <?php echo $disableClassName; ?>" title="<?php echo $disabledLabel; ?>">
 							<i class="icon-menu"></i>
@@ -129,7 +129,7 @@ if ($saveOrder)
 						<span class="sortable-handler inactive">
 							<i class="icon-menu"></i>
 						</span>
-						<?php endif; ?>
+					<?php endif; ?>
 					</td>
 					<td class="center hidden-phone">
 						<?php echo JHtml::_('grid.id', $i, $item->id); ?>

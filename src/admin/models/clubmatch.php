@@ -75,7 +75,7 @@ class TTLivescoreModelClubmatch extends JModelAdmin
 			$awayplayer = $awayplayerorder[$i] - 1;
 
 			// Insert values.
-			$values = array($id, $i+1, $homeplayers[$homeplayer], $awayplayers[$awayplayer]);
+			$values = array($id, $i + 1, $homeplayers[$homeplayer], $awayplayers[$awayplayer]);
 
 			// Prepare the insert query.
 			$query
