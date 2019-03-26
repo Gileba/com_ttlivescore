@@ -163,7 +163,7 @@
 		}
 		
 		public function getClubname($id)
-        {
+		{
 			$db	= $this->getDbo();
 			$query = $db->getQuery(true);
 
@@ -188,7 +188,7 @@
 		}
 		
 		public function getCurrentMatch($id)
-        {
+		{
 			$currentScore = TTLivescoreHelper::getScore($id);
 			return $currentScore['home'] + $currentScore['away'] + 1;
 		}

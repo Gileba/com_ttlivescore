@@ -94,7 +94,7 @@
 		foreach ($this->items as $item) : 
 	?>
 		<div class="detailedscores<?php if ($j == $currentMatch) {?> active<?php ; 
-                                  } ?>">
+								  } ?>">
 			<div class="homeplayer">
 				<?php echo TTLivescoreHelper::getPlayername($item->homeplayerid); ?>
 			</div>
@@ -107,7 +107,7 @@
 					$numberOfSets = $model->getSetScore($item->id);
 					for ($i = 1; $i <= ($numberOfSets['home'] + $numberOfSets['away']); $i++) {
 						if ($i > 1) { echo ", ";
-                        }
+						}
 						echo $model->getShortScore($item->id, $i);
 					}
 				?>

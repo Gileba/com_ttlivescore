@@ -54,9 +54,9 @@
 			<select name="directionTable" id="directionTable" class="input-medium" size="1" onchange="Joomla.orderTable();">
 				<option 
 					value="asc" <?php if($listDirn === 'asc') { echo 'selected="selected"';
-                                } ?>><?php echo JText::_('JGLOBAL_ORDER_ASCENDING'); ?></option>
+								} ?>><?php echo JText::_('JGLOBAL_ORDER_ASCENDING'); ?></option>
 				<option value="desc" <?php if($listDirn === 'desc') { echo 'selected="selected"';
-                                     } ?>><?php echo JText::_('JGLOBAL_ORDER_DESCENDING'); ?></option>
+									 } ?>><?php echo JText::_('JGLOBAL_ORDER_DESCENDING'); ?></option>
 			</select>
 		</div>
 		<div class="btn-group pull-right">

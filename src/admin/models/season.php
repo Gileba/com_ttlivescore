@@ -28,10 +28,10 @@
 			{
 				$data = $this->getItem();
 				if ($data->startdate === '0000-00-00') { $data->startdate = ''; 
-                }
+				}
 
 				if ($data->enddate === '0000-00-00') { $data->endtdate = ''; 
-                }
+				}
 			}
 			
 			return $data;
