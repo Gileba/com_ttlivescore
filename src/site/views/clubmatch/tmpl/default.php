@@ -7,21 +7,21 @@
 	$model				= $this->getModel();
 	$score 				= TTLivescoreHelper::getScore($this->items[0]->cmid);
 	$currentMatch		= $model->getCurrentMatch($this->items[0]->cmid) - 1;
-	if ($currentMatch < $this->items[0]->matches) {
-		$active = true;
-		$currentMatchId		= $this->items[$currentMatch]->id;
-		$currentSetScore	= $model->getSetScore($currentMatchId);
-		$currentSet			= $currentSetScore['home'] + $currentSetScore['away'];
-		$currentPoints		= $model->getLivescore($currentMatchId);
-	}
+if ($currentMatch < $this->items[0]->matches) {
+	$active = true;
+	$currentMatchId		= $this->items[$currentMatch]->id;
+	$currentSetScore	= $model->getSetScore($currentMatchId);
+	$currentSet			= $currentSetScore['home'] + $currentSetScore['away'];
+	$currentPoints		= $model->getLivescore($currentMatchId);
+}
 
 	$app = JFactory::getApplication();
 	$currentMenuItem = $app->getMenu()->getActive();
 	$params = $currentMenuItem->params;
 	$refreshrate = 10;
-	if ((int) $params->get('refreshDetail') !== 0) {
-		$refreshRate = (int) $params->get('refreshDetail');
-	}
+if ((int) $params->get('refreshDetail') !== 0) {
+	$refreshRate = (int) $params->get('refreshDetail');
+}
 
 ?>
 
@@ -54,17 +54,17 @@
 			</div>
 		</div>
 		<?php
-			if ($active) {
-		?>
+		if ($active) {
+			?>
 		<div class="playerNames">
 			<div class="home">
 				<div class="player">
-					<?php echo TTLivescoreHelper::getPlayername($this->items[$currentMatch]->homeplayerid); ?>
+				<?php echo TTLivescoreHelper::getPlayername($this->items[$currentMatch]->homeplayerid); ?>
 				</div>
 			</div>
 			<div class="away">
 				<div class="player">
-					<?php echo TTLivescoreHelper::getPlayername($this->items[$currentMatch]->awayplayerid); ?>
+				<?php echo TTLivescoreHelper::getPlayername($this->items[$currentMatch]->awayplayerid); ?>
 				</div>
 			</div>
 		</div>
@@ -74,27 +74,27 @@
 					<div><?php echo $currentPoints['home'][$currentSet]; ?></div>
 				</div>
 				<div class="score">
-					<?php echo $currentSetScore['home']; ?>
+				<?php echo $currentSetScore['home']; ?>
 				</div>
 			</div>
 			<div class="away">
 				<div class="score">
-					<?php echo $currentSetScore['away']; ?>
+				<?php echo $currentSetScore['away']; ?>
 				</div>
 				<div class="points">
 					<div><?php echo $currentPoints['away'][$currentSet]; ?></div>
 				</div>
 			</div>
 		</div>
-		<?php
-			}
+			<?php
+		}
 		?>
 	<?php
 		$j = 0;
-		foreach ($this->items as $item) :
-	?>
+	foreach ($this->items as $item) :
+		?>
 		<div class="detailedscores<?php if ($j == $currentMatch) {?> active<?php ;
-								  } ?>">
+									} ?>">
 			<div class="homeplayer">
 				<?php echo TTLivescoreHelper::getPlayername($item->homeplayerid); ?>
 			</div>
@@ -104,12 +104,12 @@
 			</div>
 			<div class="details">
 				<?php
-					$numberOfSets = $model->getSetScore($item->id);
-					for ($i = 1; $i <= ($numberOfSets['home'] + $numberOfSets['away']); $i++) {
-						if ($i > 1) { echo ", ";
-						}
-						echo $model->getShortScore($item->id, $i);
+				$numberOfSets = $model->getSetScore($item->id);
+				for ($i = 1; $i <= ($numberOfSets['home'] + $numberOfSets['away']); $i++) {
+					if ($i > 1) { echo ", ";
 					}
+					echo $model->getShortScore($item->id, $i);
+				}
 				?>
 			</div>
 			<div class="homescore">
@@ -120,8 +120,8 @@
 				<?php echo $model->getSetScore($item->id)['away']; ?>
 			</div>
 		</div>
-	<?php
-			$j++;
+		<?php
+		$j++;
 		endforeach;
 	?>
 	</div>

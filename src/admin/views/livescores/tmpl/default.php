@@ -54,7 +54,7 @@
 				<?php foreach($this->items as $i => $item) :
 					$canCheckin = $user->authorise('core.manage', 'com_checkin') || $item->checked_out === $user->get('id') || $item->checked_out === 0;
 					$canChange = $user->authorise('core.edit.state', 'com_ttlivescore') && $canCheckin;
-				?>
+					?>
 				<tr class="row<?php echo $i % 2; ?>" sortable-group-id="1">
 					<td class="center hidden-phone">
 						<?php echo JHtml::_('grid.id', $i, $item->id); ?>
@@ -65,20 +65,20 @@
 					<td>
 						<?php
 							echo $item->homeplayerlastname . ', ' . $item->homeplayerfirstname;
-							if ($this->escape($item->homeplayermiddlename) !== '')
+						if ($this->escape($item->homeplayermiddlename) !== '')
 							{
-								echo ' (' . $this->escape($item->homeplayermiddlename) . ')';
-							}
+							echo ' (' . $this->escape($item->homeplayermiddlename) . ')';
+						}
 						?>
 					</td>
 					<td class="center">-</td>
 					<td>
 						<?php
 							echo $item->awayplayerlastname . ', ' . $item->awayplayerfirstname;
-							if ($item->awayplayermiddlename !== '')
+						if ($item->awayplayermiddlename !== '')
 							{
-								echo ' (' . $this->escape($item->awayplayermiddlename) . ')';
-							}
+							echo ' (' . $this->escape($item->awayplayermiddlename) . ')';
+						}
 						?>
 					</td>
 				</tr>

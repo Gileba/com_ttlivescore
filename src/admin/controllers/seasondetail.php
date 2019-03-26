@@ -1,7 +1,7 @@
 <?php
 	defined('_JEXEC') or die;
 
-	class TTLivescoreControllerSeasondetail extends JControllerForm
-	{
+class TTLivescoreControllerSeasondetail extends JControllerForm
+{
 
-	}
+}

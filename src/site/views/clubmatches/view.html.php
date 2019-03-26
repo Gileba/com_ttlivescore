@@ -1,20 +1,20 @@
 <?php
 	defined ('_JEXEC') or die;
 
-	class TTLivescoreViewClubmatches extends JViewLegacy
+class TTLivescoreViewClubmatches extends JViewLegacy
+{
+	protected $items;
+
+	public function display($tpl = null)
 	{
-		protected $items;
+		$this->items = $this->get('Items');
 
-		public function display($tpl = null)
+		if (count($errors = $this->get('Errors')))
 		{
-			$this->items = $this->get('Items');
-
-			if (count($errors = $this->get('Errors')))
-			{
-				JError::raiseErorr(500, implode("\n", $errors));
-				return false;
-			}
-
-			parent::display($tpl);
+			JError::raiseErorr(500, implode("\n", $errors));
+			return false;
 		}
+
+		parent::display($tpl);
 	}
+}

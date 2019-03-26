@@ -60,7 +60,7 @@
 					value="asc" <?php if($listDirn === 'asc') { echo 'selected="selected"';
 								} ?>><?php echo JText::_('JGLOBAL_ORDER_ASCENDING'); ?></option>
 				<option value="desc" <?php if($listDirn === 'desc') { echo 'selected="selected"';
-									 } ?>><?php echo JText::_('JGLOBAL_ORDER_DESCENDING'); ?></option>
+										} ?>><?php echo JText::_('JGLOBAL_ORDER_DESCENDING'); ?></option>
 			</select>
 		</div>
 		<div class="btn-group pull-right">
@@ -106,7 +106,7 @@
 				<?php foreach($this->items as $i => $item) :
 					$canCheckin = $user->authorise('core.manage', 'com_checkin') || $item->checked_out === $user->get('id') || $item->checked_out === 0;
 					$canChange = $user->authorise('core.edit.state', 'com_ttlivescore') && $canCheckin;
-				?>
+					?>
 				<tr class="row<?php echo $i % 2; ?>">
 					<td class="center hidden-phone">
 						<?php echo JHtml::_('grid.id', $i, $item->id); ?>
@@ -114,12 +114,12 @@
 					<td class="center">
 						<div class="btn-group">
 							<?php
-								if ($canChange)
+							if ($canChange)
 								{
-									echo JHtml::_('jgrid.published', $item->published, $i, 'players.', $canChange, 'cb', $item->publish_up, $item->publish_down);
-									JHtml::_('actionsdropdown.' . ((int) $item->published === 2 ? 'un' : '') . 'archive', 'cb' . $i, 'players');
-									echo JHtml::_('actionsdropdown.render', $this->escape($item->lastname . ' ' . $item->firstname));
-								}
+								echo JHtml::_('jgrid.published', $item->published, $i, 'players.', $canChange, 'cb', $item->publish_up, $item->publish_down);
+								JHtml::_('actionsdropdown.' . ((int) $item->published === 2 ? 'un' : '') . 'archive', 'cb' . $i, 'players');
+								echo JHtml::_('actionsdropdown.render', $this->escape($item->lastname . ' ' . $item->firstname));
+							}
 							?>
 						</div>
 					</td>
@@ -127,10 +127,10 @@
 						<a href="<?php echo JROUTE::_('index.php?option=com_ttlivescore&task=player.edit&id=' . (int) $item->id); ?>">
 							<?php
 								echo $this->escape($item->lastname);
-								if ($this->escape($item->middlename) !== '')
+							if ($this->escape($item->middlename) !== '')
 								{
-									echo ' (' . $this->escape($item->middlename) . ')';
-								}
+								echo ' (' . $this->escape($item->middlename) . ')';
+							}
 							?>
 						</a>
 					</td>

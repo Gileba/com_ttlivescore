@@ -7,11 +7,11 @@
 
 	$canOrder 	= $user->authorise('core.edit.state', 'com_ttlivescore');
 	$saveOrder 	= $listOrder == 'a.ordering';
-	if ($saveOrder)
-	{
-		$saveOrderingUrl = 'index.php?option=com_ttlivescore&task=countries.saveOrderAjax&tmpl=component';
-		JHtml::_('sortablelist.sortable', 'countryList', 'adminForm', strtolower($listDirn), $saveOrderingUrl);
-	}
+if ($saveOrder)
+{
+	$saveOrderingUrl = 'index.php?option=com_ttlivescore&task=countries.saveOrderAjax&tmpl=component';
+	JHtml::_('sortablelist.sortable', 'countryList', 'adminForm', strtolower($listDirn), $saveOrderingUrl);
+}
 
 	$sortFields = $this->getSortFields();
 ?>
@@ -66,7 +66,7 @@
 					value="asc" <?php if($listDirn === 'asc') { echo 'selected="selected"';
 								} ?>><?php echo JText::_('JGLOBAL_ORDER_ASCENDING'); ?></option>
 				<option value="desc" <?php if($listDirn === 'desc') { echo 'selected="selected"';
-									 } ?>><?php echo JText::_('JGLOBAL_ORDER_DESCENDING'); ?></option>
+										} ?>><?php echo JText::_('JGLOBAL_ORDER_DESCENDING'); ?></option>
 			</select>
 		</div>
 		<div class="btn-group pull-right">
@@ -109,23 +109,23 @@
 				<?php foreach($this->items as $i => $item) :
 					$canCheckin = $user->authorise('core.manage', 'com_checkin') || $item->checked_out === $user->get('id') || $item->checked_out === 0;
 					$canChange = $user->authorise('core.edit.state', 'com_ttlivescore') && $canCheckin;
-				?>
+					?>
 				<tr class="row<?php echo $i % 2; ?>" sortable-group-id="1">
 					<td class="order nowrap center hidden-phone">
 					<?php
-						if ($canChange) :
-							$disableClassName 	= '';
-							$disabledLabel		= '';
-							if (!$saveOrder) :
-								$disabledLabel = JText::_('JORDERINGDISABLED');
-								$disableClassName = 'inactive tip-top';
+					if ($canChange) :
+						$disableClassName 	= '';
+						$disabledLabel		= '';
+						if (!$saveOrder) :
+							$disabledLabel = JText::_('JORDERINGDISABLED');
+							$disableClassName = 'inactive tip-top';
 							endif;
-					?>
+						?>
 						<span class="sortable-handler hasTooltip <?php echo $disableClassName; ?>" title="<?php echo $disabledLabel; ?>">
 							<i class="icon-menu"></i>
 						</span>
 						<input type="text" style="display:none;" name="order[]" size="5" value="<?php echo $item->ordering; ?>" class="width-20 text-area-order" />
-						<?php else : ?>
+					<?php else : ?>
 						<span class="sortable-handler inactive">
 							<i class="icon-menu"></i>
 						</span>
