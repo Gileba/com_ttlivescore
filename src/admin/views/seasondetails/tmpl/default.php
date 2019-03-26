@@ -58,8 +58,8 @@
 			<label for="directionTable" class="element-invisible"><?php echo jText::_('JFIELD_ORDERING_DESC'); ?></label>
 			<select name="directionTable" id="directionTable" class="input-medium" size="1" onchange="Joomla.orderTable();">
 				<option 
-					value="asc" <?php if($listDirn === 'asc') echo 'selected="selected"'; ?>><?php echo JText::_('JGLOBAL_ORDER_ASCENDING'); ?></option>
-				<option value="desc" <?php if($listDirn === 'desc') echo 'selected="selected"'; ?>><?php echo JText::_('JGLOBAL_ORDER_DESCENDING'); ?></option>
+					value="asc" <?php if($listDirn === 'asc') { echo 'selected="selected"';} ?>><?php echo JText::_('JGLOBAL_ORDER_ASCENDING'); ?></option>
+				<option value="desc" <?php if($listDirn === 'desc') { echo 'selected="selected"';} ?>><?php echo JText::_('JGLOBAL_ORDER_DESCENDING'); ?></option>
 			</select>
 		</div>
 		<div class="btn-group pull-right">
@@ -111,7 +111,8 @@
 						<a href="<?php echo JROUTE::_('index.php?option=com_ttlivescore&task=seasondetail.edit&id=' . (int) $item->id); ?>">
 							<?php 
 								echo $this->escape($item->lastname) . ', ' . $this->escape($item->firstname);
-								if (!($item->middlename === '')) echo ' (' . $this->escape($item->middlename) . ')'; 
+								if (!($item->middlename === '')) { echo ' (' . $this->escape($item->middlename) . ')';
+                                } 
 							?>
 						</a>
 					</td>
@@ -123,7 +124,8 @@
 					</td>
 					<td class="nowrap has-context">
 						<?php 
-							if (!($item->prefix === '')) echo $this->escape($item->prefix) . '-'; 
+							if (!($item->prefix === '')) { echo $this->escape($item->prefix) . '-';
+                            } 
 							echo $this->escape($item->localranking);
 						?>
 					</td>
