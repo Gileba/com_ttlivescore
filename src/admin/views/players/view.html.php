@@ -10,16 +10,16 @@
 		protected $pagination;
 		protected $countries;
 		protected $sex;
-		
+
 
 		public function display($tpl = null)
 		{
 			$this->items 		= $this->get('Items');
 			$this->state 		= $this->get('State');
 			$this->pagination	= $this->get('Pagination');
-			
+
 			TTLivescoreHelper::addSubmenu('players');
-						
+
 			//Get country options
 			$this->countries = JFormHelper::loadFieldType('countries', false);
 
@@ -31,20 +31,20 @@
 				JError::raiseError(500, implode("/n", $errors));
 				return false;
 			}
-			
+
 			$this->addToolbar();
 			$this->sidebar = JHtmlSidebar::render();
 			parent::display($tpl);
 		}
-		
+
 		protected function addToolbar()
 		{
 			$canDo	= TTLivescoreHelper::getActions();
 			$state 	= $this->get('State');
-			
+
 			JToolbarHelper::title(JText::_('COM_TTLIVESCORE_MANAGER_PLAYERS'), '');
 			JToolbarHelper::addNew('player.add');
-			
+
 			if ($canDo->get('core.edit'))
 			{
 				JToolbarHelper::editList('player.edit');
@@ -72,14 +72,14 @@
 			{
 				JToolbarHelper::preferences('com_ttlivescore');
 			}
-			
+
 			JHtmlSidebar::setAction('index.php?option=com_ttlivescore&view=players');
-			
+
 			JHtmlSidebar::addFilter(Jtext::_('COM_TTLIVESCORE_FILTER_COUNTRY'), 'filter_countries', JHtml::_('select.options', $this->countries->getOptions(), 'value', 'text', $this->state->get('filter.countries'), true));
 			JHtmlSidebar::addFilter(Jtext::_('COM_TTLIVESCORE_FILTER_SEX'), 'filter_sex', JHtml::_('select.options', $this->sex->getOptions(), 'value', 'text', $this->state->get('filter.sex'), true));
 			JHtmlSidebar::addFilter(Jtext::_('JOPTION_SELECT_PUBLISHED'), 'filter_state', JHtml::_('select.options', JHtml::_('jgrid.publishedOptions'), 'value', 'text', $this->state->get('filter.state'), true));
 		}
-		
+
 		protected function getSortFields()
 		{
 			return array(

@@ -1,17 +1,17 @@
 <?php
 	defined('_JEXEC') or die;
-	
 
-	class TTLivescoreModelLivescore extends JModelAdmin 
+
+	class TTLivescoreModelLivescore extends JModelAdmin
 	{
 		protected $text_prefix 	= 'COM_TTLIVESCORE';
 		protected $match;
-		
+
 		public function getTable($type = 'Livescore', $prefix = 'TTLivescoreTable', $config = array())
 		{
 			return JTable::getInstance($type, $prefix, $config);
 		}
-		
+
 		public function getForm($data = array(), $loadData = true)
 		{
 			$form = $this->loadForm('com_ttlivescore.livescore', 'livescore', array('control' => 'jform', 'load_data' => $loadData));
@@ -19,19 +19,19 @@
 			{
 				return false;
 			}
-			
+
 			return $form;
 		}
-		
+
 		protected function loadFormData()
 		{
 			$data = JFactory::getApplication()->getUserState('com_ttlivescore.edit.livescore.data', array());
-			
+
 			if (empty($data))
 			{
 				$data = $this->getItem();
 			}
-			
+
 			return $data;
 		}
 
@@ -46,20 +46,20 @@
 				->join('INNER', $db->quoteName('#__ttlivescore_clubmatches', 'cb') . ' ON (' . $db->quoteName('a.cmid') . ' = ' . $db->quoteName('cb.id') . ')')
 				->join('INNER', $db->quoteName('#__ttlivescore_matchdefinitions', 'md') . ' ON (' . $db->quoteName('cb.mdid') . ' = ' . $db->quoteName('md.id') . ')')
 				->where($db->quoteName('a.id') . ' = ' . (int) $id);
-			
+
 			$db->setQuery($query);
 			try
 			{
 				$db->execute();
 			}
-			catch (Exception $e) 
+			catch (Exception $e)
 			{
 				JFactory::getApplication()->enqueueMessage($e->getMessage());
 			}
-			
+
 			return $db->loadobject();
 		}
-		
+
 		public function getCurrentSet($id)
 		{
 			$this->match 	= $this->getMatch($id);
@@ -67,21 +67,21 @@
 			$away 			= 0;
 			$homesets 		= array($this->match->homeset1, $this->match->homeset2, $this->match->homeset3, $this->match->homeset4, $this->match->homeset5, $this->match->homeset6, $this->match->homeset7);
 			$awaysets 		= array ($this->match->awayset1, $this->match->awayset2, $this->match->awayset3, $this->match->awayset4, $this->match->awayset5, $this->match->awayset6, $this->match->awayset7);
-			
+
 			for ($i = 0; $i < $this->match->numberofsets; $i++)
 			{
 				if (($homesets[$i] < 11 && $awaysets[$i] < 11) || ((abs($homesets[$i] - $awaysets[$i]) < 2)))
 				{
 					return $i + 1;
 				}
-				
+
 				$homesets[$i] > $awaysets[$i] ? $home++ : $away++;
-				
+
 				if ($home > ($this->match->numberofsets / 2) || $away > ($this->match->numberofsets / 2)) {
 					return $i + 1;
 				}
 			}
-			
+
 			return $i + 1;
 		}
 
@@ -97,20 +97,20 @@
 				->from($db->quoteName('#__ttlivescore_livescores', 'a'))
 				->where($db->quoteName('cmid') . ' = ' . (int) $currentMatch->cmid)
 				->order($db->quotename ('matchid') . ' ASC');
-			
+
 			$db->setQuery($query);
 			try
 			{
 				$db->execute();
 			}
-			catch (Exception $e) 
+			catch (Exception $e)
 			{
 				JFactory::getApplication()->enqueueMessage($e->getMessage());
 			}
-			
+
 			$all_matches = $db->loadObjectList();
 			$next = false;
-			
+
 			foreach ($all_matches as $match)
 			{
 				if ($next == true) {
@@ -121,8 +121,8 @@
 					$next = true;
 				}
 			}
-			
+
 			return array('cmid' => $currentMatch->cmid, 'matchid' => 0);
 		}
-		
+
 	}

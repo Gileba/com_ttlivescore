@@ -1,8 +1,8 @@
 <?php
 	defined('_JEXEC') or die;
-	
+
 	JLoader::register('TTLivescoreHelper', JPATH_ADMINISTRATOR . '/components/com_ttlivescore/helpers/ttlivescore.php');
-	
+
 	$app = JFactory::getApplication();
 	$currentMenuItem = $app->getMenu()->getActive();
 	$params = $currentMenuItem->params;
@@ -10,7 +10,7 @@
 	if ((int) $params->get('refreshGlobal') !== 0) {
 		$refreshRate = (int) $params->get('refreshGlobal');
 	}
-	
+
 	$season	= '';
 ?>
 
@@ -24,19 +24,19 @@
 
 <div id="livescore-wrapper">
 	<div class="livescore">
-		<?php 
+		<?php
 			if (empty($this->items)) {
 				echo '<div class="season">' . JText::_('COM_TTLIVESCORE_NO_ACTIVE_LIVESCORE') . '</div>';
 			}
 
-			foreach ($this->items as $item) : 
+			foreach ($this->items as $item) :
 				$score = TTLivescoreHelper::getScore($item->id);
 		?>
-		<?php 
+		<?php
 			if ($season != $item->season)
 			{
 				$season = $item->season;
-				echo '<div class="season">' . $season . '</div>'; 
+				echo '<div class="season">' . $season . '</div>';
 			}
 		?>		
 		<div class="clubmatch">

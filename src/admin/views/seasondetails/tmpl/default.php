@@ -4,7 +4,7 @@
 	$user		= JFactory::getUser();
 	$listOrder	= $this->escape($this->state->get('list.ordering'));
 	$listDirn	= $this->escape($this->state->get('list.direction'));
-	
+
 	//Get country options
 	JFormHelper::addFieldPath(JPATH_COMPONENT . '/models/fields');
 	$seasons = JFormHelper::loadFieldType('seasons', false);
@@ -101,7 +101,7 @@
 				</tr>
 			</tfoot>
 			<tbody>
-				<?php foreach($this->items as $i => $item) : 
+				<?php foreach($this->items as $i => $item) :
 					$canCheckin = $user->authorise('core.manage', 'com_checkin') || $item->checked_out === $user->get('id') || $item->checked_out === 0;
 					$canChange = $user->authorise('core.edit.state', 'com_ttlivescore') && $canCheckin;
 				?>
@@ -111,10 +111,10 @@
 					</td>
 					<td class="nowrap has-context">
 						<a href="<?php echo JROUTE::_('index.php?option=com_ttlivescore&task=seasondetail.edit&id=' . (int) $item->id); ?>">
-							<?php 
+							<?php
 								echo $this->escape($item->lastname) . ', ' . $this->escape($item->firstname);
 								if (!($item->middlename === '')) { echo ' (' . $this->escape($item->middlename) . ')';
-								} 
+								}
 							?>
 						</a>
 					</td>
@@ -125,9 +125,9 @@
 						<?php echo $this->escape($item->season); ?>
 					</td>
 					<td class="nowrap has-context">
-						<?php 
+						<?php
 							if (!($item->prefix === '')) { echo $this->escape($item->prefix) . '-';
-							} 
+							}
 							echo $this->escape($item->localranking);
 						?>
 					</td>

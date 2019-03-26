@@ -1,8 +1,8 @@
 <?php
 	defined('_JEXEC') or die;
-	
+
 	JLoader::register('TTLivescoreHelper', JPATH_ADMINISTRATOR . '/components/com_ttlivescore/helpers/ttlivescore.php');
-	
+
 	$active				= false;
 	$model				= $this->getModel();
 	$score 				= TTLivescoreHelper::getScore($this->items[0]->cmid);
@@ -14,7 +14,7 @@
 		$currentSet			= $currentSetScore['home'] + $currentSetScore['away'];
 		$currentPoints		= $model->getLivescore($currentMatchId);
 	}
-	
+
 	$app = JFactory::getApplication();
 	$currentMenuItem = $app->getMenu()->getActive();
 	$params = $currentMenuItem->params;
@@ -89,11 +89,11 @@
 		<?php
 			}
 		?>
-	<?php 
+	<?php
 		$j = 0;
-		foreach ($this->items as $item) : 
+		foreach ($this->items as $item) :
 	?>
-		<div class="detailedscores<?php if ($j == $currentMatch) {?> active<?php ; 
+		<div class="detailedscores<?php if ($j == $currentMatch) {?> active<?php ;
 								  } ?>">
 			<div class="homeplayer">
 				<?php echo TTLivescoreHelper::getPlayername($item->homeplayerid); ?>
@@ -120,7 +120,7 @@
 				<?php echo $model->getSetScore($item->id)['away']; ?>
 			</div>
 		</div>
-	<?php 
+	<?php
 			$j++;
 		endforeach;
 	?>

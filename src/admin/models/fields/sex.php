@@ -1,12 +1,12 @@
 <?php
- 
+
 defined('JPATH_BASE') or die;
- 
+
 jimport('joomla.html.html');
 jimport('joomla.form.formfield');
 jimport('joomla.form.helper');
 JFormHelper::loadFieldClass('list');
- 
+
 /**
  * Custom Field class for the Joomla Framework.
  *
@@ -23,7 +23,7 @@ class JFormFieldSex extends JFormFieldList
 	 * @since	1.6
 	 */
 	protected $type = 'Sex';
- 
+
 	/**
 	 * Method to get the field options.
 	 *
@@ -37,7 +37,7 @@ class JFormFieldSex extends JFormFieldList
 			'M'	=> 'Man',
 			'W' => 'Woman'
 		);
- 
+
 		return $options;
 	}
 }

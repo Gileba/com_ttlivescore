@@ -4,7 +4,7 @@
 	$user		= JFactory::getUser();
 	$listOrder	= $this->escape($this->state->get('list.ordering'));
 	$listDirn	= $this->escape($this->state->get('list.direction'));
-	
+
 	$canOrder 	= $user->authorise('core.edit.state', 'com_ttlivescore');
 	$saveOrder 	= $listOrder == 'a.ordering';
 	if ($saveOrder)
@@ -106,17 +106,17 @@
 				</tr>
 			</tfoot>
 			<tbody>
-				<?php foreach($this->items as $i => $item) : 
+				<?php foreach($this->items as $i => $item) :
 					$canCheckin = $user->authorise('core.manage', 'com_checkin') || $item->checked_out === $user->get('id') || $item->checked_out === 0;
 					$canChange = $user->authorise('core.edit.state', 'com_ttlivescore') && $canCheckin;
 				?>
 				<tr class="row<?php echo $i % 2; ?>" sortable-group-id="1">
 					<td class="order nowrap center hidden-phone">
-					<?php 
-						if ($canChange) : 
-							$disableClassName 	= ''; 
+					<?php
+						if ($canChange) :
+							$disableClassName 	= '';
 							$disabledLabel		= '';
-							if (!$saveOrder) : 
+							if (!$saveOrder) :
 								$disabledLabel = JText::_('JORDERINGDISABLED');
 								$disableClassName = 'inactive tip-top';
 							endif;

@@ -1,25 +1,25 @@
 <?php
 	defined('_JEXEC') or die;
 	JHtml::_('formbehavior.chosen', 'select');
-	
+
 	// Prefilling the values is only possible for existing matches
 	if ($this->form->getValue('id') != 0)
 	{
 		$homeplayerarray = explode(",", $this->item->homeplayers);
-		$this->form->setValue('homeplayer1', null, $homeplayerarray[0]); 
-		$this->form->setValue('homeplayer2', null, $homeplayerarray[1]); 
-		$this->form->setValue('homeplayer3', null, $homeplayerarray[2]); 
+		$this->form->setValue('homeplayer1', null, $homeplayerarray[0]);
+		$this->form->setValue('homeplayer2', null, $homeplayerarray[1]);
+		$this->form->setValue('homeplayer3', null, $homeplayerarray[2]);
 
 		$homereserveplayerarray = explode(",", $this->item->homereserves);
-		$this->form->setValue('homereserveplayer1', null, $homereserveplayerarray[0]); 
+		$this->form->setValue('homereserveplayer1', null, $homereserveplayerarray[0]);
 
 		$awayplayerarray = explode(",", $this->item->awayplayers);
-		$this->form->setValue('awayplayer1', null, $awayplayerarray[0]); 
-		$this->form->setValue('awayplayer2', null, $awayplayerarray[1]); 
-		$this->form->setValue('awayplayer3', null, $awayplayerarray[2]); 
+		$this->form->setValue('awayplayer1', null, $awayplayerarray[0]);
+		$this->form->setValue('awayplayer2', null, $awayplayerarray[1]);
+		$this->form->setValue('awayplayer3', null, $awayplayerarray[2]);
 
 		$awayreserveplayerarray = explode(",", $this->item->awayreserves);
-		$this->form->setValue('awayreserveplayer1', null, $awayreserveplayerarray[0]); 
+		$this->form->setValue('awayreserveplayer1', null, $awayreserveplayerarray[0]);
 	}
 ?>
 

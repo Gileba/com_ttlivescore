@@ -4,7 +4,7 @@
 	$user		= JFactory::getUser();
 	$listOrder	= $this->escape($this->state->get('list.ordering'));
 	$listDirn	= $this->escape($this->state->get('list.direction'));
-	
+
 	//Get country options
 	JFormHelper::addFieldPath(JPATH_COMPONENT . '/models/fields');
 	$countries = JFormHelper::loadFieldType('countries', false);
@@ -97,7 +97,7 @@
 				</tr>
 			</tfoot>
 			<tbody>
-				<?php foreach($this->items as $i => $item) : 
+				<?php foreach($this->items as $i => $item) :
 					$canCheckin = $user->authorise('core.manage', 'com_checkin') || $item->checked_out === $user->get('id') || $item->checked_out === 0;
 					$canChange = $user->authorise('core.edit.state', 'com_ttlivescore') && $canCheckin;
 				?>
@@ -107,7 +107,7 @@
 					</td>
 					<td class="center">
 						<div class="btn-group">
-							<?php 
+							<?php
 								if ($canChange)
 								{
 									echo JHtml::_('jgrid.published', $item->published, $i, 'clubs.', $canChange, 'cb', $item->publish_up, $item->publish_down);
@@ -119,8 +119,8 @@
 					</td>
 					<td class="nowrap has-context">
 						<a href="<?php echo JROUTE::_('index.php?option=com_ttlivescore&task=club.edit&id=' . (int) $item->id); ?>">
-							<?php 
-								echo $this->escape($item->name); 
+							<?php
+								echo $this->escape($item->name);
 							?>
 						</a>
 					</td>

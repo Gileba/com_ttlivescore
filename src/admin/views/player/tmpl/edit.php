@@ -1,6 +1,6 @@
 <?php
 	defined('_JEXEC') or die;
-	
+
 	JHtml::_('formbehavior.chosen', 'select');
 ?>
 

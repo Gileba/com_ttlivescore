@@ -1,6 +1,6 @@
 <?php
 	defined('_JEXEC') or die;
-	class TTLivescoreControllerMatchdefinition extends JControllerForm 
+	class TTLivescoreControllerMatchdefinition extends JControllerForm
 	{
-		
+
 	}

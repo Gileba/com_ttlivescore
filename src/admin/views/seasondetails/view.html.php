@@ -10,16 +10,16 @@
 		protected $pagination;
 		protected $seasons;
 		protected $clubs;
-		
+
 
 		public function display($tpl = null)
 		{
 			$this->items 		= $this->get('Items');
 			$this->state 		= $this->get('State');
 			$this->pagination	= $this->get('Pagination');
-			
+
 			TTLivescoreHelper::addSubmenu('seasondetails');
-						
+
 			//Get season options
 			$this->seasons = JFormHelper::loadFieldType('seasons', false);
 
@@ -31,19 +31,19 @@
 				JError::raiseError(500, implode("/n", $errors));
 				return false;
 			}
-			
+
 			$this->addToolbar();
 			$this->sidebar = JHtmlSidebar::render();
 			parent::display($tpl);
 		}
-		
+
 		protected function addToolbar()
 		{
 			$canDo	= TTLivescoreHelper::getActions();
-			
+
 			JToolbarHelper::title(JText::_('COM_TTLIVESCORE_MANAGER_SEASONDETAILS'), '');
 			JToolbarHelper::addNew('seasondetail.add');
-			
+
 			if ($canDo->get('core.edit'))
 			{
 				JToolbarHelper::editList('seasondetail.edit');
@@ -58,13 +58,13 @@
 			{
 				JToolbarHelper::preferences('com_ttlivescore');
 			}
-			
+
 			JHtmlSidebar::setAction('index.php?option=com_ttlivescore&view=seasondetails');
-			
+
 			JHtmlSidebar::addFilter(Jtext::_('COM_TTLIVESCORE_FILTER_SEASONS'), 'filter_seasons', JHtml::_('select.options', $this->seasons->getOptions(), 'value', 'text', $this->state->get('filter.seasons'), true));
 			JHtmlSidebar::addFilter(Jtext::_('COM_TTLIVESCORE_FILTER_CLUBS'), 'filter_clubs', JHtml::_('select.options', $this->clubs->getOptions(), 'value', 'text', $this->state->get('filter.clubs'), true));
 		}
-		
+
 		protected function getSortFields()
 		{
 			return array(

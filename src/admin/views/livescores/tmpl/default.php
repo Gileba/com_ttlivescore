@@ -51,7 +51,7 @@
 				</tr>
 			</tfoot>
 			<tbody>
-				<?php foreach($this->items as $i => $item) : 
+				<?php foreach($this->items as $i => $item) :
 					$canCheckin = $user->authorise('core.manage', 'com_checkin') || $item->checked_out === $user->get('id') || $item->checked_out === 0;
 					$canChange = $user->authorise('core.edit.state', 'com_ttlivescore') && $canCheckin;
 				?>
@@ -63,11 +63,11 @@
 						<?php echo $item->matchid; ?>
 					</td>
 					<td>
-						<?php 
-							echo $item->homeplayerlastname . ', ' . $item->homeplayerfirstname; 
+						<?php
+							echo $item->homeplayerlastname . ', ' . $item->homeplayerfirstname;
 							if ($this->escape($item->homeplayermiddlename) !== '')
 							{
-								echo ' (' . $this->escape($item->homeplayermiddlename) . ')'; 
+								echo ' (' . $this->escape($item->homeplayermiddlename) . ')';
 							}
 						?>
 					</td>
@@ -77,7 +77,7 @@
 							echo $item->awayplayerlastname . ', ' . $item->awayplayerfirstname;
 							if ($item->awayplayermiddlename !== '')
 							{
-								echo ' (' . $this->escape($item->awayplayermiddlename) . ')'; 
+								echo ' (' . $this->escape($item->awayplayermiddlename) . ')';
 							}
 						?>
 					</td>
