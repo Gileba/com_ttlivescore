@@ -74,7 +74,7 @@
 .club {
 	font-size: 150%;
 	align-self: center;
-	justify-self: center;
+	justify-self: center; /* csslint allow: known-properties */
 	padding: 5px 10px;
 }
 
@@ -86,7 +86,7 @@
 	font-size: 300%;
 	font-weight: bolder;
 	align-self: center;
-	justify-self: center;
+	justify-self: center; /* csslint allow: known-properties */
 }
 
 /* Current Match */
