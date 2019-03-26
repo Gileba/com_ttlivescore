@@ -33,6 +33,7 @@
 				JToolbarHelper::cancel('matchdefinition.cancel');
 				return;
 			}
+
 			JToolbarHelper::cancel('matchdefinition.cancel', 'JTOOLBAR_CLOSE');
 		}
 	}

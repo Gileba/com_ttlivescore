@@ -15,6 +15,7 @@
 					'localranking', 'a.localranking'
 				);
 			}
+
 			parent::__construct($config);
 		}
 		

@@ -84,6 +84,7 @@
 				
 				return false;
 			}
+
 			parent::display();
 			
 			return $this;

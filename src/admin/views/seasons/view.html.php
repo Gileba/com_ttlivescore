@@ -43,6 +43,7 @@
 			{
 				JToolbarHelper::editList('season.edit');
 			}
+
 			if ($canDo->get('core.edit.state'))
 			{
 				JToolbarHelper::publish('seasons.publish', 'JTOOLBAR_PUBLISH', true);
@@ -50,14 +51,17 @@
 				JToolbarHelper::archiveList('seasons.archive');
 				JToolbarHelper::checkin('seasons.checkin');
 			}
+
 			if ($state->get('filter.state') === -2 && ($canDo->get('core.delete')))
 			{
 				JToolbarHelper::deleteList('', 'seasons.delete', 'JTOOLBAR_EMPTY_TRASH');
 			}
+
 			if ($canDo->get('core.edit.state') && !($state->get('filter.state') !== -2))
 			{
 				JToolbarHelper::trash('seasons.trash');
 			}
+
 			JToolbarHelper::custom('seasons.details', 'list-2', 'list-2', JText::_('COM_TTLIVESCORE_SUBMENU_SEASONDETAILS'), true);
 			if ($canDo->get('core.admin'))
 			{

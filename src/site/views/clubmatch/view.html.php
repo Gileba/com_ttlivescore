@@ -14,6 +14,7 @@
 				JError::raiseErorr(500, implode("\n", $errors));
 				return false;
 			}
+
 			parent::display($tpl);
 		}
 	}

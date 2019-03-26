@@ -21,6 +21,7 @@
 					'sex', 'a.sex'
 					);
 			}
+
 			parent::__construct($config);
 		}
 		

@@ -39,6 +39,7 @@
 				JToolbarHelper::cancel('club.cancel');
 				return;
 			}
+
 			JToolbarHelper::cancel('club.cancel', 'JTOOLBAR_CLOSE');
 		}
 	}

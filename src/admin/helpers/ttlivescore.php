@@ -94,6 +94,7 @@
 			{
 				$player .= ' (' . $result->middlename . ')';
 			}
+
 			$player .= ', ' . $result->firstname;
 			
 			return $player;
@@ -158,7 +159,6 @@
 						break;
 					}
 				}
-
 			}
 			
 			return array('home' => $homeclub, 'away' => $awayclub);

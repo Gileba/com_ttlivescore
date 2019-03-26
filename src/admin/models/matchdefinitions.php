@@ -13,6 +13,7 @@
 					'ordering', 'a.ordering',
 				);
 			}
+
 			parent::__construct($config);
 		}
 		

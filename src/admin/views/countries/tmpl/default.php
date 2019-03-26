@@ -12,6 +12,7 @@
 		$saveOrderingUrl = 'index.php?option=com_ttlivescore&task=countries.saveOrderAjax&tmpl=component';
 		JHtml::_('sortablelist.sortable', 'countryList', 'adminForm', strtolower($listDirn), $saveOrderingUrl);
 	}
+
 	$sortFields = $this->getSortFields();
 ?>
 

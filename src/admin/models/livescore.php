@@ -116,6 +116,7 @@
 				if ($next == true) {
 					return array('cmid' => $match->cmid, 'matchid' => $match->id);
 				}
+
 				if (($match->id) == $id) {
 					$next = true;
 				}

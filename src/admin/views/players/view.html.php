@@ -48,6 +48,7 @@
 			{
 				JToolbarHelper::editList('player.edit');
 			}
+
 			if ($canDo->get('core.edit.state'))
 			{
 				JToolbarHelper::publish('players.publish', 'JTOOLBAR_PUBLISH', true);
@@ -55,14 +56,17 @@
 				JToolbarHelper::archiveList('players.archive');
 				JToolbarHelper::checkin('players.checkin');
 			}
+
 			if ($state->get('filter.state') === -2 && ($canDo->get('core.delete')))
 			{
 				JToolbarHelper::deleteList('', 'players.delete', 'JTOOLBAR_EMPTY_TRASH');
 			}
+
 			if ($canDo->get('core.edit.state') && !($state->get('filter.state') !== -2))
 			{
 				JToolbarHelper::trash('players.trash');
 			}
+
 			if ($canDo->get('core.admin'))
 			{
 				JToolbarHelper::preferences('com_ttlivescore');

@@ -43,10 +43,12 @@
 			{
 				JToolbarHelper::editList('clubmatch.edit');
 			}
+
 			if ($canDo->get('core.delete'))
 			{
 				JToolbarHelper::deleteList('', 'clubmatches.delete', 'JTOOLBAR_DELETE');
 			}
+
 			if ($canDo->get('core.admin'))
 			{
 				JToolbarHelper::preferences('com_ttlivescore');

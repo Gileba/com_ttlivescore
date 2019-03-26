@@ -47,10 +47,12 @@
 			{
 				JToolbarHelper::editList('seasondetail.edit');
 			}
+
 			if ($canDo->get('core.delete'))
 			{
 				JToolbarHelper::deleteList('', 'seasondetails.delete', 'JTOOLBAR_DELETE');
 			}
+
 			if ($canDo->get('core.admin'))
 			{
 				JToolbarHelper::preferences('com_ttlivescore');

@@ -44,6 +44,7 @@
 			{
 				JToolbarHelper::editList('club.edit');
 			}
+
 			if ($canDo->get('core.edit.state'))
 			{
 				JToolbarHelper::publish('clubs.publish', 'JTOOLBAR_PUBLISH', true);
@@ -51,14 +52,17 @@
 				JToolbarHelper::archiveList('clubs.archive');
 				JToolbarHelper::checkin('clubs.checkin');
 			}
+
 			if ($state->get('filter.state') === -2 && ($canDo->get('core.delete')))
 			{
 				JToolbarHelper::deleteList('', 'clubs.delete', 'JTOOLBAR_EMPTY_TRASH');
 			}
+
 			if ($canDo->get('core.edit.state') && !($state->get('filter.state') !== -2))
 			{
 				JToolbarHelper::trash('clubs.trash');
 			}
+
 			if ($canDo->get('core.admin'))
 			{
 				JToolbarHelper::preferences('com_ttlivescore');

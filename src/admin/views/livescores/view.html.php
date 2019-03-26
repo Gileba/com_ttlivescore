@@ -37,6 +37,7 @@
 			{
 				JToolbarHelper::editList('livescore.edit');
 			}
+
 			if ($canDo->get('core.admin'))
 			{
 				JToolbarHelper::preferences('com_ttlivescore');

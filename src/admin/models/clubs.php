@@ -17,6 +17,7 @@
 					'publish_down', 'a.publish_down'
 					);
 			}
+
 			parent::__construct($config);
 		}
 		

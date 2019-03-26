@@ -19,6 +19,7 @@
 					'enddate', 'a.enddate'
 					);
 			}
+
 			parent::__construct($config);
 		}
 		

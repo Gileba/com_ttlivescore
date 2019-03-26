@@ -40,6 +40,7 @@
 			{
 				JToolbarHelper::editList('matchdefinition.edit');
 			}
+
 			if ($canDo->get('core.edit.state'))
 			{
 				JToolbarHelper::publish('matchdefinitions.publish', 'JTOOLBAR_PUBLISH', true);
@@ -47,14 +48,17 @@
 				JToolbarHelper::archiveList('matchdefinitions.archive');
 				JToolbarHelper::checkin('matchdefinitions.checkin');
 			}
+
 			if ($state->get('filter.state') === -2 && ($canDo->get('core.delete')))
 			{
 				JToolbarHelper::deleteList('', 'matchdefinitions.delete', 'JTOOLBAR_EMPTY_TRASH');
 			}
+
 			if ($canDo->get('core.edit.state') && !($state->get('filter.state') !== -2))
 			{
 				JToolbarHelper::trash('matchdefinitions.trash');
 			}
+
 			if ($canDo->get('core.admin'))
 			{
 				JToolbarHelper::preferences('com_ttlivescore');

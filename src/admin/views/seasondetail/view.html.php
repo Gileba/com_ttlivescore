@@ -39,6 +39,7 @@
 				JToolbarHelper::cancel('seasondetail.cancel');
 				return;
 			}
+
 			JToolbarHelper::cancel('seasondetail.cancel', 'JTOOLBAR_CLOSE');
 		}
 	}

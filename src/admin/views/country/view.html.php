@@ -33,6 +33,7 @@
 				JToolbarHelper::cancel('country.cancel');
 				return;
 			}
+
 			JToolbarHelper::cancel('country.cancel', 'JTOOLBAR_CLOSE');
 		}
 	}

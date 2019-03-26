@@ -15,6 +15,7 @@
 					'matchdate', 'a.date'
 				);
 			}
+
 			parent::__construct($config);
 		}
 		

@@ -35,8 +35,7 @@
 								</button>
 <?php
 							echo '<div class="span2 center score' . ($bigButtons ? ' bigbutton':'') . '">'. $this->form->getValue($points) . '</div>';
-							if (
-								($this->set == $i) && 
+							if (($this->set == $i) && 
 								(
 									(
 										($this->form->getValue($points) < 11) && 
@@ -83,8 +82,7 @@
 							</button>
 <?php
 							echo '<div class="span2 center score' . ($bigButtons ? ' bigbutton':'') . '">'. $this->form->getValue($points) . '</div>';
-							if (
-								($this->set == $i) && 
+							if (($this->set == $i) && 
 								(
 									(
 										($this->form->getValue($points) < 11) && 

@@ -13,6 +13,7 @@
 					'awayplayer', 'ap.lastname', 
 					);
 			}
+
 			parent::__construct($config);
 		}
 		
@@ -45,6 +46,7 @@
 			{
 				$query->where($db->quoteName('a.cmid') . ' = ' . (int) $cmid);
 			}
+
 			return $query;
 		}
 	}

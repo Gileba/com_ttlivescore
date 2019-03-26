@@ -38,6 +38,7 @@
 				JToolbarHelper::publish('countries.publish', 'JTOOLBAR_PUBLISH', true);
 				JToolbarHelper::unpublish('countries.unpublish', 'JTOOLBAR_UNPUBLISH', true);
 			}
+
 			if ($canDo->get('core.admin'))
 			{
 				JToolbarHelper::preferences('com_ttlivescore');

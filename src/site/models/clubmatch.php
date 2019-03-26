@@ -100,7 +100,6 @@
 						break 2;
 					}
 				}
-
 			}
 			
 			return array('home' => $home, 'away' => $away);
@@ -116,7 +115,6 @@
 			{
 				$homesets 	= array($scores[$i]->homeset1, $scores[$i]->homeset2, $scores[$i]->homeset3, $scores[$i]->homeset4, $scores[$i]->homeset5, $scores[$i]->homeset6, $scores[$i]->homeset7);
 				$awaysets 	= array ($scores[$i]->awayset1, $scores[$i]->awayset2, $scores[$i]->awayset3, $scores[$i]->awayset4, $scores[$i]->awayset5, $scores[$i]->awayset6, $scores[$i]->awayset7);
-			
 			}
 			
 			return array('home' => $homesets, 'away' => $awaysets);
