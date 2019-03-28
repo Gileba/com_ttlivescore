@@ -129,7 +129,7 @@ class TTLivescoreModelClubmatch extends JModelAdmin
 		$query
 			->select($db->quoteName(array('a.id', 'a.name', 'a.matchorderhome', 'a.matchorderaway', 'a.matches')))
 			->from($db->quoteName('#__ttlivescore_matchdefinitions', 'a'))
-			->join('INNER', $db->quoteName('#__ttlivescore_clubmatches', 'cm') . 
+			->join('INNER', $db->quoteName('#__ttlivescore_clubmatches', 'cm') .
 				' ON (' . $db->quoteName('cm.mdid') . ' = ' . $db->quoteName('a.id') . ')')
 			->where($db->quoteName('cm.id') . ' = ' . (int) $id);
 
