@@ -43,12 +43,15 @@ class TTLivescoreModelClubmatch extends JModelList
 					'homeset3', 'homeset4', 'homeset5', 'homeset6', 'homeset7', 'awayset1', 'awayset2', 'awayset3', 'awayset4', 'awayset5',
 					'awayset6', 'awayset7', 'homeclub', 'awayclub', 'matches'
 				)
-			))
+			)
+			)
 			->from($db->quoteName('#__ttlivescore_livescores', 'a'))
 			->join('INNER', $db->quoteName('#__ttlivescore_clubmatches', 'cm') .
-				' ON (' . $db->quoteName('a.cmid') . ' = ' . $db->quoteName('cm.id') . ')')
+				' ON (' . $db->quoteName('a.cmid') . ' = ' . $db->quoteName('cm.id') . ')'
+				)
 			->join('INNER', $db->quoteName('#__ttlivescore_matchdefinitions', 'md') .
-				' ON (' . $db->quoteName('cm.mdid') . ' = ' . $db->quoteName('md.id') . ')');
+				' ON (' . $db->quoteName('cm.mdid') . ' = ' . $db->quoteName('md.id') . ')'
+				);
 		if ($id = $this->getState('id'))
 		{
 			$query->where($db->quoteName('a.cmid') . ' = ' . (int) $id);
@@ -71,12 +74,15 @@ class TTLivescoreModelClubmatch extends JModelList
 				array('homeset1', 'homeset2', 'homeset3', 'homeset4', 'homeset5', 'homeset6', 'homeset7', 'awayset1', 'awayset2', 'awayset3',
 					'awayset4', 'awayset5', 'awayset6', 'awayset7', 'id', 'clubmatchid', 'numberofsets', 'homeclub', 'awayclub'
 				)
-			))
+			)
+			)
 			->from($db->quoteName('#__ttlivescore_livescores', 'a'))
 			->join('INNER', $db->quoteName('#__ttlivescore_clubmatches', 'cm') .
-				' ON (' . $db->quoteName('a.cmid') . ' = ' . $db->quoteName('cm.id') . ')')
+				' ON (' . $db->quoteName('a.cmid') . ' = ' . $db->quoteName('cm.id') . ')'
+				)
 			->join('INNER', $db->quoteName('#__ttlivescore_matchdefinitions', 'md') .
-				' ON (' . $db->quoteName('cm.mdid') . ' = ' . $db->quoteName('md.id') . ')')
+				' ON (' . $db->quoteName('cm.mdid') . ' = ' . $db->quoteName('md.id') . ')'
+				)
 			->where($db->quoteName('a.id') . ' = ' . (int) $id);
 
 		$db->setQuery($query);
@@ -100,8 +106,10 @@ class TTLivescoreModelClubmatch extends JModelList
 		{
 			$home 		= 0;
 			$away		= 0;
-			$homesets 	= array($scores[$i]->homeset1, $scores[$i]->homeset2, $scores[$i]->homeset3, $scores[$i]->homeset4, $scores[$i]->homeset5, $scores[$i]->homeset6, $scores[$i]->homeset7);
-			$awaysets 	= array ($scores[$i]->awayset1, $scores[$i]->awayset2, $scores[$i]->awayset3, $scores[$i]->awayset4, $scores[$i]->awayset5, $scores[$i]->awayset6, $scores[$i]->awayset7);
+			$homesets 	= array($scores[$i]->homeset1, $scores[$i]->homeset2, $scores[$i]->homeset3, $scores[$i]->homeset4, $scores[$i]->homeset5, 
+				$scores[$i]->homeset6, $scores[$i]->homeset7);
+			$awaysets 	= array ($scores[$i]->awayset1, $scores[$i]->awayset2, $scores[$i]->awayset3, $scores[$i]->awayset4, $scores[$i]->awayset5, 
+				$scores[$i]->awayset6, $scores[$i]->awayset7);
 
 			for ($j = 0; $j < $scores[$i]->numberofsets; $j++)
 			{
@@ -135,8 +143,10 @@ class TTLivescoreModelClubmatch extends JModelList
 
 		for ($i = 0; $i < count($scores); $i++)
 		{
-			$homesets 	= array($scores[$i]->homeset1, $scores[$i]->homeset2, $scores[$i]->homeset3, $scores[$i]->homeset4, $scores[$i]->homeset5, $scores[$i]->homeset6, $scores[$i]->homeset7);
-			$awaysets 	= array ($scores[$i]->awayset1, $scores[$i]->awayset2, $scores[$i]->awayset3, $scores[$i]->awayset4, $scores[$i]->awayset5, $scores[$i]->awayset6, $scores[$i]->awayset7);
+			$homesets 	= array($scores[$i]->homeset1, $scores[$i]->homeset2, $scores[$i]->homeset3, $scores[$i]->homeset4, $scores[$i]->homeset5, 
+				$scores[$i]->homeset6, $scores[$i]->homeset7); 
+			$awaysets 	= array ($scores[$i]->awayset1, $scores[$i]->awayset2, $scores[$i]->awayset3, 
+				$scores[$i]->awayset4, $scores[$i]->awayset5, $scores[$i]->awayset6, $scores[$i]->awayset7);
 		}
 
 		return array('home' => $homesets, 'away' => $awaysets);
