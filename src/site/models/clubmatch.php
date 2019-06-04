@@ -106,9 +106,9 @@ class TTLivescoreModelClubmatch extends JModelList
 		{
 			$home 		= 0;
 			$away		= 0;
-			$homesets 	= array($scores[$i]->homeset1, $scores[$i]->homeset2, $scores[$i]->homeset3, $scores[$i]->homeset4, $scores[$i]->homeset5, 
+			$homesets 	= array($scores[$i]->homeset1, $scores[$i]->homeset2, $scores[$i]->homeset3, $scores[$i]->homeset4, $scores[$i]->homeset5,
 				$scores[$i]->homeset6, $scores[$i]->homeset7);
-			$awaysets 	= array ($scores[$i]->awayset1, $scores[$i]->awayset2, $scores[$i]->awayset3, $scores[$i]->awayset4, $scores[$i]->awayset5, 
+			$awaysets 	= array ($scores[$i]->awayset1, $scores[$i]->awayset2, $scores[$i]->awayset3, $scores[$i]->awayset4, $scores[$i]->awayset5,
 				$scores[$i]->awayset6, $scores[$i]->awayset7);
 
 			for ($j = 0; $j < $scores[$i]->numberofsets; $j++)
@@ -143,9 +143,9 @@ class TTLivescoreModelClubmatch extends JModelList
 
 		for ($i = 0; $i < count($scores); $i++)
 		{
-			$homesets 	= array($scores[$i]->homeset1, $scores[$i]->homeset2, $scores[$i]->homeset3, $scores[$i]->homeset4, $scores[$i]->homeset5, 
-				$scores[$i]->homeset6, $scores[$i]->homeset7); 
-			$awaysets 	= array ($scores[$i]->awayset1, $scores[$i]->awayset2, $scores[$i]->awayset3, 
+			$homesets 	= array($scores[$i]->homeset1, $scores[$i]->homeset2, $scores[$i]->homeset3, $scores[$i]->homeset4, $scores[$i]->homeset5,
+				$scores[$i]->homeset6, $scores[$i]->homeset7);
+			$awaysets 	= array ($scores[$i]->awayset1, $scores[$i]->awayset2, $scores[$i]->awayset3,
 				$scores[$i]->awayset4, $scores[$i]->awayset5, $scores[$i]->awayset6, $scores[$i]->awayset7);
 		}
 
