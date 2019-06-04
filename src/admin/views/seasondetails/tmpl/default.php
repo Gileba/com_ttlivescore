@@ -107,7 +107,7 @@
 			</tfoot>
 			<tbody>
 				<?php foreach($this->items as $i => $item) :
-					$canCheckin = $user->authorise('core.manage', 'com_checkin') || $item->checked_out === $user->get('id') 
+					$canCheckin = $user->authorise('core.manage', 'com_checkin') || $item->checked_out === $user->get('id')
 						|| $item->checked_out === 0;
 					$canChange = $user->authorise('core.edit.state', 'com_ttlivescore') && $canCheckin;
 				?>
