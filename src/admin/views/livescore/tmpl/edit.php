@@ -14,7 +14,7 @@
 	<div class="row-fluid">
 		<div class="span10 form-horizontal">
 			<fieldset>
-				<?php 
+				<?php
 					echo JHtml::_('bootstrap.startPane', 'myTab', array('active' => 'details'));
 					echo JHtml::_('bootstrap.addPanel', 'myTab', 'details', JText::sprintf('COM_TTLIVESCORE_EDIT_LIVESCORE', $this->item->id, true));
 				?>

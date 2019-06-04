@@ -41,15 +41,15 @@ class TTLivescoreModelSeasondetails extends JModelList
 		$orderDirn = $this->state->get('list.direction');
 
 		$query
-			->select($db->quoteName(array('a.id', 's.name', 'p.lastname', 'p.firstname', 'p.middlename', 'c.name', 'a.localranking', 
+			->select($db->quoteName(array('a.id', 's.name', 'p.lastname', 'p.firstname', 'p.middlename', 'c.name', 'a.localranking',
 			'l.rankingprefix'), array('id', 'season', 'lastname', 'firstname', 'middlename', 'club', 'localranking', 'prefix')))
 			->from($db->quoteName('#__ttlivescore_seasondetails', 'a'))
-			->join('INNER', $db->quoteName('#__ttlivescore_players', 'p') . ' ON (' . $db->quoteName('a.player') . ' = ' . 
+			->join('INNER', $db->quoteName('#__ttlivescore_players', 'p') . ' ON (' . $db->quoteName('a.player') . ' = ' .
 			$db->quoteName('p.id') . ')')
 			->join('INNER', $db->quoteName('#__ttlivescore_clubs', 'c') . ' ON (' . $db->quoteName('a.club') . ' = ' . $db->quoteName('c.id') . ')')
-			->join('INNER', $db->quoteName('#__ttlivescore_seasons', 's') . ' ON (' . $db->quoteName('a.season') . ' = ' . 
+			->join('INNER', $db->quoteName('#__ttlivescore_seasons', 's') . ' ON (' . $db->quoteName('a.season') . ' = ' .
 			$db->quoteName('s.id') . ')')
-			->join('INNER', $db->quoteName('#__ttlivescore_countries', 'l') . ' ON (' . $db->quoteName('s.country') . ' = ' . 
+			->join('INNER', $db->quoteName('#__ttlivescore_countries', 'l') . ' ON (' . $db->quoteName('s.country') . ' = ' .
 			$db->quoteName('l.ioc_code') . ')')
 			->order($orderCol . ' ' . $orderDirn);
 
@@ -70,7 +70,7 @@ class TTLivescoreModelSeasondetails extends JModelList
 
 		if(!empty($search)){
 			$like = $db->escape('%' . $search . '%');
-			$query->where('(p.lastname LIKE ' . $db->quote($like, false) . ' OR p.firstname LIKE ' . $db->quote($like, false) . ' OR c.name LIKE ' . 
+			$query->where('(p.lastname LIKE ' . $db->quote($like, false) . ' OR p.firstname LIKE ' . $db->quote($like, false) . ' OR c.name LIKE ' .
 			$db->quote($like, false) . ')');
 		}
 
