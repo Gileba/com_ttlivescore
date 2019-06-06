@@ -44,8 +44,13 @@
 			/>
 		</div>
 		<div class="btn-group pull-left">
-			<button class="btn hasTooltip" type="submit" title="<?php echo JText::_('JSEARCH_FILTER_SUBMIT'); ?> "><i class="icon-search"></i></button>
-			<button class="btn hasTooltip" type="button" title="<?php echo JText::_('JSEARCH_FILTER_CLEAR'); ?>" onclick="document.getElementById('filter_search').value=''; this.form.submit();"> <i class="icon-remove"> </i></button>
+			<button class="btn hasTooltip" type="submit" title="<?php echo JText::_('JSEARCH_FILTER_SUBMIT'); ?> ">
+				<i class="icon-search"></i>
+			</button>
+			<button class="btn hasTooltip" type="button" title="<?php echo JText::_('JSEARCH_FILTER_CLEAR'); ?>"
+				onclick="document.getElementById('filter_search').value=''; this.form.submit();">
+				<i class="icon-remove"> </i>
+			</button>
 		</div>
 		<div class="btn-group pull-right hidden-phone">
 			<label for="limit" class="element-invisible">
@@ -91,7 +96,8 @@
 			<thead>
 				<tr>
 					<th width="1%" class="hidden-phone">
-						<input type="checkbox" name="checkall-toggle" value="" title="<?php echo JText::_('JGLOBAL_CHECK_ALL'); ?>" onclick="Joomla.checkAll(this)" />
+						<input type="checkbox" name="checkall-toggle" value="" title="<?php echo JText::_('JGLOBAL_CHECK_ALL'); ?>"
+							onclick="Joomla.checkAll(this)" />
 					</th>
 					<th>
 						<?php echo JHtml::_('grid.sort', 'COM_TTLIVESCORE_HEADING_DATE', 'a.date', $listDirn, $listOrder); ?>
@@ -113,7 +119,8 @@
 			</tfoot>
 			<tbody>
 				<?php foreach($this->items as $i => $item) { :
-					$canCheckin = $user->authorise('core.manage', 'com_checkin') || $item->checked_out === $user->get('id') || $item->checked_out === 0;
+					$canCheckin = $user->authorise('core.manage', 'com_checkin') || $item->checked_out === $user->get('id')
+						|| $item->checked_out === 0;
 				}
 
 					$canChange = $user->authorise('core.edit.state', 'com_ttlivescore') && $canCheckin;
@@ -134,7 +141,10 @@
 					</td>
 					<td class="nowrap has-context">
 						<?php if($item->livescorescreated == false) { ?>
-							<a href="<?php echo JROUTE::_('index.php?option=com_ttlivescore&task=clubmatches.creatematches&id=' . (int) $item->id); ?>">
+							<a href="<?php echo JROUTE::_('index.php?option=com_ttlivescore&task=clubmatches.creatematches&id=' .
+								(int) $item->id
+								); ?>
+							">
 								<span class="btn btn-small btn-primary">
 									<span class="icon-tree-2"></span><?php echo JText::_('COM_TTLIVESCORE_BUTTON_CREATEMATCHES');?>
 								</span>
