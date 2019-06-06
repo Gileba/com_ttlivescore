@@ -44,8 +44,13 @@
 			/>
 		</div>
 		<div class="btn-group pull-left">
-			<button class="btn hasTooltip" type="submit" title="<?php echo JText::_('JSEARCH_FILTER_SUBMIT'); ?> "><i class="icon-search"></i></button>
-			<button class="btn hasTooltip" type="button" title="<?php echo JText::_('JSEARCH_FILTER_CLEAR'); ?>" onclick="document.getElementById('filter_search').value=''; this.form.submit();"> <i class="icon-remove"> </i></button>
+			<button class="btn hasTooltip" type="submit" title="<?php echo JText::_('JSEARCH_FILTER_SUBMIT'); ?> ">
+				<i class="icon-search"></i>
+			</button>
+			<button class="btn hasTooltip" type="button" title="<?php echo JText::_('JSEARCH_FILTER_CLEAR'); ?>"
+				onclick="document.getElementById('filter_search').value=''; this.form.submit();">
+				<i class="icon-remove"> </i>
+			</button>
 		</div>
 		<div class="btn-group pull-right hidden-phone">
 			<label for="limit" class="element-invisible">
@@ -76,7 +81,8 @@
 			<thead>
 				<tr>
 					<th width="1%" class="hidden-phone">
-						<input type="checkbox" name="checkall-toggle" value="" title="<?php echo JText::_('JGLOBAL_CHECK_ALL'); ?>" onclick="Joomla.checkAll(this)" />
+						<input type="checkbox" name="checkall-toggle" value="" title="<?php echo JText::_('JGLOBAL_CHECK_ALL'); ?>"
+							onclick="Joomla.checkAll(this)" />
 					</th>
 					<th width="1%" style="min-width: 55px;" class="nowrap center">
 						<?php echo JHtml::_('grid.sort', 'JSTATUS', 'a.published', $listDirn, $listOrder); ?>
@@ -104,7 +110,8 @@
 			</tfoot>
 			<tbody>
 				<?php foreach($this->items as $i => $item) :
-					$canCheckin = $user->authorise('core.manage', 'com_checkin') || $item->checked_out === $user->get('id') || $item->checked_out === 0;
+					$canCheckin = $user->authorise('core.manage', 'com_checkin') || $item->checked_out === $user->get('id')
+						|| $item->checked_out === 0;
 					$canChange = $user->authorise('core.edit.state', 'com_ttlivescore') && $canCheckin;
 					?>
 				<tr class="row<?php echo $i % 2; ?>">
@@ -116,7 +123,9 @@
 							<?php
 							if ($canChange)
 								{
-								echo JHtml::_('jgrid.published', $item->published, $i, 'players.', $canChange, 'cb', $item->publish_up, $item->publish_down);
+								echo JHtml::_('jgrid.published', $item->published, $i, 'players.', $canChange, 'cb', $item->publish_up,
+									$item->publish_down
+								);
 								JHtml::_('actionsdropdown.' . ((int) $item->published === 2 ? 'un' : '') . 'archive', 'cb' . $i, 'players');
 								echo JHtml::_('actionsdropdown.render', $this->escape($item->lastname . ' ' . $item->firstname));
 							}
