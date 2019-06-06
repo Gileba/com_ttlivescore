@@ -41,10 +41,18 @@ class TTLivescoreModelLivescore extends JModelAdmin
 		$query = $db->getQuery(true);
 
 		$query
-			->select($db->quoteName(array('a.homepointsset1', 'a.homepointsset2', 'a.homepointsset3', 'a.homepointsset4', 'a.homepointsset5', 'a.homepointsset5', 'a.homepointsset7', 'a.awaypointsset1', 'a.awaypointsset2', 'a.awaypointsset3', 'a.awaypointsset4', 'a.awaypointsset5', 'a.awaypointsset6', 'a.awaypointsset7', 'md.sets', 'a.cmid'), array('homeset1', 'homeset2', 'homeset3', 'homeset4', 'homeset5', 'homeset6', 'homeset7', 'awayset1', 'awayset2', 'awayset3', 'awayset4', 'awayset5', 'awayset6', 'awayset7', 'numberofsets', 'cmid')))
+			->select($db->quoteName(array('a.homepointsset1', 'a.homepointsset2', 'a.homepointsset3', 'a.homepointsset4', 'a.homepointsset5',
+			'a.homepointsset5', 'a.homepointsset7', 'a.awaypointsset1', 'a.awaypointsset2', 'a.awaypointsset3', 'a.awaypointsset4',
+			'a.awaypointsset5', 'a.awaypointsset6', 'a.awaypointsset7', 'md.sets', 'a.cmid'), array('homeset1', 'homeset2', 'homeset3', 'homeset4',
+			'homeset5', 'homeset6', 'homeset7', 'awayset1', 'awayset2', 'awayset3', 'awayset4', 'awayset5', 'awayset6', 'awayset7', 'numberofsets',
+			'cmid')
+			)
+			)
 			->from($db->quoteName('#__ttlivescore_livescores', 'a'))
-			->join('INNER', $db->quoteName('#__ttlivescore_clubmatches', 'cb') . ' ON (' . $db->quoteName('a.cmid') . ' = ' . $db->quoteName('cb.id') . ')')
-			->join('INNER', $db->quoteName('#__ttlivescore_matchdefinitions', 'md') . ' ON (' . $db->quoteName('cb.mdid') . ' = ' . $db->quoteName('md.id') . ')')
+			->join('INNER', $db->quoteName('#__ttlivescore_clubmatches', 'cb') . ' ON (' . $db->quoteName('a.cmid') . ' = ' .
+			$db->quoteName('cb.id') . ')')
+			->join('INNER', $db->quoteName('#__ttlivescore_matchdefinitions', 'md') . ' ON (' . $db->quoteName('cb.mdid') . ' = ' .
+			$db->quoteName('md.id') . ')')
 			->where($db->quoteName('a.id') . ' = ' . (int) $id);
 
 		$db->setQuery($query);
@@ -65,8 +73,10 @@ class TTLivescoreModelLivescore extends JModelAdmin
 		$this->match 	= $this->getMatch($id);
 		$home 			= 0;
 		$away 			= 0;
-		$homesets 		= array($this->match->homeset1, $this->match->homeset2, $this->match->homeset3, $this->match->homeset4, $this->match->homeset5, $this->match->homeset6, $this->match->homeset7);
-		$awaysets 		= array ($this->match->awayset1, $this->match->awayset2, $this->match->awayset3, $this->match->awayset4, $this->match->awayset5, $this->match->awayset6, $this->match->awayset7);
+		$homesets 		= array($this->match->homeset1, $this->match->homeset2, $this->match->homeset3, $this->match->homeset4,
+		$this->match->homeset5, $this->match->homeset6, $this->match->homeset7);
+		$awaysets 		= array ($this->match->awayset1, $this->match->awayset2, $this->match->awayset3, $this->match->awayset4,
+		$this->match->awayset5, $this->match->awayset6, $this->match->awayset7);
 
 		for ($i = 0; $i < $this->match->numberofsets; $i++)
 		{

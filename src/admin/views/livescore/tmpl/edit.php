@@ -42,7 +42,7 @@
 							echo '<div class="span2 center score' . ($bigButtons ? ' bigbutton' : '') . '">' . $this->form->getValue($points) .
 							'</div>';
 							if (($this->set == $i)
-								&& ((($this->form->getValue($points) < 11) && ($this->form->getValue('homepointsset' . $i) < 11)                                )
+								&& ((($this->form->getValue($points) < 11) && ($this->form->getValue('homepointsset' . $i) < 11))
 								|| ((abs($this->form->getValue($points) - $this->form->getValue('homepointsset' . $i)) < 2)))
 							)
 							{
@@ -86,9 +86,9 @@ for ($i = 1; $i <= $this->set; $i++)
 	<?php
 	echo '<div class="span2 center score' . ($bigButtons ? ' bigbutton' : '') . '">' . $this->form->getValue($points) . '</div>';
 	if (($this->set == $i)
-		&& (                                (                                ($this->form->getValue($points) < 11)
-		&& ($this->form->getValue('awaypointsset' . $i) < 11)                                )
-		|| (                                (abs($this->form->getValue($points) - $this->form->getValue('awaypointsset' . $i)) < 2)                                ))
+		&& ((($this->form->getValue($points) < 11)
+		&& ($this->form->getValue('awaypointsset' . $i) < 11))
+		|| ((abs($this->form->getValue($points) - $this->form->getValue('awaypointsset' . $i)) < 2)))
 	)
 	{
 		$disablehomeplus = false;
