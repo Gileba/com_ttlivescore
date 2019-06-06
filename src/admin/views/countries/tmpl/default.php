@@ -67,10 +67,12 @@ if ($saveOrder)
 		<div class="btn-group pull-right hidden-phone">
 			<label for="directionTable" class="element-invisible"><?php echo jText::_('JFIELD_ORDERING_DESC'); ?></label>
 			<select name="directionTable" id="directionTable" class="input-medium" size="1" onchange="Joomla.orderTable();">
-				<option value="asc" <?php if($listDirn === 'asc') ? echo 'selected="selected"';?>>
+				<option value="asc" <?php if($listDirn === 'asc') { ? echo 'selected="selected"';
+									}?>>
 					<?php echo JText::_('JGLOBAL_ORDER_ASCENDING'); ?>
 				</option>
-				<option value="desc" <?php if($listDirn === 'desc') ? echo 'selected="selected"'; ?>>
+				<option value="desc" <?php if($listDirn === 'desc') { ? echo 'selected="selected"';
+												 } ?>>
 					<?php echo JText::_('JGLOBAL_ORDER_DESCENDING'); ?>
 				</option>
 			</select>
@@ -117,22 +119,26 @@ if ($saveOrder)
 				</tr>
 			</tfoot>
 			<tbody>
-				<?php foreach($this->items as $i => $item) :
+				<?php foreach($this->items as $i => $item) { :
 					$canCheckin = $user->authorise('core.manage', 'com_checkin') || $item->checked_out === $user->get('id')
 						|| $item->checked_out === 0;
+				}
+
 					$canChange = $user->authorise('core.edit.state', 'com_ttlivescore') && $canCheckin;
-					?>
+				?>
 				<tr class="row<?php echo $i % 2; ?>" sortable-group-id="1">
 					<td class="order nowrap center hidden-phone">
 					<?php
-					if ($canChange) :
+					if ($canChange) { :
 						$disableClassName 	= '';
+					}
+
 						$disabledLabel		= '';
-						if (!$saveOrder) :
-							$disabledLabel = JText::_('JORDERINGDISABLED');
-							$disableClassName = 'inactive tip-top';
-						endif;
-						?>
+					if (!$saveOrder) :
+						$disabledLabel = JText::_('JORDERINGDISABLED');
+						$disableClassName = 'inactive tip-top';
+					endif;
+					?>
 						<span class="sortable-handler hasTooltip <?php echo $disableClassName; ?>" title="<?php echo $disabledLabel; ?>">
 							<i class="icon-menu"></i>
 						</span>
@@ -151,7 +157,7 @@ if ($saveOrder)
 						<?php
 							echo JHtml::_('jgrid.published', $item->published, $i, 'countries.', $canChange, 'cb', $item->publish_up,
 								$item->publish_down);
-						?>
+							?>
 					</td>
 					<td class="nowrap has-context">
 						<a href="<?php echo JROUTE::_('index.php?option=com_ttlivescore&task=country.edit&id=' . (int) $item->id); ?>">

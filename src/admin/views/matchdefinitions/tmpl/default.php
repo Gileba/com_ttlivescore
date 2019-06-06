@@ -52,10 +52,12 @@
 		<div class="btn-group pull-right hidden-phone">
 			<label for="directionTable" class="element-invisible"><?php echo jText::_('JFIELD_ORDERING_DESC'); ?></label>
 			<select name="directionTable" id="directionTable" class="input-medium" size="1" onchange="Joomla.orderTable();">
-				<option value="asc" <?php if($listDirn === 'asc') ? echo 'selected="selected"';?>>
+				<option value="asc" <?php if($listDirn === 'asc') { ? echo 'selected="selected"';
+									}?>>
 					<?php echo JText::_('JGLOBAL_ORDER_ASCENDING'); ?>
 				</option>
-				<option value="desc" <?php if($listDirn === 'desc') ? echo 'selected="selected"'; ?>>
+				<option value="desc" <?php if($listDirn === 'desc') { ? echo 'selected="selected"';
+												 } ?>>
 					<?php echo JText::_('JGLOBAL_ORDER_DESCENDING'); ?>
 				</option>
 			</select>
@@ -91,10 +93,12 @@
 				</tr>
 			</tfoot>
 			<tbody>
-				<?php foreach($this->items as $i => $item) :
+				<?php foreach($this->items as $i => $item) { :
 					$canCheckin = $user->authorise('core.manage', 'com_checkin') || $item->checked_out === $user->get('id') || $item->checked_out === 0;
+				}
+
 					$canChange = $user->authorise('core.edit.state', 'com_ttlivescore') && $canCheckin;
-					?>
+				?>
 				<tr class="row<?php echo $i % 2; ?>">
 					<td class="center hidden-phone">
 						<?php echo JHtml::_('grid.id', $i, $item->id); ?>
