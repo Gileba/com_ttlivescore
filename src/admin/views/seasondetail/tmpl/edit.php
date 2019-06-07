@@ -10,8 +10,8 @@
 		<div class="span10 form-horizontal">
 			<fieldset>
 				<?php echo JHtml::_('bootstrap.startPane', 'myTab', array('active' => 'details')); ?>
-				<?php echo JHtml::_('bootstrap.addPanel', 'myTab', 'details', 
-					empty($this->item->id) ? JText::_('COM_TTLIVESCORE_NEW_SEASONDETAIL', true) : 
+				<?php echo JHtml::_('bootstrap.addPanel', 'myTab', 'details',
+					empty($this->item->id) ? JText::_('COM_TTLIVESCORE_NEW_SEASONDETAIL', true) :
 					JText::sprintf('COM_TTLIVESCORE_EDIT_SEASONDETAIL', $this->item->id, true)); ?>
 				<?php echo $this->form->renderField('season'); ?>
 				<?php echo $this->form->renderField('player'); ?>
