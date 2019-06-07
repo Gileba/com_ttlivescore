@@ -75,9 +75,15 @@ class TTLivescoreViewPlayers extends JViewLegacy
 
 		JHtmlSidebar::setAction('index.php?option=com_ttlivescore&view=players');
 
-		JHtmlSidebar::addFilter(Jtext::_('COM_TTLIVESCORE_FILTER_COUNTRY'), 'filter_countries', JHtml::_('select.options', $this->countries->getOptions(), 'value', 'text', $this->state->get('filter.countries'), true));
-		JHtmlSidebar::addFilter(Jtext::_('COM_TTLIVESCORE_FILTER_SEX'), 'filter_sex', JHtml::_('select.options', $this->sex->getOptions(), 'value', 'text', $this->state->get('filter.sex'), true));
-		JHtmlSidebar::addFilter(Jtext::_('JOPTION_SELECT_PUBLISHED'), 'filter_state', JHtml::_('select.options', JHtml::_('jgrid.publishedOptions'), 'value', 'text', $this->state->get('filter.state'), true));
+		JHtmlSidebar::addFilter(Jtext::_('COM_TTLIVESCORE_FILTER_COUNTRY'), 'filter_countries', 
+			JHtml::_('select.options', $this->countries->getOptions(), 'value', 'text', $this->state->get('filter.countries'), true)
+		);
+		JHtmlSidebar::addFilter(Jtext::_('COM_TTLIVESCORE_FILTER_SEX'), 'filter_sex', 
+			JHtml::_('select.options', $this->sex->getOptions(), 'value', 'text', $this->state->get('filter.sex'), true)
+		);
+		JHtmlSidebar::addFilter(Jtext::_('JOPTION_SELECT_PUBLISHED'), 'filter_state', 
+			JHtml::_('select.options', JHtml::_('jgrid.publishedOptions'), 'value', 'text', $this->state->get('filter.state'), true)
+		);
 	}
 
 	protected function getSortFields()
