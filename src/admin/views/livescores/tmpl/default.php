@@ -29,7 +29,8 @@
 			<thead>
 				<tr>
 					<th width="1%" class="hidden-phone">
-						<input type="checkbox" name="checkall-toggle" value="" title="<?php echo JText::_('JGLOBAL_CHECK_ALL'); ?>" onclick="Joomla.checkAll(this)" />
+						<input type="checkbox" name="checkall-toggle" value="" title="<?php echo JText::_('JGLOBAL_CHECK_ALL'); ?>"
+							onclick="Joomla.checkAll(this)" />
 					</th>
 					<th width="2%" class="hidden-phone">
 						#
@@ -52,7 +53,8 @@
 			</tfoot>
 			<tbody>
 				<?php foreach($this->items as $i => $item) :
-					$canCheckin = $user->authorise('core.manage', 'com_checkin') || $item->checked_out === $user->get('id') || $item->checked_out === 0;
+					$canCheckin = $user->authorise('core.manage', 'com_checkin') || $item->checked_out === $user->get('id')
+						|| $item->checked_out === 0;
 					$canChange = $user->authorise('core.edit.state', 'com_ttlivescore') && $canCheckin;
 					?>
 				<tr class="row<?php echo $i % 2; ?>" sortable-group-id="1">

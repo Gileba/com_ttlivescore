@@ -23,12 +23,16 @@ if ($this->form->getValue('id') != 0)
 }
 ?>
 
-<form action="<?php echo JRoute::_('index.php?option=com_ttlivescore&layout=edit&id=' . (int) $this->item->id); ?>" method="post" name="adminForm" id="adminForm" class="form-validate">
+<form action="<?php echo JRoute::_('index.php?option=com_ttlivescore&layout=edit&id=' . (int) $this->item->id); ?>" method="post" name="adminForm" 
+	id="adminForm" class="form-validate">
 	<div class="row-fluid">
 		<div class="span10 form-horizontal">
 			<fieldset>
 				<?php echo JHtml::_('bootstrap.startPane', 'myTab', array('active' => 'details')); ?>
-				<?php echo JHtml::_('bootstrap.addPanel', 'myTab', 'details', empty($this->item->id) ? JText::_('COM_TTLIVESCORE_NEW_CLUBMATCH', true) : JText::sprintf('COM_TTLIVESCORE_EDIT_CLUBMATCH', $this->item->id, true)); ?>
+				<?php echo JHtml::_('bootstrap.addPanel', 'myTab', 'details',
+					empty($this->item->id) ? JText::_('COM_TTLIVESCORE_NEW_CLUBMATCH', true) : 
+					JText::sprintf('COM_TTLIVESCORE_EDIT_CLUBMATCH', $this->item->id, true)
+					); ?>
 				<?php echo $this->form->renderField('mdid'); ?>
 				<?php echo $this->form->renderField('sid'); ?>
 				<?php echo $this->form->renderField('date'); ?>

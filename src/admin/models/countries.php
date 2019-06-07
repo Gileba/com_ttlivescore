@@ -40,7 +40,9 @@ class TTLivescoreModelCountries extends JModelList
 		$orderDirn = $this->state->get('list.direction');
 
 		$query
-			->select($db->quoteName(array('a.id', 'a.name', 'a.ioc_code', 'a.published', 'a.ordering', 'a.publish_up', 'a.publish_down', 'a.rankingprefix')))
+			->select($db->quoteName(array('a.id', 'a.name', 'a.ioc_code', 'a.published', 'a.ordering', 'a.publish_up', 'a.publish_down',
+				'a.rankingprefix'))
+				)
 			->from($db->quoteName('#__ttlivescore_countries', 'a'))
 			->order($orderCol . ' ' . $orderDirn);
 
