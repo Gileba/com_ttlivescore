@@ -67,7 +67,7 @@ class TTLivescoreViewMatchDefinitions extends JViewLegacy
 
 		JHtmlSidebar::setAction('index.php?option=com_ttlivescore&view=matchdefinitions');
 
-		JHtmlSidebar::addFilter(Jtext::_('JOPTION_SELECT_PUBLISHED'), 'filter_state', 
+		JHtmlSidebar::addFilter(Jtext::_('JOPTION_SELECT_PUBLISHED'), 'filter_state',
 			JHtml::_('select.options', JHtml::_('jgrid.publishedOptions'), 'value', 'text', $this->state->get('filter.state'), true)
 		);
 	}
