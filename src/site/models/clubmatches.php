@@ -26,7 +26,7 @@ class TTLivescoreModelClubmatches extends JModelList
 		$query = $db->getQuery(true);
 
 		$query
-			->select($db->quoteName(array('a.id', 's.name', 'hc.name', 'ac.name', 'a.date', 'a.livescorescreated'), 
+			->select($db->quoteName(array('a.id', 's.name', 'hc.name', 'ac.name', 'a.date', 'a.livescorescreated'),
 				array('id', 'season', 'homeclub', 'awayclub', 'matchdate', 'livescorescreated'))
 				)
 			->from($db->quoteName('#__ttlivescore_clubmatches', 'a'))
