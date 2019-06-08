@@ -43,15 +43,15 @@ class TTLivescoreModelClubmatch extends JModelList
 					'homeset3', 'homeset4', 'homeset5', 'homeset6', 'homeset7', 'awayset1', 'awayset2', 'awayset3', 'awayset4', 'awayset5',
 					'awayset6', 'awayset7', 'homeclub', 'awayclub', 'matches'
 				)
-			)
+				)
 			)
 			->from($db->quoteName('#__ttlivescore_livescores', 'a'))
 			->join('INNER', $db->quoteName('#__ttlivescore_clubmatches', 'cm') .
 				' ON (' . $db->quoteName('a.cmid') . ' = ' . $db->quoteName('cm.id') . ')'
-				)
+					)
 			->join('INNER', $db->quoteName('#__ttlivescore_matchdefinitions', 'md') .
 				' ON (' . $db->quoteName('cm.mdid') . ' = ' . $db->quoteName('md.id') . ')'
-				);
+					);
 		if ($id = $this->getState('id'))
 		{
 			$query->where($db->quoteName('a.cmid') . ' = ' . (int) $id);
@@ -74,15 +74,15 @@ class TTLivescoreModelClubmatch extends JModelList
 				array('homeset1', 'homeset2', 'homeset3', 'homeset4', 'homeset5', 'homeset6', 'homeset7', 'awayset1', 'awayset2', 'awayset3',
 					'awayset4', 'awayset5', 'awayset6', 'awayset7', 'id', 'clubmatchid', 'numberofsets', 'homeclub', 'awayclub'
 				)
-			)
+				)
 			)
 			->from($db->quoteName('#__ttlivescore_livescores', 'a'))
 			->join('INNER', $db->quoteName('#__ttlivescore_clubmatches', 'cm') .
 				' ON (' . $db->quoteName('a.cmid') . ' = ' . $db->quoteName('cm.id') . ')'
-				)
+					)
 			->join('INNER', $db->quoteName('#__ttlivescore_matchdefinitions', 'md') .
 				' ON (' . $db->quoteName('cm.mdid') . ' = ' . $db->quoteName('md.id') . ')'
-				)
+					)
 			->where($db->quoteName('a.id') . ' = ' . (int) $id);
 
 		$db->setQuery($query);

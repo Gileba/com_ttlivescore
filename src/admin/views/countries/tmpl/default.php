@@ -141,15 +141,14 @@ if ($saveOrder)
 				<tr class="row<?php echo $i % 2; ?>" sortable-group-id="1">
 					<td class="order nowrap center hidden-phone">
 					<?php
-					if ($canChange) { :
+					if ($canChange) { 
 						$disableClassName 	= '';
-					}
-
 						$disabledLabel		= '';
-					if (!$saveOrder) :
+					}
+					if (!$saveOrder) {
 						$disabledLabel = JText::_('JORDERINGDISABLED');
 						$disableClassName = 'inactive tip-top';
-					endif;
+					}
 					?>
 						<span class="sortable-handler hasTooltip <?php echo $disableClassName; ?>" title="<?php echo $disabledLabel; ?>">
 							<i class="icon-menu"></i>
