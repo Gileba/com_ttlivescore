@@ -168,7 +168,7 @@ if ($saveOrder)
 					<td class="center">
 						<?php
 							echo JHtml::_('jgrid.published', $item->published, $i, 'countries.', $canChange, 'cb', $item->publish_up,
-							$item->publish_down
+								$item->publish_down
 							);
 							?>
 					</td>
