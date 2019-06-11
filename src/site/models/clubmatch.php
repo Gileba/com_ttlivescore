@@ -79,10 +79,10 @@ class TTLivescoreModelClubmatch extends JModelList
 			->from($db->quoteName('#__ttlivescore_livescores', 'a'))
 			->join('INNER', $db->quoteName('#__ttlivescore_clubmatches', 'cm') .
 				' ON (' . $db->quoteName('a.cmid') . ' = ' . $db->quoteName('cm.id') . ')'
-					)
+			)
 			->join('INNER', $db->quoteName('#__ttlivescore_matchdefinitions', 'md') .
 				' ON (' . $db->quoteName('cm.mdid') . ' = ' . $db->quoteName('md.id') . ')'
-					)
+			)
 			->where($db->quoteName('a.id') . ' = ' . (int) $id);
 
 		$db->setQuery($query);
