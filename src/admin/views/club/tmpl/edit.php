@@ -19,6 +19,7 @@
 				}
 
 				}
+				?>
 				<?php echo $this->form->renderField('name'); ?>
 				<?php echo $this->form->renderField('published'); ?>
 				<?php echo $this->form->renderField('emblem'); ?>
