@@ -45,8 +45,10 @@ class TTLivescoreModelSeasons extends JModelList
 		$orderDirn = $this->state->get('list.direction');
 
 		$query
-			->select($db->quoteName(array('a.id', 'a.name', 'a.country', 'a.published', 'a.ordering', 'a.publish_up', 'a.publish_down',
-				'a.startdate', 'a.enddate'))
+			->select(
+				$db->quoteName(
+					array('a.id', 'a.name', 'a.country', 'a.published', 'a.ordering', 'a.publish_up', 'a.publish_down', 'a.startdate', 'a.enddate')
+				)
 			)
 			->from($db->quoteName('#__ttlivescore_seasons', 'a'))
 			->order($orderCol . ' ' . $orderDirn);
