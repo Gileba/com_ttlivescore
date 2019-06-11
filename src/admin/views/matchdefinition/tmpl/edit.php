@@ -14,7 +14,9 @@
 					echo JHtml::_('bootstrap.addPanel', 'myTab', 'details', JText::_('COM_TTLIVESCORE_NEW_MATCHDEFINITION', true));
 				}
 				else {
-					echo JHtml::_('bootstrap.addPanel', 'myTab', 'details', JText::sprintf('COM_TTLIVESCORE_EDIT_MATCHDEFINITION', $this->item->id, true));
+					echo JHtml::_('bootstrap.addPanel', 'myTab', 'details',
+						JText::sprintf('COM_TTLIVESCORE_EDIT_MATCHDEFINITION', $this->item->id, true)
+					);
 				}
 				?>
 				<?php echo $this->form->renderField('name'); ?>
