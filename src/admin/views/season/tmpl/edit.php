@@ -11,11 +11,11 @@
 			<fieldset>
 				<?php echo JHtml::_('bootstrap.startPane', 'myTab', array('active' => 'details')); ?>
 				<?php
-					if (empty($this->item->id)) {
-						echo JHtml::_('bootstrap.addPanel', 'myTab', 'details', JText::_('COM_TTLIVESCORE_NEW_SEASON', true));
-					} else {
-						echo JHtml::_('bootstrap.addPanel', 'myTab', 'details', JText::sprintf('COM_TTLIVESCORE_EDIT_SEASON', $this->item->id, true));
-					}
+				if (empty($this->item->id)) {
+					echo JHtml::_('bootstrap.addPanel', 'myTab', 'details', JText::_('COM_TTLIVESCORE_NEW_SEASON', true));
+				} else {
+					echo JHtml::_('bootstrap.addPanel', 'myTab', 'details', JText::sprintf('COM_TTLIVESCORE_EDIT_SEASON', $this->item->id, true));
+				}
 				?>
 				<?php echo $this->form->renderField('name'); ?>
 				<?php echo $this->form->renderField('published'); ?>
