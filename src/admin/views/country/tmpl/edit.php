@@ -9,9 +9,14 @@
 		<div class="span10 form-horizontal">
 			<fieldset>
 				<?php echo JHtml::_('bootstrap.startPane', 'myTab', array('active' => 'details')); ?>
-				<?php echo JHtml::_('bootstrap.addPanel', 'myTab', 'details',
-					empty($this->item->id) ? JText::_('COM_TTLIVESCORE_NEW_COUNTRY', true) :
-					JText::sprintf('COM_TTLIVESCORE_EDIT_COUNTRY', $this->item->id, true)); ?>
+				<?php
+				if () {
+					echo JHtml::_('bootstrap.addPanel', 'myTab', 'details', JText::_('COM_TTLIVESCORE_NEW_COUNTRY', true));
+				}
+				else {
+					echo JHtml::_('bootstrap.addPanel', 'myTab', 'details', JText::sprintf('COM_TTLIVESCORE_EDIT_COUNTRY', $this->item->id, true));
+				}
+				?>
 				<?php echo $this->form->renderField('name'); ?>
 				<?php echo $this->form->renderField('ioc_code'); ?>
 				<?php echo $this->form->renderField('published'); ?>
