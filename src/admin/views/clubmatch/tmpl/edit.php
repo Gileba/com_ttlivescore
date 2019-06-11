@@ -30,12 +30,16 @@ if ($this->form->getValue('id') != 0)
 			<fieldset>
 				<?php echo JHtml::_('bootstrap.startPane', 'myTab', array('active' => 'details')); ?>
 				<?php
-					echo JHtml::_('bootstrap.addPanel', 'myTab', 'details',
-						empty($this->item->id) ?
-							JText::_('COM_TTLIVESCORE_NEW_CLUBMATCH', true) :
+					if (empty($this->item->id)) { 
+						echo JHtml::_('bootstrap.addPanel', 'myTab', 'details', JText::_('COM_TTLIVESCORE_NEW_CLUBMATCH', true);
+					}
+					else
+					{
+						echo JHtml::_('bootstrap.addPanel', 'myTab', 'details',
 							JText::sprintf('COM_TTLIVESCORE_EDIT_CLUBMATCH', $this->item->id, true)
 						);
-					?>
+					}
+				?>
 				<?php echo $this->form->renderField('mdid'); ?>
 				<?php echo $this->form->renderField('sid'); ?>
 				<?php echo $this->form->renderField('date'); ?>
