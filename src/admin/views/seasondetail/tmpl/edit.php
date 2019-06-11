@@ -14,7 +14,9 @@
 				if (empty($this->item->id)) {
 					echo JHtml::_('bootstrap.addPanel', 'myTab', 'details', JText::_('COM_TTLIVESCORE_NEW_SEASONDETAIL', true));
 				} else {
-					echo JHtml::_('bootstrap.addPanel', 'myTab', 'details', JText::sprintf('COM_TTLIVESCORE_EDIT_SEASONDETAIL', $this->item->id, true));
+					echo JHtml::_('bootstrap.addPanel', 'myTab', 'details',
+						JText::sprintf('COM_TTLIVESCORE_EDIT_SEASONDETAIL', $this->item->id, true)
+					);
 				?>
 				<?php echo $this->form->renderField('season'); ?>
 				<?php echo $this->form->renderField('player'); ?>
