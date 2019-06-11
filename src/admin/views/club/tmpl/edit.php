@@ -12,11 +12,14 @@
 				<?php echo JHtml::_('bootstrap.startPane', 'myTab', array('active' => 'details')); ?>
 				<?php
 				if (empty($this->item->id)) {
-					echo JHtml::_('bootstrap.addPanel', 'myTab', 'details', JText::_('COM_TTLIVESCORE_NEW_CLUB', true);				}
-				else {
-					echo JHtml::_('bootstrap.addPanel', 'myTab', 'details', JText::sprintf('COM_TTLIVESCORE_EDIT_CLUB', (int) $this->item->id, true);				}
+					echo JHtml::_('bootstrap.addPanel', 'myTab', 'details', JText::_('COM_TTLIVESCORE_NEW_CLUB', true);
 				}
-				<?php echo $this->form->renderField('name'); ?>
+				else {
+					echo JHtml::_('bootstrap.addPanel', 'myTab', 'details', JText::sprintf('COM_TTLIVESCORE_EDIT_CLUB', (int) $this->item->id, true);
+				}
+
+				}
+				< ? php echo $this->form->renderField('name'); ?>
 				<?php echo $this->form->renderField('published'); ?>
 				<?php echo $this->form->renderField('emblem'); ?>
 				<?php echo $this->form->renderField('country'); ?>
