@@ -10,7 +10,7 @@
 			<fieldset>
 				<?php echo JHtml::_('bootstrap.startPane', 'myTab', array('active' => 'details')); ?>
 				<?php
-				if () {
+				if (empty($this->item->id)) {
 					echo JHtml::_('bootstrap.addPanel', 'myTab', 'details', JText::_('COM_TTLIVESCORE_NEW_COUNTRY', true));
 				}
 				else {
