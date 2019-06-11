@@ -13,7 +13,8 @@
 				<?php
 				if (empty($this->item->id)) {
 					echo JHtml::_('bootstrap.addPanel', 'myTab', 'details', JText::_('COM_TTLIVESCORE_NEW_SEASON', true));
-				} else {
+				}
+				else {
 					echo JHtml::_('bootstrap.addPanel', 'myTab', 'details', JText::sprintf('COM_TTLIVESCORE_EDIT_SEASON', $this->item->id, true));
 				}
 				?>
