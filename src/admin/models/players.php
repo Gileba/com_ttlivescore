@@ -50,8 +50,13 @@ class TTLivescoreModelPlayers extends JModelList
 		$orderDirn = $this->state->get('list.direction');
 
 		$query
-			->select($db->quoteName(array('a.id', 'a.lastname', 'a.firstname', 'a.middlename', 'a.country', 'a.published', 'a.dateofbirth',
-				'a.image', 'a.publish_up', 'a.publish_down', 'a.sex')))
+			->select(
+				$db->quoteName(
+					array('a.id', 'a.lastname', 'a.firstname', 'a.middlename', 'a.country', 'a.published', 'a.dateofbirth', 'a.image', 'a.publish_up',
+						'a.publish_down', 'a.sex'
+					)
+				)
+			)
 			->from($db->quoteName('#__ttlivescore_players', 'a'))
 			->order($orderCol . ' ' . $orderDirn);
 
