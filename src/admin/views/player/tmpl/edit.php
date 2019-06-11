@@ -13,7 +13,8 @@
 				<?php
 				if empty($this->item->id)) {
 					echo JHtml::_('bootstrap.addPanel', 'myTab', 'details', JText::_('COM_TTLIVESCORE_NEW_PLAYER', true));
-				} else {
+				}
+				else {
 					echo JHtml::_('bootstrap.addPanel', 'myTab', 'details', JText::sprintf('COM_TTLIVESCORE_EDIT_PLAYER', $this->item->id, true));
 				}
 				?>
