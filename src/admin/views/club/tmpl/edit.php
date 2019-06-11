@@ -15,7 +15,7 @@
 					echo JHtml::_('bootstrap.addPanel', 'myTab', 'details', JText::_('COM_TTLIVESCORE_NEW_CLUB', true));
 				}
 				else {
-					echo JHtml::_('bootstrap.addPanel', 'myTab', 'details', JText::sprintf('COM_TTLIVESCORE_EDIT_CLUB', (int) $this->item->id, true);
+					echo JHtml::_('bootstrap.addPanel', 'myTab', 'details', JText::sprintf('COM_TTLIVESCORE_EDIT_CLUB', (int) $this->item->id, true));
 				}
 
 				}
