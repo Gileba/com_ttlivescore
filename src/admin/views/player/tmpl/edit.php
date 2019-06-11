@@ -10,9 +10,13 @@
 		<div class="span10 form-horizontal">
 			<fieldset>
 				<?php echo JHtml::_('bootstrap.startPane', 'myTab', array('active' => 'details')); ?>
-				<?php echo JHtml::_('bootstrap.addPanel', 'myTab', 'details',
-					empty($this->item->id) ? JText::_('COM_TTLIVESCORE_NEW_PLAYER', true) :
-					JText::sprintf('COM_TTLIVESCORE_EDIT_PLAYER', $this->item->id, true)); ?>
+				<?php 
+				if empty($this->item->id)) {
+					echo JHtml::_('bootstrap.addPanel', 'myTab', 'details', JText::_('COM_TTLIVESCORE_NEW_PLAYER', true));
+				} else {
+					echo JHtml::_('bootstrap.addPanel', 'myTab', 'details', JText::sprintf('COM_TTLIVESCORE_EDIT_PLAYER', $this->item->id, true));
+				}
+				?>
 				<?php echo $this->form->renderField('lastname'); ?>
 				<?php echo $this->form->renderField('middlename'); ?>
 				<?php echo $this->form->renderField('firstname'); ?>
