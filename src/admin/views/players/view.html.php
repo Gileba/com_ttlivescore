@@ -5,10 +5,35 @@
 
 class TTLivescoreViewPlayers extends JViewLegacy
 {
+	/**
+	 * Model items array.
+	 *
+	 * @var		array
+	 */
 	protected $items;
+	/**
+	 * Model state object.
+	 *
+	 * @var		object
+	 */
 	protected $state;
+	/**
+	 * Model pagination object.
+	 *
+	 * @var		object
+	 */
 	protected $pagination;
+	/**
+	 * Model countries array.
+	 *
+	 * @var		array
+	 */
 	protected $countries;
+	/**
+	 * Model sex array.
+	 *
+	 * @var		array
+	 */
 	protected $sex;
 
 
