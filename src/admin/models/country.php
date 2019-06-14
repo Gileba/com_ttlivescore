@@ -2,6 +2,11 @@
 	defined('_JEXEC') or die;
 class TTLivescoreModelCountry extends JModelAdmin
 {
+	/**
+	 * Model text prefix string.
+	 *
+	 * @var		string
+	 */
 	protected $text_prefix = 'COM_TTLIVESCORE';
 
 	public function getTable($type = 'Country', $prefix = 'TTLivescoreTable', $config = array())

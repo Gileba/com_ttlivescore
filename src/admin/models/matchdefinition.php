@@ -2,6 +2,11 @@
 	defined('_JEXEC') or die;
 class TTLivescoreModelMatchdefinition extends JModelAdmin
 {
+	/**
+	 * Model text prefix string.
+	 *
+	 * @var		string
+	 */
 	protected $text_prefix = 'COM_TTLIVESCORE';
 
 	public function getTable($type = 'Matchdefinition', $prefix = 'TTLivescoreTable', $config = array())

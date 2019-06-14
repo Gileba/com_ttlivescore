@@ -4,7 +4,18 @@
 
 class TTLivescoreModelLivescore extends JModelAdmin
 {
+	/**
+	 * Model text prefix string.
+	 *
+	 * @var		string
+	 */
 	protected $text_prefix 	= 'COM_TTLIVESCORE';
+
+	/**
+	 * Model matchnumber.
+	 *
+	 * @var		integer
+	 */
 	protected $match;
 
 	public function getTable($type = 'Livescore', $prefix = 'TTLivescoreTable', $config = array())

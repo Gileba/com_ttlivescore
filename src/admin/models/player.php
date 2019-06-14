@@ -3,6 +3,11 @@
 
 class TTLivescoreModelPlayer extends JModelAdmin
 {
+	/**
+	 * Model text prefix string.
+	 *
+	 * @var		string
+	 */
 	protected $text_prefix = 'COM_TTLIVESCORE';
 
 	public function getTable($type = 'Player', $prefix = 'TTLivescoreTable', $config = array())
