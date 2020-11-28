@@ -7,10 +7,10 @@
 	$currentMenuItem = $app->getMenu()->getActive();
 	$params = $currentMenuItem->params;
 	$refreshrate = 60;
-	if (($params != null) && ((int) $params->get('refreshGlobal') !== 0)) {
-		$refreshRate = (int) $params->get('refreshGlobal');
-	}
-	
+if (($params != null) && ((int) $params->get('refreshGlobal') !== 0)) {
+	$refreshRate = (int) $params->get('refreshGlobal');
+}
+
 	$season	= '';
 ?>
 

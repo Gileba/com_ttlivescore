@@ -19,9 +19,9 @@ if ($currentMatch < $this->items[0]->matches) {
 	$currentMenuItem = $app->getMenu()->getActive();
 	$params = $currentMenuItem->params;
 	$refreshrate = 10;
-	if (($params != null) && ((int) $params->get('refreshDetail') !== 0)) {
-		$refreshRate = (int) $params->get('refreshDetail');
-	}
+if (($params != null) && ((int) $params->get('refreshDetail') !== 0)) {
+	$refreshRate = (int) $params->get('refreshDetail');
+}
 ?>
 
 <script>
@@ -93,7 +93,7 @@ if ($currentMatch < $this->items[0]->matches) {
 	foreach ($this->items as $item) :
 		?>
 		<div class="detailedscores<?php if ($j == $currentMatch) {?> active<?php ;
-									} ?>">
+								  } ?>">
 			<div class="homeplayer">
 				<?php echo TTLivescoreHelper::getPlayername($item->homeplayerid); ?>
 			</div>
