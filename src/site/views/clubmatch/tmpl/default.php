@@ -19,10 +19,9 @@ if ($currentMatch < $this->items[0]->matches) {
 	$currentMenuItem = $app->getMenu()->getActive();
 	$params = $currentMenuItem->params;
 	$refreshrate = 10;
-if ((int) $params->get('refreshDetail') !== 0) {
-	$refreshRate = (int) $params->get('refreshDetail');
-}
-
+	if (($params != null) && ((int) $params->get('refreshDetail') !== 0)) {
+		$refreshRate = (int) $params->get('refreshDetail');
+	}
 ?>
 
 <script>
