@@ -1,16 +1,18 @@
 <?php
 	defined('_JEXEC') or die;
 
+	use Joomla\CMS\Factory;
+
 	JLoader::register('TTLivescoreHelper', JPATH_ADMINISTRATOR . '/components/com_ttlivescore/helpers/ttlivescore.php');
 
-	$app = JFactory::getApplication();
+	$app = Factory::getApplication();
 	$currentMenuItem = $app->getMenu()->getActive();
-	$params = $currentMenuItem->params;
+	$params = $currentMenuItem->getParams();
 	$refreshrate = 60;
 	if (($params != null) && ((int) $params->get('refreshGlobal') !== 0)) {
 		$refreshRate = (int) $params->get('refreshGlobal');
 	}
-	
+
 	$season	= '';
 ?>
 
@@ -38,7 +40,7 @@
 				$season = $item->season;
 				echo '<div class="season">' . $season . '</div>';
 			}
-			?>		
+			?>
 		<div class="clubmatch">
 			<div class="home">
 				<div class="club">
